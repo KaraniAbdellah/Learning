@@ -2859,12 +2859,90 @@ up.addEventListener("click", function() {
         top:0, left:0, behavior: "smooth",
     });
 });
-// Add Function To Your Vanilla Projects
 
 
 
 
 
+
+////////////////////////////////////////////////////////
+// Destructuring 
+/*
+    "is javascript expression that allows us to extract data from array, object,
+    and maps and set them into new, distinct variables"
+    - Destructuring Array
+    [a, b, c, d] = arrayName;
+*/  
+
+var MyFriends = ["Abdellah", "Omaima", "Ali", "Maysa"];
+
+var [a, b, c, d] = MyFriends;
+console.log(a, b, c, d);
+[x, y, z] = MyFriends;
+console.log(x, y, z);
+[o="World", , , w, e="Hello"] = MyFriends;
+console.log(o, w, e); // Abdellah Maysa Hello 
+
+
+
+// Destructuring Array Advanced Example
+/*
+    - [a, b, c, [, e, r ,[, , e]], d] = arrayName;
+*/
+var myFriends = ["Abdellah", "Omar", ["Ahmed", "Omaima", ["Fatima", "Maysa"]]];
+var [a, b, [c, d, [e, f]]] = myFriends;
+console.log(a, b, c, d, e, f);
+
+var [, , [, a, [, b]]] = myFriends;
+console.log(a, b); // Omaima Maysa
+
+
+
+// Destructuring Array ==> Swapping Varibales 
+/*
+    - [a, b] = [b, a]
+*/
+var book = "Video";
+var video = "Book";
+
+// Old Method
+var temp = video;
+video = book;
+book = temp;
+
+// New Method
+[book, video] = [video, book];
+console.log(book, video); // Video Book
+
+
+
+// Destructuring Objects
+/*
+    - letters is object with keys [a, b , c]
+    - let a, b, c;
+    - ({a, b, c} = letters);
+*/
+var user = {
+    theName: "Abdellah",
+    theAge: 20,
+    theTitle: "Developer",
+    theCountry: "Morocco",
+};
+var letters = {
+    a: "a",
+    b: "b",
+    c: "c",
+};
+
+console.log(user.theName);
+console.log(user["theName"]);
+
+var {theName, theAge, theTitle, theCountry} = user; // Declare
+console.log(theName, theAge, theTitle, theCountry);
+({theName, theAge, theTitle, theCountry} = user); // Has Benn Decalre
+
+var {a, c} = letters;
+console.log(a, c); // a c --> Without USe Common
 
 
 
