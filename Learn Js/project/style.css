@@ -1,0 +1,28 @@
+body {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    background-color: #222;
+}
+a,button {
+    color: white;
+    text-decoration: none;
+    font-size: 22px;
+    background-color: #3b3bef;
+    padding: 15px 30px;
+    margin: 20px auto;
+    display: block;
+    width: 200px;
+    border-radius: 6px;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -ms-border-radius: 6px;
+    -o-border-radius: 6px;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    cursor: pointer;
+}
+button {
+    border: 0;
+    outline: 0;
+}

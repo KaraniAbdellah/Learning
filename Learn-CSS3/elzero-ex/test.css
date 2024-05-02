@@ -1,0 +1,30 @@
+div[title="Hello"],
+div[title="HTML"] {
+    color: red;
+}
+
+
+div[title="Elzero"]:nth-child(4):not(.parent div) {
+    color: red;
+}
+
+
+div.circle-100 {
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    width: 100px;
+    height: 100px;
+    border: 6px solid black;
+    border-radius: 50%;
+}
+
+
+
+
+
+
+
+
+
+

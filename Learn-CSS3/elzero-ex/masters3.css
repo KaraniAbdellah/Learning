@@ -1,0 +1,164 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container{
+    position: relative;
+    background-color: #ddd;
+    padding: 10px;
+    width: 1000px;
+    height: 800px;
+    display: grid;
+    margin: 20px auto;
+    gap: 5px 5px;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: 25% 25% 25% 23%;
+    grid-template-areas: "one one one one two two three three"
+    "four four five five five five three three"
+    "four four seven seven seven seven three three"
+    "eight eight nine nine ten ten eleven eleven";
+}
+.one, .two, .three, .four, .five, .seven, .eight, .nine, .ten, .eleven {
+    position: relative;
+    padding: 10px;
+    transition: .5s all linear ;
+    border-radius: 6px;
+}
+.container div:hover {
+    box-shadow: 0px 0px 15px 2px #727272;
+    transform: scale(1.08);
+    opacity: 100%;
+    z-index: 10;
+}
+::selection {
+    background-color: orangered;
+    color: rgb(0, 0, 0);
+}
+.container div::before {
+    content: " ";
+    background-color: blue;
+    border-radius: 40px;
+    position: absolute;
+    bottom: 0;
+    right: 0px;
+    width: 100%;
+    height: 3px;
+}
+.container div:hover::before {
+    background-color: orangered;
+}
+.container div::after {
+    content: "  ";
+    background-color: transparent;
+    width: 20px;
+    height: 20px;
+    border: 3px solid;
+    border-color: blue transparent blue blue;
+    border-radius: 50%;
+    color: #eee;
+    position: absolute;
+    top: 12px;
+    right: 19px;
+    transition: 4s;
+}
+.container div:hover::after {
+    transform: rotate(2000deg);
+    border-color: orangered orangered orangered transparent;
+}
+h5 {
+    color: gray;
+    font-weight: 300;
+    line-height: 30px;
+    font-weight: bold;
+}
+.one {
+    grid-area: one;
+    background-color: #ffffff;
+}
+.two {
+    grid-area: two;
+    background-color: #ffffff;
+}
+.three {
+    grid-area: three;
+    background-color: #000000;
+    color: white;
+}
+.four {
+    grid-area: four;
+    background-color: #ffffff;
+}
+.five {
+    grid-area: five;
+    background-color: #000000;
+    color: white;
+}
+.seven {
+    grid-area: seven;
+    background-color: #ffffff;
+}
+.eight {
+    grid-area: eight;
+    background-color: #ffffff;
+}
+.nine {
+    grid-area: nine;
+    background-color: #000000;
+    color: white;
+}
+.ten {
+    grid-area: ten;
+    background-color: #ffffff;
+}
+.eleven {
+    grid-area: eleven;
+    background-color: #ffffff;
+}
+
+/* important */
+
+.one-selector  div.main.red {
+    color: red;
+}
+
+.two-selector .parent > .child:nth-child(2){
+    color: red;
+}
+
+.three-selector .parent > div:only-child {
+    color: red;
+}
+
+.four-selector div[title="Hello"],
+div[title="HTML"] {
+    color: red;
+}
+.four-selector :nth-child(4):not(.parent div[title="Elzero"]) {
+    color: red;
+}
+
+.five-selector :nth-child(2) div {
+    color: red;
+}
+
+.six-selector :nth-child(1) div:nth-child(3) {
+    color: red;
+}
+
+.seven-selector :nth-child(1) div:nth-last-of-type(2) {
+    color: red;
+}
+
+.eight-selector :not(h3, :first-child, :last-child) {
+    color: red;
+}
+
+
+
+
+
+
+
+

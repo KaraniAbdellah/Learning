@@ -1,0 +1,26 @@
+{
+  "cSpell.words": [
+    "Afficher",
+    "ATGCTAGCTAGCATGACCTTATGACTGAACATG",
+    "ATGCTAGCTAGTCTACGCTGAACATG",
+    "Avant",
+    "Caractere",
+    "Chaine",
+    "Factorialle",
+    "histo",
+    "Identique",
+    "Insere",
+    "Remplire",
+    "Remplissage",
+    "Saisir",
+    "Sont",
+    "Supprimer",
+    "tmpstr",
+    "Valeurs",
+    "Vérifier"
+  ],
+  "C_Cpp.errorSquiggles": "disabled",
+  "files.associations": {
+    "string.h": "c"
+  }
+}

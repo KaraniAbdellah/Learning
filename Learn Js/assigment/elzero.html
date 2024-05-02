@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elzero assignment</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        // Assign 93 Tp 106
+        var items = document.querySelector(".openLink");
+        [...items.children].forEach(function (ele) {
+            if (ele.classList.contains("open") && ele.textContent == "Elzero") {
+                ele.click();
+            }
+        });
+    </script>
+</head>
+
+<body>
+    <div class="Assignment_83_95">
+        <div id="elzero" class="element" name="js">JavaScript</div>
+        <h1 id="elzeroo">elzero</h1>
+        <h1>images</h1>
+        <br>
+        <div class="currency">
+            <form action="" id="form-currency">
+                <input onclick="updateResult()" type="number" name="dollar" placeholder="USD Dollar" />
+                <div class="result">{0} USD Dollar = {0} Egyptian Pound</div>
+            </form>
+        </div>
+        <br>
+        <div class="using_hand">
+            <div class="one" title="two">Two</div>
+            <div class="two" title="one">One</div>
+        </div>
+        <br>
+
+
+
+        <div class="images">
+            <img class="imgSet" decoding="async" src="#" alt="One" />
+            <img class="imgSet" decoding="async" src="#" />
+            <img class="imgSet" decoding="async" src="#" alt="Three" />
+            <img class="imgSet" decoding="async" src="#" />
+            <img class="imgSet" decoding="async" src="#" />
+        </div>
+        <br>
+        <br>
+
+
+
+        <div class="challenge">
+            <form action="" id="cha">
+                <input type="number" name="elements" class="input" placeholder="Number Of Elements" /><br> <br>
+                <input type="text" name="texts" class="input" placeholder="Elements Text" /><br><br>
+                <select name="type" class="input">
+                    <option value="Div">Div</option>
+                    <option value="Section">Section</option>
+                </select><br><br>
+                <input type="submit" id="remove" name="create" value="Create" />
+                <button onclick="Create()">Create</button>
+                <div class="results"></div>
+            </form>
+        </div>
+    </div>
+
+
+
+    <div class="openLink">
+        <a class="open" href="https://google.com">Google</a>
+        <!-- <a class="open" href="https://elzero.org">Elzero</a> -->
+        <a class="not" href="https://facebook.com">Facebook</a>
+        <a class="linked" href="https://linkedin.com">Elzero</a>
+    </div>
+
+
+
+    <div class="assign">
+        <input type="email" class="classes-to-add" placeholder="Add Classes" />
+        <input type="email" class="classes-to-remove" placeholder="Remove Classes" />
+        <div class="element current" title="Current">Current Element</div>
+        <div class="classes-list">
+            <h5>Current Element Class Lists</h5>
+            <div></div>
+        </div>
+    </div>
+
+
+
+    <div class="assign1">
+        <div class="our-element">Our Element</div>
+        <p>Paragraph</p>
+    </div>
+
+
+
+    <div class="getElzero">
+        <span>Hello</span>
+        <!-- We Need The Next Text Without Spaces -->
+        Elzero
+    </div>
+
+
+
+    <div class="search">
+        <div>Element</div>
+        <span>Element</span>
+        <p>Element</p>
+        <article>Element</article>
+        <section>Element</section>
+        <footer>Element</footer>
+    </div>
+
+
+
+    <div class="counter" style="font-size: 50px; margin: 50px;">8</div>
+    <script src="/assigment/elzero.js"></script>
+</body>
+
+</html>
