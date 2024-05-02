@@ -1,4 +1,2 @@
-// Please Revise The Last Lessons About Distructring Function Paramaters
-
-
-
+// Please Revise The Last Lessons About Distructring Function Paramater#
+    

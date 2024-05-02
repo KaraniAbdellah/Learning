@@ -2946,4 +2946,31 @@ console.log(a, c); // a c --> Without USe Common
 
 
 
+// Destructuring Fucntions Parameters
+/*
+    const obj = {
+        key1: { v1: "", v2: "" }
+    }
+    
+    function({a, b, c:{d, e: {f}}} = obj) --> Use The Keys Name
+    
+    If There is a Nested Object --> key1: {v1, v2}
+*/
+// function showDetails(obj) {
+//     console.log(`Name: ${obj.theName}, Age: ${obj.theAge}, Skill: ${obj.theSkill.html}`);
+// }
+
+function showDetails({theName: a, theAge, theSkill: {html}} = user) { // user Alternative Value
+    console.log(`Name: ${a}, Age: ${theAge}, Skill: ${html}`);
+}
+const user = {
+    theName: "Abdellah",
+    theAge: 20,
+    theSkill: {
+        html: 60,
+        css: 50,
+    },
+};
+showDetails(user);
+
 
