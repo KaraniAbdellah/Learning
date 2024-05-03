@@ -2956,21 +2956,58 @@ console.log(a, c); // a c --> Without USe Common
     
     If There is a Nested Object --> key1: {v1, v2}
 */
+
 // function showDetails(obj) {
 //     console.log(`Name: ${obj.theName}, Age: ${obj.theAge}, Skill: ${obj.theSkill.html}`);
 // }
 
-function showDetails({theName: a, theAge, theSkill: {html}} = user) { // user Alternative Value
-    console.log(`Name: ${a}, Age: ${theAge}, Skill: ${html}`);
+function show_details({theName, theAge, isManager, theCountry, skills: {html, js: {next}}}) {
+    console.log(`Name: ${theName}, Age: ${theAge}, IsManager: ${isManager}, Country: ${theCountry}`);
+    console.log("The Skills : ", html, next);
 }
+
 const user = {
     theName: "Abdellah",
     theAge: 20,
-    theSkill: {
-        html: 60,
-        css: 50,
+    isManger: true,
+    theCountry: "Morocco",
+    skills: {
+        html: 30,
+        css: 40,
+        js: {
+            react: 10000,
+            next: 3000,
+        },
     },
-};
-showDetails(user);
+}
+// show_details(user);
+show_details(user);
+
+
+
+
+// Destructuring Mixed Content
+function printInfo({theName: name, theAge: age, skills: [a, , c], adr: {morocco: m}}) {
+    console.log(`${name} + ${age} + ${c} + ${m}`);
+}
+const user = {
+    theName: "Abdellah",
+    theAge:  20,
+    skills: ["HTML", "CSS", "JS "],
+    adr: {
+        morocco: "Rabat",
+        ksa: "Riyadh",
+    },
+}
+printInfo(user);
+
+
+
+
+
+
+
+
+
 
 
