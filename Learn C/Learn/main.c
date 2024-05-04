@@ -8297,7 +8297,7 @@ int main() {
 }
 */
 
-#define n 3050
+#define n 3050 // Think Out Of The Box
 
 bool isPrime(int i) {
 	int j;
