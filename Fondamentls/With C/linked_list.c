@@ -412,7 +412,8 @@ int main() {
         head = add_at_queue(head, ele);
     }
     // Add At Head
-    add_at_middle_beforeV(&head, 404, 3);
+    // add_at_middle_beforeV(&head, 404, 3);
+    // add_at_middle_afterV(&head, 404, 3);
     display(head);
 }
 

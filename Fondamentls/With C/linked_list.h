@@ -70,9 +70,9 @@ void add_at_middle_afterV(Node **head, int ele, int value) {
         if(temp->data == value) {
             new_node->next = temp->next;
             new_node->prev = temp;
+            if (temp->next != NULL) temp->next->prev = new_node;
             temp->next = new_node;
-            temp->next->prev = new_node;
-        }
+        } else printf("\n%d Does Not Exit\n", value);
     }
 }
 
