@@ -408,9 +408,11 @@ int main() {
     scanf("%d", &nbr_ele);
     for (int i = 0; i < nbr_ele; i++) {
         scanf("%d", &ele);
-        add_at_head(&head, ele);
+        // add_at_head(&head, ele);
+        head = add_at_queue(head, ele);
     }
     // Add At Head
+    add_at_middle_beforeV(&head, 404, 3);
     display(head);
 }
 
