@@ -8089,7 +8089,7 @@ int main() {
 	for (i = 0; i < n; i++) {
 		Affichage(empls[i]);
 	}
-	
+
 	getMax(empls, n);
 	return 0;
 }
@@ -8149,7 +8149,7 @@ int main() {
 				printf("Livre %d : ", i + 1);
 				printf("\n--------------------\n");
 				ajouter_details(&livres[i]);
-			}		
+			}
 		}
 		else if (choix == 2) {
 			// Affichage
@@ -8166,7 +8166,7 @@ int main() {
 				printf("\nAucun Livres Exit\n");
 				printf("\n-----------------\n");
 			}
-		
+
 		}
 		else if (choix == 3) {
 			// Affichage des livres d'un auteur donnee
@@ -8181,27 +8181,27 @@ int main() {
 						printf("\t %s  \t  %d$\n", livres[i].titre, livres[i].prix);
 					}
 				}
-				printf("\n-----------------\n");			
+				printf("\n-----------------\n");
 			} else {
 				printf("\n-----------------\n");
 				printf("Aucun LIvres Exit");
 				printf("\n-----------------\n");
 			}
-		
-		} 
+
+		}
 		else if (choix == 4) {
 			printf("\n-----------------\n");
 			printf("Le Nombres Des Livres C'est : %d", n);
 			printf("\n-----------------\n");
-		
-		} else break;		
+
+		} else break;
 	}
 	return 0;
 }
 */
 
 /*
-// Power Crisis 1031 
+// Power Crisis 1031
 int is_That_m(int T[], int N, int m) {
 	int i = 0, count = 0, p = 0;
 	for (i = 1; i <= N; i++) {
@@ -8246,7 +8246,7 @@ int main() {
 
 
 /*
-// Power Crisis 1031 
+// Power Crisis 1031
 int is_That_m(int N, int m) {
 	int i, count = 0, p = 0, T[N];
 	for (i = 1; i <= N; i++) {
@@ -8288,7 +8288,7 @@ int main() {
 					count++;
 					break;
 				}
-			}			
+			}
 		}
 	}
 	// print the result
@@ -8297,11 +8297,61 @@ int main() {
 }
 */
 
+#define n 3050
 
+bool isPrime(int i) {
+	int j;
+	if (i == 2 || i == 3) return true;
+	else {
+		for (j = 2; j <= i / 2; j++) {
+			if (i % j == 0) return false;
+		}
+	}
+	return true;
+}
 
+void generate_primes(int *p) {
+	int i, count = 0;
+	for (i = 2; i < 30000; i++) {
+		bool check = isPrime(i);
+		if (check == true) {
+			p[count] = i;
+			count++;
+		}
+	}
+}
 
+int is_serve(int *T, int N, int *S) {
+    int pos = 0, count = 0, i = 0, m = T[i];
+    while (i != N - 1) {
+        if (S[pos] != -1 && count == m - 1) {
+            S[pos] = -1; i++; m = T[i]; count = 0;
+        }
+        if (S[pos] != -1) count++;
+        pos++;
+        if (pos == N) pos = 0;
+    }
+    printf("%d\n",search_serve(S, N));
+}
 
+int search_serve(int *S, int N) {
+    for (int j = 0, i = N - 1; j <= i; j++, i--) {
+        if (S[j] != -1) return j + 1;
+        if (S[i] != -1) return i + 1;
+    }
+}
 
+int main() {
+	int N, m, i, count = 0, T[n], S[n];
+	for (int j = 0; j < n; j++) S[j] = j + 1;
+	generate_primes(T);
+	while ((scanf("%d", &N)) && N != 0) {
+        // start search for serve person
+        for (int j = 0; j < N; j++) S[j] = j + 1;
+        is_serve(T, N, S);
+	}
+	return 0;
+}
 
 
 
