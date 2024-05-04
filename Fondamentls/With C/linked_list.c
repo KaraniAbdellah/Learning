@@ -4,12 +4,12 @@
 
 // Linked List [Insertion, Deletion, Search] + Complexitys
 
-//	Insertion 
+//	Insertion
 /*
-	- in Memory : 
+	- in Memory :
 		In Tables Each Element Must Stocker In Other Element
 		In Linked List We can Reserve Elements In Memory With Random Space
-	- Pointers : 
+	- Pointers :
 		Must have A Structure A That Contain Address Of Next Element And value Of Current Element
 		Each Pointer Point In Next Element [Structure] Not To Value
 
@@ -18,7 +18,7 @@
 		first we create a Node [adress_of_next, data] by pointer that pointe to element
 		must new element pointe to next element By using the adress
 		must head point to new node
-	
+
 	- Insertion At Queue
 		must a create a function taht create an element and new_node pointer that pointe in element
 		if head == NULL --> head = new_node
@@ -26,7 +26,7 @@
 			this by using a loop and pointer
 			and then temp->next = new_node
 		and all this cases must new_node->next = NULL
-		
+
 
 	- Insertion At Middle By Using Position for [user && programmer]
 		int i = 1 --> for programmers --> indexing start with zero
@@ -35,16 +35,16 @@
 			. for access to next ele use temp->next
 			. Then just affectation of adresses
 		In This Loop We Must check if (i < pos and temp != NULL)
-		The Worst Scenario Is if (temp == NULL) --> Add in Queue By Calling The Function 
-		if (pos == 0) must change the content of head by create a pointer that 
+		The Worst Scenario Is if (temp == NULL) --> Add in Queue By Calling The Function
+		if (pos == 0) must change the content of head by create a pointer that
 		point to head pointe [**] and change the content by *head = new_node
 
 	- Insertion At Middle By Add To Next Ele [after]
 		we need the pointer "temp" to pointe to the each element
-		search element : Loop Thought The Linked List and check if temp->data != ele 
+		search element : Loop Thought The Linked List and check if temp->data != ele
 			if exist --> add in linked list
 			else --> add in queue
-		
+
 	- display eles:
 		this function must take the adress of last elements that we add and this ele is first ele
 		and then we can to next ele by using next pointer
@@ -66,7 +66,7 @@ Node *insert_at_head(Node *head, int valeur) {
 	head = new_node; // new_node contain adress of new ele
 	return head;
 }
-	
+
 Node *insert_at_queue(Node *head, int valeur) {
 	Node *new_node = (Node *) malloc(sizeof(Node));
 	new_node->data = valeur;
@@ -87,7 +87,7 @@ void display(Node *head) {
 		// while (temp != NULL) {
 			// printf("%d --> ", temp->data);
 			// temp = temp->next;
-		// } 
+		// }
 		for (temp = head; temp != NULL; temp = temp->next) {
 			printf("%d --> ", temp->data);
 		}
@@ -103,8 +103,8 @@ void insert_at_middle_nime(Node **head, int valeur, int pos) {
 		Node *temp = *head;
 		if (pos == 0) {
 			new_node->next = *head;
-			*head = new_node;			
-		} 
+			*head = new_node;
+		}
 		else {
 			while (i < pos && temp != NULL) {
 				temp = temp->next;
@@ -114,8 +114,8 @@ void insert_at_middle_nime(Node **head, int valeur, int pos) {
 			else {
 				new_node->next = temp->next;
 				temp->next = new_node;
-			}	
-		}		
+			}
+		}
 	}
 }
 
@@ -158,9 +158,10 @@ int main() {
 
 */
 
-
+////////////////////////////////////////////////////////////////////////
 
 // String Case
+
 /*
 
 typedef struct {
@@ -212,18 +213,11 @@ int main() {
 
 
 ////////////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////////////
 
 // Deletion
 
 /*
-	- in memory
-		
-*/
-
-typedef struct {
+typedef struct Node {
 	int data;
 	struct Node *next;
 } Node;
@@ -276,7 +270,7 @@ void delete_at_middle1(Node **head, int valeur) {
 		Node *p = *head;
 		*head = (*head)->next;
 		free(p);
-	} 
+	}
 	else {
 		Node *temp = (*head)->next;
 		Node *p = *head;
@@ -285,16 +279,29 @@ void delete_at_middle1(Node **head, int valeur) {
 				p->next = temp->next;
 				free(temp);
 				break;
-			} 
+			}
 			p = p->next;
 			temp = temp->next;
 		}
 	}
 }
 
-void delete_at_middle2(Node **head, int valeur) {
-	// Do it Alone Please
+void delete_at_queue(Node **head) {
+    if (*head != NULL) {
+        Node *temp = *head;
+        if (temp->next == NULL) {
+            *head = NULL;
+            free(temp);
+        }
+        else {
+            while (temp->next->next != NULL) temp = temp->next;
+            Node *p = temp->next;
+            temp->next = NULL;
+            free(p);
+        }
+    }
 }
+
 
 int main() {
 	Node *head = NULL;
@@ -316,13 +323,96 @@ int main() {
 	delete_at_middle1(&head, 4);
 	printf("\nDelete in Any Where \n");
 	display(head);
+	////////////// Delete At Queue
+	printf("\nDelete At Queue\n");
+	delete_at_queue(&head);
+	display(head);
 	return 0;
 }
+*/
 
 
+////////////////////////////////////////////////////////////////////////////////////////
 
+// Search In List
 
+/*
+typedef struct Node {
+	int data;
+	struct Node *next;
+} Node;
 
+void display(Node *head) {
+	if (head == NULL) printf("Empty List");
+	else {
+		Node *temp = head;
+		while (temp != NULL) {
+			printf("%d --> ", temp->data);
+			temp = temp->next;
+		}
+	}
+}
+
+Node *add_at_queue(Node *head, int valeur) {
+	Node *new_node = (Node *) malloc(sizeof(Node));
+	new_node->data = valeur;
+	new_node->next = NULL;
+	if (head == NULL) head = new_node;
+	else {
+		Node *temp = head;
+		while (temp->next != NULL) temp = temp->next;
+		temp->next = new_node;
+	}
+	return head;
+}
+
+void search_in_list(Node *head, int v) {
+    if (head != NULL) {
+    Node *temp = head;
+        int i = 0;
+        while (temp->data != v && temp->next != NULL) {
+            temp = temp->next;
+            i++;
+        }
+        if (temp->data == v) printf("\n%d Eixt At Position %d\n", v, i);
+        else printf("\n%d Does Not Exit\n");
+    }
+}
+
+int main() {
+	Node *head = NULL;
+	int n, i, valeur;
+	printf("Enter Number of Element : ");
+	scanf("%d", &n);
+	for (i = 0;i < n; i++) {
+		scanf("%d", &valeur);
+		head = add_at_queue(head, valeur);
+	}
+	search_in_list(head, 4);
+	return 0;
+}
+*/
+
+////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////
+
+// Start A Double List In Header File
+#include "linked_list.h"
+
+int main() {
+    Node *head = NULL;
+    int nbr_ele, ele;
+    printf("Enter Number Of Element : ");
+    scanf("%d", &nbr_ele);
+    for (int i = 0; i < nbr_ele; i++) {
+        scanf("%d", &ele);
+        add_at_head(&head, ele);
+    }
+    // Add At Head
+    display(head);
+}
 
 
 
