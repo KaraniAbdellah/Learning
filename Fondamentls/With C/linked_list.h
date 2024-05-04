@@ -76,12 +76,49 @@ void add_at_middle_afterV(Node **head, int ele, int value) {
     }
 }
 
+void add_at_position(Node **head, int index, int value) {
+    if (*head != NULL) {
+        Node *temp = *head;
+
+    }
+}
+
+void delete_at_head(Node **head) {
+    if (*head != NULL) {
+        Node *temp = *head;
+        *head = temp->next;
+        free(temp);
+    }
+}
+
+void delete_at_queue(Node **head) {
+    if (*head != NULL) {
+        Node *temp = *head;
+        while (temp->next != NULL) temp = temp->next;
+        if (temp->prev != NULL) temp->prev->next = NULL;
+        else *head = NULL;
+        free(temp);
+    }
+}
 
 
-
-
-
-
+void delete_at_middle(liste *head, int value) {
+    if (*head != NULL) {
+        Node *temp = *head;
+        while (temp->data != value && temp->next != NULL) temp = temp->next;
+        if (temp->data == value) {
+            // Previos Element
+            if (temp->prev != NULL) {
+                temp->prev->next = temp->next;
+            } else *head = temp->next;
+            // Next Element
+            if (temp->next != NULL) temp->next->prev = temp->prev;
+            free(temp);
+        } else {
+            printf("\n%d Does Not Exit\n", value);
+        }
+    }
+}
 
 
 

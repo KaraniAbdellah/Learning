@@ -411,9 +411,13 @@ int main() {
         // add_at_head(&head, ele);
         head = add_at_queue(head, ele);
     }
-    // Add At Head
+    /* Insertion */
     // add_at_middle_beforeV(&head, 404, 3);
     // add_at_middle_afterV(&head, 404, 3);
+    /* Deletion */
+    // delete_at_head(&head);
+    // delete_at_queue(&head);
+    // delete_at_middle(&head, 1);
     display(head);
 }
 
