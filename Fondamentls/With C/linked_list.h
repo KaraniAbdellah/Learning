@@ -76,10 +76,22 @@ void add_at_middle_afterV(Node **head, int ele, int value) {
     }
 }
 
-void add_at_position(Node **head, int index, int value) {
+void add_at_position(Node **head, int pos, int value) {
     if (*head != NULL) {
         Node *temp = *head;
-
+        Node *new_node = (Node *) malloc(sizeof(Node));
+        info(new_node, value);
+	int i = 0;
+	while (temp->next != NULLL && i < pos - 1) {
+		temp = temp->next; i++;
+	}
+	if (i == pos - 1) {
+		new_node->next = temp;
+		new_node->prev = temp->prev;
+		if (temp->prev != NULL) temp->prev->next = new_node;
+		else *head = new_node;
+		temp->prev = new_node;
+	} else printf("\nPosition Does Not\n");
     }
 }
 

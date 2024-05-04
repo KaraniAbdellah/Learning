@@ -418,6 +418,7 @@ int main() {
     // delete_at_head(&head);
     // delete_at_queue(&head);
     // delete_at_middle(&head, 1);
+    add_at_position(&head, 3, 404); // (&pointer, position, value) Position Start With 1
     display(head);
 }
 
