@@ -474,9 +474,27 @@ console.groupEnd();
 
 
 
-// Challenge 12
+// Challenge 12 --> In Another File
 console.group("Challenge 12");
+console.groupEnd();
 
 
+// Challenge 13 --> In Another File
+console.group("Challenge 13");
+
+var chosen = 3;
+var myFriends = [
+    {title: "Abdellah", age: 20, avialable: true, skills: ["HTMLL", "CSS", "JS"]},
+    {title: "Omaima", age: 30, avialable: false, skills: ["C", "JAVA", "VS"]},
+    {title: "Ahmed", age: 40, avialable: true, skills: ["Laravl", "PHP", "COBOL"]},
+];
+
+var {title: t, age: a, avialable: ava, skills: [, , last_skill]} = myFriends[chosen - 1];
+console.log(t);
+console.log(a);
+if (ava == true) console.log("Available");
+else console.log("Not Available");
+console.log(last_skill);
+console.groupEnd();
 
 

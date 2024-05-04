@@ -1,19 +1,10 @@
-// Destructuring Mixed Content
+// Destructring Challenge
 
-function printInfo({theName: name, theAge: age, skills: [a, , c], adr: {morocco: m}}) {
-    console.log(`${name} + ${age} + ${c} + ${m}`);
-}
+var chosen = 1;
+var myFrinds
 
-const user = {
-    theName: "Abdellah",
-    theAge:  20,
-    skills: ["HTML", "CSS", "JS "],
-    adr: {
-        morocco: "Rabat",
-        ksa: "Riyadh",
-    },
-}
-printInfo(user);
+
+
 
 
 
