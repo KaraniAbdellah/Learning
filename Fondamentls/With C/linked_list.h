@@ -1,3 +1,6 @@
+// Double List
+// Insertion And Deletion And Searching
+
 typedef struct Node {
     int data;
     struct Node *next;
@@ -81,18 +84,18 @@ void add_at_position(Node **head, int pos, int value) {
         Node *temp = *head;
         Node *new_node = (Node *) malloc(sizeof(Node));
         info(new_node, value);
-	int i = 0;
-	while (temp->next != NULLL && i < pos - 1) {
-		temp = temp->next; i++;
-	}
-	if (i == pos - 1) {
-		new_node->next = temp;
-		new_node->prev = temp->prev;
-		if (temp->prev != NULL) temp->prev->next = new_node;
-		else *head = new_node;
-		temp->prev = new_node;
-	} else printf("\nPosition Does Not\n");
-    }
+        int i = 0;
+        while (temp->next != NULL && i < pos - 1) {
+            temp = temp->next; i++;
+        }
+        if (i == pos - 1) {
+            new_node->next = temp;
+            new_node->prev = temp->prev;
+            if (temp->prev != NULL) temp->prev->next = new_node;
+            else *head = new_node;
+            temp->prev = new_node;
+        } else printf("\nPosition Does Not Exit\n");
+    } else printf("\nEmpty List\n");
 }
 
 void delete_at_head(Node **head) {
@@ -133,8 +136,18 @@ void delete_at_middle(liste *head, int value) {
 }
 
 
-
-
+void search_in_list(Node *head, int ele) {
+    if (head != NULL) {
+        Node *temp = head;
+        int i = 0;
+        while (temp->data != ele && temp->next != NULL) {
+            temp = temp->next;
+            i++;
+        }
+        if (temp->data == ele) printf("\n%d Eixt At Position %d\n", ele, i + 1);
+        else printf("\n%d Does Not Exit\n");
+    }
+}
 
 
 
