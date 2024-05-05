@@ -8452,18 +8452,23 @@ int main() {
 }
 */
 
+/*
 int main() {
-    FILE *f1 = fopen("file.txt", "w+");
+    FILE *f1 = fopen("file.txt", "r+");
     if (f1 == NULL) printf("Can Not THis File");
     else {
         printf("We Are OPen The File Succefully");
         fputs("HELLO", f1);
         fseek(f1, 2, SEEK_SET);
         fputs("XX", f1);
+        char content[20];
+        fseek(f1, 0, SEEK_SET);
+        fgets(content, 19, f1);
+        printf("%s", content);
     }
     return 0;
 }
-
+*/
 
 
 
