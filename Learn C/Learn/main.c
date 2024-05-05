@@ -8359,7 +8359,7 @@ int main() {
 }
 */
 
-
+/*
 int is_serve2(int N, int step) {
     int start = 1;
     for (int i = 1; i <= N; i++) {
@@ -8382,6 +8382,102 @@ int main() {
         printf("Case %d: %d\n", i + 1, T[i]);
     }
 }
+*/
+
+/* File Exercice For All Function
+int main() {
+    char file1[10], file2[10];
+    printf("Enter File Number One : "); gets(file1);
+    printf("Enter File Number Two : "); gets(file2);
+    // Opening The Filies
+    FILE *f1 = fopen(file1, "rb");
+    FILE *f2 = fopen(file2, "ab+");
+    char file1_content[100];
+    if (f1 != NULL) {
+        printf("We Are Open The Files\n");
+        /* Method Number One [printf(), scanf()]
+         while (feof(f1) != true) {
+            fscanf(f1, "%s", file1_content);
+            fprintf(f2, "%s", file1_content);
+        }
+        */
+        /* Method Number Two
+        int c;
+        while ((c = fgetc(f1)) != EOF) { // getc return character
+            fputc(c, f2);
+        }
+        */
+        /* Method Number Three
+        while (fgets(file1_content, 99, f1) != NULL) {
+            fputs(file1_content, f2);
+        }
+        */
+        /*  Method For Binary File
+        int x;
+        do {
+            x = fread(&file1_content, sizeof(file1_content), 1, f1);
+            printf("%s", file1_content);
+            fwrite(&file1_content, sizeof(file1_content), 1, f2);
+        } while (x > 1);
+        *//* Using While And feof(file);
+        while (feof(f1) != true) {
+            fread(&file1_content, sizeof(file1_content), 1, f1);
+            printf("%s", file1_content);
+            fwrite(&file1_content, sizeof(file1_content), 1, f2);
+        }
+        fclose(f1);
+        fclose(f2);
+    } else {
+        printf("\n%s Does Not Exit\n", file1);
+    }
+    return 0;
+}
+*/
+
+// ftell exercice
+
+/*
+int main() {
+    FILE *p_file = fopen("file.txt", "r");
+    int pos = ftell(p_file);
+    printf("The Position Is %d\n",  pos); // 0
+    char file_content[20];
+    while(feof(p_file) != true) {
+        fgets(file_content, 19, p_file);
+        printf("%s\n", file_content); // HELLO
+    }
+    pos = ftell(p_file);
+    printf("The Position Is %d\n",  pos); // 6
+    return 0;
+}
+*/
+
+int main() {
+    FILE *f1 = fopen("file.txt", "w+");
+    if (f1 == NULL) printf("Can Not THis File");
+    else {
+        printf("We Are OPen The File Succefully");
+        fputs("HELLO", f1);
+        fseek(f1, 2, SEEK_SET);
+        fputs("XX", f1);
+    }
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
