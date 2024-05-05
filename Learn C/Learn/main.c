@@ -8470,7 +8470,20 @@ int main() {
 }
 */
 
-
+int main() {
+    FILE *p_file = fopen("file.txt", "w");
+    if (p_file == NULL) printf("Can Not Open This File");
+    else {
+        int position;
+        printf("\nWe Are Open The File Succefully\n");
+        fputs("Hello", p_file);
+        position = ftell(p_file);
+        printf("\nThe Position is %d\n", position);
+        fseek(p_file, -2, SEEK_END);
+        fputs("XX", p_file);
+    }
+    return 0;
+}
 
 
 
