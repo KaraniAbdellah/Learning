@@ -8322,16 +8322,23 @@ void generate_primes(int *p) {
 }
 
 int is_serve(int *T, int N, int *S) {
-    int pos = 0, count = 0, i = 0, m = T[i];
+    int pos = 0, count = 0, i = 0, m = T[i], x = -1;
     while (i != N - 1) {
         if (S[pos] != -1 && count == m - 1) {
-            S[pos] = -1; i++; m = T[i]; count = 0;
+            printf("\nm = %d\n", m);
+            x += m; S[pos] = -1; i++; m = T[i]; count = 0;
+            if (x > N) {
+                m = x - (x - N + x - m); x = -1; x = x + m; m = T[i];
+            }
+            // printf("\nx = %d\n", x);
+            // for (int k = 0; k < N; k++) printf("%d ", S[k]);
+            // printf("\n");
         }
         if (S[pos] != -1) count++;
         pos++;
         if (pos == N) pos = 0;
     }
-    printf("%d\n",search_serve(S, N));
+    printf("%d\n", search_serve(S, N));
 }
 
 int search_serve(int *S, int N) {
