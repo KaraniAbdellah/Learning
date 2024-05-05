@@ -8297,6 +8297,7 @@ int main() {
 }
 */
 
+/*
 #define n 3050 // Think Out Of The Box
 
 bool isPrime(int i) {
@@ -8321,18 +8322,14 @@ void generate_primes(int *p) {
 	}
 }
 
+
 int is_serve(int *T, int N, int *S) {
     int pos = 0, count = 0, i = 0, m = T[i], x = -1;
     while (i != N - 1) {
-        if (S[pos] != -1 && count == m - 1) {
-            printf("\nm = %d\n", m);
-            x += m; S[pos] = -1; i++; m = T[i]; count = 0;
-            if (x > N) {
-                m = x - (x - N + x - m); x = -1; x = x + m; m = T[i];
-            }
-            // printf("\nx = %d\n", x);
-            // for (int k = 0; k < N; k++) printf("%d ", S[k]);
-            // printf("\n");
+        if (S[pos] != -1 && count == m) {
+            S[pos] = -1; i++; m = T[i]; count = 0;
+            for (int k = 0; k < N; k++) printf("%d ", S[k]);
+            printf("\n");
         }
         if (S[pos] != -1) count++;
         pos++;
@@ -8340,6 +8337,7 @@ int is_serve(int *T, int N, int *S) {
     }
     printf("%d\n", search_serve(S, N));
 }
+
 
 int search_serve(int *S, int N) {
     for (int j = 0, i = N - 1; j <= i; j++, i--) {
@@ -8359,9 +8357,31 @@ int main() {
 	}
 	return 0;
 }
+*/
 
 
-
+int is_serve2(int N, int step) {
+    int start = 1;
+    for (int i = 1; i <= N; i++) {
+        start = (start + step - 1) % i + 1;
+        printf("\nStart = %d\n", start);
+    }
+    return start;
+}
+#define n 10000
+int main() {
+    int N, step, nbr, T[n], count = 0;
+    scanf("%d", &nbr);
+    for (int i = 0; i < nbr; i++) {
+        while ((scanf("%d %d", &N, &step)) != -1) {
+           T[count] = is_serve2(N, step);
+           count++;
+        }
+    }
+    for (int i = 0; i < nbr; i++) {
+        printf("Case %d: %d\n", i + 1, T[i]);
+    }
+}
 
 
 
