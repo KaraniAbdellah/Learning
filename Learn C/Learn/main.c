@@ -8470,6 +8470,7 @@ int main() {
 }
 */
 
+/*
 int main() {
     FILE *p_file = fopen("file.txt", "w");
     if (p_file == NULL) printf("Can Not Open This File");
@@ -8480,17 +8481,72 @@ int main() {
         position = ftell(p_file);
         printf("\nThe Position is %d\n", position);
         fseek(p_file, -2, SEEK_END);
+        rewind(p_file);
         fputs("XX", p_file);
     }
     return 0;
 }
+*/
+
+/*
+int main() {
+    char file1[20];
+    printf("Enter The Name Of The File : ");
+    scanf("%[^\n]s", file1);
+    FILE *p_file = fopen(file1, "r");
+    if (p_file == NULL) printf("Can Not Open This File");
+    else {
+        char file_content[50];
+        printf("\nWe Are Open The File Succefully\n");
+        // fputs("HELLO WORLD", p_file);
+        /*
+        fseek(p_file, 0, SEEK_END);
+        int pos = ftell(p_file);
+        printf("\nposition = %d\n", pos);
+        int c, pos1 = 1;
+        while (pos1 <= pos) {
+            fseek(p_file, -pos1, SEEK_END);
+            c = fgetc(p_file); pos1++;
+            printf("%c", (char) c);
+        }
+        */
+        /*
+        fseek(p_file, 0, SEEK_END);
+        int c, pos = ftell(p_file);
+        for (int i = 1; i <= pos; i++) {
+            fseek(p_file, -i, SEEK_END);
+            c = getc(p_file);
+            printf("%c", c);
+        }
+    }
+    fclose(p_file);
+    rename("file1.txt", "file.txt");
+    // remove("file1.txt");
+    return 0;
+}
+*/
+
+/*
+int main() {
+    union note {
+        int mark; char score;
+    };
+    union note result;
+    printf("Enter The NOtes : ");
+    scanf("%c", &result.score); getchar();
+    // printf("Enter The Mark : ");
+    // scanf("%c", &result.score);
+    result.mark = 66;
+    printf("%d %c", result.mark, result.score);
+    return 0;
+}
+*/
 
 
 
+int main() {
 
-
-
-
+}
 
 
 
