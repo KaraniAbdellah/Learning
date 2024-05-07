@@ -8543,7 +8543,16 @@ int main() {
 */
 
 int main() {
-
+    int n = 9, count = 0;
+    for (int i = 0; i < 2 * n - 1; i++) {
+        for (int j = 0; j < 2 * n; j++) {
+            printf("%d  ", n - count);
+        }
+        printf("\n");
+        if (i < n - 1) count++;
+        else count--;
+    }
+    return 0;
 }
 
 
