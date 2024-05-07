@@ -1130,6 +1130,7 @@ var items = document.querySelector(".search").children;
 for (var i = 0; i < items.length; i++) {
     console.log(`This Is ${items[i].nodeName}`);
 }
+console.groupEnd();
 
 
 // assignment 101 To 110
@@ -1186,19 +1187,105 @@ var handler = setInterval(function() {
     if (counter.textContent == 5) {
         clearInterval(handler);
         // window.open("https://elzero.org", "_blank");
-        window.open("https://elzero.org", "_blank", "width=500,height=500");
+        // window.open("https://elzero.org", "_blank", "width=500,height=500");
     }
 } ,1000);
+clearInterval(handler);
+console.groupEnd();
+
+console.group("110 To 115");
+console.log("Show The Chanlages"); // chalange12.html
+console.groupEnd();
 
 
 
+// assignment 115 To 115
+console.group("115 To 122");
+// Get The Nedded
+var myNumbers = [1, 2, 3, 4, 5];
+var [a, , , , e] = myNumbers;
+console.log(a * e); // 5
 
+// Get The Needded
+var mySkills = ["HTML", "CSS", "JavaScript", ["PHP", "Python", ["Django", "Laravel"]]];
+var [a, b, c, [d, e, [f, g]]] = mySkills;
+console.log(`My Skills: ${a}, ${b}, ${c}, ${d}, ${e}, ${f}, ${g}`);
 
+// Get The Needded
+var arr1 = ["Ahmed", "Sameh", "Sayed"];
+var arr2 = ["Mohamed", "Gamal", "Amir"];
+var arr3 = ["Haytham", "Shady", "Mahmoud"];
+// var [, a, b]= arr3;
+// var [c, , ] = arr1;
+var [[, a, b], [c, , ]] = [arr3, arr1];
+console.log(`My Best Friends: ${a}, ${b}, ${c}`); // My Best Friends: Shady, Mahmoud, Ahmed
 
+// Get The Needded
+var member = {
+    age: 30,
+    working: false,
+    country: "Egypt",
+    hobbies: ["Reading", "Swimming", "Programming"],
+};
 
+var {age: a, working: w, country: c, hobbies: [h1, , h3]} = member;
+console.log(`My Age Is ${a} And Iam ${w ? "" : "Not"} Working`);
+// My Age Is 30 And Iam Not Working
+console.log(`I Live in ${c}`);
+// I Live in Egypt
+console.log(`My Hobbies: ${h1} And ${h3}`);
+// My Hobbies: Reading And Programming
 
+// Get The Nedded
+var game = {
+    title: "YS",
+    developer: "Falcom",
+    releases: {
+      "Oath In Felghana": ["USA", "Japan"],
+      "Ark Of Napishtim": {
+        US: "20 USD",
+        JAP: "10 USD",
+      },
+      Origin: "30 USD",
+    },
+};
 
+console.log(Object.keys(game.releases)); // ['Oath In Felghana', 'Ark Of Napishtim', 'Origin']
+console.log(Object.values(game.releases)); // 20USD ["USA", "Japan"] 10USD 30USD
 
+var {title: t, developer: d, releases: {"Oath In Felghana": [u, j],
+"Ark Of Napishtim": {US: u_price, JAP: j_price}, Origin: or}} = game;
+[o, a] = [Object.keys(game.releases)[0], Object.keys(game.releases)[1]];
+console.log(`My Favourite Games Style Is ${t} Style`);
+// My Favourite Games Style Is YS Style
+console.log(`And I Love ${d} Games`);
+// And I Love Falcom Games
+console.log(`My Best Release Is ${o} It Released in ${u} & ${j}`);
+// My Best Release Is Oath In Felghana It Released in USA & Japan
+console.log(`Although I Love ${a}`);
+// Although I Love Ark Of Napishtim
+console.log(`${a} Price in USA Is ${u_price}`);
+// Ark Of Napishtim Price in USA Is 20 USD
+console.log(`${a} Price in Japan Is ${j_price}`);
+// Ark Of Napishtim Price in Japan Is 10 USD
+console.log(`Origin Price Is ${or}`);
+// Origin Price Is 30 USD
+
+// Get The Nedded
+var chosen = 0;
+
+let myFriends = [
+  { title: "Osama", age: 39, available: true, skills: ["HTML", "CSS"] },
+  { title: "Ahmed", age: 25, available: false, skills: ["Python", "Django"] },
+  { title: "Sayed", age: 33, available: true, skills: ["PHP", "Laravel"] },
+];
+
+var {title: t, age: a, available: av, skills: [ , c]} = myFriends[chosen];
+av = av ? "Available" : "Not Available";
+console.log(t);
+console.log(a);
+console.log(av);
+console.log(c);
 
 
 
