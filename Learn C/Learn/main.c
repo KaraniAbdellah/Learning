@@ -8543,14 +8543,22 @@ int main() {
 */
 
 int main() {
-    int n = 9, count = 0;
+    int n = 9, count = 0, a, b;
     for (int i = 0; i < 2 * n - 1; i++) {
+        a = n;
         for (int j = 0; j < 2 * n; j++) {
-            printf("%d  ", n - count);
+            if (i < n) {
+                if (a > n - count) {
+                    printf("$  "); a--;
+                }
+                if(a <= n - count) printf("%d  ", n - count);
+                if (i < 2 * n)
+            }
         }
         printf("\n");
         if (i < n - 1) count++;
         else count--;
+        // Incremente The Variables
     }
     return 0;
 }
