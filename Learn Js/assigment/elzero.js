@@ -1217,7 +1217,8 @@ var arr2 = ["Mohamed", "Gamal", "Amir"];
 var arr3 = ["Haytham", "Shady", "Mahmoud"];
 // var [, a, b]= arr3;
 // var [c, , ] = arr1;
-var [[, a, b], [c, , ]] = [arr3, arr1];
+// var [[, a, b], [c, , ]] = [arr3, arr1];
+var [c, , , , a, b] = arr1.concat(arr3);
 console.log(`My Best Friends: ${a}, ${b}, ${c}`); // My Best Friends: Shady, Mahmoud, Ahmed
 
 // Get The Needded
@@ -1251,11 +1252,12 @@ var game = {
 };
 
 console.log(Object.keys(game.releases)); // ['Oath In Felghana', 'Ark Of Napishtim', 'Origin']
-console.log(Object.values(game.releases)); // 20USD ["USA", "Japan"] 10USD 30USD
+console.log(Object.values(game.releases)); //  ["USA", "Japan"] 20USD 10USD 30USD
 
-var {title: t, developer: d, releases: {"Oath In Felghana": [u, j],
-"Ark Of Napishtim": {US: u_price, JAP: j_price}, Origin: or}} = game;
-[o, a] = [Object.keys(game.releases)[0], Object.keys(game.releases)[1]];
+var {title: t, developer: d} = game;
+var [[u, j], {US: u_price, JAP: j_price}, or] = Object.values(game.releases);
+var [o, a] = Object.keys(game.releases);
+
 console.log(`My Favourite Games Style Is ${t} Style`);
 // My Favourite Games Style Is YS Style
 console.log(`And I Love ${d} Games`);
