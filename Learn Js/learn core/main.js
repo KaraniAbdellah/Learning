@@ -1,13 +1,1 @@
-// Destructring Challenge
-
-var chosen = 1;
-var myFrinds
-
-
-
-
-
-
-
-
-
+// Repeat The Set Data TYpes Please

@@ -3006,6 +3006,47 @@ printInfo(user);
 
 
 
+////////////////////////////////////////////////////////
+// Set Data Type
+/*
+    * Syntax: new Set(Iterable)
+    -- Object To Store Unique Values
+    -- Can Not To Element By Index
+    * Proprietes 
+        - size
+    * Methodss: 
+    - add
+    - delete
+    - clear
+    - has
+*/
+var myData = [1, 2, 2, 4, 5, "A"];
+// var myNewData = new Set(myData);
+var myNewData = new Set().add(1).add(2).add(2).add(4).add(5).add("A");
+console.log(myNewData); // [1, 2, 4, 5]
+console.log(myData); // [1, 2, 3, 4, 5]
+
+console.log(myNewData.size);
+
+console.log(myData[0]); // 1
+console.log(myNewData[0]); // undefined
+
+myNewData.add(1).add(2).add(20);
+console.log(myNewData); // [1, 2, 4, 5, 20]
+console.log(myNewData.delete(1));
+console.log(myNewData); // [2, 3, 5, 20]
+
+// myNewData.clear();
+console.log(myNewData); // Nothing
+
+console.log(myNewData.has("a".toUpperCase())); // true
+
+ 
+
+
+
+
+
 
 
 
