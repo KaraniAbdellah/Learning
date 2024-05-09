@@ -8544,15 +8544,27 @@ int main() {
 
 int main() {
     int n = 9, count = 0, a, b;
-    for (int i = 0; i < 2 * n - 1; i++) {
+    for (int i = 0; i < 2 * n; i++) {
         a = n;
-        for (int j = 0; j < 2 * n; j++) {
+        b = 1;
+        for (int j = 0; j < (2 * n) - 1; j++) {
             if (i < n) {
-                if (a > n - count) {
-                    printf("$  "); a--;
+                if (j < n) {
+                    if (i <= j) printf("%d ",n - i);
+                    else printf("@ "); // "%d ",n - j
+                } else {
+                    if (j < (2 * n) - i - 1) printf("%d ",n - i);
+                    else {
+                        printf("/ "); // "%d ", n + b - i
+                        b++;
+                    }
                 }
-                if(a <= n - count) printf("%d  ", n - count);
-                if (i < 2 * n)
+            } else {
+                if (j < n) {
+                    if (j < n - c)
+                } else {
+
+                }
             }
         }
         printf("\n");
