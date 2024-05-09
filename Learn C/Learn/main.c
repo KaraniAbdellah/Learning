@@ -8542,6 +8542,7 @@ int main() {
 }
 */
 
+/*
 int main() {
     int n = 9, count = 0, a, b;
     for (int i = 0; i < 2 * n; i++) {
@@ -8574,14 +8575,87 @@ int main() {
     }
     return 0;
 }
+*/
+
+/*
+// Exercice 3
+int * alloue_Vecteur(int t, int val) {
+    int *vect = (int *) malloc(sizeof(int) * t);
+    if (vect == NULL) printf("Erreur Pour L'allocation");
+    else {
+        printf("\nAllocation Cree \n");
+        for (int i = 0; i < t; i++) vect[0] = val;
+    }
+    return vect;
+}
+
+void libere_Vecteur(int * vect) {
+    printf("\nLibration de Esapce Du Vecteur\n");
+    free(vect);
+}
+
+int main() {
+    int t = 10, val = 2;
+    int *vect = alloue_Vecteur(t, val);
+    libere_Vecteur(vect);
+    return 0;
+}
+*/
+
+/*
+
+void longueur_chaine_tableau(char chaine[]) {
+    int longueur = 0;
+    while (chaine[longueur] != '\0') {
+        longueur++;
+    }
+    printf("La Longueur De Chaine C'est : %d\n", longueur);
+}
+
+void longueur_chaine_pointer(char *p) {
+    int longueur = 0;
+    for (; *p != '\0'; p++)  longueur++;
+    printf("La Longueur De Chaine C'est : %d\n", longueur);
+}
+
+int main() {
+    // Avec Tableau
+    char chaine[] = "Hello World";
+    longueur_chaine_tableau(chaine);
+    longueur_chaine_pointer(&chaine);
+    return 0;
+}
+
+*/
+
+/*
+    while ((c = getchar()) && c != '\n') {
+        chaine[i] = c; i++;
+    }
+    chaine[i] = '\0';
+*/
+
+int compare_chaines(char *s1, char *s2) {
+    while (*s1 != '\0' && *s2 != '\0') {
+        if (*s1 < *s2) return -1;
+        else if (*s1 > *s2) return 1;
+        s1++;
+        s2++;
+    }
+    if (*s1 == '\0' && *s2 == '\0') return 0;
+    else if (*s1 == '\0') return -1;
+    else return 1;
+}
 
 
-
-
-
-
-
-
+int main() {
+    char s1[] = "Alpha";
+    char s2[] = "Beta";
+    if (compare_chaines(s1, s2) == 0) printf("les deux chaînes sont équivalentes\n");
+    else if (compare_chaines(s1, s2) == -1) printf("%s est avant %s\n", s1, s2);
+    else printf("%s est avant %s\n", s2, s1);
+    return 0;
+}
 
 
 
