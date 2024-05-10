@@ -8829,7 +8829,7 @@ int main() {
     // Printf The R Matrix
     for (int i = 0; i < l; i++) {
         for (int j = 0; j < c; j++) {
-            // printf("%d ", *(*(R + i) + j));
+            printf("%d ", (*(*(R + i) + j)));
         }
         printf("\n");
     }
@@ -8844,18 +8844,12 @@ int main() {
     free(M2);
     free(R);
     */
-    /*
+/*
     for (int i = 0; i < l; i++) {
-        for (int j = 0; j < c; j++) {
-            free(*(*(M1 + i) + j));
-            free(*(*(M2 + i) + j));
-            free(*(*(R + i) + j));
-        }
-        free(*(M1 + i));
-        free(*(M2 + i));
-        free(*(R + i));
-    }
-    */
+            free(*(M1 + i));
+            free(*(M2 + i));
+            free(*(R + i));
+    } free(M1); free(M2); free(R);
 /*
     for (int i = 0; i < l; i++) {
         free(*(M1 + i));
@@ -8865,11 +8859,15 @@ int main() {
     free(M1);
     free(M2);
     free(R);
+*//*
     return 0;
 }
 */
 
-
+int main() {
+    printf("GOOD!");
+    return 0;
+}
 
 
 
