@@ -8635,6 +8635,7 @@ int main() {
     chaine[i] = '\0';
 */
 
+/*
 int compare_chaines(char *s1, char *s2) {
     while (*s1 != '\0' && *s2 != '\0') {
         if (*s1 < *s2) return -1;
@@ -8656,6 +8657,208 @@ int main() {
     else printf("%s est avant %s\n", s2, s1);
     return 0;
 }
+*/
+
+/*
+void echangeValeurs(int* a, int* b, int* c, int* d) {
+    int temp = *a;
+    *a = *b;
+    *b = *c;
+    *c = *d;
+    *d = temp;
+}
+int main() {
+    int a = 10, b = 20, c = 30, d = 40;
+    printf("Avant l'echange : a = %d, b = %d, c = %d, d = %d\n", a, b, c, d);
+    echangeValeurs(&a, &b, &c, &d);
+    printf("Apres l'echange : a = %d, b = %d, c = %d, d = %d\n", a, b, c, d);
+
+    return 0;
+}
+*/
+
+/*
+
+int resoudreEquation(float a, float b, float *x) {
+    if (a == 0) {
+        if (b == 0) {
+            return -1;
+        } else {
+            return 0;
+        }
+    } else {
+        *x = -b / a;
+        return 1;
+    }
+}
+
+int main() {
+    float a, b, x;
+    printf("Entrez la valeur de a : ");
+    scanf("%f", &a);
+    printf("Entrez la valeur de b : ");
+    scanf("%f", &b);
+    int nbSolutions = resoudreEquation(a, b, &x);
+    switch (nbSolutions) {
+        case 0:
+            printf("L'equation n'a pas de solution.\n");
+            break;
+        case 1:
+            printf("L'equation a une solution unique : x = %.4f\n", x);
+            break;
+        case -1:
+            printf("L'equation a une infinite des solutions.\n");
+            break;
+        default:
+            printf("Erreur\n");
+    }
+
+    return 0;
+}
+
+*/
+
+
+/*
+
+void lireVecteur(float *V, int taille) {
+    printf("Saisissez les elements du vecteur :\n");
+    for (int i = 0; i < taille; i++) {
+        printf("Element %d : ", i + 1);
+        scanf("%f", &V[i]);
+    }
+}
+
+void afficherVecteur(float *V, int taille) {
+    printf("Vecteur : [ ");
+    for (int i = 0; i < taille; i++) {
+        printf("%.2f ", V[i]);
+    }
+    printf("]\n");
+}
+
+void sommeVecteurs(float *A, float *B, float *resultat, int taille) {
+    for (int i = 0; i < taille; i++) {
+        resultat[i] = A[i] + B[i];
+    }
+}
+
+void produitScalaire(float *V, float scalaire, float *resultat, int taille) {
+    for (int i = 0; i < taille; i++) {
+        resultat[i] = V[i] * scalaire;
+    }
+}
+
+float produitVecteurs(float *A, float *B, int taille) {
+    float produit = 0;
+    for (int i = 0; i < taille; i++) {
+        produit += A[i] * B[i];
+    }
+    return produit;
+}
+
+int main() {
+    int taille;
+    printf("Entrez la taille : ");
+    scanf("%d", &taille);
+    float vecteurA[taille], vecteurB[taille], resultat[taille];
+    float scalaire;
+    printf("Enterz les elements du vecteur A :\n");
+    lireVecteur(vecteurA, taille);
+    printf("Enterz les elements du vecteur B :\n");
+    lireVecteur(vecteurB, taille);
+    int choix;
+    printf("\nMenu :\n");
+    printf("[1] Somme de vecteurs\n");
+    printf("[2] Produit d'un vecteur par un scalaire\n");
+    printf("[3] Produit scalaire de deux vecteurs\n");
+    printf("Votre choix : ");
+    scanf("%d", &choix);
+    switch (choix) {
+        case 1:
+            sommeVecteurs(vecteurA, vecteurB, resultat, taille);
+            printf("La somme des vecteurs est : ");
+            afficherVecteur(resultat, taille);
+            break;
+        case 2:
+            printf("Entrez le scalaire : ");
+            scanf("%f", &scalaire);
+            produitScalaire(vecteurA, scalaire, resultat, taille);
+            printf("Le produit de vecteurA par le scalaire est : ");
+            afficherVecteur(resultat, taille);
+            break;
+        case 3:
+            printf("Le produit scalaire des vecteurs A et B : %.2f\n", produitVecteurs(vecteurA, vecteurB, taille));
+            break;
+        default:
+            printf("Choix invalide\n");
+    }
+    return 0;
+}
+
+*/
+
+/*
+void additionnerMatrices(int **M1, int **M2, int **R, int l, int c) {
+    for (int i = 0; i < l; i++) {
+        for (int j = 0; j < c; j++) {
+            R[i][j] = M1[i][j] + M2[i][j];
+        }
+    }
+}
+
+int main() {
+    int l = 2, c = 2;
+    int **M1 = (int **) malloc(sizeof(int *) * l);
+    int **M2 = (int **) malloc(sizeof(int *) * l);
+    int **R = (int **) malloc(sizeof(int *) * l);
+    for (int i = 0; i < l; i++) {
+        *(M1 + i) = (int *) malloc(c * sizeof(int));
+        *(M2 + i) = (int *) malloc(c * sizeof(int));
+        *(R + i) = (int *) malloc(c * sizeof(int));
+    }
+    // Fill The Matrix
+    for (int i = 0; i < l; i++) {
+        for (int j = 0; j < c; j++) {
+            M1[i][j] = i + j;
+            M2[i][j] = i + j;
+        }
+    }
+    additionnerMatrices(M1, M2, R, l, c);
+    // Printf The R Matrix
+    for (int i = 0; i < l; i++) {
+        for (int j = 0; j < c; j++) {
+            printf("%d ", R[i][j]);
+        }
+        printf("\n");
+    }
+    return 0;
+}
+*/
+
+
+int main() {
+    printf("Hello World");
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
