@@ -8863,30 +8863,31 @@ int main() {
 }
 */
 
-
+/*
 int main() {
-    int n = 9, count = 0, b, c = 0, a = 0, d = 0;
+    int n = 9, count = 0, b, c = 0, a, d = 0;
     for (int i = 0; i < 2 * n - 1; i++) {
         b = 1;
+        a = 1;
         for (int j = 0; j < (2 * n) - 1; j++) {
             if (i < n) {
                 if (j < n) {
                     if (i <= j) printf("%d ",n - i);
-                    else printf("@ "); // "%d ",n - j
+                    else printf("%d ",n - j); // @
                 } else {
                     if (j < (2 * n) - i - 1) printf("%d ",n - i);
                     else {
-                        printf("/ "); // "%d ", n + b - i
+                        printf("%d ", n + b - i); // /
                         b++;
                     }
                 }
             } else {
                 if (j < n) {
-                    if (j < n - 1 - c) printf("* ");
+                    if (j < n - 1 - c) printf("%d ", n - j); // *
                     else printf("%d ", i - n + 2);
                 } else {
                     if (j < n + d)printf("%d ", i - n + 2);
-                    else  printf("* ");
+                    else { printf("%d ", i - n + 2 + a); a++;}
                 }
 
             }
@@ -8900,8 +8901,29 @@ int main() {
     }
     return 0;
 }
+*/
 
 
+/*
+long long int fib(int *F, int *N, int n, int *steps) {
+    *(steps) += 1;
+    if (N[n] == n) return F[n];
+    else if (n == 0 || n == 1) {
+        F[n] = n; N[n] = n;
+    }
+    else {
+        N[n] = n; F[n] = fib(F, N, n - 2, steps) + fib(F, N, n - 1, steps);
+    }
+    return steps;
+}
+
+int main() {
+    long long int F[1000], N[1000], n = 10;
+    long long int steps = 0;
+    printf("n = %lld --> %lld", n, fib(&F, &N, n, &steps));
+    return 0;
+}
+*/
 
 
 
