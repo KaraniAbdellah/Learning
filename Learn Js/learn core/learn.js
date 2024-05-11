@@ -3086,6 +3086,69 @@ myWs.forEach(ele => console.log(ele)); // myWs.forEach is not a function
 
 
 
+// Map Data Type Vs Object
+
+/*
+    - Map Data Type
+    Syntax: new Map(Iterable With Key/ Value)
+    
+    - Map
+        Does Not Contain Key By Default
+        Key Can Be Anything [function, object, any primitive data type]
+        Ordered by Insertion
+        Get Item By Size
+        Can Be Directly Iterated
+        Better Performance when add or remove
+    - Object
+        Has Default Key
+        String Or Symbol --> Key
+        Not 100% Till Now --> Ordered
+        Need To Do Manually --> size
+        Low Performance When Compare With Map
+*/
+
+
+var myObject = {};
+var myEmptyObject = Object.create(null);
+var myMap = new Map();
+
+console.log(myObject); // [[Prototype]]: Object
+console.log(myEmptyObject); // No properties --> No Prototype
+console.log(myMap); // No properties
+
+
+var myNewObject = {
+    10: "Number",
+    "10": "String", // like 10: "String"
+};
+console.log(myNewObject);
+console.log(myNewObject[10]); // String
+
+
+var myNewMap = new Map();
+myNewMap.set(10, "Number");
+myNewMap.set("10", "String");
+myNewMap.set(function sayHello() {return "Hello World"}, "SayHello");
+myNewMap.set(true, "Boolean");
+myNewMap.set({a: 1, b: 2}, "Object");
+
+
+console.log(myNewMap);
+console.log(myNewMap.get(10)); // Number
+console.log(myNewMap.get("10")); // String
+console.log(myNewMap.get("Hello World"));
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
