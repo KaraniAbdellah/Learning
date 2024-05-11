@@ -3044,6 +3044,48 @@ console.log(myNewData.has("a".toUpperCase())); // true
  
 
 
+// Set vs WeakSet And Garbage Collector
+    
+/*
+    WeakSet is Weak , 
+    meaning refrence to object in weakset that help weakly.
+    if no other refrences to a object store, these object can be garbage collected.
+
+    Different Between Set And WeakSet    
+
+    ==> Set
+        Can Store Any Data Values
+        Have Size Proprety
+        Have [Keys, Values, Enteries]
+        Can Use foreach
+    ==> WeakSet
+        Collection Of Object Only
+        Does Have A Size Proprety
+        Does Not Have [clear, values, keys, enteries]
+        Can Not Use foreach
+    Search
+        WeakSet Use Cases
+*/
+var mySet = new Set([1, 2, 3, 3, "A"]);
+console.log(mySet);
+// size
+console.log(mySet.size);
+// itarator
+var iterator = mySet.values();
+console.log(iterator.next()); // {value: 1, done: false} --> Deos Not Done
+console.log(iterator.next().value); // 2 
+// foreach
+mySet.forEach( ele => console.log(ele));
+
+// WeakSet
+var myWs = new WeakSet([{A: 1, B: 2}]);
+console.log(myWs);
+var iter = myWs.values();
+console.log(iter); // myWs.values is not a function
+myWs.forEach(ele => console.log(ele)); // myWs.forEach is not a function
+
+
+
 
 
 
