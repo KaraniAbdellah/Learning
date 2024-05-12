@@ -8904,9 +8904,11 @@ int main() {
 */
 
 
-/*
-long long int fib(int *F, int *N, int n, int *steps) {
+// 1033 beecrowd
+
+long long int fib(int *F, int *N, int n, long long int *steps) {
     *(steps) += 1;
+    printf("\nsteps = %lld\n", *steps);
     if (N[n] == n) return F[n];
     else if (n == 0 || n == 1) {
         F[n] = n; N[n] = n;
@@ -8914,16 +8916,41 @@ long long int fib(int *F, int *N, int n, int *steps) {
     else {
         N[n] = n; F[n] = fib(F, N, n - 2, steps) + fib(F, N, n - 1, steps);
     }
-    return steps;
+    return F[n];
+}
+
+
+long long int fib1(int n, long long int *calls) {
+    *calls += 1;
+    if (n == 0) return 0;
+    else if (n == 1) return 1;
+    else return fib1(n - 1, calls) + fib1(n - 2, calls);
 }
 
 int main() {
-    long long int F[1000], N[1000], n = 10;
-    long long int steps = 0;
-    printf("n = %lld --> %lld", n, fib(&F, &N, n, &steps));
+    int n, base, rem, index, count = 1;
+    while ((scanf("%d %d", &n, &base)) && (n != 0 || base != 0)) {
+        // In Each Iteration
+        long long int calls = 0, calls_temp;
+        int result[n];
+        rem = 0; index = 0;
+        // Getting The Cals
+        fib1(n, &calls);
+        // Translate To The Base
+        calls_temp = calls;
+        while (calls_temp != 0) {
+            rem = calls_temp % base;
+            calls_temp = calls_temp / 10;
+            result[index] = rem; index++;
+        }
+        // Print The Result
+        printf("\nCase %d: %d %d %d\n", count, n, base, result[0]);
+        count++;
+    }
+
     return 0;
 }
-*/
+
 
 
 
