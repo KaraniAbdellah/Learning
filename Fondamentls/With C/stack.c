@@ -3,6 +3,7 @@
 #include <stddef.h>
 #include <stdbool.h>
 
+
 typedef struct {
     int head;
     int size;
@@ -54,6 +55,24 @@ int main() {
     printf("The Deleted Value Is %d", delete_ele);
     return 0;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
