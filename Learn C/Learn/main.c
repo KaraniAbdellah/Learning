@@ -8906,15 +8906,15 @@ int main() {
 
 // 1033 beecrowd
 
-long long int fib(int *F, int *N, int n, long long int *steps) {
-    *(steps) += 1;
-    printf("\nsteps = %lld\n", *steps);
+/*
+long long int fib(int F[], int N[], int n, long long int *calls) {
     if (N[n] == n) return F[n];
     else if (n == 0 || n == 1) {
         F[n] = n; N[n] = n;
+        return F[n];
     }
     else {
-        N[n] = n; F[n] = fib(F, N, n - 2, steps) + fib(F, N, n - 1, steps);
+        N[n] = n; F[n] = fib(F, N, n - 2, calls) + fib(F, N, n - 1, calls);
     }
     return F[n];
 }
@@ -8932,11 +8932,15 @@ int main() {
     while ((scanf("%d %d", &n, &base)) && (n != 0 || base != 0)) {
         // In Each Iteration
         long long int calls = 0, calls_temp;
+        long long int calls1; // int N[3000], F[3000];
         int result[n];
         rem = 0; index = 0;
         // Getting The Cals
         fib1(n, &calls);
+        // fib(&F, &N, n, &calls);
+        printf("\ncalls = %lld\n", calls);
         // Translate To The Base
+        calls = (calls * 2) - 1;
         calls_temp = calls;
         while (calls_temp != 0) {
             rem = calls_temp % base;
@@ -8950,9 +8954,12 @@ int main() {
 
     return 0;
 }
+*/
 
-
-
+int main() {
+    printf("We Need To Calculate Number Of Calls By Reducing The Call Function");
+    return 0;
+}
 
 
 
