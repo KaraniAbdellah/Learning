@@ -3126,17 +3126,17 @@ console.log(myNewObject[10]); // String
 
 
 var myNewMap = new Map();
-myNewMap.set(10, "Number");
-myNewMap.set("10", "String");
-myNewMap.set(function sayHello() {return "Hello World"}, "SayHello");
-myNewMap.set(true, "Boolean");
-myNewMap.set({a: 1, b: 2}, "Object");
+var newMap = new Map();
+newMap.set("10", "String");
+newMap.set(10, "Number");
+newMap.set("Object", {1: 10, 20: 30});
+newMap.set("Function", function sayHello() {return "Hello World"});
 
 
-console.log(myNewMap);
-console.log(myNewMap.get(10)); // Number
-console.log(myNewMap.get("10")); // String
-console.log(myNewMap.get("Hello World"));
+console.log(new_object[10]);
+console.log(newMap.get(10));
+console.log(newMap.get("Object"));
+console.log(newMap.get("Function"));
 
 
 
