@@ -3151,7 +3151,6 @@ console.log(newMap.get("Function"));
         -- size
     --> Map Is Sensible To The Key Letters
 */
-
 var myMap = new Map([
     [10, "Number"],
     ["name", "String"],
