@@ -3087,7 +3087,6 @@ myWs.forEach(ele => console.log(ele)); // myWs.forEach is not a function
 
 
 // Map Data Type Vs Object
-
 /*
     - Map Data Type
     Syntax: new Map(Iterable With Key/ Value)
