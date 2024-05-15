@@ -1,33 +1,40 @@
-// Map Data Types
+// Map Vs WeakMap
+
 /*
-    Methods
-    -- Set 
-    -- get
-    -- delete 
-    -- clear
-    -- has
-    Proprioties
-        -- size
-    --> Map Is Sensible To The Key Letters
+    WeakMap Allows Garbage Collector To Do Its Task But Not Map.
+
+    Map     ==> Key Can Be Anything
+    WeakMap ==> Key Can Be Object Only 
 */
 
-var myMap = new Map([
-    [10, "Number"],
-    ["name", "String"],
-    [false, "Boolean"],
-]);
-myMap.set("10", "Number");
-console.log(myMap.get(10));
-console.log(myMap.get(false));
+var muser = { theName: "Abdellah" };
+var myMap = new Map();
+myMap.set(muser, "Object Value");
 
-console.log(myMap.size);
-console.log(myMap.delete("10")); // true --> Succeffuly Deleted
-console.log(myMap.size);
-console.log(myMap.clear());
-console.log(myMap.size);
+console.log(myMap);
 
-if (myMap.has("Name")) console.log(`There is 10 key`);
-else console.log("There Is No 10 Key");
+
+muser = null; // Overwrite The Refrence
+console.log(myMap);
+
+
+var wuser = { theName: "Abdellah" };
+var myWeakMap = new WeakMap();
+myWeakMap.set(wuser, "Object Value");
+
+console.log(myWeakMap);
+
+wuser = null; // Overwrite The Refrence
+console.log(myWeakMap); // null
+
+
+
+
+
+
+
+
+
 
 
 
