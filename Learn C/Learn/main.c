@@ -8907,40 +8907,52 @@ int main() {
 // 1033 beecrowd
 
 /*
-long long int fib(int F[], int N[], int n, long long int *calls) {
-    if (N[n] == n) return F[n];
-    else if (n == 0 || n == 1) {
-        F[n] = n; N[n] = n;
-        return F[n];
-    }
-    else {
-        N[n] = n; F[n] = fib(F, N, n - 2, calls) + fib(F, N, n - 1, calls);
-    }
-    return F[n];
-}
-
-
 long long int fib1(int n, long long int *calls) {
     *calls += 1;
     if (n == 0) return 0;
     else if (n == 1) return 1;
     else return fib1(n - 1, calls) + fib1(n - 2, calls);
 }
+*/
+
+#define MAX_SIZE 20
+
+long long int fib(int F[], int N[], int *C, int n) {
+    if (n == 0 || n == 1) {
+        F[n] = n; N[n] = n; C[n] += 1;
+        return F[n];
+    }
+    else if (N[n] == n ){
+        C[n] += 1;
+        return F[n];
+    }
+
+    else {
+        C[n] += 1;
+        N[n] = n; F[n] = fib(F, N, C, n - 2) + fib(F, N, C, n - 1);
+    }
+}
+
 
 int main() {
     int n, base, rem, index, count = 1;
     while ((scanf("%d %d", &n, &base)) && (n != 0 || base != 0)) {
         // In Each Iteration
         long long int calls = 0, calls_temp;
-        long long int calls1; // int N[3000], F[3000];
+        long long int calls1; int N[MAX_SIZE], F[MAX_SIZE], C[MAX_SIZE];
         int result[n];
         rem = 0; index = 0;
+        // Intial The counter To The Zero
+        for (int i = 0; i < MAX_SIZE; i++) C[i] = 0;
         // Getting The Cals
-        fib1(n, &calls);
-        // fib(&F, &N, n, &calls);
+        fib(F, N, &C, n);
+        // Calculate The Number Of Calls
+        for (int i = 0; i < MAX_SIZE; i++) {
+            calls += C[i];
+            printf("%d ", C[i]);
+        }
         printf("\ncalls = %lld\n", calls);
         // Translate To The Base
-        calls = (calls * 2) - 1;
         calls_temp = calls;
         while (calls_temp != 0) {
             rem = calls_temp % base;
@@ -8954,12 +8966,9 @@ int main() {
 
     return 0;
 }
-*/
 
-int main() {
-    printf("We Need To Calculate Number Of Calls By Reducing The Call Function");
-    return 0;
-}
+
+
 
 
 
