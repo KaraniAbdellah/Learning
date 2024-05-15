@@ -8919,17 +8919,19 @@ long long int fib1(int n, long long int *calls) {
 
 long long int fib(int F[], int N[], int *C, int n) {
     if (n == 0 || n == 1) {
-        F[n] = n; N[n] = n; C[n] += 1;
-        return F[n];
-    }
-    else if (N[n] == n ){
         C[n] += 1;
+        // printf("//n = %d C[n] = %d \n", n, C[n]);
+        F[n] = n; N[n] = n;
         return F[n];
     }
-
+    else if (N[n] == n) {
+        C[n] += 1;
+        // printf("//n = %d C[n] = %d \n", n, C[n]);
+        return F[n];
+    }
     else {
         C[n] += 1;
-        N[n] = n; F[n] = fib(F, N, C, n - 2) + fib(F, N, C, n - 1);
+        N[n] = n; F[n] = fib(F, N, C, n - 1) + fib(F, N, C, n - 2);
     }
 }
 
@@ -8943,7 +8945,9 @@ int main() {
         int result[n];
         rem = 0; index = 0;
         // Intial The counter To The Zero
-        for (int i = 0; i < MAX_SIZE; i++) C[i] = 0;
+        for (int i = 0; i < MAX_SIZE; i++) {
+            C[i] = 0; F[i] = 0; N[i] = 0;
+        }
         // Getting The Cals
         fib(F, N, &C, n);
         // Calculate The Number Of Calls
