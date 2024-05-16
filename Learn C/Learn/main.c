@@ -8920,18 +8920,18 @@ long long int fib1(int n, long long int *calls) {
 long long int fib(int F[], int N[], int *C, int n) {
     if (n == 0 || n == 1) {
         C[n] += 1;
-        // printf("//n = %d C[n] = %d \n", n, C[n]);
         F[n] = n; N[n] = n;
-        return F[n];
+        return C[n]; // Return the number of calls
     }
     else if (N[n] == n) {
         C[n] += 1;
-        // printf("//n = %d C[n] = %d \n", n, C[n]);
-        return F[n];
+        return C[n]; // Return the number of calls
     }
     else {
         C[n] += 1;
-        N[n] = n; F[n] = fib(F, N, C, n - 1) + fib(F, N, C, n - 2);
+        N[n] = n;
+        F[n] = fib(F, N, C, n - 1) + fib(F, N, C, n - 2);
+        return C[n]; // Return the number of calls
     }
 }
 
@@ -8940,29 +8940,24 @@ int main() {
     int n, base, rem, index, count = 1;
     while ((scanf("%d %d", &n, &base)) && (n != 0 || base != 0)) {
         // In Each Iteration
-        long long int calls = 0, calls_temp;
-        long long int calls1; int N[MAX_SIZE], F[MAX_SIZE], C[MAX_SIZE];
+        long long int calls = 0, last_digit;
+        int C[MAX_SIZE] = {0}, F[MAX_SIZE] = {0}, N[MAX_SIZE] = {-1};
         int result[n];
         rem = 0; index = 0;
-        // Intial The counter To The Zero
-        for (int i = 0; i < MAX_SIZE; i++) {
-            C[i] = 0; F[i] = 0; N[i] = 0;
-        }
-        // Getting The Cals
-        fib(F, N, &C, n);
         // Calculate The Number Of Calls
+        fib(F, N, &C, n);fib(F, N, &C, n);
+        for (int i = MAX_SIZE - 1; i >= 0; i--) {
+            for (int j = MAX_SIZE - 1; j >= 0; j--) {
+                C[i] += C[j];
+            }
+        }
         for (int i = 0; i < MAX_SIZE; i++) {
-            calls += C[i];
             printf("%d ", C[i]);
+            calls += C[i];
         }
         printf("\ncalls = %lld\n", calls);
         // Translate To The Base
-        calls_temp = calls;
-        while (calls_temp != 0) {
-            rem = calls_temp % base;
-            calls_temp = calls_temp / 10;
-            result[index] = rem; index++;
-        }
+        last_digit = calls % base;
         // Print The Result
         printf("\nCase %d: %d %d %d\n", count, n, base, result[0]);
         count++;
