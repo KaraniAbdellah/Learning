@@ -122,35 +122,72 @@ int isEmpty(myQueue *q) {
     else return 0;
 }
 
-/*
-int isFull(myQueue *q) {
-    if (q->size == MAX_SIZE) return 1; // Full List
-    else return 0;
-}
-*/
+
 // We Need The Test For Empty List And Full List
-void Enqueue(myQueue **head, int item) {
+void Enqueue(myQueue **head, myQueue **tail, int item) {
     myQueue *new_node = (myQueue *) malloc(sizeof(myQueue));
     if (new_node == NULL) {
         printf("\nOVERFLOW\n");
         return;
     }
     new_node->data = item;
-    new_node->next = *head;
-    *head = new_node;
+    if (*tail == NULL) {
+        *tail = *head = new_node;
+    } else {
+        (*tail)->next = new_node;
+        (*tail) = new_node;
+    }
 }
 
-void Dequeue(myQueue **head) {
-
+void Dequeue(myQueue **head, myQueue **tail) {
+    if (*head == NULL) {
+        printf("\nList is Empty!\n");
+        return;
+    }
+    myQueue *temp = *head;
+    *head = temp->next;
+    if (*head == NULL) *tail = NULL;
+    free(temp);
 }
+
+void display(myQueue *head) {
+    if (head == NULL) printf("\nThe List Is Empty\n");
+    else {
+        myQueue *temp = head;
+        while (temp != NULL) {
+            printf("%d --> ", temp->data);
+            temp = temp->next;
+        }
+    }
+    printf("\n");
+}
+
+
+int Front(myQueue *head) {
+    if (head == NULL) {
+    	printf("\nList is Empty\n");
+    	return;	
+    }
+    else {
+        int front_item = head->data;
+        return front_item;
+    }
+}
+
 
 int main() {
+    myQueue *tail = NULL;
     myQueue *head = NULL;
-
-
-
-
-
+    int nbr_items, item;
+    printf("Enter The Number Of The Element : ");
+    scanf("%d", &nbr_items);
+    for (int i = 0; i < nbr_items; i++) {
+        scanf("%d", &item);
+        Enqueue(&head, &tail, item);
+    }
+    display(head);
+    Dequeue(&head, &tail);
+    display(head);
     return 0;
 }
 
