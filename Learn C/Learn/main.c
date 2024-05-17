@@ -8921,17 +8921,16 @@ long long int fib(int F[], int N[], int *C, int n) {
     if (n == 0 || n == 1) {
         C[n] += 1;
         F[n] = n; N[n] = n;
-        return C[n]; // Return the number of calls
+        return F[n];
     }
     else if (N[n] == n) {
         C[n] += 1;
-        return C[n]; // Return the number of calls
+        return F[n];
     }
     else {
         C[n] += 1;
         N[n] = n;
         F[n] = fib(F, N, C, n - 1) + fib(F, N, C, n - 2);
-        return C[n]; // Return the number of calls
     }
 }
 
@@ -8942,19 +8941,33 @@ int main() {
         // In Each Iteration
         long long int calls = 0, last_digit;
         int C[MAX_SIZE] = {0}, F[MAX_SIZE] = {0}, N[MAX_SIZE] = {-1};
+        for (int i = 0; i < MAX_SIZE; i++) {
+            C[i] = 1; F[i] = 0; N[i] = -1;
+        }
         int result[n];
         rem = 0; index = 0;
         // Calculate The Number Of Calls
-        fib(F, N, &C, n);fib(F, N, &C, n);
-        for (int i = MAX_SIZE - 1; i >= 0; i--) {
-            for (int j = MAX_SIZE - 1; j >= 0; j--) {
+        // fib(F, N, &C, n);
+        for (int i = 0; i < MAX_SIZE; i++) {
+            printf("%d ", C[i]);
+        }
+        printf("\n");
+        for (int i = n - 1; i >= 0; i--) {
+            for (int j = i; j >= 0; j--) {
                 C[i] += C[j];
             }
         }
+        for (int i = 0; i < n; i++) calls += C[i];
         for (int i = 0; i < MAX_SIZE; i++) {
-            printf("%d ", C[i]);
+            C[i] = 1;
+        }
+        for (int i = n - 2; i >= 0; i--) {
+            for (int j = i; j > 0; j--) {
+                C[i] += C[j];
+            }
             calls += C[i];
         }
+        for (int i = 0; i < n; i++) calls += C[i];
         printf("\ncalls = %lld\n", calls);
         // Translate To The Base
         last_digit = calls % base;
