@@ -8924,7 +8924,7 @@ long long int fib(int F[], int N[], int *C, int n) {
         return F[n];
     }
     else if (N[n] == n) {
-        C[n] += 1;
+        C[n] += 2;
         return F[n];
     }
     else {
@@ -8942,12 +8942,12 @@ int main() {
         long long int calls = 0, last_digit;
         int C[MAX_SIZE] = {0}, F[MAX_SIZE] = {0}, N[MAX_SIZE] = {-1};
         for (int i = 0; i < MAX_SIZE; i++) {
-            C[i] = 1; F[i] = 0; N[i] = -1;
+            C[i] = 0; F[i] = 0; N[i] = -1;
         }
         int result[n];
         rem = 0; index = 0;
         // Calculate The Number Of Calls
-        ib(F, N, &C, n);
+        fib(F, N, C, n);
         for (int i = 0; i < n; i++) {
             calls += C[i];
             printf("%d  ", C[i]);
