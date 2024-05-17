@@ -8947,27 +8947,11 @@ int main() {
         int result[n];
         rem = 0; index = 0;
         // Calculate The Number Of Calls
-        // fib(F, N, &C, n);
-        for (int i = 0; i < MAX_SIZE; i++) {
-            printf("%d ", C[i]);
-        }
-        printf("\n");
-        for (int i = n - 1; i >= 0; i--) {
-            for (int j = i; j >= 0; j--) {
-                C[i] += C[j];
-            }
-        }
-        for (int i = 0; i < n; i++) calls += C[i];
-        for (int i = 0; i < MAX_SIZE; i++) {
-            C[i] = 1;
-        }
-        for (int i = n - 2; i >= 0; i--) {
-            for (int j = i; j > 0; j--) {
-                C[i] += C[j];
-            }
+        ib(F, N, &C, n);
+        for (int i = 0; i < n; i++) {
             calls += C[i];
+            printf("%d  ", C[i]);
         }
-        for (int i = 0; i < n; i++) calls += C[i];
         printf("\ncalls = %lld\n", calls);
         // Translate To The Base
         last_digit = calls % base;
