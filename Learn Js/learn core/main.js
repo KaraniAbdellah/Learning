@@ -1,14 +1,22 @@
-var mySet = new Set().add(1).add(3).add(4).add(5);
+// var createObject = new Object();
+var createObject = Object.create(null);
+var myMap = new Map();
 
-console.log(mySet);
-console.log(mySet.values());
-console.log(mySet.keys());
-mySet.forEach(ele => console.log(ele));
-
+createObject.x = 10;
 
 
-var myWeakSet = new WeakSet([{A: 65, B: 66}]); 
-console.log(myWeakSet);
-console.log(myWeakSet.values());
+var newObject = {
+    10: "Number",
+    "10": "String",
+};
+console.log(newObject);
+console.log(newObject["10"]); // string
+
+myMap.set(10, "number").set("10", "String");
+
+console.log(myMap.get(10)); // number
+console.log(myMap.get("10")); // string
+
+
 
 
