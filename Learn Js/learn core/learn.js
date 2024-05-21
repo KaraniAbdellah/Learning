@@ -3047,11 +3047,11 @@ console.log(myNewData.has("a".toUpperCase())); // true
 // Set vs WeakSet And Garbage Collector
     
 /*
-    WeakSet is Weak , 
+    WeakSet is Weak,
     meaning refrence to object in weakset that help weakly.
     if no other refrences to a object store, these object can be garbage collected.
 
-    Different Between Set And WeakSet    
+    Different Between Set And WeakSet
 
     ==> Set
         Can Store Any Data Values

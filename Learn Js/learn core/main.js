@@ -1,27 +1,14 @@
-// Set is Data Type
-// Remove The Duplicates Elements
+var mySet = new Set().add(1).add(3).add(4).add(5);
 
-
-var mySet = new Set([1, 2, 3, 4, 5, 7, 5]);
 console.log(mySet);
-
-mySet.add(12);
-mySet.delete(2);
-console.log(mySet);
-
-console.log(mySet[0]); // undefined
-
-if (mySet.has(2)) console.log("YES");
-else console.log("NO");
-
-console.log(mySet.size); // 6
+console.log(mySet.values());
+console.log(mySet.keys());
+mySet.forEach(ele => console.log(ele));
 
 
 
-
-
-
-
-
+var myWeakSet = new WeakSet([{A: 65, B: 66}]); 
+console.log(myWeakSet);
+console.log(myWeakSet.values());
 
 
