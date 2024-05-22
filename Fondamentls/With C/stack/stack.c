@@ -61,78 +61,80 @@ int main() {
 ///////////////////////////////////////
 ///////////////////////////////////////
 // With Linked List
-typedef struct {
-    int head;
-    int size;
-    struct Node *pile;
+
+
+typedef struct myStack {
+	int data;
+	struct myStack *next;
+	struct myStack *prev;
 } myStack;
 
-typedef struct Node {
-    int data;
-    struct Node *next;
-} Node;
 
-// Add At Queue And Remove At Head
-
-int is_empty(myStack stack) {
-    if(stack.head == 0) return 1;
-    else return 0;
+void push(myStack **head, myStack **summit, int item) {
+	myStack *new_node = (myStack *) malloc(sizeof(myStack));
+	new_node->prev = new_node->next = NULL;
+	new_node->data = item;
+	if (*head == NULL) *head = *summit = new_node;
+	else {
+		(*summit)->next = new_node;
+		new_node->prev = *summit; 
+		*summit = new_node;
+	}
 }
 
-int is_plien(myStack stack) {
-    if (stack.head == stack.size) return 1;
-    else return 0;
-}
-
-void pile(Node **head, int value, myStack *stack) {
-    // Like Add An Element in Linked List
-    Node *new_node = (Node *) malloc(sizeof(Node));
-    new_node->data = value;
-    new_node->next = NULL;
-    new_node->next = *head;
-    *head = new_node;
-    stack->head++;
+void pop(myStack **head, myStack **summit) {
+	if (*summit == NULL) printf("\nList is Empty\n");
+	else {
+		myStack *temp = *summit;
+		*summit = temp->prev;
+		if (*summit == NULL) *head = NULL;
+		else (*summit)->next = NULL;
+		free(temp);	
+	}
 }
 
 
-void depile(Node **head, myStack *stack) {
-    Node *temp = *head;
-    *head = (*head)->next;
-    free(temp);
-    stack->head--;
+void display(myStack *head) {
+	if (head == NULL) printf("\nStack Empty\n");
+	else {
+		myStack *temp = head;
+		while (temp != NULL) {
+			printf("%d --> ", temp->data);
+			temp = temp->next;
+		}	
+	}
+	printf("\n");
 }
 
 
-void display(Node *head) {
-    Node *temp = head;
-    while (temp != NULL) {
-        printf("%d ", temp->data);
-        temp = temp->next;
-    }
-    printf("\n");
+void free_stack(myStack **head, myStack **summit) {
+	myStack *temp;
+	myStack *current = temp;
+	while (current != NULL) {
+		temp = current;
+		*summit = temp->prev;
+		current = current->prev;
+		free(temp);
+	}
 }
+
 
 int main() {
-    myStack stack1;
-    Node *head = NULL;
-    int nbr_ele, ele;
-    printf("Enter Number Of Element : ");
-    scanf("%d", &nbr_ele);
-    stack1.size = nbr_ele;
-    stack1.head = 0;
-    for (int i = 0; i < nbr_ele; i++) {
-        scanf("%d", &ele);
-        pile(&head, ele, &stack1);
-    }
-    display(head);
-    depile(&head, &stack1);
-    display(head);
-    // Test
-    return 0;
+	myStack *summit = NULL;
+	myStack *head = NULL;
+	int nbr_ele, item;
+	printf("Enter The Number Of Element : ");
+	scanf("%d", &nbr_ele);
+	for (int i = 0; i < nbr_ele; i++) {
+		scanf("%d", &item);
+		push(&head, &summit, item);
+	}
+	display(head);
+	pop(&head, &summit);
+	display(head);
+	free_stack(&head, &summit);
+	display(head);
 }
-
-
-
 
 
 
