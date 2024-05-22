@@ -109,7 +109,6 @@ int main() {
 
 */
 
-#define MAX_SIZE 10
 
 typedef struct myQueue {
     int data;
@@ -118,10 +117,6 @@ typedef struct myQueue {
 } myQueue;
 
 
-
-
-
-// We Need The Test For Empty List And Full List
 void Enqueue(myQueue **head, myQueue **tail, int item) {
     myQueue *new_node = (myQueue *) malloc(sizeof(myQueue));
     if (new_node == NULL) {
@@ -181,16 +176,16 @@ void display_tail(myQueue *tail) {
 int Front(myQueue *head) {
     if (head == NULL) {
     	printf("\nList is Empty\n");
-    	return;	
+    	return -1;	
     }
     int front_item = head->data;
     return front_item;
 }
 
-int Rear(muQueue *tail) {
+int Rear(myQueue *tail) {
 	if (tail == NULL) {
 		printf("\nList is Empty\n");
-		return;
+		return -1;
 	}
 	int rear_item = tail->data;
 	return rear_item;
