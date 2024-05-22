@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stddef.h>
 #include <stdbool.h>
+#include <stdlib.h>
 
 
 // Queue
@@ -62,7 +63,6 @@ int Front(myQueue q) {
         return -1;
     }
     int front_item = q.elements[q.head];
-    q.head++;
     return front_item;
 }
 
@@ -114,13 +114,11 @@ int main() {
 typedef struct myQueue {
     int data;
     struct myQueue *next;
+	struct myQueue *prev;
 } myQueue;
 
 
-int isEmpty(myQueue *q) {
-    if (q == NULL) return 1; // Empty List
-    else return 0;
-}
+
 
 
 // We Need The Test For Empty List And Full List
@@ -131,13 +129,16 @@ void Enqueue(myQueue **head, myQueue **tail, int item) {
         return;
     }
     new_node->data = item;
+	new_node->next = new_node->prev = NULL;
     if (*tail == NULL) {
         *tail = *head = new_node;
     } else {
+		new_node->prev = *tail;
         (*tail)->next = new_node;
         (*tail) = new_node;
     }
 }
+
 
 void Dequeue(myQueue **head, myQueue **tail) {
     if (*head == NULL) {
@@ -147,10 +148,12 @@ void Dequeue(myQueue **head, myQueue **tail) {
     myQueue *temp = *head;
     *head = temp->next;
     if (*head == NULL) *tail = NULL;
+	else (*head)->prev = NULL;
     free(temp);
 }
 
-void display(myQueue *head) {
+
+void display_head(myQueue *head) {
     if (head == NULL) printf("\nThe List Is Empty\n");
     else {
         myQueue *temp = head;
@@ -162,18 +165,36 @@ void display(myQueue *head) {
     printf("\n");
 }
 
+void display_tail(myQueue *tail) {
+	if (tail == NULL) printf("\nThe List is Empty\n");
+	else {
+		myQueue *temp = tail;
+		while (temp != NULL) {
+			printf("%d <-- ", temp->data);
+			temp = temp->prev;		
+		}
+	}
+}
+
+
 
 int Front(myQueue *head) {
     if (head == NULL) {
     	printf("\nList is Empty\n");
     	return;	
     }
-    else {
-        int front_item = head->data;
-        return front_item;
-    }
+    int front_item = head->data;
+    return front_item;
 }
 
+int Rear(muQueue *tail) {
+	if (tail == NULL) {
+		printf("\nList is Empty\n");
+		return;
+	}
+	int rear_item = tail->data;
+	return rear_item;
+}
 
 int main() {
     myQueue *tail = NULL;
@@ -185,9 +206,11 @@ int main() {
         scanf("%d", &item);
         Enqueue(&head, &tail, item);
     }
-    display(head);
+    display_head(head);
     Dequeue(&head, &tail);
-    display(head);
+    display_tail(tail);
+	printf("\nFirst Element is %d\n", Front(head));
+	printf("\nLast Element is %d\n", Rear(tail));
     return 0;
 }
 
