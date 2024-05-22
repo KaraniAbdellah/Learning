@@ -3177,22 +3177,32 @@ else console.log("There Is No 10 Key");
 /*
     WeakMap Allows Garbage Collector To Do Its Task But Not Map.
     Map     ==> Key Can Be Anything
-    WeakMap ==> Key Can Be Object Only 
+    WeakMap ==> Key Can Be Object Only
 */
 
-var muser = { theName: "Abdellah" };
-var myMap = new Map();
-myMap.set(muser, "Object Value");
-console.log(myMap);
-muser = null; // Overwrite The Refrence
-console.log(myMap);
+// Map And WeakMap
 
-var wuser = { theName: "Abdellah" };
+var muser = {theName: "Abdellah"};
+var myMap = new Map();
+myMap.set("10", "string");
+console.log(myMap);
+console.log(myMap.get("10")); // string
+
+myMap.set(muser, "Value Of Object");
+console.log(myMap);
+console.log(myMap.get(muser)); // Value Of Object
+
+muser = null;
+console.log(myMap.get(muser)) // undefined
+
+var wuser = {theAge: 19};
 var myWeakMap = new WeakMap();
-myWeakMap.set(wuser, "Object Value");
-console.log(myWeakMap);
-wuser = null; // Overwrite The Refrence
-console.log(myWeakMap); // null
+myWeakMap.set(wuser, "Abdellah");
+console.log(myWeakMap.get(wuser)); // Abdellah
+wuser = null;
+console.log(myWeakMap.get(wuser)); // undefined
+
+
 
 
 
@@ -3207,7 +3217,7 @@ console.log(myWeakMap); // null
     --- Set
     --- Using The Map Function
     --- Arrow Function
-    --- Shorten The Method + USe Arguements 
+    --- Shorten The Method + USe Arguements
 */
 console.log(Array.from("12345", function(number) {
     return +number + +number;
