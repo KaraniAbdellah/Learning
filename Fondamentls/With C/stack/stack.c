@@ -77,7 +77,7 @@ void push(myStack **head, myStack **summit, int item) {
 	if (*head == NULL) *head = *summit = new_node;
 	else {
 		(*summit)->next = new_node;
-		new_node->prev = *summit; 
+		new_node->prev = *summit;
 		*summit = new_node;
 	}
 }
@@ -89,13 +89,13 @@ void pop(myStack **head, myStack **summit) {
 		*summit = temp->prev;
 		if (*summit == NULL) *head = NULL;
 		else (*summit)->next = NULL;
-		free(temp);	
+		free(temp);
 	}
 }
 
 
 void display(myStack *head) {
-	if (head == NULL) printf("\nStack Empty\n");
+	if (!head) printf("\nStack Empty\n");
 	else {
 		myStack *temp = head;
 		while (temp != NULL) {
@@ -108,14 +108,16 @@ void display(myStack *head) {
 
 
 void free_stack(myStack **head, myStack **summit) {
-	myStack *temp;
-	myStack *current = temp;
-	while (current != NULL) {
-		temp = current;
-		*summit = temp->prev;
-		current = current->prev;
-		free(temp);
-	}
+	if (*head != NULL) {
+		myStack *temp = *summit;
+		while (temp != NULL) {
+			myStack *current = temp;
+			temp = temp->prev;
+			free(current);
+		}
+		*summit = NULL;
+		*head = NULL;
+	} else printf("\nList Empty\n");
 }
 
 
