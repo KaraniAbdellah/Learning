@@ -3284,7 +3284,29 @@ function array_from() {
 console.log(array_from("Abdellah", "karani", 30));
 
 
-
+/*
+  Array Methods
+  - Array.copyWithin(Target, Start => Optional, End => Optional)
+  "Copy Part Of An Array To Another Location in The Same Array"
+  -- Any Negative Value Will Count From The End
+  -- Target
+  ---- Index To Copy Part To
+  ---- If At Or Greater Than Array Length Nothing Will Be Copied
+  -- Start
+  ---- Index To Start Copying From
+  ---- If Does Not Write Start = Start From Index 0
+  -- End
+  ---- Index To End Copying From
+  ---- Not Including End
+  ---- If Does Not Write End = Reach The End
+*/
+var myArray = [1, 2, 3, 4, 5, 6, "A", "B", "C", "D"];
+// myArray.copyWithin(3); // [1, 2, 3, 1, 2, 3, 4, 5, 6, 'A']
+// myArray.copyWithin(5, 7, 8); // [1, 2, 3, 4, 5, 'B', 'A', 'B', 'C', 'D']
+// myArray.copyWithin(0, 6); // ['A', 'B', 'C', 'D', 5, 6, 'A', 'B', 'C', 'D']
+// myArray.copyWithin(2, 6, 8); // [1, 2, 'A', 'B', 5, 6, 'A', 'B', 'C', 'D']
+myArray.copyWithin(-8, -4, -2); // [1, 2, 'A', 'B', 5, 6, 'A', 'B', 'C', 'D']
+console.log(myArray);
 
 
 
