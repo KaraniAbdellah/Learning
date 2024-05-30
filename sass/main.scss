@@ -1,0 +1,6 @@
+@for $i from 1 through 1 {
+    .class-#{$i} {
+        font-size: 10px + $i;
+    }
+}
+
