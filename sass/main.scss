@@ -1,6 +1,7 @@
-@for $i from 1 through 1 {
-    .class-#{$i} {
-        font-size: 10px + $i;
-    }
-}
+// Import Global Roles
+@use "sass/layout/global-roles";
+
+// Import Pages
+@use "sass/pages/contact"
+
 
