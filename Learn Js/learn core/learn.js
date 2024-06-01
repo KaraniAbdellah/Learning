@@ -3327,7 +3327,7 @@ console.log(myArray);
 var nums = [1, 2, 3, 4, 5, 6, 7];
 var myNumber = 5;
 var check = nums.some(function(ele) {
-    console.log(this); // this for owner of the fucntion
+    console.log(this); // this for owner of the function
     return ele > this;
 }, myNumber);
 var check_nums = nums.some( ele => ele > 78);
@@ -3336,7 +3336,7 @@ var check_nums = nums.some( ele => ele > 78);
 function checkNumber(arr, value) {
     return arr.some(ele => ele === value);
 }
-console.log(checkNumber(nums, 20)); // fals
+console.log(checkNumber(nums, 20)); // false
 
 // With Using Object
 var range = {
