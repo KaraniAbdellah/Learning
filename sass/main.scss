@@ -1,7 +1,40 @@
-// Import Global Roles
-@use "sass/layout/global-roles";
+// Varibles
+/*
+    syntax : $varName
+    !global : make it global
+    in best practice make a folder in the project "varibles" with file "_colors.scss"
+    in "_colors.scss" --> put the variables
 
-// Import Pages
-@use "sass/pages/contact"
+    --> Import
+        @use "sass/varibles/colors"; ==> use colors.$vanName
+        @use "sass/varibles/colors" as *; use The Varibles name Directly 
 
+*/
+// Import Varibles
+@use "sass/varibles/colors";
+$alt_color: green; // global varibles
+.header {
+    color: $alt_color;
+}
+.footor {
+    $alt_color: red !global; // global varibles
+    $border_color: green; // local varibles
+    color: $alt_color;
+    border: 2px solid $border_color;
+}
+.copy_right {
+    background-color: $alt_color;
+}
+
+.side_bar {
+    // background-color: $backgound_color; with as *
+    background-color: colors.$backgound_color; // without as *
+    border: 2px solid colors.$border;
+}
+$max_mobile: "max-width: 767px;";
+@media ($max_mobile) {
+    .side_bar {
+        background-color: colors.$main_color;
+    }
+}
 

@@ -1,11 +1,34 @@
-* {
-  box-sizing: border-box;
+/*
+    syntax : $varName
+    !global : make it global
+    in best practice make a folder in the project "varibles" with file "_colors.scss"
+    in "_colors.scss" --> put the variables
+
+    --> Import
+        @use "sass/varibles/colors"; ==> use colors.$vanName
+        @use "sass/varibles/colors" as *; use The Varibles name Directly 
+
+*/
+.header {
+  color: green;
 }
 
-.hidden {
-  display: inline;
+.footor {
+  color: red;
+  border: 2px solid green;
 }
 
-.box {
-  padding: 20px;
+.copy_right {
+  background-color: red;
+}
+
+.side_bar {
+  background-color: blue;
+  border: 2px solid orange;
+}
+
+@media (max_mobile) {
+  .side_bar {
+    background-color: red;
+  }
 }/*# sourceMappingURL=main.css.map */

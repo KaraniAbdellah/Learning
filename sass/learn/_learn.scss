@@ -1,5 +1,7 @@
 // Start Learning Sass
 
+@import url("../sass/layout/_global-roles.scss");
+@use "../sass/pages/contact";
 // Import And Use And Advanced Architecture
 /*
     It Is Improtant To Create Sass Folder That Contain [Two Folder layout and pages]
@@ -10,6 +12,9 @@
     - in "main.scss" --> @use "sass/layout/global-roles.scss"
     - in "main.css" --> Must Show The Global Roles
 */
+
+
+// Varibles
 
 
 

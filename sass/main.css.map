@@ -1,1 +1,1 @@
-{"version":3,"sources":["sass/layout/_global-roles.scss","main.css","sass/pages/_contact.scss"],"names":[],"mappings":"AAAA;EACI,sBAAA;ACCJ;;ADCA;EACI,eAAA;ACEJ;;ACNA;EACI,aAAA;ADSJ","file":"main.css"}
+{"version":3,"sources":["main.scss","main.css","sass/varibles/_colors.scss"],"names":[],"mappings":"AACA;;;;;;;;;;CAAA;AAcA;EACI,YAFQ;ACDZ;;ADKA;EAGI,UAFY;EAGZ,uBAAA;ACJJ;;ADMA;EACI,qBANY;ACGhB;;ADMA;EAEI,sBE7Bc;EF8Bd,wBAAA;ACJJ;;ADOA;EACI;IACI,qBEpCK;EDgCX;AACF","file":"main.css"}
