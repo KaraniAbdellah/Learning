@@ -1,26 +1,18 @@
-// Revise The Old Lession
-
-@use "sass/varibles/colors" as *; // For Using Externel Varibles
-@use "sass/varibles/colors"; // Use colors.$varName
-
-$main_color: red;
-$border_color: orange;
-
-footer {
-    $border_color: black !global; // Global Varibles
-    $border-radius: 10px; // Local Varible
-    border: 2px solid $border_color;
-    border-radius: $border-radius;
+// Nesting And Parent Element
+.parent {
+    font-weight: bold;
 }
-.content {
-    background-color: $main_color;
-    border: $main_color 2px solid;
-    border: 2px solid $border_color;
+.parent .child {
+    color: red;
 }
-$max_width: "max-width: 767px";
-@media ($max_width) {
-    .content {
-        background-color: $back_color;
+// In Sass
+.parent {
+    color: red;
+    .child {
+        font-weight: 900;
+        .first {
+            background-color: blue;
+        }
     }
 }
 

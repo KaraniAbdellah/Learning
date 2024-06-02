@@ -24,7 +24,7 @@
     --> Import
         @use "sass/varibles/colors"; ==> use colors.$vanName
         @use "sass/varibles/colors" as *; use The Varibles name Directly 
-    --> Local Varibles PowerFull Of The Varibles That Exit In File"
+    --> Local Varibles PowerFull Of The Varibles That Exit In File "colors.scss"
 */
 // Import Varibles
 @use "sass/varibles/colors" as *; // For Using Externel Varibles

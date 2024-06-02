@@ -1,16 +1,17 @@
-footer {
-  border: 2px solid black;
-  border-radius: 10px;
+.parent {
+  font-weight: bold;
 }
 
-.content {
-  background-color: red;
-  border: red 2px solid;
-  border: 2px solid black;
+.parent .child {
+  color: red;
 }
 
-@media (max-width: 767px) {
-  .content {
-    background-color: green;
-  }
+.parent {
+  color: red;
+}
+.parent .child {
+  font-weight: 900;
+}
+.parent .child .first {
+  background-color: blue;
 }/*# sourceMappingURL=main.css.map */
