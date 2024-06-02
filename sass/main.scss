@@ -1,40 +1,28 @@
-// Varibles
-/*
-    syntax : $varName
-    !global : make it global
-    in best practice make a folder in the project "varibles" with file "_colors.scss"
-    in "_colors.scss" --> put the variables
+// Revise The Old Lession
 
-    --> Import
-        @use "sass/varibles/colors"; ==> use colors.$vanName
-        @use "sass/varibles/colors" as *; use The Varibles name Directly 
+@use "sass/varibles/colors" as *; // For Using Externel Varibles
+@use "sass/varibles/colors"; // Use colors.$varName
 
-*/
-// Import Varibles
-@use "sass/varibles/colors";
-$alt_color: green; // global varibles
-.header {
-    color: $alt_color;
+$main_color: red;
+$border_color: orange;
+
+footer {
+    $border_color: black !global; // Global Varibles
+    $border-radius: 10px; // Local Varible
+    border: 2px solid $border_color;
+    border-radius: $border-radius;
 }
-.footor {
-    $alt_color: red !global; // global varibles
-    $border_color: green; // local varibles
-    color: $alt_color;
+.content {
+    background-color: $main_color;
+    border: $main_color 2px solid;
     border: 2px solid $border_color;
 }
-.copy_right {
-    background-color: $alt_color;
-}
-
-.side_bar {
-    // background-color: $backgound_color; with as *
-    background-color: colors.$backgound_color; // without as *
-    border: 2px solid colors.$border;
-}
-$max_mobile: "max-width: 767px;";
-@media ($max_mobile) {
-    .side_bar {
-        background-color: colors.$main_color;
+$max_width: "max-width: 767px";
+@media ($max_width) {
+    .content {
+        background-color: $back_color;
     }
 }
+
+
 
