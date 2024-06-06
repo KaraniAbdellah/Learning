@@ -1,17 +1,59 @@
 .parent {
+  color: blue;
+}
+
+.child {
   font-weight: bold;
 }
 
-.parent .child {
-  color: red;
+.first-child {
+  background-color: red;
 }
 
 .parent {
-  color: red;
+  color: blue;
 }
 .parent .child {
-  font-weight: 900;
+  font-weight: bold;
 }
-.parent .child .first {
-  background-color: blue;
+.parent .child .first-child {
+  background-color: red;
+}
+
+.parent-one, .parent-two {
+  padding: 20px;
+}
+.parent-one .child, .parent-two .child {
+  padding: 10px;
+}
+
+.parent > .child {
+  font-size: 30px;
+}
+
+.parent > .child-one {
+  font-size: 30px;
+}
+.parent > .child-two {
+  font-size: 30px;
+}
+
+.parent > .child {
+  display: grid;
+}
+.parent .test {
+  display: black;
+}
+.parent + p {
+  text-align: center;
+}
+
+.parent + p {
+  color: red;
+}
+.parent + span {
+  color: blue;
+}
+.parent + button {
+  color: grey;
 }/*# sourceMappingURL=main.css.map */

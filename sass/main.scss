@@ -1,20 +1,49 @@
-// Nesting And Parent Element
+// Nestiong And Parent Element
+
+// in Css
 .parent {
+    color: blue;
+}
+.child {
     font-weight: bold;
 }
-.parent .child {
-    color: red;
+.first-child {
+    background-color: red;
 }
-// In Sass
+// in Sass
 .parent {
-    color: red;
+    color: blue;
     .child {
-        font-weight: 900;
-        .first {
-            background-color: blue;
+        font-weight: bold;
+        .first-child {
+            background-color: red;
         }
     }
 }
 
+.parent-one, .parent-two {
+    padding: 20px;
+    .child {
+        padding: 10px;
+    }
+}
 
+.parent > .child {
+    font-size: 30px;
+}
+.parent  {
+    > { .child-one {font-size: 30px;}
+        .child-two {font-size: 30px;}
+    }
+}
+.parent {
+    > .child {display: grid;} // This is Direct Child
+    .test {display: black;} // This is Not Direct Child
+    + p {text-align: center;}
+}
+.parent + {
+    p {color: red;}
+    span {color: blue;}
+    button {color: grey;}
+}
 
