@@ -1,8 +1,10 @@
 // Start Learning Sass
 
+
+
+// Import And Use And Advanced Architecture
 @import url("../sass/layout/_global-roles.scss");
 @use "../sass/pages/contact";
-// Import And Use And Advanced Architecture
 /*
     It Is Improtant To Create Sass Folder That Contain [Two Folder layout and pages]
     layout cerate "_global-roles.scss" 
@@ -12,6 +14,8 @@
     - in "main.scss" --> @use "sass/layout/global-roles.scss"
     - in "main.css" --> Must Show The Global Roles
 */
+
+
 
 
 // Varibles
@@ -29,10 +33,8 @@
 // Import Varibles
 @use "sass/varibles/colors" as *; // For Using Externel Varibles
 @use "sass/varibles/colors"; // Use colors.$varName
-
 $main_color: red;
 $border_color: orange;
-
 footer {
     $border_color: black !global; // Global Varibles
     $border-radius: 10px; // Local Varible
@@ -52,6 +54,71 @@ $max_width: "max-width: 767px";
 }
 
 
+
+
+
+// Nestiong And Parent Element
+/*
+    > --> Direct child
+    + --> Next Element
+    &red --> For box.red
+*/
+
+.parent {
+    color: blue;
+}
+.child {
+    font-weight: bold;
+}
+// in Sass
+.parent {
+    color: blue;
+    .child {
+        font-weight: bold;
+        .first-child { background-color: red; }
+    }
+}
+.parent-one, .parent-two {
+    padding: 20px;
+    .child {
+        padding: 10px;
+    }
+}
+.parent > .child {
+    font-size: 30px;
+}
+.parent  {
+    > { .child-one {font-size: 30px;}
+        .child-two {font-size: 30px;}
+    }
+}
+.parent {
+    > .child {display: grid;} // This is Direct Child
+    .test {display: black;} // This is Not Direct Child
+    + p {text-align: center;}
+}
+.parent + {
+    p {color: red;}
+    span {color: blue;}
+    button {color: grey;}
+}
+.parent {
+    > .child { color: green; }
+    + .child-two { color: yellow; }
+}
+
+.box {
+    .title { text-align: center; }
+    + .description { color: red; }
+    &.red { background-color: red; }
+    &.green { background-color: green; } // .green.box
+    &:hover { background-color: yellow; } // box:hover
+    &.red:hover { font-size: 50px; } // box.red:hover
+    &:hover .title { font-size: 100px; } // .box:hover .title
+    :not(&) { font-weight: bold; } // :not(.box)
+    [title="box"] & { padding: 50px; } // [title=box] .box 
+    *[title="box"] { padding: 50px; } // .box *[title=box]
+}
 
 
 

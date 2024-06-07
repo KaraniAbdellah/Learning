@@ -1,5 +1,11 @@
 // Nestiong And Parent Element
 
+/*
+    > --> Direct child
+    + --> Next Element
+    &red --> For box.red
+*/
+
 // in Css
 .parent {
     color: blue;
@@ -7,17 +13,12 @@
 .child {
     font-weight: bold;
 }
-.first-child {
-    background-color: red;
-}
 // in Sass
 .parent {
     color: blue;
     .child {
         font-weight: bold;
-        .first-child {
-            background-color: red;
-        }
+        .first-child { background-color: red; }
     }
 }
 
@@ -46,4 +47,23 @@
     span {color: blue;}
     button {color: grey;}
 }
+.parent {
+    > .child { color: green; }
+    + .child-two { color: yellow; }
+}
+
+.box {
+    .title { text-align: center; }
+    + .description { color: red; }
+    &.red { background-color: red; }
+    &.green { background-color: green; } // .green.box
+    &:hover { background-color: yellow; } // box:hover
+    &.red:hover { font-size: 50px; } // box.red:hover
+    &:hover .title { font-size: 100px; } // .box:hover .title
+    :not(&) { font-weight: bold; } // :not(.box)
+    [title="box"] & { padding: 50px; } // [title=box] .box 
+    *[title="box"] { padding: 50px; } // .box *[title=box]
+}
+
+
 

@@ -1,13 +1,14 @@
+/*
+    > --> Direct child
+    + --> Next Element
+    &red --> For box.red
+*/
 .parent {
   color: blue;
 }
 
 .child {
   font-weight: bold;
-}
-
-.first-child {
-  background-color: red;
 }
 
 .parent {
@@ -56,4 +57,42 @@
 }
 .parent + button {
   color: grey;
+}
+
+.parent > .child {
+  color: green;
+}
+.parent + .child-two {
+  color: yellow;
+}
+
+.box .title {
+  text-align: center;
+}
+.box + .description {
+  color: red;
+}
+.box.red {
+  background-color: red;
+}
+.box.green {
+  background-color: green;
+}
+.box:hover {
+  background-color: yellow;
+}
+.box.red:hover {
+  font-size: 50px;
+}
+.box:hover .title {
+  font-size: 100px;
+}
+:not(.box) {
+  font-weight: bold;
+}
+[title=box] .box {
+  padding: 50px;
+}
+.box *[title=box] {
+  padding: 50px;
 }/*# sourceMappingURL=main.css.map */
