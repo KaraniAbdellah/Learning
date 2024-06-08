@@ -3267,7 +3267,7 @@ console.log(
     Array.from("12345", function(number) {
         return +number + +number;
 }));
-console.log(Array.from("12345", (n) => +n + +n));
+console.log(Array.from("12345", (n) => +n + +n)); // [2, 4, 6, 8, 10]
 
 // Use Cases 1
 var myArray = [1, 1, 1, 2, 3, 4];
@@ -3384,45 +3384,50 @@ console.log(check); // false 10 is not greater 15
   "Allow Iterable To Expand In Place"
 */
 // Spread With String => Expand String
+// With Strings
+var word = "Hello World";
+console.log(word);
+console.log(...word); // H e l l o   W o r l d
 
-console.log("Abdellah"); // Abdellah
-console.log(..."Abdellah"); // A b d e l l a h
-console.log([..."Abdellah"]); // ['A', 'b', 'd', 'e', 'l', 'l', 'a', 'h']
+// With Array 
+var nums1 = [1, 2, 3];
+var nums2 = [4, 5, 6];
+var nums = nums1.concat(nums2);
+console.log(nums); // [1, 2, 3, 4, 5, 6]
+console.log([...nums1, ...nums2]); // [1, 2, 3, 4, 5, 6]
 
-// Concatenate Arrays
+// Copy The Array
+var copiedArray = [...nums1];
+nums[1] = 10;
+console.log(copiedArray); // [1, 2, 3]
 
-var evenNums = [2, 4, 6, 8];
-var oddNums = [1, 3, 5, 7];
-console.log([...evenNums, ...oddNums]); // [2, 4, 6, 8, 1, 3, 5, 7]
-console.log(evenNums.concat(oddNums)); // [2, 4, 6, 8, 1, 3, 5, 7]
+// Push Inside
+var myFriends = ["John", "Doe"];
+var MyNewFriends = ["Sara", "Sameh"];
+myFriends.push(...MyNewFriends);
+console.log(myFriends); // ['John', 'Doe', 'Sara', 'Sameh']
 
-// Copy Array
+// Using Math Object
+var nums = [1, 2, 3, 4, 5, 6, 10];
+console.log(Math.max(nums)); // NaN
+console.log(Math.max(...nums)); // 10
 
-var copiedArray = [...evenNums];
-console.log(copiedArray); // [2, 4, 6, 8]
-
-// Push Inside Array
-
-var allFriends = ["Abdelatif", "Muhamed", "Abdellah"];
-var thisYearFriends = ["Badr", "Ayman"];
-allFriends.push(...thisYearFriends);
-console.log(allFriends);
-
-// Use With Math Object
-
-var myNums = [10, 20, 30, 40, 50];
-console.log(Math.max(...myNums)); // 50
-
-// Spread With Objects => Merge Objects
+// With Object
 var objOne = {
     a: 1,
     b: 2,
 };
-var objTwo = {
+var objTow = {
     c: 3,
     d: 4,
 };
-console.log({...objOne, ...objTwo, e: 5}); // {a: 1, b: 2, c: 3, d: 4, e: 5}
+console.log({...objOne, ...objTow, e: 4}); // {a: 1, b: 2, c: 3, d: 4, e: 4}
+
+
+
+
+
+
 
 
 
