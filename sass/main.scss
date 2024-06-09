@@ -1,69 +1,14 @@
-// Nestiong And Parent Element
+// & Operator
 
-/*
-    > --> Direct child
-    + --> Next Element
-    &red --> For box.red
-*/
-
-// in Css
 .parent {
-    color: blue;
-}
-.child {
-    font-weight: bold;
-}
-// in Sass
-.parent {
-    color: blue;
+    padding: 10px;
     .child {
-        font-weight: bold;
-        .first-child { background-color: red; }
+        color: red;
     }
+    
 }
 
-.parent-one, .parent-two {
-    padding: 20px;
-    .child {
-        padding: 10px;
-    }
-}
 
-.parent > .child {
-    font-size: 30px;
-}
-.parent  {
-    > { .child-one {font-size: 30px;}
-        .child-two {font-size: 30px;}
-    }
-}
-.parent {
-    > .child {display: grid;} // This is Direct Child
-    .test {display: black;} // This is Not Direct Child
-    + p {text-align: center;}
-}
-.parent + {
-    p {color: red;}
-    span {color: blue;}
-    button {color: grey;}
-}
-.parent {
-    > .child { color: green; }
-    + .child-two { color: yellow; }
-}
-
-.box {
-    .title { text-align: center; }
-    + .description { color: red; }
-    &.red { background-color: red; }
-    &.green { background-color: green; } // .green.box
-    &:hover { background-color: yellow; } // box:hover
-    &.red:hover { font-size: 50px; } // box.red:hover
-    &:hover .title { font-size: 100px; } // .box:hover .title
-    :not(&) { font-weight: bold; } // :not(.box)
-    [title="box"] & { padding: 50px; } // [title=box] .box 
-    *[title="box"] { padding: 50px; } // .box *[title=box]
-}
 
 
 
