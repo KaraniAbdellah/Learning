@@ -1,1 +1,36 @@
-/*# sourceMappingURL=main.css.map */
+/*
+    @extend .className --> This is A Class That Exit in Html Page
+        - Use The Same Class On Many Different Elements To Give Them The Same Look
+    @extend %name --> This is Placeholder For Just Taking The Source
+        - Placeholders are special selectors
+        - They do not exist in the HTML page
+        - Use For Sharing The Style For Diffrent Elements
+*/
+.box {
+  color: red;
+  font-size: 10px;
+  font-weight: bold;
+  margin: auto;
+  margin-top: 10x;
+  margin-right: 20px;
+}
+
+.articles, .ads {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-box, .articles, .ads {
+  background-color: #eee;
+  padding: 10px;
+  margin: 10px;
+}
+
+.ads {
+  color: green;
+}
+
+.articles {
+  color: red;
+}/*# sourceMappingURL=main.css.map */
