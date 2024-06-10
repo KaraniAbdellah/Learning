@@ -1288,7 +1288,34 @@ console.log(t);
 console.log(a);
 console.log(av);
 console.log(c);
+console.groupEnd();
 
 
+
+
+// Map And Set
+console.group("123 To 133");
+// Get The Nedded
+var setOfNumbers = new Set().add(10);
+setOfNumbers.add(20).add(setOfNumbers.size);
+console.log(setOfNumbers);
+var iterator = setOfNumbers.values();
+iterator.next(); iterator.next();
+console.log(iterator.next().value); // 2
+
+// Get The Nedded
+var myFriend = ["Osama", "Ahmed", "Sayed", "Sayed", "Mahmoud", "Osama"];
+console.log([...new Set(myFriend)].sort()); // ['Ahmed', 'Mahmoud', 'Osama', 'Sayed']
+
+// Get The Nedded
+let myInfo = {
+    username: "Abdellah",
+    role: "Admin",
+    country: "Morocco",
+};
+var newMap = new Map();
+console.log(newMap.set("username", "Abdellah").set("role", "Admin").set("country", "Morocco")); // Map(3) {'username' => 'Osama', 'role' => 'Admin', 'country' => 'Egypt'}
+console.log(newMap.size); // 3
+console.log(newMap.has("role")); // true
 
 

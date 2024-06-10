@@ -508,21 +508,16 @@ console.group("Challenge 14");
   - You Cant Use Loop
   - You Cant Use Any Higher Order Function
   - Only One Line Solution Inside Console
-  - If You Use Length => Then Only Time Only
+  - If You Use Length => Then Only One Time
   Hints
   - You Can Use * Operator Only In Calculation
   - Set
   - Spread Operator
   - Math Object Methods
 */
-
-// [100, 100, 10]
-
-var n1 = [10, 30, 10, 20]; // 10 30 20
-var n2 = [30, 20, 10]; // 30 20 10
-
-var arr = [Math.min(...n1) * Math.min(...n1), Math.min(...n1) * Math.min(...n1), Math.min(...n1)];
-console.log(arr); // [100, 100, 10]
+var n1 = [10, 30, 10, 20];
+var n2 = [30, 20, 10];
+console.log([...n1, ...n2].length * Math.max(...n1)); // 210
 
 
 console.groupEnd();
