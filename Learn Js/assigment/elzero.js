@@ -1276,7 +1276,7 @@ console.log(`Origin Price Is ${or}`);
 // Get The Nedded
 var chosen = 0;
 
-let myFriends = [
+var myFriends = [
   { title: "Osama", age: 39, available: true, skills: ["HTML", "CSS"] },
   { title: "Ahmed", age: 25, available: false, skills: ["Python", "Django"] },
   { title: "Sayed", age: 33, available: true, skills: ["PHP", "Laravel"] },
@@ -1314,8 +1314,55 @@ let myInfo = {
     country: "Morocco",
 };
 var newMap = new Map();
-console.log(newMap.set("username", "Abdellah").set("role", "Admin").set("country", "Morocco")); // Map(3) {'username' => 'Osama', 'role' => 'Admin', 'country' => 'Egypt'}
+var myInfo_values = Object.values(myInfo);
+var myInfo_keys = Object.keys(myInfo);
+for (var i = 0; i < myInfo_values.length; i++) {
+    newMap.set(myInfo_keys[i], myInfo_values[i]);
+}
 console.log(newMap.size); // 3
 console.log(newMap.has("role")); // true
+
+// Get The Nedded
+
+var theNumber = 100020003000;
+console.log([...new Set([...`${theNumber}`])]); // ['1', '0', '2', '3']
+
+// Convert String To Array With 5 Methods
+let theName = "Elzero";
+console.log([...theName]);
+console.log([...new Set(theName)]);
+console.log(new Array(...theName));
+console.log(Array.from(theName, ele => ele));
+
+// Get The Nedded
+var chars = ["A", "B", "C", 20, "D", "E", 10, 15, 6];
+// Steps 
+/**
+ * Sort The Array
+ * Get The Number of Number That Exit in Array
+ * Replace The The Number Of The Number That Exit By The Number Of The Charcter
+ * Met The Number of Charcter In Begin Of The Array
+ */
+var str = [];
+chars.forEach(function(ele, index) {
+    if (ele != Number(ele)) str.push(ele);
+});
+var nums = [];
+chars.forEach(function(ele, index) {
+    if (ele == Number(ele)) nums.push(ele); 
+});
+var count = nums.length;
+chars = [];
+chars.push(...nums, ...str);
+chars.copyWithin(0, count, count + count); 
+console.log(chars);
+// ['A', 'B', 'C', 'D', 'A', 'B', 'C', 'D', 'E']
+
+// Get The Nedded
+var numsOne = [1, 2, 3];
+var numsTwo = [4, 5, 6];
+console.log([...numsOne, ...numsTwo]); // [1, 2, 3, 4, 5, 6]
+console.log([...new Set(numsOne), ...numsTwo]);
+
 
 

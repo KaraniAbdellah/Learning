@@ -3216,7 +3216,7 @@ var myWeakMap = new WeakMap();
 var iterator = mySet.values(); // Accessing To Elements
 console.log(iterator.next()); console.log(iterator.next());
 console.log(iterator.next()); console.log(iterator.next());
-console.log(iterator.next()); console.log(iterator.next());
+console.log(iterator.next().value); console.log(iterator.next());
 console.log(mySet.size);
 console.log(mySet);
 
