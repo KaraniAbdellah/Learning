@@ -1323,25 +1323,25 @@ console.log(newMap.size); // 3
 console.log(newMap.has("role")); // true
 
 // Get The Nedded
-
 var theNumber = 100020003000;
-console.log([...new Set([...`${theNumber}`])]); // ['1', '0', '2', '3']
+console.log(Array.from([...new Set([...`${theNumber}`])], ele => ele != 0 ? ele: "").join("")); // 123
 
-// Convert String To Array With 5 Methods
+// Convert String To Array With 5 Methods --->  ['E', 'l', 'z', 'e', 'r', 'o']
 let theName = "Elzero";
-console.log([...theName]);
-console.log([...new Set(theName)]);
-console.log(new Array(...theName));
-console.log(Array.from(theName, ele => ele));
+console.log([...theName]); 
+console.log([...new Set(theName)]); 
+console.log(new Array(...theName)); 
+console.log(Array.from(theName, ele => ele)); 
+console.log(theName.split("")); 
 
 // Get The Nedded
-var chars = ["A", "B", "C", 20, "D", "E", 10, 15, 6];
+var chars = ["Z", "Y", "A", "D", "E", 10, 1];
 // Steps 
 /**
  * Sort The Array
  * Get The Number of Number That Exit in Array
  * Replace The The Number Of The Number That Exit By The Number Of The Charcter
- * Met The Number of Charcter In Begin Of The Array
+ * Set The Number of Charcter In Begin Of The Array
  */
 var str = [];
 chars.forEach(function(ele, index) {
@@ -1356,13 +1356,15 @@ chars = [];
 chars.push(...nums, ...str);
 chars.copyWithin(0, count, count + count); 
 console.log(chars);
-// ['A', 'B', 'C', 'D', 'A', 'B', 'C', 'D', 'E']
+
 
 // Get The Nedded
 var numsOne = [1, 2, 3];
 var numsTwo = [4, 5, 6];
 console.log([...numsOne, ...numsTwo]); // [1, 2, 3, 4, 5, 6]
-console.log([...new Set(numsOne), ...numsTwo]);
+console.log([...new Set(numsOne), ...new Set(numsTwo)]); // [1, 2, 3, 4, 5, 6]
+console.log(numsOne.concat(numsTwo)); // [1, 2, 3, 4, 5, 6]
+
 
 
 
