@@ -8,6 +8,13 @@ typedef struct Node {
 } Node;
 
 
+typedef struct Queue {
+    Node *adresse;
+    struct Queue* front;
+    struct Queue* rear;
+}
+
+
     // Start The Protptype Of The Fucntions
     Node *create_node(int value);
     void insert_node(Node **root, int value);

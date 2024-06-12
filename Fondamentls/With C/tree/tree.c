@@ -25,7 +25,7 @@ void insert_node(Node **root, int value) {
     new_node = create_node(value);
     if (*root == NULL) {
         *root = new_node;
-        return; 
+        return;
     }
     temp = *root;
     while (1) {
@@ -44,11 +44,44 @@ void insert_node(Node **root, int value) {
 }
 
 
-// Display The Elements
+typedef struct Queue {
+    Node *data;
+    Queue *next;
+} Queue;
 
-void display(Node *root) {
+
+// create Queue Element
+Queue *create_queue() {
+    Queue *new_ele = (Queue *) malloc(sizeof(Queue));
+    new_ele->front = new_ele->rear = NULL;
+    return new_ele;
+}
+
+// Enqueue
+void enqueue(Queue **front, Queue **rear, Node *node) {
+    Queue *new_ele = create_queue();
+    new_ele->data = node;
+    if (*front == NULL) {
+        front = rear = new_ele;
+    } else {
+        rear->next = = new_ele;
+        new_ele->next = NULL;
+    }
+}
+
+Queue *dequeue(Queue *rear) {
+    return rear;
+}
+
+
+// Display The Elements
+void display(Queue *front, Queue *rear, Node *root) {
     Node *temp = root;
-    
+    enqueue(&front, &rear, temp);
+    while (rear != NULL) {
+        enqueue(&front, &rear, temp->right);
+        enqueue(&front, &rear, temp->left);
+    }
     printf("\n");
 }
 
