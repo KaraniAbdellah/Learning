@@ -1941,20 +1941,20 @@ console.log(copyObj.doubleAge()); // 20 * 2 = 40 [After Writing this.age * 2 in 
     Syntax
     - Object.assign(target, source)
     --- target => The target object to copy to
-    --- source => Can A Objects
+    --- source => Can Be An Objects
     --- Two Propriety In The Same Name => Take First Prop
 */
 var obj1 = {
     prop1: 1,
     methd1: function () {
         return this.prop1;
-    }
+    },
 }
 var obj2 = {
     prop2: 2,
     methd2: function () {
         return this.prop2;
-    }
+    },
 }
 var targetObj = {
     prop3: "Hello",

@@ -1295,7 +1295,8 @@ console.groupEnd();
 
 // Map And Set
 console.group("123 To 133");
-// Get The Nedded
+
+// Get The Nedded for Set
 var setOfNumbers = new Set().add(10);
 setOfNumbers.add(20).add(setOfNumbers.size);
 console.log(setOfNumbers);
@@ -1303,11 +1304,19 @@ var iterator = setOfNumbers.values();
 iterator.next(); iterator.next();
 console.log(iterator.next().value); // 2
 
-// Get The Nedded
+// Another Solution For Set
+var setOfNumbers = new Set([10]);
+setOfNumbers.add(20).add(setOfNumbers.size);
+console.log(setOfNumbers);
+console.log(Array.from(setOfNumbers, ele => ele)[2]);
+
+
+// Get The Nedded for Sorting The Array
 var myFriend = ["Osama", "Ahmed", "Sayed", "Sayed", "Mahmoud", "Osama"];
 console.log([...new Set(myFriend)].sort()); // ['Ahmed', 'Mahmoud', 'Osama', 'Sayed']
 
-// Get The Nedded
+
+// Get The Nedded For Convert Object To Map
 let myInfo = {
     username: "Abdellah",
     role: "Admin",
@@ -1322,39 +1331,42 @@ for (var i = 0; i < myInfo_values.length; i++) {
 console.log(newMap.size); // 3
 console.log(newMap.has("role")); // true
 
-// Get The Nedded
+// Another Solution For Convert Object To Map
+console.log(Object.entries(myInfo)); // 3 Arrays Each One With Key And Value
+console.log(new Map(Object.entries(myInfo))); // This Another Method For set Information In The map
+
+
+// Get The Nedded --> is Print 123 Using Set and Spread Operator
 var theNumber = 100020003000;
-console.log(Array.from([...new Set([...`${theNumber}`])], ele => ele != 0 ? ele: "").join("")); // 123
+console.log(Number(Array.from([...new Set([...`${theNumber}`])], ele => ele != 0 ? ele: "").join(""))); // 123
+console.log(+(Array.from([...new Set([...`${theNumber}`])], ele => ele != 0 ? ele: "").join(""))); // 123
+console.log(+[...new Set(`${theNumber}`)].sort().slice(true).join("")); // true --> 1
+
 
 // Convert String To Array With 5 Methods --->  ['E', 'l', 'z', 'e', 'r', 'o']
-let theName = "Elzero";
-console.log([...theName]); 
-console.log([...new Set(theName)]); 
-console.log(new Array(...theName)); 
-console.log(Array.from(theName, ele => ele)); 
-console.log(theName.split("")); 
+var theName = "Elzero";
+console.log([...theName]);
+console.log([...new Set(theName)]);
+console.log(new Array(...theName));
+console.log(Array.from(theName, ele => ele));
+console.log(theName.split(""));
+console.log(Object.assign([], theName));
+
 
 // Get The Nedded
-var chars = ["Z", "Y", "A", "D", "E", 10, 1];
+var chars = ["A", "B", "C", 20, "D", "E", 10, 15, 6];
 // Steps 
 /**
- * Sort The Array
- * Get The Number of Number That Exit in Array
- * Replace The The Number Of The Number That Exit By The Number Of The Charcter
- * Set The Number of Charcter In Begin Of The Array
+ * Get The Numbers in Array and String in Array
+ * Make Another Array That Contain Previous Two Arrays
+ * Set The Numbers In Begin And Charcter In The Last
+ * Use The copyWithin To Replace Numbers In Charcters
  */
-var str = [];
-chars.forEach(function(ele, index) {
-    if (ele != Number(ele)) str.push(ele);
-});
-var nums = [];
-chars.forEach(function(ele, index) {
-    if (ele == Number(ele)) nums.push(ele); 
-});
-var count = nums.length;
+var str = chars.filter(ele => !Number(ele));
+var nums = chars.filter(ele => Number(ele));
 chars = [];
 chars.push(...nums, ...str);
-chars.copyWithin(0, count, count + count); 
+chars.copyWithin(0, nums.length,  nums.length * 2); 
 console.log(chars);
 
 
@@ -1364,7 +1376,8 @@ var numsTwo = [4, 5, 6];
 console.log([...numsOne, ...numsTwo]); // [1, 2, 3, 4, 5, 6]
 console.log([...new Set(numsOne), ...new Set(numsTwo)]); // [1, 2, 3, 4, 5, 6]
 console.log(numsOne.concat(numsTwo)); // [1, 2, 3, 4, 5, 6]
-
+numsOne.push(...numsTwo);
+console.log(numsOne);
 
 
 
