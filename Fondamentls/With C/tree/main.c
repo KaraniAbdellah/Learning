@@ -16,7 +16,7 @@ int main() {
         insert_node(&root, value);
     }
     printf("Level Order Traversal: ");
-    displayLevelOrder(root);
+    display_level_order(root);
     return 0;
 }
 
