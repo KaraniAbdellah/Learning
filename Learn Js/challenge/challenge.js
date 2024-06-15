@@ -518,9 +518,12 @@ console.group("Challenge 14");
 var n1 = [10, 30, 10, 20];
 var n2 = [30, 20, 10];
 console.log([...n1, ...n2].length * Math.max(...n1)); // 210
-
-
 console.groupEnd();
+
+
+
+
+
 
 
 

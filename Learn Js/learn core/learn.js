@@ -3428,6 +3428,69 @@ console.log({...objOne, ...objTow, e: 4}); // {a: 1, b: 2, c: 3, d: 4, e: 4}
 
 
 
+////////////////////////////////////////////////////////
+// Regular Expression
+/*
+    for matches something with A certain way
+    - Email
+    - IP
+    - Phone
+    - URL
+*/
+var str1 = "10 20 100 1000 10000";
+var str2 = "os12 os12 os145 os23os os123Os2133osOs";
+var InvalidEmail = "Abdellah@@@gmail...com";
+var validEmail = "o@nn.sa";
+var myIp = "192.168.111.100"; // IPv4
+var url = "abdellah.com";
+    
+    
+    
+    
+// Regular Expression - Modifiers
+/*
+  Syntax
+  /pattern/modifier(s);
+  new RegExp("pattern", "modifier(s)")
+
+  Modifiers => Flags
+  i => All case insensitive
+  g => global --> global match finds all matches (not only the first
+  m => Multilines --> Search in lines (text)
+
+  Search Methods
+  - match(Pattern)
+
+  Match
+  -- Matches A String Against a Regular Expression Pattern
+  -- Returns An Array With The Matches
+  -- Returns null If No Match Is Found.
+*/
+var myString = "Hello Elzero Web School I Love elzero";
+var regex = /elzero/;
+console.log(myString.match(regex)); // elzero in index 31
+var regex = /elzero/i;
+console.log(myString.match(regex)); // elzero in index 6
+var regex = /elzero/ig;
+console.log(myString.match(regex)); // ['Elzero', 'elzero']
+var regex = new RegExp("elzero", "gi");
+console.log(myString.match(regex)); // ['Elzero', 'elzero']
+var regex = new RegExp("elzeros", "gi");
+console.log(myString.match(regex)); // null
+
+
+
+
+
+
+
+ 
+    
+    
+
+
+
+
 
 
 
