@@ -17,6 +17,9 @@ int main() {
     }
     printf("Level Order Traversal: ");
     display_level_order(root);
+    printf("Prefixe : "); Prefixe(root); printf("\n");
+    printf("Infixe : "); Infixe(root); printf("\n");
+    printf("Postfixe : "); Postfixe(root); printf("\n");
     return 0;
 }
 

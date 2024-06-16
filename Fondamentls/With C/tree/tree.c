@@ -97,6 +97,47 @@ void display_level_order(Node *root) {
 }
 
 
+// Start Prefxe --> 
+void Prefixe(Node *root) {
+    if (root == NULL) return;
+    printf("%d  ", root->data);
+    Prefixe(root->left);
+    Prefixe(root->right);
+}
+
+
+// Start Infixe --> 
+void Infixe(Node *root) {
+    if (root == NULL) return;
+    Infixe(root->left);
+    printf("%d  ", root->data);
+    Infixe(root->right);
+}
+
+
+// Start Postfixe --> 
+void Postfixe(Node *root) {
+    if (root == NULL) return;
+    Postfixe(root->left);
+    Postfixe(root->right);
+    printf("%d  ", root->data);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

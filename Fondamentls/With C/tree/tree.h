@@ -23,5 +23,8 @@ typedef struct Queue {
     void enqueue(Queue **front, Queue **rear, Node *node);
     Node *dequeue(Queue **front, Queue **rear);
     void display_level_order(Node *root);
+    void Prefixe(Node *root);
+    void Infixe(Node *root);
+    void Postfixe(Node *root);
 
 #endif
