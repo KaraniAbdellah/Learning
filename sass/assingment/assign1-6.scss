@@ -1,3 +1,97 @@
-.parent {
-    color: red;
+// Get A Sprecific Output
+.content {
+    > .box {
+        padding: 15px;
+        > .title {
+            font-size: 18px;
+        }
+    }
+    .cat {
+        padding: 15px;
+    }
+    &.premium:before {
+        content: "Premium Box";
+    }
+    &.premium:hover {
+        background-color: #eee;
+    }
 }
+
+// Get The Nedded With Three Method
+.class > {
+    .child { padding: 10px; }
+}
+.class {
+    > .child { padding: 10px; }
+}
+.class {
+    > {
+        .child { padding: 10px; }
+    }
+}
+
+// Write Sass Code That Get The Result
+.class {
+    &{ font-size: 20px;  font-weight: bold; } 
+}
+
+// Write The css Code Of This Assigne
+.parent {
+    & + .sibling {
+      margin: auto {
+        top: 10px;
+      }
+      & ~ .last {
+        padding: 10px;
+      }
+    }
+}
+
+// Do This Without A Grouping
+%widget {
+    background-color: white;
+    padding: 20px;
+}
+%main-border {
+    border: 1px solid #CCC
+}
+.my-class {
+    font-weight: bold;
+    margin: 20px auto;
+    @extend %widget;
+    @extend %main-border;
+}
+
+// Use What You Learn
+$max-width: 575px;
+.box {
+    h2, p { font-size: 20px; }
+}
+@media (max-width: $max-width) {
+    .box {
+        h2, p { 
+            font-size: 20px;
+            span {
+                font-weight: bold;
+            } 
+        }
+    }
+}
+
+
+// Use Just The Varibles Without Any Modification In Variables
+// Do Not Edit Here
+$red: #e91e63;
+$green: #009688;
+
+$link-color: $green;
+$link-hover: $red;
+
+// Do Not Edit Here
+.box a {
+  color: $link-color;
+  &:hover {
+    color: $link-hover;
+  }
+}
+

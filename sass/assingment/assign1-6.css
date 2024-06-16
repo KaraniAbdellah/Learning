@@ -1,3 +1,73 @@
-.parent {
-  color: red;
+.content > .box {
+  padding: 15px;
+}
+.content > .box > .title {
+  font-size: 18px;
+}
+.content .cat {
+  padding: 15px;
+}
+.content.premium:before {
+  content: "Premium Box";
+}
+.content.premium:hover {
+  background-color: #eee;
+}
+
+.class > .child {
+  padding: 10px;
+}
+
+.class > .child {
+  padding: 10px;
+}
+
+.class > .child {
+  padding: 10px;
+}
+
+.class {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.parent + .sibling {
+  margin: auto;
+  margin-top: 10px;
+}
+.parent + .sibling ~ .last {
+  padding: 10px;
+}
+
+.my-class {
+  background-color: white;
+  padding: 20px;
+}
+
+.my-class {
+  border: 1px solid #CCC;
+}
+
+.my-class {
+  font-weight: bold;
+  margin: 20px auto;
+}
+
+.box h2, .box p {
+  font-size: 20px;
+}
+
+@media (max-width: 575px) {
+  .box h2, .box p {
+    font-size: 20px;
+  }
+  .box h2 span, .box p span {
+    font-weight: bold;
+  }
+}
+.box a {
+  color: #009688;
+}
+.box a:hover {
+  color: #e91e63;
 }/*# sourceMappingURL=assign1-6.css.map */
