@@ -4,6 +4,15 @@
 
 
 
+// Create Node
+Node *create_node(int value) {
+    Node *new_node = (Node *)malloc(sizeof(Node));
+    new_node->left = new_node->right = NULL;
+    new_node->data = value;
+    return new_node;
+}
+
+
 // Insert Node in The Tree
 void insert_node(Node **root, int value) {
     Node *temp, *new_node;
@@ -28,14 +37,6 @@ void insert_node(Node **root, int value) {
     }
 }
 
-
-// Create Node
-Node *create_node(int value) {
-    Node *new_node = (Node *)malloc(sizeof(Node));
-    new_node->left = new_node->right = NULL;
-    new_node->data = value;
-    return new_node;
-}
 
 
 // Create Ele in Queue
@@ -97,7 +98,7 @@ void display_level_order(Node *root) {
 }
 
 
-// Start Prefxe --> 
+// Start Prefxe -->  root-left-right
 void Prefixe(Node *root) {
     if (root == NULL) return;
     printf("%d  ", root->data);
@@ -106,7 +107,7 @@ void Prefixe(Node *root) {
 }
 
 
-// Start Infixe --> 
+// Start Infixe -->  left-racine-right
 void Infixe(Node *root) {
     if (root == NULL) return;
     Infixe(root->left);
@@ -115,7 +116,7 @@ void Infixe(Node *root) {
 }
 
 
-// Start Postfixe --> 
+// Start Postfixe -->  left-right-root
 void Postfixe(Node *root) {
     if (root == NULL) return;
     Postfixe(root->left);
@@ -124,17 +125,46 @@ void Postfixe(Node *root) {
 }
 
 
+// Search The Min Element
+Node *minimum(Node *root) {
+    Node *temp;
+    if (root == NULL) return NULL;
+    temp = root;
+    while (temp->left != NULL) temp = temp->left;
+    return temp;
+}
 
 
+// Search The Max Element
+Node *maximum(Node *root) {
+    Node *temp;
+    if (root == NULL) return NULL;
+    temp = root;
+    while (temp->right != NULL) temp = temp->right;
+    return temp;
+}
 
 
+// Search About An Element
+Node *search(Node *root, int value) {
+    Node *temp;
+    temp = root;
+    while (temp != NULL) {
+        if (temp->data == value) return temp;
+        else if (temp->data > value) {
+            temp = temp->left;
+        } else temp = temp->right;
+    }
+    return NULL;
+}
 
 
-
-
-
-
-
+// Search With Recursive
+Node *search_recursive(Node *root, int value) {
+    if (root->data == value) return root;
+    else if (root->data > value) search_recursive(root->left, value);
+    else search_recursive(root->right, value);
+}
 
 
 
