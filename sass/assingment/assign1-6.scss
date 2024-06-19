@@ -35,19 +35,40 @@
     &{ font-size: 20px;  font-weight: bold; } 
 }
 
-// Write The css Code Of This Assigne
+// Write The css Code Of This Assigne 
+/*  ~ means : 
+    It selects all subsequent siblings, not just the immediate next sibling.
+    It does not select elements that precede the specified element.
+    The siblings must share the same parent element.
+*/
 .parent {
-    & + .sibling {
+    & + .sibling { // .parent + .sibling { // code }
       margin: auto {
         top: 10px;
       }
-      & ~ .last {
+    & ~ .last { // .parent ~ .last { // code }
         padding: 10px;
       }
     }
 }
 
 // Do This Without A Grouping
+.widget {
+    background-color: white;
+    padding: 20px;
+  }
+.main-border {
+    border: 1px solid #CCC
+}
+.my-class {
+    @extend .widget;
+    @extend .main-border;
+    font-weight: bold;
+    margin: 20px auto;
+}
+  
+
+// Do Not Show The Class widget and main-border
 %widget {
     background-color: white;
     padding: 20px;
@@ -93,5 +114,39 @@ $link-hover: $red;
   &:hover {
     color: $link-hover;
   }
+}
+
+
+// Project_Folder/
+// ├── Helpers/
+// │   ├── _vars.scss
+// │   └── _functions.scss
+// ├── Layout/
+// │   ├── _header.scss
+// │   └── _footer.scss
+// └── main.scss
+// --- Helpers
+@use "/assingment//helpers/";
+// // ------ _vars.scss
+@use "/assingment/helpers/vars";
+// // ------ _functions.scss
+@use "/assingment/helpers/_functions";
+// // --- Layout
+// // ------ _header.scss
+@use "/assingment/layout/header";
+// // ------ _footer.scss
+@use "/assingment/layout/footer";
+
+
+
+// Get The This From --> Use &
+.box {
+    font-size: 20px;
+    &-holder {
+        width: 1000px;
+        &-content {
+            margin: auto;
+        }
+    }
 }
 

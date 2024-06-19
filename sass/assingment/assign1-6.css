@@ -31,12 +31,31 @@
   font-weight: bold;
 }
 
+/*  ~ means : 
+    It selects all subsequent siblings, not just the immediate next sibling.
+    It does not select elements that precede the specified element.
+    The siblings must share the same parent element.
+*/
 .parent + .sibling {
   margin: auto;
   margin-top: 10px;
 }
 .parent + .sibling ~ .last {
   padding: 10px;
+}
+
+.widget, .my-class {
+  background-color: white;
+  padding: 20px;
+}
+
+.main-border, .my-class {
+  border: 1px solid #CCC;
+}
+
+.my-class {
+  font-weight: bold;
+  margin: 20px auto;
 }
 
 .my-class {
@@ -70,4 +89,14 @@
 }
 .box a:hover {
   color: #e91e63;
+}
+
+.box {
+  font-size: 20px;
+}
+.box-holder {
+  width: 1000px;
+}
+.box-holder-content {
+  margin: auto;
 }/*# sourceMappingURL=assign1-6.css.map */
