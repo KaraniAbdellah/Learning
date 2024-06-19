@@ -3454,7 +3454,8 @@ var url = "abdellah.com";
   new RegExp("pattern", "modifier(s)")
 
   Modifiers => Flags
-  i => All case insensitive
+  i => All case insensitive [ for /this string/ ]
+    /abcd/ = /ABCD/ --> the same
   g => global --> global match finds all matches (not only the first)
   m => Multilines --> Search in lines (text)
 
@@ -3507,16 +3508,31 @@ var regex_not_nums = /[^0-5]/gi;
 console.log(nums.match(regex_nums)); // ['1', '2', '3', '4', '5', '7', '9']
 console.log(nums.match(regex_not_nums)); // ['7', '9', 'j', 'k']
 
-
 var special_nums = "1@23)34_90~4#";
 var regex_special_nums = /[^0-9]/gi;
 console.log(special_nums.match(regex_special_nums)); // ['@', ')', '_', '~', '#']
-
 
 var practice = "Os1 Os1 Os2 Os8 Os8Os";
 var regex_practice = /os[5-9]os/gi;
 console.log(practice.match(regex_practice)); // ['Os8Os']
 
+
+// Part 2
+let myString = "AaBbcdefG123!234%^&*";
+var atozSmall = /[A-Z]/g;
+console.log(myString.match(atozSmall)); // ['A', 'B', 'G']
+var NotAtozSmall = /[^a-z]/g;
+console.log(myString.match(NotAtozSmall)); // Not a to z charcter
+var a_And_b_And_c = /[abp]/g;
+console.log(myString.match(a_And_b_And_c)); // ['a', 'b']
+var not_a_And_b_And_c = /[^BbcdefG123!234%^&*]/g;
+console.log(myString.match(not_a_And_b_And_c)); // ['A', 'a']
+var allCapital_and_Small = /[a-z,A-Z]/g; // or [a-zA-Z]
+console.log(myString.match(allCapital_and_Small)); // ['A', 'a', 'B', 'b', 'c', 'd', 'e', 'f', 'G']
+var numsAndSpecials = /[^a-zA-Z]/g;
+console.log(myString.match(numsAndSpecials)); // ['1', '2', '3', '!', '2', '3', '4', '%', '^', '&', '*']
+var specials = /[^0-9^a-zA-Z]/g;
+console.log(myString.match(specials)); // ['!', '%', '&', '*']
 
 
 
