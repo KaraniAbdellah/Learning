@@ -202,4 +202,59 @@ $media_check: "767px";
 
 
 
+// Create Triangle With If And Else
+%main_style {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto;
+}
+.main {
+    padding: 20px;
+    border: 2px solid black;
+    width: 100px;
+    height: 100px;
+    @extend %main_style;
+}
+$direction: "right"; // top || right || left || bottom
+.arrow-div {
+    @extend .main;
+    position: relative;
+    &::before {
+        content: "";
+        position: absolute;
+        background-color: red;
+        width: 0;
+        height: 0;
+        border: 20px solid black;
+        background-color: transparent;
+        border-color: yellow red blue green;
+        @if $direction == "top" { 
+            top: -40px;
+            border-color: transparent transparent green transparent;
+        } 
+        @else if ($direction == "right") {
+            right: -40px;
+            border-color: transparent transparent transparent green;
+        } 
+        @else if ($direction == "left") {
+            left: -40px;
+            border-color: transparent green transparent transparent;
+        } 
+        @else if $direction == "bottom" {
+            bottom: -40px;
+            border-color: green transparent transparent transparent;
+        } @else {
+            @error "This Direction #{$direction} Does Not Exit"
+        }
+    }
+}
+
+
+
+
+
+
+
+
 
