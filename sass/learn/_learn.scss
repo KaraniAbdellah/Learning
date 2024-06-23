@@ -251,6 +251,28 @@ $direction: "right"; // top || right || left || bottom
 }
 
 
+// Interpolation
+/*
+    Declare A Varible
+        $varName: "value";
+    Use It As A Class
+        .#{varName} { proprities }
+*/
+
+$company: "falcon";
+$position: "left";
+
+.ad-#{$company}-#{unique-id()} {
+    font-size: 10px;
+    background-color: url("imgs/#{$company}.png");
+    #{$position}: 0;
+}
+
+
+
+
+
+
 
 
 
