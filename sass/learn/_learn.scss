@@ -270,6 +270,26 @@ $position: "left";
 
 
 
+// Comments And Documenting
+// This Comment Will Not Show In Css File   
+/* This Comment Will Show In Css File And Not In Compresed Mode */
+/*! This Comment Will Show In Css File And In Compresed Mode */
+.box {
+    font-size: 10px; // This Font Size
+}
+$company: "google";
+/* This Comment Contain Interpolation --> #{$company} */
+
+/// Function To Do Bla Bla Bla
+/// 
+/// @param {num}
+/// The Number Of Number Of Bla Bla Bla
+/// @return {int}
+/// 
+
+
+
+
 
 
 
