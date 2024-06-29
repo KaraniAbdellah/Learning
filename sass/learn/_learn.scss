@@ -251,6 +251,20 @@ $direction: "right"; // top || right || left || bottom
 }
 
 
+// and not or 
+/*
+    use [or, not, and] --> [&&, ||, !]
+*/
+$number: 10;
+$color: red;
+$theme: light;
+.class {
+    color: if($number > 5 or $color == red and not $theme == light, $color, $color);
+}
+
+
+
+
 // Interpolation
 /*
     Declare A Varible

@@ -4,6 +4,7 @@ $language: "ar"; // English
 $gap: 20px;
 
 
+
 .#{$main} {
     padding: $gap;
     direction: if($language == "en", ltr, rtl);
@@ -16,6 +17,54 @@ $gap: 20px;
     }
 }
 
+
+
+// SASS Code Without Write Colors
+$main-color: red;
+$alt-color: blue;
+/* Theme Version: 1.0 */
+/* Website Theme Main Color Is: #{$main-color} */
+/* Website Theme Alternate Color Is: #{$alt-color} */
+
+
+
+// SASS Code
+$number: 12;
+.class {
+  @if $number > 8 {
+    color: blue;
+  } @else if $number > 5 {
+    color: green;
+  } @else {
+    color: red;
+  }
+  // In One Line
+  color: if($number > 8, blue, if($number > 5, green, red));
+}
+
+
+
+// Collocation if Condition
+$number: 10;
+$color: red;
+$theme: light;
+.class {
+    color: if($number > 5 and $color == red and not $theme == light, $color, $color);
+}
+
+
+// Condition In Condition
+$number: 8;
+.box {
+  @if ($number == 10) {
+    text-align: center;
+    background-color: #eee;
+  } @else if ($number == 9) {
+    background-color: #eee;
+  } @else {
+    // Noting
+  }
+}
 
 
 
