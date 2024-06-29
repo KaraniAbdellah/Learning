@@ -12,6 +12,7 @@ typedef struct Node {
 typedef struct Queue {
     Node *data;
     struct Queue *next;
+    struct Queue *prev;
 } Queue;
 
 

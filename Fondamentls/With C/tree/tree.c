@@ -43,7 +43,7 @@ void insert_node(Node **root, int value) {
 Queue *create_queue(Node *node) {
     Queue *new_ele = (Queue *)malloc(sizeof(Queue));
     new_ele->data = node;
-    new_ele->next = NULL;
+    new_ele->next = new_ele->prev = NULL;
     return new_ele;
 }
 
@@ -54,6 +54,7 @@ void enqueue(Queue **front, Queue **rear, Node *node) {
     if (*rear == NULL) {
         *front = *rear = new_ele;
     } else {
+        new_ele->prev = *rear;
         (*rear)->next = new_ele;
         *rear = new_ele;
     }
@@ -65,11 +66,11 @@ Node *dequeue(Queue **front, Queue **rear) {
     if (*front == NULL) {
         return NULL;
     }
-    Queue *temp = *front;
+    Queue *temp = *rear;
     Node *node = temp->data;
-    *front = (*front)->next;
-    if (*front == NULL) {
-        *rear = NULL;
+    *rear = (*rear)->prev;
+    if (*rear == NULL) {
+        *front = NULL;
     }
     free(temp);
     return node;
@@ -84,15 +85,14 @@ void display_level_order(Node *root) {
     Queue *front = NULL, *rear = NULL;
     enqueue(&front, &rear, root);
     while (front != NULL) {
-        Node *toprint = front->data;
+        Node *toprint = dequeue(&front, &rear);
+        printf("%d ", toprint->data);
         if (toprint->left != NULL) {
             enqueue(&front, &rear, toprint->left);
         }
         if (toprint->right != NULL) {
             enqueue(&front, &rear, toprint->right);
         }
-        printf("%d ", toprint->data);
-        dequeue(&front, &rear);
     }
     printf("\n");
 }
