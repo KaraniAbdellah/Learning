@@ -168,6 +168,24 @@ Node *search_recursive(Node *root, int value) {
 
 
 
+// Delete Node
+Node *deleteNode(Node *root, int value) {
+    // Built It Alone After Explication
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
