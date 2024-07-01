@@ -127,8 +127,8 @@ void Postfixe(Node *root) {
 
 // Search The Min Element
 Node *minimum(Node *root) {
-    Node *temp;
     if (root == NULL) return NULL;
+    Node *temp;
     temp = root;
     while (temp->left != NULL) temp = temp->left;
     return temp;
@@ -137,8 +137,8 @@ Node *minimum(Node *root) {
 
 // Search The Max Element
 Node *maximum(Node *root) {
-    Node *temp;
     if (root == NULL) return NULL;
+    Node *temp;
     temp = root;
     while (temp->right != NULL) temp = temp->right;
     return temp;
@@ -170,14 +170,68 @@ Node *search_recursive(Node *root, int value) {
 
 // Delete Node
 Node *deleteNode(Node *root, int value) {
-    // Built It Alone After Explication
+    if (root == NULL) return NULL;
+    if (root->data == value) {
+        // case if there no child
+        if (root->left == NULL && root->right == NULL) {
+            free(root);
+            root = NULL;
+        }
+        // case if there one child at the right or left
+        else if (root->left == NULL) {
+            Node *temp = root;
+            root = root->right;
+            free(temp);
+        }
+        else if (root->right == NULL) {
+            Node *temp = root;
+            root = root->left;
+            free(temp);
+        }
+        // case if root has two children
+        else {
+            Node *temp = minimum(root->right);
+            root->data = temp->data;
+            root->right = deleteNode(root->right, temp->data);
+        }
+    }
+    else if (root->data < value) {
+        root->right = deleteNode(root->right, value);
+    }
+    else {
+        root->left = deleteNode(root->left, value);
+    }
+    return root;
 }
 
 
+// Detecte The min If Tree And Return Value
+int maximum_with_value(Node *root) {
+    if (root == NULL) return -1;
+    Node *temp = root;
+    while (temp->right != NULL) temp = temp->right;
+    return temp->data;
+}
 
 
+// Detecte The max If Tree And Return Value
+int minimum_with_value(Node *root) {
+    if (root == NULL) return -1;
+    Node *temp = root;
+    while (temp->left != NULL) temp = temp->left;
+    return temp->data;
+}
 
 
+    
+// Check If Tree Binary Search Tree
+int is_bst(Node *root) {
+    if (root == NULL) return 1;
+    if (root->left != NULL && maximum_with_value(root->left) > root->data) return 0;
+    if (root->right != NULL && minimum_with_value(root->right) < root->data) return 0;
+    if (!is_bst(root->left) || !is_bst(root->right)) return 0;
+    return 1;
+}
 
 
 

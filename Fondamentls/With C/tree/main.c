@@ -37,6 +37,13 @@ int main() {
     Node *ele_searched2 = search(root, value_searched2);
     if (ele_searched2 == NULL) printf("%d Does Not Exit\n", value_searched2);
     else printf("%d Exit In The Tree\n", value_searched2);
+    // Delete Node From Tree
+    deleteNode(root, 10);
+    Prefixe(root);
+    printf("\n");
+    // check if it binary search tree
+    if (is_bst(root)) printf("This is a Binary Search Tree\n");
+    else printf("This Is Not a Binary Search Tree\n");
     return 0;
 }
 

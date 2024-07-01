@@ -29,6 +29,8 @@ typedef struct Queue {
     Node *maximum(Node *root);
     Node *search(Node *root, int value);
     Node *search_recursive(Node *root, int value);
+    Node *deleteNode(Node *root, int value);
+    int is_bst(Node *root);
 #endif
 
 
