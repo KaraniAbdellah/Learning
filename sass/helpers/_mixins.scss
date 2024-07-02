@@ -1,0 +1,21 @@
+@mixin list-reset {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+@mixin circle($width, $height) {
+    border-radius: 50%;
+    width: $width;
+    height: $height;
+}
+@mixin centering {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    // @include circle(100px, 100px);
+}
+
+
+
+
+
