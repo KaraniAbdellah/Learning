@@ -130,14 +130,14 @@
 ; mov ah, 01h
 ; int 21h
 
-org  100h
-msg dw '[] : $'
-mov ah, 09h
-mov dx, offset msg
-int 21h
+; org  100h
+; msg dw '[] : $'
+; mov ah, 09h
+; mov dx, offset msg
+; int 21h
 
-mov cx, 5
-while:
+; mov cx, 5
+; while:
     mov ah, 01h
     int 21h
     push ax
