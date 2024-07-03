@@ -304,6 +304,108 @@ $company: "google";
 
 
 
+// Mixin And Include
+/*
+    @mixin class(arguments) {
+        // Styling
+    }
+    .class {
+        @include class(parameters);
+    }
+    - We Can Do The Mixin In The File
+    
+*/
+
+// Improt Mixin File
+@use "helpers/mixins" as *;
+@mixin list-reset {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+ul.links {
+    @include list-reset;
+}
+@mixin circle($width, $height) {
+    border-radius: 50%;
+    width: $width;
+    height: $height;
+}
+.circle-100 {
+    @include circle(100px, 100px);
+}
+.circle-200 {
+    @include circle(200px, 200px);
+}
+@mixin centering {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    // @include circle(100px, 100px);
+}
+.center-circle {
+    @include centering;
+    @include circle(400px, 400px);
+}
+
+
+
+
+// Each + Maps
+/*
+    $varibles: names;
+    @each <variable> in <expression> { ... } 
+*/
+// Theme Example
+$themes: red, green, blue;
+@each $theme in $themes {
+    .#{$theme}-theme {
+        background-color: #eee;
+        .product {
+            background-color: $theme;
+            .title {    
+                color: $theme;
+                font-weight: bold;
+            }
+        }
+    }
+}
+
+// Social Example
+$social : (
+    "facebook": blue,
+    "youtube": red,
+    "github": black,
+);
+@each $name, $color in $social {
+    .#{$name} {
+        background-color: $color;
+        &::before {
+            content: $name;
+        }
+    }
+}
+
+// Descturing Example
+$classes : "one" 15px red, "two" 30px blue, "three" 10px green;
+@each $class, $font, $color in $classes {
+    .#{$class} {
+        font-size: $font;
+        color: $color;
+        padding: calc($font / 2);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 

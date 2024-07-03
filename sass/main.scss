@@ -1,46 +1,31 @@
-// Mixin And Include
-/*
-    @mixin class(arguments) {
-        // Styling
-    }
-    .class {
-        @include class(parameters);
-    }
-    - We Can Do The Mixin In The File
-    
-*/
+// Repeat Each And Map With A Practical Example
 
-// Improt Mixin File
-@use "helpers/mixins" as *;
-@mixin list-reset {
-    padding: 0;
-    margin: 0;
-    list-style: none;
+
+// Loop => While
+/*
+    @for <variable> from <start> to <end> { ... }
+    @for <variable> from <start> through <end> { ... }
+    @while <Condition> { ... }
+*/
+$start : 1;
+$end : 10;
+@for $i from $start to $end {
+    .class {
+        color: green;
+    }
 }
-ul.links {
-    @include list-reset;
+
+@while $start <= $end {
+    .class-#{$start * 100} {
+        width: $start * 100px;
+        height: ($start * 100px) / 2;
+    }
+    $start: $start + 1;
 }
-@mixin circle($width, $height) {
-    border-radius: 50%;
-    width: $width;
-    height: $height;
-}
-.circle-100 {
-    @include circle(100px, 100px);
-}
-.circle-200 {
-    @include circle(200px, 200px);
-}
-@mixin centering {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    // @include circle(100px, 100px);
-}
-.center-circle {
-    @include centering;
-    @include circle(400px, 400px);
-}
+
+
+
+
 
 
 
