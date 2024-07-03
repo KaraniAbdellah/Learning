@@ -3617,13 +3617,48 @@ console.log(urls.match(urlsRegex));
     x and y are numbers
 */
 var serials = "S100S S3000S S50000S S950000S";
-
 console.log(serials.match(/s\d{3}s/gi)); // S[Three Number]S
 console.log(serials.match(/s\d{4,5}s/gi)); // S[Fout Or Five]S
 console.log(serials.match(/\s\d{4, }s/gi)); // S[At Least Four]S
 
 
-    
+
+// Regular Expression Quantifiers Part 3
+/*
+  $  => End With Something
+  ^  => Start With Something
+  ?= => Followed By Something
+  ?! => Not Followed By Something
+*/
+var myString = "We Love Programming";
+var personnes = "1OsamaZ 2AhmedZ 3Mohammed 4MoustafaZ 5GamalZ";
+console.log(/ing$/gi.test(myString));
+console.log(/^we/gi.test(myString));
+console.log(/^\d/gi.test(personnes)); // start with digit
+console.log(/^\s/gi.test(personnes)); // start with space
+
+console.log(personnes.match(/\d\w{5}(?=z)/gi)); // finich with z
+console.log(personnes.match(/\d\w{8}(?!Z)/gi)); // Not finich with z
+
+
+
+
+// Regular Expression – Replace With Pattern
+/*
+  - replace --> replace first search value 
+  - replaceAll
+*/
+var txt = "We Love Programming And @ Because @ Is Amazing";
+console.log(txt.replace("@", "Js"));
+console.log(txt.replaceAll(/@/gi, "Js"));
+
+
+
+
+
+
+
+
 
 
 
