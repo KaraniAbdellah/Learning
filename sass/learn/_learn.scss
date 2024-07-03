@@ -398,7 +398,29 @@ $classes : "one" 15px red, "two" 30px blue, "three" 10px green;
 
 
 
+// Repeat Each And Map With A Practical Example
 
+
+// Loop => While
+/*
+    @for <variable> from <start> to <end> { ... }
+    @for <variable> from <start> through <end> { ... }
+    @while <Condition> { ... }
+*/
+$start : 1;
+$end : 10;
+@for $i from $start to $end {
+    .class {
+        color: green;
+    }
+}
+
+@while $start <= $end {
+    .class-#{$start * 1} {
+        width: $start * 100px;
+        height: ($start * 100px) / 2;
+    }
+    $start: 
 
 
 
