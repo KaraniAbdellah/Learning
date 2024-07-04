@@ -420,9 +420,8 @@ $end : 10;
         width: $start * 100px;
         height: ($start * 100px) / 2;
     }
-    $start: 
-
-
+    $start: $start + 1;
+}
 
 
 

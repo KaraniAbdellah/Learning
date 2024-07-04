@@ -1,1 +1,31 @@
-// repeat The While Loop And For Lopp And Also @Each Loop
+// I Want To Make 5 Classes
+
+
+$colors: red 2px solid, black 3px solid, green 20px solid, yellow 12px solid, orange 19px solid;
+
+@each $color, $font, $style in $colors {
+    .#{$color} {
+        border: $color $style $font;
+    }
+}
+
+
+@for $i from 1 to 10 {
+    .class {
+        color: red;
+    }
+}
+
+$start: 1;
+@while ($start < 10) {
+    .class {
+        color: yellow;
+    }
+    $start : $start + 1;
+}
+
+
+
+
+
+
