@@ -1,0 +1,25 @@
+// Use Mixin To Get The Needed
+@mixin arrow($position) {
+    content: "";
+    position: absolute;
+    border: 20px solid transparent;
+    #{$position}: -40px;
+    transform: if($position == top or $position == bottom, translateX(-50%), translateY(-50%));
+    @if($position == top) {
+        left: 50%; border-bottom-color: red;
+    } @else if($position == right) {
+        top: 50%; border-left-color: red;
+    } @else if ($position == bottom) {
+        left: 50%; border-top-color: red;
+    } @else {
+        top: 50%; border-right-color: red;
+    }
+}
+.element {
+    &::before {
+        @include arrow("bottom");
+    }
+}
+
+
+

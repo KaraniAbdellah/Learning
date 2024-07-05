@@ -1,0 +1,9 @@
+.element::before {
+  content: "";
+  position: absolute;
+  border: 20px solid transparent;
+  bottom: -40px;
+  transform: translateX(-50%);
+  left: 50%;
+  border-top-color: red;
+}/*# sourceMappingURL=assign11-15.css.map */
