@@ -1378,6 +1378,32 @@ console.log([...new Set(numsOne), ...new Set(numsTwo)]); // [1, 2, 3, 4, 5, 6]
 console.log(numsOne.concat(numsTwo)); // [1, 2, 3, 4, 5, 6]
 numsOne.push(...numsTwo);
 console.log(numsOne);
+console.groupEnd();
+
+
+
+// Assignment 134 to 145
+console.group("134 to 145");
+var ip = "2001:db8:3333:4444:5555:6666:7777:8888";
+var regexIp1 = /\d+:\w+\d+:\d+:\d+:\d+:\d+:\d+:\d+/gi;
+var regexIp2 = /((\w+)?\d+:?){2,}/gi;
+console.log(ip.match(regexIp1));
+console.log(regexIp1.test(ip));
+console.log(ip.match(regexIp2));
+console.log(regexIp2.test(ip));
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

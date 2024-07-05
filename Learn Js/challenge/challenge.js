@@ -521,9 +521,25 @@ console.log([...n1, ...n2].length * Math.max(...n1)); // 210
 console.groupEnd();
 
 
+// Challange About regex
+// Challenge 15
+// Write Your Pattern Here
+console.group("Challenge 15");
+var url1 = 'elzero.org';
+var url2 = 'http://elzero.org';
+var url3 = 'https://elzero.org';
+var url4 = 'https://www.elzero.org';
+var url5 = 'https://www.elzero.org:8080/articles.php?id=100&cat=topics';
+
+var re = /((http|https)*:\/\/www.)*\w+.\w+(:\d{4}\/\w+.\w+\?id=\d+\W?\w+\W?\w+)?/gi;
+
+console.log(url1.match(re));
+console.log(url2.match(re));
+console.log(url3.match(re));
+console.log(url4.match(re));
+console.log(url5.match(re));
 
 
-
-
+console.groupEnd();
 
 
