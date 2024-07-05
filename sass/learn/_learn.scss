@@ -426,6 +426,15 @@ $end : 10;
 
 
 
+// Create Bootstrap Grid System
+$grid_cols: 12;
+
+@for $i from 1 to $grid_cols {
+    .col-#{$i} {
+        // width: (100% / 12) * $i;
+        width: percentage($i / $grid_cols);
+    }
+}
 
 
 
