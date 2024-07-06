@@ -6,4 +6,153 @@
   transform: translateX(-50%);
   left: 50%;
   border-top-color: red;
+}
+
+.col-1 {
+  width: 6.25%;
+}
+
+.col-2 {
+  width: 12.5%;
+}
+
+.col-3 {
+  width: 18.75%;
+}
+
+.col-4 {
+  width: 25%;
+}
+
+.col-5 {
+  width: 31.25%;
+}
+
+.col-6 {
+  width: 37.5%;
+}
+
+.col-7 {
+  width: 43.75%;
+}
+
+.col-8 {
+  width: 50%;
+}
+
+.col-9 {
+  width: 56.25%;
+}
+
+.col-10 {
+  width: 62.5%;
+}
+
+.col-11 {
+  width: 68.75%;
+}
+
+.col-12 {
+  width: 75%;
+}
+
+.col-13 {
+  width: 81.25%;
+}
+
+.col-14 {
+  width: 87.5%;
+}
+
+.col-15 {
+  width: 93.75%;
+}
+
+.col-16 {
+  width: 100%;
+}
+
+.books {
+  padding: 20px;
+  font-size: 18px;
+  border: 2px solid red;
+  color: #444;
+}
+
+.games {
+  padding: 30px;
+  font-size: 18px;
+  border: 2px solid green;
+  color: #444;
+}
+
+.dvds {
+  padding: 20px;
+  font-size: 16px;
+  border: 2px solid blue;
+  color: #444;
+}
+
+.circle-100 {
+  width: 100px;
+  height: 100px;
+  border-radius: 50px;
+}
+
+.circle-200 {
+  width: 200px;
+  height: 200px;
+  border-radius: 100px;
+}
+
+.circle-300 {
+  width: 300px;
+  height: 300px;
+  border-radius: 150px;
+}
+
+.circle-400 {
+  width: 400px;
+  height: 400px;
+  border-radius: 200px;
+}
+
+.circle-500 {
+  width: 500px;
+  height: 500px;
+  border-radius: 250px;
+}
+
+.circle-100 {
+  width: 100px;
+  height: 100px;
+  border-radius: 50px;
+}
+
+.circle-200 {
+  width: 200px;
+  height: 200px;
+  border-radius: 100px;
+}
+
+.circle-300 {
+  width: 300px;
+  height: 300px;
+  border-radius: 150px;
+}
+
+.circle-400 {
+  width: 400px;
+  height: 400px;
+  border-radius: 200px;
+}
+
+.circle-500 {
+  width: 500px;
+  height: 500px;
+  border-radius: 250px;
+}
+
+textarea {
+  color: red;
 }/*# sourceMappingURL=assign11-15.css.map */

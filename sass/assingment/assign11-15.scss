@@ -23,3 +23,66 @@
 
 
 
+// Write A Grid System With Loop
+@for $i from 1 through 16 {
+    .col-#{$i} {
+        width: percentage($i / 16);
+    }
+}
+
+
+
+// get this outpit without change the value of the variables
+$names:
+    "books" 20px red 18,
+    "games" 30px green 18,
+    "dvds" 20px blue;
+
+
+@each $name, $padding, $color, $font in $names {
+    .#{$name} {
+        padding: $padding;
+        font-size: if($font, #{$font}px, 16px);
+        border: 2px solid $color;
+        color: #444;
+    }
+}
+
+
+// You Have This Varible, Pracitce While Loop.
+$init: 1;
+@while $init <= 5 {
+    .circle-#{$init * 100} {
+        width: #{$init * 100}px;
+        height: #{$init * 100}px;
+        border-radius: #{($init / 2) * 100}px;
+    }
+    $init: $init + 1;
+}
+// With Foor Lopp
+// You Have This Varible, Pracitce While Loop.
+$init: 1;
+@for $init from 1 to 6 {
+    .circle-#{$init * 100} {
+        width: #{$init * 100}px;
+        height: #{$init * 100}px;
+        border-radius: #{($init / 2) * 100}px;
+    }
+}
+
+
+
+
+// Get The Nedded
+
+@mixin placeholder {
+    color: red;
+}
+
+// Using
+textarea {
+    @include placeholder {
+        color: #444;
+    };
+}
+  
