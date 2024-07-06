@@ -1317,7 +1317,7 @@ console.log([...new Set(myFriend)].sort()); // ['Ahmed', 'Mahmoud', 'Osama', 'Sa
 
 
 // Get The Nedded For Convert Object To Map
-let myInfo = {
+var myInfo = {
     username: "Abdellah",
     role: "Admin",
     country: "Morocco",
@@ -1382,8 +1382,10 @@ console.groupEnd();
 
 
 
-// Assignment 134 to 145
-console.group("134 to 145");
+// Assignment 134 to 146
+console.group("134 to 146");
+
+// Match Thiss Ip Address
 var ip = "2001:db8:3333:4444:5555:6666:7777:8888";
 var regexIp1 = /\d+:\w+\d+:\d+:\d+:\d+:\d+:\d+:\d+/gi;
 var regexIp2 = /((\w+)?\d+:?){2,}/gi;
@@ -1393,17 +1395,59 @@ console.log(ip.match(regexIp2));
 console.log(regexIp2.test(ip));
 
 
+// Get The Nedded
+var specialNames = "Os10O OsO Os100O Osa100O Os1000 Os100m";
+var regexSpecialNames = /Os\d*O/gi;
+console.log(specialNames.match(regexSpecialNames)); // ['Os10O', 'OsO', 'Os100O']
+
+
+// Match This Phone Number
+var phone = "+(995)-123 (4567)";
+var regexPhone = /\+\(\d{3}\)-\d{3} \(\d{4}\)/gi;
+console.log(phone.match(regexPhone));
+
+// Explain
+var re = /https?:\/\/(?:[-\w]+\.)?([-\w]+)\.\w+(?:\.\w+)\/?.*/i;
+
+/**
+ * This For Match An URL
+ * https? --> can begin with https or not 
+ * :// --> Required
+ * (?:[-\w]+\.)? --> 
+ * ([-\w]+) --> 
+ * \.\w+ --> 
+ * (?:\.\w+)? --> 
+ * \/?.* --> 
+*/
+
+
+// Write One Pattern That Can Match All This
+var date1 = "25/10/1982";
+var date2 = "25 - 10 - 1982";
+var date3 = "25 10 1982";
+var date4 = "25 10 82";
+
+var re = /\d{1,}\/?\s?-?\s?\d{1,}\/?\s?-?\s?\d{2,}/gi; // Write Pattern Here
+console.log(date1.match(re)); // "25/10/1982"
+console.log(date2.match(re)); // "25 - 10 - 1982"
+console.log(date3.match(re)); // "25 10 1982"
+console.log(date4.match(re)); // "25 10 82"
 
 
 
+// From The Challange
+var url1 = 'elzero.org';
+var url2 = 'http://elzero.org';
+var url3 = 'https://elzero.org';
+var url4 = 'https://www.elzero.org';
+var url5 = 'https://www.elzero.org:8080/articles.php?id=100&cat=topics';
 
+var re = /((http|https)*:\/\/www.)*\w+.\w+(:\d{4}\/\w+.\w+\?id=\d+\W?\w+\W?\w+)?/gi;
 
-
-
-
-
-
-
-
+console.log(url1.match(re));
+console.log(url2.match(re));
+console.log(url3.match(re));
+console.log(url4.match(re));
+console.log(url5.match(re));
 
 
