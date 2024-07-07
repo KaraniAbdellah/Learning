@@ -75,13 +75,40 @@ $init: 1;
 
 // Get The Nedded
 @mixin placeholder {
-    color: red;
+    &.placeholder {
+        @content;
+    } &:-moz-placeholder {
+        @content;
+    } &::-moz-placeholder {
+        @content;
+    } &:-ms-input-placeholder {
+        @content;
+    } &::-webkit-input-placeholder {
+        @content;
+    }
 }
-
 // Using
 textarea {
     @include placeholder {
         color: #444;
     };
 }
+
+
+
+@mixin flex-center($width: auto) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: $width;
+}
+
+// Using
+.box-one {
+    @include flex-center(400px);
+  }
+.box-two {
+    @include flex-center;
+}
   
+

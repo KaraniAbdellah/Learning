@@ -153,6 +153,32 @@
   border-radius: 250px;
 }
 
-textarea {
-  color: red;
+textarea.placeholder {
+  color: #444;
+}
+textarea:-moz-placeholder {
+  color: #444;
+}
+textarea::-moz-placeholder {
+  color: #444;
+}
+textarea:-ms-input-placeholder {
+  color: #444;
+}
+textarea::-webkit-input-placeholder {
+  color: #444;
+}
+
+.box-one {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 400px;
+}
+
+.box-two {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: auto;
 }/*# sourceMappingURL=assign11-15.css.map */
