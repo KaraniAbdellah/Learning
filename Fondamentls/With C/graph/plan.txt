@@ -1,0 +1,49 @@
+I. Introduction aux Graphes
+Définition et concepts de base
+Terminologie : nœud (sommet), arête (arc), graphe orienté vs non orienté
+Exemples d'applications des graphes dans divers domaines (réseaux sociaux, cartographie, circuits électriques, etc.)
+
+
+II. Représentation des Graphes
+Matrice d'adjacence
+Liste d'adjacence
+Comparaison des avantages et inconvénients de chaque représentation
+
+
+III. Types de Graphes
+Graphe simple vs graphe pondéré
+Graphe cyclique vs acyclique
+Graphe connexe vs graphe non connexe
+
+
+IV. Parcours de Graphes
+Parcours en profondeur (DFS - Depth-First Search)
+Implémentation récursive et itérative
+Application : détection de cycles, composantes fortement connexes
+Parcours en largeur (BFS - Breadth-First Search)
+Implémentation avec file
+Application : plus court chemin, arbres couvrants, détection de connexité
+
+
+X. Operation sur les graphes
+Insertion
+Recherche
+Suppression
+
+
+V. Algorithmes classiques sur les Graphes
+Algorithme de Dijkstra : plus court chemin
+Algorithme de Bellman-Ford : plus court chemin avec poids négatifs
+Algorithme de Kruskal : arbre couvrant de poids minimal
+Algorithme de Prim : arbre couvrant de poids minimal (version de Prim)
+
+note : on va concentre just avec graphe simple et pondéré.
+
+
+
+
+
+
+
+
+
