@@ -532,6 +532,7 @@ var url4 = 'https://www.elzero.org';
 var url5 = 'https://www.elzero.org:8080/articles.php?id=100&cat=topics';
 
 var re = /((http|https)*:\/\/www.)*\w+.\w+(:\d{4}\/\w+.\w+\?id=\d+\W?\w+\W?\w+)?/gi;
+var re = /((http)?s\:\/\/)?(w{3}.)?\w+.\w+(:\d+\/\w+.\w+\D+\d+\D+)?/gi;
 
 console.log(url1.match(re));
 console.log(url2.match(re));
