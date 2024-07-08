@@ -438,6 +438,24 @@ $grid_cols: 12;
 
 
 
+// Functions
+@use "../sass/helpers/functions" as *;
+@function half($size: auto) {
+    @return $size / 2;
+}
+
+@function calculate($sizes...) {
+    $total: 0;
+    @each $size in $sizes {
+        $total: $total + $size;
+    }
+    @return $total;
+}
+.element {
+    width: half(200px);
+    height: calculate(12px, 23px, 45px);
+}
+
 
 
 
