@@ -1407,23 +1407,24 @@ console.log("========================");
 
 // Match This Phone Number
 var phone = "+(995)-123 (4567)";
-var regexPhone = /\+\(\d{3}\)-\d{3} \(\d{4}\)/gi;
+var regexPhone = /\+\(\d{3}\)-\d{3}\s\(\d{4}\)/gi;
 console.log(phone.match(regexPhone));
 console.log("========================");
 
 // Explain
+var url1 = 'elzero.org';
+var url2 = 'http://elzero.org';
+var url3 = 'https://elzero.org';
+var url4 = 'https://www.elzero.org';
+var url5 = 'https://www.elzero.org:8080/articles.php?id=100&cat=topics';
 var re = /https?:\/\/(?:[-\w]+\.)?([-\w]+)\.\w+(?:\.\w+)\/?.*/i;
+console.log(url1.match(re));
+console.log(url2.match(re));
+console.log(url3.match(re));
+console.log(url4.match(re));
+console.log(url5.match(re));
+console.log("========================");
 
-/**
- * This For Match A URL
- * https? --> can begin with https or not 
- * :// --> Required
- * (?:[-\w]+\.)? --> can exit some or no
- * ([-\w]+) --> matches word character or a hyphen, can be many
- * \.\w+ --> .charcters
- * (?:\.\w+)? --> string:.word characters can exit or no
- * \/?.* --> / can exit or no .can exit or no
-*/
 
 
 // Write One Pattern That Can Match All This
@@ -1432,7 +1433,9 @@ var date2 = "25 - 10 - 1982";
 var date3 = "25 10 1982";
 var date4 = "25 10 82";
 
-var re = /\d{1,}\/?\s?-?\s?\d{1,}\/?\s?-?\s?\d{2,}/gi; // Write Pattern Here
+var re = /\d{1,}\/?\s?-?\s?\d{1,}\/?\s?-?\s?\d{2,}/gi; // My Code
+var re = /(\d{2,}(\/?|\s?|\-)+)+/gi;
+var re = /(\d|\D)+/gi;
 console.log(date1.match(re)); // "25/10/1982"
 console.log(date2.match(re)); // "25 - 10 - 1982"
 console.log(date3.match(re)); // "25 10 1982"
@@ -1456,6 +1459,7 @@ console.log(url3.match(re));
 console.log(url4.match(re));
 console.log(url5.match(re));
 console.log("========================");
+
 
 
 
