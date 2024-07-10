@@ -486,4 +486,29 @@ $grid_cols: 12;
 
 
 
+//  Practice Create Media Queries Mixin
+@mixin breakPoint($point) {
+    @if $point == mobile {
+        @media (max-width: 767px) {
+            @content;
+        }
+    } @else if $point == small {
+        @media (min-width: 768px) and (max-width: 991px) {
+            @content;
+        }
+    } @else if $point == medium {
+        @media (min-width: 992px) and (max-width: 1199px) {
+            @content;
+        }
+    } @else {
+        @media (min-width: 1200px) {
+            @content;
+        }
+    }
+}
 
+.media {
+    @include breakPoint(mobile) {
+        font-size: 20px;
+    }
+}
