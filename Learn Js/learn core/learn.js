@@ -3670,7 +3670,26 @@ form.addEventListener("submit", function(event) {
 
 
 
+// OOP Introduction
+/*
+    OOP stand of Object Oriented Programming
+    OOP is Paradigm or style of code
+    OOP use the concept of object to design a computer programm
+    it is not new --> siince 1960
+    some language support this style and some not
 
+    Object : package contain proprerties and fucntions work together
+        to produce something in your application. function called methods
+    
+    Example
+        Car : [Properties : color, price || Methods : walk, stop]
+    
+    Why We Use OOP ? 
+    You Will be Able to Create a Large and Complex Software Architecture in Organized Ways.
+    You Will be Able To Hide Certain Parts Of Code in Your Object With Encapsulation To Prevent 
+        Mess With The Code.
+    You Will Be Able To Create Reusable Objects To Use in Your Application Easily With Inheritance.
+*/
 
 
 
