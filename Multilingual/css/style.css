@@ -1,0 +1,12 @@
+div {
+    background-color: #272525ca;
+    color: white;
+}
+
+div h1 {
+    /* margin: 0; /* reset 
+    margin-left: 10px; */
+    /* Method 1 For Margin and padding for parent better then child */
+    padding: 0 10px;
+}
+

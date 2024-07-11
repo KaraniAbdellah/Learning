@@ -1,0 +1,17 @@
+// Problems & Solutions Part 1
+
+/*
+    Don't start with Arabic Design.
+    Programmmer Note: Don't Use Words Direct in Template.
+    padding and margin for parent better than child.
+        - in englich design 
+            child : margin-left: 10px;
+        - in arabic design
+            child : margin-right: 10px; and margin-left: 0px;
+        - the solution is : 
+            in englich design
+                parent : padding: 0px 10px;
+*/  
+
+// repeat this please it is important
+

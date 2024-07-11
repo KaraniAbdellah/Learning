@@ -1,0 +1,10 @@
+/* Method 1 For Margin and padding for parent better then child */
+div {
+    text-align: right;
+}
+/*div h1 {
+    margin-right: 10px;
+    margin-left: 0;
+} */
+
+
