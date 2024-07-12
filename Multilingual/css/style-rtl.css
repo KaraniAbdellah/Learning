@@ -1,10 +1,16 @@
 /* Method 1 For Margin and padding for parent better then child */
 div {
-    text-align: right;
+    /* text-align: right; */
+    /* we are use dir="rtl" */
+    color: #eeee;
 }
-/*div h1 {
+/* div h1 {
     margin-right: 10px;
     margin-left: 0;
 } */
 
+
+div h1 {
+    display: block; /* RTL */ /* This Exit In style.css */
+}
 

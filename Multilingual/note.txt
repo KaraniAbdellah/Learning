@@ -1,5 +1,4 @@
 // Problems & Solutions Part 1
-
 /*
     Don't start with Arabic Design.
     Programmmer Note: Don't Use Words Direct in Template.
@@ -13,5 +12,22 @@
                 parent : padding: 0px 10px;
 */  
 
-// repeat this please it is important
+
+
+Problems & Solutions Part 2
+/*
+    padding and margin left + right bettern then one direction
+        the element does not fill the content
+        in child 
+            margin-left: 10px;
+            margin-right: 10px;
+
+    don't forget page dir Attribute.
+        <html dir="rtl">  bettern then text-align: right;
+    Highlight What you Will Edit Soon
+    Make The Direction Edit In The Same Time
+    change the colors when you have more one time do it in the same time
+*/
+
+
 
