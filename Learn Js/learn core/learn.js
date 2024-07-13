@@ -3698,7 +3698,7 @@ form.addEventListener("submit", function(event) {
 
 // Constructor Function
 function User(id, username, salary) {
-    this.id = id;
+    this.id = id; // propreties
     this.username = username;
     this.salary = salary + 1000;
 }
@@ -3716,7 +3716,7 @@ class User {
         this.i = id;
         this.u = username || "Unknown";
         this.s = salary < 6000 ? salary + 500 : salary;
-        this.msg = function() {
+        this.msg = function() { // function
             return ("Hello ", this.u);
         }
     }
@@ -3733,6 +3733,73 @@ console.log(user2.msg()); // Hello Mahamed
 console.log(user2.msg); // native code
 console.log(user2.writeMessage());
 console.log(user2.writeMessage); // native code
+
+
+
+class User {
+    constructor(username, id, age) {
+        this.u = username;
+        this.i = id;
+        this.a = age;
+    }
+    updateName(newName) {
+        this.u = newName;
+    }
+}
+
+var user1 = new User("Abdellah", 200344, 20);
+console.log(user1.u, user1.i, user1.a);
+user1.updateName("mohamed");
+console.log(user1.u);
+
+var str1 = "Hello World";
+var str2 = new String("Hello World");
+console.log(typeof str1);
+console.log(typeof str2);
+
+console.log(str1 instanceof String);
+console.log(str2 instanceof String);
+
+console.log(str1.constructor == String); // true --> because we used constractor to create string
+console.log(str2.constructor == String); 
+
+
+
+// Repeat The Last Two Lessons
+
+// Class Static Properties And Methods
+
+/**
+ * class static properties is just for class not object
+ */
+class User {
+    count = 0; // not a static propreties
+    static count_for_class = 0;
+    constructor(username, id, age) {
+        this.u = username;
+        this.i = id;
+        this.a = age;
+        User.count_for_class++;
+    }
+    static sayHello() {
+        return "hello from class";
+    }
+    static countMembers() {
+        return `The Number Of Memners is ${this.count_for_class}`;
+    }
+}
+var user1 = new User("Abdellah", 200344, 20);
+var user2 = new User("Mohamed", 6464, 40);
+var user3 = new User("Othmane", 34324, 23);
+
+console.log(user1.count); // 0
+console.log(User.count); // undefined
+
+console.log(user1.count_for_class); // undefined
+console.log(User.count_for_class); // 0
+console.log(User.sayHello()); // hello from class
+
+console.log(User.countMembers());
 
 
 
