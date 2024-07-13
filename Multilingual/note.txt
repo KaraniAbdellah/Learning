@@ -1,4 +1,4 @@
-// Problems & Solutions Part 1
+// ======= Problems & Solutions Part 1 =======
 /*
     Don't start with Arabic Design.
     Programmmer Note: Don't Use Words Direct in Template.
@@ -14,7 +14,7 @@
 
 
 
-Problems & Solutions Part 2
+// ======= Problems & Solutions Part 2 =======
 /*
     padding and margin left + right bettern then one direction
         the element does not fill the content
@@ -28,6 +28,33 @@ Problems & Solutions Part 2
     Make The Direction Edit In The Same Time
     change the colors when you have more one time do it in the same time
 */
+
+
+// ======= Problems & Solutions Part 3 =======
+/*
+    Don't Ever Forget Comments and ordering of elements
+    Use inline-block Instead of float if you don't need float
+        if you have 4 element each one 25% 
+            using float: left; but in arabic style float: right; --> good
+            using diplay: inline-block;  --> the width of element big then 100% 
+            because the display add some spaces
+        if you have just 2 element with 25% 
+            do not take the precedent method
+            do diplay: inline-block; without float for style.css and style-rtl.css
+        the idea : if width does not 100% use inline-block
+        inline-block : use dir of html page
+    RTL File For Direction Only
+        do not use background in rtl file
+    RTL file after mean file
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/style-rtl.css">
+*/
+
+
+// repeat this please please again
+
+
+
 
 
 

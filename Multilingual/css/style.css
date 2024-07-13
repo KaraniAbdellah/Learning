@@ -1,3 +1,4 @@
+/* ======= Part 1 and Part 2 ======= */
 div {
     background-color: #272525ca;
     color: white;
@@ -12,4 +13,29 @@ div h1 {
     margin-left: 10px;
     display: inline; /* RTL Value */
 }
+
+/* ======= Part 3 ======= */
+/* Start Header */ 
+.header {
+    padding: 20px;
+}
+.header h3 {
+    color: red;
+}
+.header p {
+    color: white;
+}
+.parent {
+    width: 100%;
+}
+.parent .child {
+    color: black;
+    background-color: #ddd;
+    width: 25%;
+    height: 50px;
+    /* float: left; */
+    display: inline-block;
+}
+
+
 

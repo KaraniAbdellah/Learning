@@ -1,3 +1,4 @@
+/* ======= Part 1 And Part 2 ======= */
 /* Method 1 For Margin and padding for parent better then child */
 div {
     /* text-align: right; */
@@ -9,8 +10,24 @@ div {
     margin-left: 0;
 } */
 
-
 div h1 {
     display: block; /* RTL */ /* This Exit In style.css */
 }
+
+/* ======= Part 3 ======= */
+/* Start Header */
+.header {
+    padding: 20px;
+}
+.header h3 {
+    color: red;
+}
+.header p {
+    color: white;
+}
+.parent .child {
+    float: right; /* if you use display: inline-block; remove this */
+}
+
+
 
