@@ -14,6 +14,7 @@ div h1 {
     display: block; /* RTL */ /* This Exit In style.css */
 }
 
+
 /* ======= Part 3 ======= */
 /* Start Header */
 .header {
@@ -25,9 +26,14 @@ div h1 {
 .header p {
     color: white;
 }
-.parent .child {
-    float: right; /* if you use display: inline-block; remove this */
+/* .parent .child {
+    float: right;
+} */
+
+
+/* ======= Part 4 ======= */
+.view::after {
+    font-family: "FontAwesome";
+    content: "\f053";
 }
-
-
 
