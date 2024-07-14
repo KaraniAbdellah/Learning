@@ -3710,98 +3710,113 @@ console.log(user1.salary, user3.salary, user2.salary);
 
 
 
-//  Deal With Properties And Methods
+//  Deal With Properties And Methods + Some Test Cases
 class User {
     constructor(id, username, salary) {
-        this.i = id;
-        this.u = username || "Unknown";
-        this.s = salary < 6000 ? salary + 500 : salary;
-        this.msg = function() { // function
-            return ("Hello ", this.u);
-        }
-    }
-    // Methods
-    writeMessage() {
-        return ("Hello ", this.u);
-    }
-}
-var user1 = new User(10, "", 2000);
-var user2 = new User(100, "mohamed", 7000);
-console.log(user1.i, user1.u, user1.s);
-console.log(user2.i, user2.u, user2.s);
-console.log(user2.msg()); // Hello Mahamed
-console.log(user2.msg); // native code
-console.log(user2.writeMessage());
-console.log(user2.writeMessage); // native code
-
-
-
-class User {
-    constructor(username, id, age) {
         this.u = username;
-        this.i = id;
-        this.a = age;
+        this.id = id;
+        this.s = salary;
+        this.msg = function() {
+            return "Hello A New User"
+        }      
+    }
+    sayHello() {
+        return `Hello ${this.u}`;
     }
     updateName(newName) {
         this.u = newName;
     }
 }
+var userOne = new User(10393, "abdelllah", 29023);
 
-var user1 = new User("Abdellah", 200344, 20);
-console.log(user1.u, user1.i, user1.a);
-user1.updateName("mohamed");
-console.log(user1.u);
+console.log(userOne.u, userOne.id, userOne.s);
+console.log(userOne.sayHello());
+userOne.updateName("Mohamed");
+console.log(userOne.sayHello());
+
+console.log(userOne.sayHello); // native code
+console.log(userOne.msg); // native code
+console.log(userOne.msg()); // Hello Ne User
 
 var str1 = "Hello World";
 var str2 = new String("Hello World");
-console.log(typeof str1);
-console.log(typeof str2);
-
-console.log(str1 instanceof String);
-console.log(str2 instanceof String);
-
-console.log(str1.constructor == String); // true --> because we used constractor to create string
-console.log(str2.constructor == String); 
+console.log(typeof str1, typeof str2); // string object
+console.log(str1 instanceof String, str2 instanceof String); // false true
+console.log(str1.constructor == String, str2.constructor == String); // true true
+// because we used constractor to create string
 
 
 
-// Repeat The Last Two Lessons
 
 // Class Static Properties And Methods
-
 /**
  * class static properties is just for class not object
  */
 class User {
-    count = 0; // not a static propreties
-    static count_for_class = 0;
-    constructor(username, id, age) {
+    n = 0;
+    static count = 0;
+    constructor(id, username, salary) {
         this.u = username;
-        this.i = id;
-        this.a = age;
-        User.count_for_class++;
+        this.id = id;
+        this.s = salary;
+        User.count += 1;
     }
-    static sayHello() {
-        return "hello from class";
-    }
-    static countMembers() {
-        return `The Number Of Memners is ${this.count_for_class}`;
+    static nbrOfUsers() {
+        return `The Number Of Users is ${this.count}`;
     }
 }
-var user1 = new User("Abdellah", 200344, 20);
-var user2 = new User("Mohamed", 6464, 40);
-var user3 = new User("Othmane", 34324, 23);
+var userOne = new User(10393, "abdelllah", 29023);
 
-console.log(user1.count); // 0
-console.log(User.count); // undefined
+console.log(userOne.n); // 0
+console.log(userOne.nbrOfUsers()); // nbrOfUsers is not a function
+console.log(User.n); // undefined
+console.log(User.nbrOfUsers()); // The Number Of Users is 1
 
-console.log(user1.count_for_class); // undefined
-console.log(User.count_for_class); // 0
-console.log(User.sayHello()); // hello from class
-
-console.log(User.countMembers());
+console.log(userOne.count); // undefined
+console.log(User.count); // 1
 
 
 
+// Class Inheritance
+/*
+    -- We Inhert Instance And Also Methods and Also Function By Using :
+    -- extends PrentClassName & super(instances...);
+    -- JavaScript doesn't check if you use all the parameters when calling a parent class constructor.
+*/
+// Parent Class
+class User {
+    constructor(id, username, salary, email) {
+        this.u = username;
+        this.id = id;
+        this.s = salary;
+        this.e = email;
+    }
+    sayHello() {
+        return `Hello ${this.u}, Your Email is ${this.e}`;
+    }
+}
+// Derived Class or Inhert Class
+class Admin extends User {
+    constructor(id, username, salary, permissions) {
+        super(id, username, salary, null); // null --> for email
+        this.s = permissions;
+    }
+}
+
+var userOne = new User(10393, "Mohamed", 29023, "x.rt@gmail.com");
+var adminOne = new Admin(23444, "Amine", 203803, true);
+console.log(adminOne.s); // true
+
+// Director
+class Director extends Admin {
+    constructor (id, username, email, happy) {
+        super(id, username, email);
+        this.h = happy;
+    }
+}
+var Ms_Director = new Director(213434, "Abdellah", "Hell@gmail.com", false);
+console.log(Ms_Director.h);
+console.log(Ms_Director.e);
+console.log(Ms_Director.sayHello()); // Hello Abdellah, Your Email is null
 
 
