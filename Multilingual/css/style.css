@@ -38,6 +38,9 @@ div h1 {
 }
 
 /* ======= Part 4 ======= */
+span {
+    color: black;
+}
 .view {
     display: inline-block;
     background-color: red;
@@ -49,6 +52,11 @@ div h1 {
     font-family: "FontAwesome";
     content: "\f054";
 }
+p.test1 {
+    text-align: end;
+}
+
+
 
 
 

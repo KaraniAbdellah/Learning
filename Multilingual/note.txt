@@ -1,7 +1,7 @@
 // ======= Problems & Solutions Part 1 =======
 /*
     Don't start with Arabic Design.
-    Programmmer Note: Don't Use Words Direct in Template.
+    Programmer Note: Don't Use Words Direct in Template.
     padding and margin for parent better than child.
         - in englich design 
             child : margin-left: 10px;
@@ -30,6 +30,7 @@
 */
 
 
+
 // ======= Problems & Solutions Part 3 =======
 /*
     Don't Ever Forget Comments and ordering of elements
@@ -51,6 +52,7 @@
 */
 
 
+
 // ======= Problems & Solutions Part 4 =======
 /*
     Consider Width Length When Specify Element Width
@@ -60,15 +62,15 @@
             .parent span { width: 40px; }
         in style-rtl.css
             span { width: 60px; }
-        that is not correct because first nesting is string then second nesting
+        that is not correct because first nesting is strong then second nesting
         use in style-rtl.css 
             .parent span { width: 60px; }
     Don't use Element That Need to Change Like Arrows. Use Pseudo Element
         in index.html
-            <span>View</span>
+            <span class="view">View</span>
             <i class="fa fa-chevron-right"></i>
         in index-rtl.html
-            <span>View</span>
+            <span class="view">View</span>
             <i class="fa fa-chevron-left"></i>
         this is not best practice --> use before and after
         .style.css
@@ -81,9 +83,32 @@
                 font-family: "FontAwesome";
                 content: "\f053";
             }
-        know you can remove <i> target element
+        know you can remove <i> target element from html file
 */
 
-// repeat this please please again
+
+
+// ======= Amazing Features To Help You =======
+/*
+    <bdi> [Bi-Directional Isolation] : use it if you have englich and arabic text
+        <p>مرحبا <bdi>Hello</bdi></p>
+        <p>Hello In Aravix Is :  <bdi>مرحبا</bdi> Go It</p>
+    Attribute dir = [ Auto ]
+        <input type="text" dir="auto">
+        the direction is depend the language
+    text-align: [ start | end ]
+        end = right
+        start = left
+    float: [ inline-start | inline-end ]
+        end = right
+        start = left 
+*/
+
+
+
+
+
+
+
 
 

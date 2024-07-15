@@ -32,8 +32,19 @@ div h1 {
 
 
 /* ======= Part 4 ======= */
+.parent span {
+    color: black;
+}
 .view::after {
     font-family: "FontAwesome";
     content: "\f053";
 }
+.test2 {
+    text-align: end;
+}
+
+
+
+
+
 
