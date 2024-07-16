@@ -1,17 +1,39 @@
-// Undersatnd this please
-
-class Parent {
-    #privateProperty = 'I am private';
-    getPrivateProperty() {
-        return this.#privateProperty;
+class User {
+    // private property
+    #e
+    #msg
+    constructor(name, id, email) {
+        this.n = name;
+        this.i = id;
+        this.#e = email;
+        this.#msg = this.#showEmail(); 
+    }
+    #showEmail() {
+        return `Your Email Is ${this.#e}`;
+    }
+    message() {
+        // return `message : ${this.#showEmail()}`;
+        return `message : ${this.#msg}`;
     }
 }
 
-class Child extends Parent {
-    showPrivateProperty() {
-        return this.getPrivateProperty(); // Accessing via a public method
+var userOne = new User("abdellah", 29394, "abdellah@gmail.com");
+console.log(userOne.message());
+
+class Admin extends User {
+    constructor(name, id, email, salary) {
+        super(name, id, email);
+        this.s = salary;
     }
 }
 
-const child = new Child();
-console.log(child.showPrivateProperty()); // Output: 'I am private'
+var adminOne = new Admin("Mohamed", 19293, "x.admin@gmail.com");
+console.log(adminOne.i); // 19293
+console.log(adminOne.n); // Mohamed
+console.log(adminOne.email); // undefined --> this private proprety
+console.log(adminOne.message()); // message : Your Email Is x.admin@gmail.com
+
+
+
+
+
