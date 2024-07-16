@@ -1,37 +1,25 @@
+// Prototype Introduction
+/*
+    is object that contain a lot of features like methods ...
+  - Prototypes are the mechanism by which JavaScript objects
+    inherit features from one another.
+*/
+
 class User {
-    // private property
-    #e
-    #msg
-    constructor(name, id, email) {
-        this.n = name;
-        this.i = id;
-        this.#e = email;
-        this.#msg = this.#showEmail(); 
+    constructor(id, username) {
+      this.i = id;
+      this.u = username;
     }
-    #showEmail() {
-        return `Your Email Is ${this.#e}`;
-    }
-    message() {
-        // return `message : ${this.#showEmail()}`;
-        return `message : ${this.#msg}`;
+    sayHello() {
+      return `Hello ${this.u}`;
     }
 }
+var userOne = new User(100, "Elzero");
+console.log(User.prototype);
 
-var userOne = new User("abdellah", 29394, "abdellah@gmail.com");
-console.log(userOne.message());
+var str = "Abdellah";
+console.log(String.prototype);
 
-class Admin extends User {
-    constructor(name, id, email, salary) {
-        super(name, id, email);
-        this.s = salary;
-    }
-}
-
-var adminOne = new Admin("Mohamed", 19293, "x.admin@gmail.com");
-console.log(adminOne.i); // 19293
-console.log(adminOne.n); // Mohamed
-console.log(adminOne.email); // undefined --> this private proprety
-console.log(adminOne.message()); // message : Your Email Is x.admin@gmail.com
 
 
 
