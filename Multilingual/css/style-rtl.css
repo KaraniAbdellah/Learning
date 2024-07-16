@@ -44,6 +44,20 @@ div h1 {
 }
 
 
+/* ======= Part 5 ======= */
+.float-right {
+    float: right;
+}
+.float-left {
+    float: left;
+}
+.t-right {
+    text-align: right;
+}
+.t-left {
+    text-align: left;
+}
+
 
 
 

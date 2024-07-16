@@ -104,7 +104,19 @@
         start = left 
 */
 
-// Repeat This Please
+
+// Create Your Helpers Classes
+/*
+    use Framework. [ Boostrap, Fondation, Semantic UI ]
+    Float Classes [ float-left | float-right ]
+        .float-left {  float: left;  }
+        .float-right {  float: right;  }
+    Text Align Classes [ text-align: right; | text-align: left; ]
+    direction classes
+*/
+
+
+
 
 
 

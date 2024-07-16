@@ -56,7 +56,18 @@ p.test1 {
     text-align: end;
 }
 
-
-
+/* ======= Part 5 ======= */
+.float-right {
+    float: right;
+}
+.float-left {
+    float: left;
+}
+.t-right {
+    text-align: right;
+}
+.t-left {
+    text-align: left;
+}
 
 
