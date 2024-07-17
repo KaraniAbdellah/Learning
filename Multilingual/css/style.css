@@ -1,3 +1,6 @@
+body {
+    padding: 20px;
+}
 /* ======= Part 1 and Part 2 ======= */
 div {
     background-color: #272525ca;
@@ -68,6 +71,32 @@ p.test1 {
 }
 .t-left {
     text-align: left;
+}
+
+
+
+/*  ======= Part 6 =======  */
+.box {
+    width: 100px;
+    height: 100px;
+    background-color: #eee;
+    border-radius: 0 20px 20px 0;
+    color: black;
+    padding: 0 5px;
+    position: relative;
+    border-width: 0 0 0 4px;
+    border-color: red;
+    border-style: solid;
+}
+.box::after {
+    content: '';
+    position: absolute;
+    right: -30px;
+    top: 50%;
+    transform: translateY(-50%);
+    border-width: 15px;
+    border-style: solid;
+    border-color: transparent transparent transparent #eee;
 }
 
 

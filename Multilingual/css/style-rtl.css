@@ -1,3 +1,4 @@
+
 /* ======= Part 1 And Part 2 ======= */
 /* Method 1 For Margin and padding for parent better then child */
 div {
@@ -60,5 +61,13 @@ div h1 {
 
 
 
-
-
+/*  ======= Part 6 =======  */
+.box {
+    border-radius: 20px 0 0 20px;
+    border-width: 0 4px 0 0 ;
+}
+.box::after {
+    border-color: transparent #eee transparent transparent;
+    right: auto; /* without this he take right from style.css */
+    left: -30px;
+}

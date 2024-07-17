@@ -105,6 +105,7 @@
 */
 
 
+
 // Create Your Helpers Classes
 /*
     use Framework. [ Boostrap, Fondation, Semantic UI ]
@@ -117,6 +118,21 @@
 
 
 
+// Properties You Need To Focus On Part 1
+/*
+    margin
+    padding
+    border-radius
+    Pseaudo Elements
+    border --> do it proprety with proprety
+        border-style, border-width, border-color
+        in style.css
+            border-width: 0 0 0 4px;
+            border-color: red;
+            border-style: solid;
+        in style-rtl.css
+            border-width: 0 4px 0 0 ;
+*/
 
 
 
