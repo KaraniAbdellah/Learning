@@ -3896,9 +3896,11 @@ console.log(adminOne.message()); // message : Your Email Is x.admin@gmail.com
 
 // Prototype Introduction
 /*
-    is object that contain a lot of features like methods ...
-  - Prototypes are the mechanism by which JavaScript objects
-    inherit features from one another.
+    Prototypes are the mechanism by which JavaScript objects
+        inherit features from one another.
+    Every object in JavaScript has a built-in property
+        which is called its prototype
+    
 */
 class User {
     constructor(id, username) {
