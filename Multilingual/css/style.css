@@ -75,7 +75,7 @@ p.test1 {
 
 
 
-/*  ======= Part 6 =======  */
+/*  ======= Part 6 and Part 7=======  */
 .box {
     width: 100px;
     height: 100px;
@@ -87,6 +87,11 @@ p.test1 {
     border-width: 0 0 0 4px;
     border-color: red;
     border-style: solid;
+    box-shadow: 10px 0px 10px 0px;
+    /* transform: rotate(20deg); */
+    position: absolute;
+    top: 50%;
+    left: 100px;
 }
 .box::after {
     content: '';

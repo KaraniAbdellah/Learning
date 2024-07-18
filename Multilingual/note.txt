@@ -136,8 +136,30 @@
 
 
 
+// Properties You Need To Focus On Part 2
+/*
+    box-shadow
+    transform
+        in style.css
+            box-shadow: 10px 0px 10px 0px;
+            transform: rotate(20deg);
+        in style-rtl.css
+        box-shadow: -10px 0px 10px 0px;
+        transform: rotate(-20deg);
+    position
+        in style.css
+            position: absolute; top: 50%; left: 100px;
+        in style-rtl.css
+            left: auto; right: 100px;
+        // reset the value by auto
+*/
 
 
+
+// Create Dynamic RTL File With Sass
+/*
+    Use Varibles for two languages
+*/
 
 
 

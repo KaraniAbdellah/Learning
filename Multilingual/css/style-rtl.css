@@ -65,6 +65,10 @@ div h1 {
 .box {
     border-radius: 20px 0 0 20px;
     border-width: 0 4px 0 0 ;
+    box-shadow: -10px 0px 10px 0px;
+    /* transform: rotate(-20deg); */
+    left: auto;
+    right: 100px;
 }
 .box::after {
     border-color: transparent #eee transparent transparent;
