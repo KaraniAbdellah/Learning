@@ -1,0 +1,6 @@
+// do the implemetation os simple graphe with c
+// understand the graphe non oriente
+// do the implemetation also for him
+// explian that in bref please
+
+

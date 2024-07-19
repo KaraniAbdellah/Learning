@@ -1,21 +1,3 @@
-I. Introduction aux Graphes
-Définition et concepts de base
-Terminologie : nœud (sommet), arête (arc), graphe orienté vs non orienté
-Exemples d'applications des graphes dans divers domaines (réseaux sociaux, cartographie, circuits électriques, etc.)
-
-
-II. Représentation des Graphes
-Matrice d'adjacence
-Liste d'adjacence
-Comparaison des avantages et inconvénients de chaque représentation
-
-
-III. Types de Graphes
-Graphe simple vs graphe pondéré
-Graphe cyclique vs acyclique
-Graphe connexe vs graphe non connexe
-
-
 IV. Parcours de Graphes
 Parcours en profondeur (DFS - Depth-First Search)
 Implémentation récursive et itérative
