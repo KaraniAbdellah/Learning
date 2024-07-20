@@ -3922,6 +3922,53 @@ console.log(String.prototype);
 
 
 
+// Add To Prototype Chain And Extend Constructors Features
+
+/*
+    --- Classes are used to define the structure and 
+        behavior of objects, while objects are used to 
+        represent specific entities in a program
+
+   --- prototype is used for objects
+   --- Object.love = "Hello World";
+        all object inhert from each other
+*/
+
+class User {
+    constructor(name, email, id) {
+        this.n = name;
+        this.e = email;
+        this.i = id;
+        this.msg = function() {
+            return 'THis.Email Value Is ', this.e;
+        }
+    }
+}
+
+var userOne = new User("Abdellah", "Karani", 34949);
+console.log(userOne.msg()); // Karani
+
+console.log(User.prototype);
+
+User.prototype.sayWelcom = function() { // add method to the prototype
+    return `Welcome ${this.n}`;
+}
+console.log(userOne.sayWelcom());
+// console.log(User.sayWelcom()); // User.sayWelcom is not a function
+
+Object.prototype.love = "Abdellah Karani";
+console.log(User.love); // Abdellah Karani
+console.log(userOne.love); // Abdellah Karani
+
+String.prototype.addDotBeforeAndAfter = function(value) {
+    return `.${this}.`;
+}
+var str = "Hello";
+console.log(str.addDotBeforeAndAfter()); // .Hello.
+
+
+
+
 
 
 
