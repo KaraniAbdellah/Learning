@@ -3956,7 +3956,7 @@ User.prototype.sayWelcom = function() { // add method to the prototype
 console.log(userOne.sayWelcom());
 // console.log(User.sayWelcom()); // User.sayWelcom is not a function
 
-Object.prototype.love = "Abdellah Karani";
+Object.prototype.love = "Abdelah Karani";
 console.log(User.love); // Abdellah Karani
 console.log(userOne.love); // Abdellah Karani
 
@@ -3966,6 +3966,52 @@ String.prototype.addDotBeforeAndAfter = function(value) {
 var str = "Hello";
 console.log(str.addDotBeforeAndAfter()); // .Hello.
 
+
+
+
+/*
+    Object Meta Data And Descriptor
+        - we can a proprety to the object
+        - writable
+            you can change the value of any proprety
+        - enumerable
+            in loop you can access to this proprety
+        - configurable 
+            Cannot Delete Or Redifine
+        - delete myObject.prop
+            delete a proprety
+*/
+
+const myObject = {
+    a: 1,
+    b: 2,
+};
+
+Object.defineProperty(myObject, "c", {
+    // default is false
+    writable: false, 
+    enumerable: false,
+    configurable: false,
+    value: 3,
+});
+
+myObject.c = 100;
+for (var prop in myObject) {
+    console.log(prop, myObject[prop]);
+}
+console.log(delete myObject.c); // false --> delete Unsuccefully
+console.log(myObject); // {a: 1, b: 2, c: 3}
+
+
+// Cannot redefine property
+Object.defineProperty(myObject, "c", {
+    // default is false
+    writable: false, 
+    enumerable: false,
+    configurable: false,
+    value: 300,
+});
+console.log(myObject.c); // 300 if [ configurable: true, ]
 
 
 
