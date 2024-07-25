@@ -18,28 +18,12 @@ typedef struct List {
 // List *adjList_udsg[n] = {0}; // for undirected simple graph
 
 
-// This Function Intialize a Graph
+// This Function Intialize a Simple Graph
 void intialize_graph(List *adjList[n]) {
     for (int i = 0; i < n; i++) {
         adjList[i] = (List *) malloc(sizeof(List));
         adjList[i]->head = NULL;
     }
-}
-
-
-// This Function To Print a Graph
-void printfList_simple_graph(List *adjList[n]) {
-    for (int i = 0; i < n; i++) {
-        Node *temp = adjList[i]->head;
-        printf("Adjacency List for %d are : ", i);
-        while (temp != NULL) {
-            printf("(%d) -> ", temp->data);
-            temp = temp->next;
-        }
-        printf("NULL");
-        printf("\n");
-    }
-    printf("-------\n");
 }
 
 
@@ -103,13 +87,27 @@ void addNode_udsg(int s, int d, List *adjList_udsg[n]) {
 }
 
 
+// This Function To Print a Graph
+void printfList_simple_graph(List *adjList[n]) {
+    for (int i = 0; i < n; i++) {
+        Node *temp = adjList[i]->head;
+        printf("Adjacency List for %d are : ", i);
+        while (temp != NULL) {
+            printf("(%d) -> ", temp->data);
+            temp = temp->next;
+        }
+        printf("NULL");
+        printf("\n");
+    }
+    printf("-------\n");
+}
 
 
 
 // Start With Weighted Graph
 typedef struct node_w {
     int data;
-    int wight;
+    int weight;
     struct node_w *next;
 } node_w;
 
@@ -118,15 +116,72 @@ typedef struct List_W {
 } List_W;
 
 
+// This Function Intialize a Weighted Graph
+void intialize_graph_w(List_W *adjList[n]) {
+    for (int i = 0; i < n; i++) {
+        adjList[i] = (List_W *) malloc(sizeof(List));
+        adjList[i]->head = NULL;
+    }
+}
+
+
+// This Function Print a Graph
+void printfList_weighted_graph(List_W *adjList[n]) {
+    node_w *temp;
+    for (int i = 0; i < n; i++) {
+        temp = adjList[i]->head;
+        printf("Adjacency List for %d are : ", i);
+        while (temp != NULL) {
+            printf("(%d,%d) --> ", temp->data, temp->weight);
+            temp = temp->next;
+        }
+        printf("NULL\n");
+    }
+}
+
+
 // Directed Weighted Graph
-void addNode_wdg(List_W *adjList[n]) {
-    
+void addNode_wdg(int s, int d, int w, List_W *adjList[n]) {
+    node_w *dest, *temp;
+    dest = (node_w *) malloc(sizeof(node_w));
+    dest->next = NULL; dest->data = d; dest->weight = w;
+    if (adjList[s]->head == NULL) {
+        adjList[s]->head = dest;
+        return;
+    }
+    temp = adjList[s]->head;
+    while (temp->next != NULL) temp = temp->next;
+    temp->next = dest;
 }
 
 
-void printfList_weighted_graph(List *adjList[n]) {
-    
+// Undirected Weighted Graph
+void addNode_uwdg(int s, int d, int w, List_W *adjList[n]) {
+    node_w *dest, *temp, *src;
+    // connect s to d
+    dest = (node_w *) malloc(sizeof(node_w));
+    dest->next = NULL; dest->data = d; dest->weight = w;
+    if (adjList[s]->head == NULL) {
+        adjList[s]->head = dest;
+    }
+    else {
+        temp = adjList[s]->head;
+        while (temp->next != NULL) temp = temp->next;
+        temp->next = dest;
+    }
+    // connect d to s
+    src = (node_w *) malloc(sizeof(node_w));
+    src->next = NULL; src->data = s; src->weight = w;
+    if (adjList[d]->head == NULL) {
+        adjList[d]->head = src;
+    } else {
+        temp = adjList[d]->head;
+        while (temp->next != NULL) temp = temp->next;
+        temp->next = src;
+    }
 }
+
+
 
 
 
