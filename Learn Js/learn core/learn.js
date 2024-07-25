@@ -3669,6 +3669,17 @@ form.addEventListener("submit", function(event) {
 
 
 
+// another Informations
+var RegexUsername1 = /^[a-zA-Z0-9]+$/;
+/**
+ * This For Inputs
+ * ^ : at The First
+ * $ : at The End
+ */
+
+
+
+
 ////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////
@@ -3980,6 +3991,7 @@ console.log(str.addDotBeforeAndAfter()); // .Hello.
             Cannot Delete Or Redifine
         - delete myObject.prop
             delete a proprety
+        [ writable, enumerable, configurable ] --> Descriptors Of An Proprety
 */
 
 const myObject = {
@@ -4012,6 +4024,56 @@ Object.defineProperty(myObject, "c", {
     value: 300,
 });
 console.log(myObject.c); // 300 if [ configurable: true, ]
+
+
+
+
+// Object Meta Data And Descriptor
+/*
+  - Define Multiple Properties
+  - Check Descriptors
+*/
+
+const myObject = {
+    h: 0,
+    a: 1,
+    b: 2,
+};
+
+console.log("Hello World");
+
+Object.defineProperties(myObject, {
+    c: {
+        configurable: true, value: 3,
+    },
+    d: {
+        configurable: false, value: 4,
+    },
+    e: {
+        configurable: false, value: 5,
+    },
+    g: {
+        configurable: false, value: 6,
+    },
+});
+
+console.log(myObject);
+console.log(Object.getOwnPropertyDescriptor(myObject, "d"));
+console.log(Object.getOwnPropertyDescriptors(myObject));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

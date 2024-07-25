@@ -1,40 +1,23 @@
-const myObject = {
-    a: 23,
-    b: 34,
-};
+// OOP Revision
 
 // old method
-myObject.c = 10;
+function User(id, email, username) {
+    this.i = id;
+    this.e = email;
+    this.u = username;
+}
+
+var user1 = new User(3003, "abdellah", 333);
+console.log(user1);
 
 // new method
-Object.defineProperty(myObject, "c", {
-    writable: true,
-    enumerable: true,
-    configurable: true,
-    value: 3,
-});
-// Testing The Enumerable
-for (var prop in myObject) {
-    console.log(prop, myObject[prop]);
-    // with false in enumerable we can not accesses to the "c" proprety
+class User1 {
+    constructor(id, email, username) {
+        this.i = id;
+        this.e = email;
+        this.u = username;
+    }
 }
-// Testing The Writable
-myObject.c = 20723; // with false in writable we can not change the value of the "c" proprety
-// Testing The Configurable
-Object.defineProperty(myObject, "c", {
-    // default is false
-    configurable: true,
-    writable: true,
-    enumerable: true,
-    value: 3,
-    // with false in configurable --> Object.defineProprety is not a function
-})
-
-
-console.log(myObject);
-
-
-
-
-
+var user2 = new User1(2202, "aksks", 39393);
+console.log(user2);
 
