@@ -1,55 +1,52 @@
-// define user
+// revise the static propreties
 
-// old method
-function User(id, name, email) {
-    this.i = id;
-    this.n = name;
-    this.e = email;
-}
 
-var userOne = new User(10029, "abdellah", "a@gmail.com");
 
-class Admin {
+class User {
+    count = 0; // for Object
+    static nbr = 0;
     constructor(id, name, email) {
-        this.i = id;
-        this.n = name;
         this.e = email;
+        this.n = name;
+        this.i = id;
+        User.nbr += 1;
+        this.msg  = function() {
+            return `No Message ${this.e}`; 
+        }
+    }
+    static state() {
+        return `The Number Of is :  ${this.nbr}`;
     }
 }
 
-var userTwo = new Admin(10030, "hamza", "h@gmail.com");
+var userOne = new User(1000, "john", "john@gmain.com");
 
-console.log(userOne);
-console.log(userTwo);
-
-console.log(typeof userOne); // object
-console.log(typeof User); // function
-
-
-
-// ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
-// make by constrastor string
-var message = new String("HI MOM!");
-var call = "CALL ME!";
-console.log(typeof message); // object
-console.log(typeof call); // string
-
-// same constractor
-console.log(message.constructor); // native code of constractor --> String
-console.log(call.constructor); // native code of constractor ---> String
-
-// instanceof
-console.log(message instanceof String); // true
-console.log(call instanceof String); // false
+console.log(userOne.msg(), userOne.e); 
+console.log(userOne.count); // 0
+console.log(User.count); // undefined
+console.log(User.nbr); // 1
+console.log(userOne.nbr); // undefined
+console.log(User.state());
 
 
+// Inhertence
 
+/**
+ * the admin inhert the property with there value
+ * we can inhert a static property or method
+ */
 
+class Admin extends User {
+    constructor (email, id, name, salary) {
+        super(id, name, email);
+        this.s = salary;
+    }
+}
 
+var adminOne = new Admin("admin@gmail.com", 10203, "deo", 2000);
 
-
-
+console.log(adminOne.count); // 0
+console.log(Admin.state()); // The Number Is 2 [ user and admin ]
 
 
 
