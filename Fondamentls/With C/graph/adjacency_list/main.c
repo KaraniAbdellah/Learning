@@ -10,7 +10,7 @@ int main() {
     printf("\nDirected Simple Graph : \n\n");
     List *adjList_dsg[n] = {0};
     
-    intialize_graph(adjList_dsg);
+    intialize_simple_graph(adjList_dsg);
     
     addNode_dsg(0, 1, adjList_dsg);
     addNode_dsg(0, 2, adjList_dsg);
@@ -25,7 +25,7 @@ int main() {
     printf("\nUndirected Simple Graph : \n\n");
     List *adjList_udsg[n] = {0};
     
-    intialize_graph(adjList_udsg);
+    intialize_simple_graph(adjList_udsg);
     
     addNode_udsg(0, 1, adjList_udsg);
     addNode_udsg(0, 2, adjList_udsg);
@@ -41,7 +41,7 @@ int main() {
     
     List_W *adjList_dwg[n] = {0};
     
-    intialize_graph_w(adjList_dwg);
+    intialize_weighted_graph(adjList_dwg);
     
     addNode_wdg(0, 1, 4, adjList_dwg);
     addNode_wdg(0, 3, 3, adjList_dwg);
@@ -56,14 +56,14 @@ int main() {
     
     List_W *adjList_udwg[n] = {0};
     
-    intialize_graph_w(adjList_udwg);
+    intialize_weighted_graph(adjList_udwg);
     
-    addNode_wdg(0, 1, 4, adjList_udwg);
-    addNode_wdg(0, 3, 3, adjList_udwg);
-    addNode_wdg(0, 5, 5, adjList_udwg);
-    addNode_wdg(2, 1, 7, adjList_udwg);
-    addNode_wdg(3, 4, 1, adjList_udwg);
-    addNode_wdg(1, 3, 1, adjList_udwg);
+    addNode_uwdg(0, 1, 4, adjList_udwg);
+    addNode_uwdg(0, 3, 3, adjList_udwg);
+    addNode_uwdg(0, 5, 5, adjList_udwg);
+    addNode_uwdg(2, 1, 7, adjList_udwg);
+    addNode_uwdg(3, 4, 1, adjList_udwg);
+    addNode_uwdg(1, 3, 1, adjList_udwg);
     printfList_weighted_graph(adjList_udwg);
     return 0;
 }

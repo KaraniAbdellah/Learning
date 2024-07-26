@@ -19,7 +19,7 @@ typedef struct List {
 
 
 // This Function Intialize a Simple Graph
-void intialize_graph(List *adjList[n]) {
+void intialize_simple_graph(List *adjList[n]) {
     for (int i = 0; i < n; i++) {
         adjList[i] = (List *) malloc(sizeof(List));
         adjList[i]->head = NULL;
@@ -117,9 +117,9 @@ typedef struct List_W {
 
 
 // This Function Intialize a Weighted Graph
-void intialize_graph_w(List_W *adjList[n]) {
+void intialize_weighted_graph(List_W *adjList[n]) {
     for (int i = 0; i < n; i++) {
-        adjList[i] = (List_W *) malloc(sizeof(List));
+        adjList[i] = (List_W *) malloc(sizeof(List_W));
         adjList[i]->head = NULL;
     }
 }
@@ -141,41 +141,41 @@ void printfList_weighted_graph(List_W *adjList[n]) {
 
 
 // Directed Weighted Graph
-void addNode_wdg(int s, int d, int w, List_W *adjList[n]) {
+void addNode_wdg(int s, int d, int w, List_W *adjList_dwg[n]) {
     node_w *dest, *temp;
     dest = (node_w *) malloc(sizeof(node_w));
     dest->next = NULL; dest->data = d; dest->weight = w;
-    if (adjList[s]->head == NULL) {
-        adjList[s]->head = dest;
+    if (adjList_dwg[s]->head == NULL) {
+        adjList_dwg[s]->head = dest;
         return;
     }
-    temp = adjList[s]->head;
+    temp = adjList_dwg[s]->head;
     while (temp->next != NULL) temp = temp->next;
     temp->next = dest;
 }
 
 
 // Undirected Weighted Graph
-void addNode_uwdg(int s, int d, int w, List_W *adjList[n]) {
+void addNode_uwdg(int s, int d, int w, List_W *adjList_udwg[n]) {
     node_w *dest, *temp, *src;
     // connect s to d
     dest = (node_w *) malloc(sizeof(node_w));
     dest->next = NULL; dest->data = d; dest->weight = w;
-    if (adjList[s]->head == NULL) {
-        adjList[s]->head = dest;
+    if (adjList_udwg[s]->head == NULL) {
+        adjList_udwg[s]->head = dest;
     }
     else {
-        temp = adjList[s]->head;
+        temp = adjList_udwg[s]->head;
         while (temp->next != NULL) temp = temp->next;
         temp->next = dest;
     }
     // connect d to s
     src = (node_w *) malloc(sizeof(node_w));
     src->next = NULL; src->data = s; src->weight = w;
-    if (adjList[d]->head == NULL) {
-        adjList[d]->head = src;
+    if (adjList_udwg[d]->head == NULL) {
+        adjList_udwg[d]->head = src;
     } else {
-        temp = adjList[d]->head;
+        temp = adjList_udwg[d]->head;
         while (temp->next != NULL) temp = temp->next;
         temp->next = src;
     }
