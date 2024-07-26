@@ -1,23 +1,64 @@
-// OOP Revision
+// define user
 
 // old method
-function User(id, email, username) {
+function User(id, name, email) {
     this.i = id;
+    this.n = name;
     this.e = email;
-    this.u = username;
 }
 
-var user1 = new User(3003, "abdellah", 333);
-console.log(user1);
+var userOne = new User(10029, "abdellah", "a@gmail.com");
 
-// new method
-class User1 {
-    constructor(id, email, username) {
+class Admin {
+    constructor(id, name, email) {
         this.i = id;
+        this.n = name;
         this.e = email;
-        this.u = username;
     }
 }
-var user2 = new User1(2202, "aksks", 39393);
-console.log(user2);
+
+var userTwo = new Admin(10030, "hamza", "h@gmail.com");
+
+console.log(userOne);
+console.log(userTwo);
+
+console.log(typeof userOne); // object
+console.log(typeof User); // function
+
+
+
+// ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// make by constrastor string
+var message = new String("HI MOM!");
+var call = "CALL ME!";
+console.log(typeof message); // object
+console.log(typeof call); // string
+
+// same constractor
+console.log(message.constructor); // native code of constractor --> String
+console.log(call.constructor); // native code of constractor ---> String
+
+// instanceof
+console.log(message instanceof String); // true
+console.log(call instanceof String); // false
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
