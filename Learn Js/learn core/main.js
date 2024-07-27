@@ -1,50 +1,24 @@
-// revise the private method
-class User {
-    count = 0;
-    static nbr = 0;
-    // private proprety
-    #talk
-    #thing
-    constructor(email, id, name) {
-        this.e = email;
-        this.i = id;
+// revise Prototype
+
+
+
+class Danone {
+    constructor(name, id, color) {
         this.n = name;
-        this.count += 1;
-        User.nbr += 1;
-        this.#talk = "Hello World"; // private
-        this.#thing = this.#saySomeThing();
-    }
-    message () {
-        return this.#talk;
-    }
-    #saySomeThing() {
-        return this.message();
-    }
-    messageOfThings() {
-        return this.#saySomeThing();
+        this.i = id;
+        this.c = color;
     }
 }
 
-var userOne = new User("a@gmail.com", 1000, "abdellah");
-console.log(userOne.count); // 0
-console.log(User.count); // unidefined
-console.log(User.nbr); // 1
-console.log(userOne.nbr); // undifined
-console.log("-".repeat(30));
+var danone_jamila = new Danone("jamila", 100, "red");
 
-console.log(User.talk); // undifined
-console.log(userOne.talk); // undifined
-console.log("-".repeat(30));
+Danone.prototype.sayWelcome = function() {
+    return "in the next product you will have a promision of 86%";
+}
 
-console.log(userOne.message());
-console.log(userOne.messageOfThings());
+console.log(Danone.prototype);
 
-
-
-
-
-
-
+console.log(danone_jamila.sayWelcome());
 
 
 
