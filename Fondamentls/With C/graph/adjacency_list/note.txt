@@ -1,5 +1,12 @@
-// so know repeat the simple graphe and weighted graphe with adjacency list
+
+//////////////// ttask : 
 // understand BFS and DFS for Adjacency List
+
+
+
+
+
+
 
 
 // Search About Representation with Adjacency Matrix
