@@ -186,6 +186,55 @@ void addNode_uwdg(int s, int d, int w, List_W *adjList_udwg[n]) {
 
 
 
+// Start BFS With Adjacency List
+typedef struct node_queue {
+    Node *data;
+    struct node_queue *next;
+} node_queue;
+
+
+void insert_node(Node *node, node_queue **graph_list) {
+    node_queue *new_node = (node_queue *) malloc(sizeof(node_queue));
+    new_node->data = node;
+    new_node->next = NULL;
+    if (*graph_list == NULL) {
+        *graph_list = new_node;
+        return;
+    }
+    (*graph_list)->next = new_node;
+}
+
+Node* delete_node(node_queue **graph_list) {
+    if (*graph_list == NULL) return NULL;
+    node_queue *temp = *graph_list;
+    if (temp->next != NULL) {
+        while (temp->next->next != NULL) temp = temp->next;
+        node_queue *p = temp->next;
+        temp->next = NULL;
+        free(p);
+    } else {
+        *graph_list = NULL;
+        free(temp);
+    }
+}
+
+/*
+    problem : 
+        insert a node to the list
+        remove a node from list
+*/
+
+void breath_first_search(List *adjList[n]) {
+    node_queue *graph_list = NULL;
+    Node *node = NULL;
+    insert_node(node ,&graph_list);
+    
+    delete_node(&graph_list);
+    
+}
+
+
+
 
 
 

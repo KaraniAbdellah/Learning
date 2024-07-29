@@ -65,6 +65,10 @@ int main() {
     addNode_uwdg(3, 4, 1, adjList_udwg);
     addNode_uwdg(1, 3, 1, adjList_udwg);
     printfList_weighted_graph(adjList_udwg);
+    
+    // BFS With Adjacency List
+    printf("\nBreadth First Search : \n\n");
+    breath_first_search(adjList_dsg);
     return 0;
 }
 
