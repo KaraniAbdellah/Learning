@@ -1459,6 +1459,115 @@ console.log(url3.match(re));
 console.log(url4.match(re));
 console.log(url5.match(re));
 console.log("========================");
+console.groupEnd();
+
+
+
+// Assignment 147 to 158
+console.group("147 to 158");
+
+// Get The Nedded
+// function Car(name, model, price) {
+//     this.n = name;
+//     this.m = model;
+//     this.p = price;
+//   }
+class Car {
+    constructor(name, model, price) {
+        this.n = name;
+        this.m = model;
+        this.p = price;
+    }
+    message = function() {
+        return `Car One Name Is ${this.n} And Model Is ${this.m} And Price Is ${this.p}`;
+    }
+    run = function() {
+        return `Car Is Running Now`;
+    }
+    stop = function() {
+        return `Car Is Stopped`;
+    }
+}
+var new_car_one = new Car("MG", 2022, 42000); 
+var new_car_two = new Car("TESLA", 2019, 34555); 
+var new_car_three = new Car("MERCIDES", 2010, 239874); 
+console.log(new_car_one.message())
+//   "Car One Name Is MG And Model Is 2022 And Price Is 420000"
+//   "Car Is Running Now"
+
+
+
+// Get The Nedded
+class Phone {
+    constructor(name, serial, price) {
+        this.name = name;
+        this.serial = serial;
+        this.price = price;
+    }
+}
+class Tablet extends Phone {
+    constructor(name, serial, price, size) {
+        super(name, serial, price);
+        this.s = size;
+    }
+    fullDetails = function() {
+        return `${this.name} Serial is ${this.serial} And Size Is ${(this.s) ? this.s : 'unknown'}`;
+    }
+}
+var TabletOne = new Tablet("iPad", 100200300, 1500, 12.9);
+var TabletTwo = new Tablet("Nokia", 350450650, 800, 10.5);
+var TabletThree = new Tablet("LG", 250450650, 650);
+
+console.log(`${TabletOne.fullDetails()}`);
+// iPad Serial is 100200300 And Size Is 12.9
+console.log(`${TabletTwo.fullDetails()}`);
+// Nokia Serial is 350450650 And Size Is 10.5
+console.log(`${TabletThree.fullDetails()}`);
+// LG Serial is 250450650 And Size Is Unknown
+console.log("-------------");
+
+
+// Get The Nedded
+// Edit The Class
+class User {
+    // the private property
+    #c
+    constructor(username, card) {
+        this.u = username;
+        this.#c = card;
+        this.showData = this.sayHello();
+    }
+    sayHello = function() {
+        var number = `${this.#c}`;
+        var regex = /(\d{4}|\d{1,})/gi;
+        var string = number.match(regex).join("-");
+        return `Hello ${this.u} You Credit Card Number Is ${string}`; 
+    }
+}
+
+// Do Not Edit Anything Below
+
+var userOne = new User("Osama", "1234-5678-1234-567");
+var userTwo = new User("Ahmed", "1234567812345678");
+var userThree = new User("Ghareeb", 1234567812345678);
+
+console.log(userOne.showData);
+// Hello Osama Your Credit Card Number Is 1234-5678-1234-5678
+
+console.log(userTwo.showData);
+// Hello Ahmed Your Credit Card Number Is 1234-5678-1234-5678
+
+console.log(userThree.showData);
+// Hello Ghareeb Your Credit Card Number Is 1234-5678-1234-5678
+
+console.log(userOne.c); // Prevent Accessing To Card Property Here
+// Undefined
+
+
+
+
+
+
 
 
 
