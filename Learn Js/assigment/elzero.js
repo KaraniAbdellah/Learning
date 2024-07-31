@@ -1541,7 +1541,7 @@ class User {
         var number = `${this.#c}`;
         var regex = /(\d{4}|\d{1,})/gi;
         var string = number.match(regex).join("-");
-        return `Hello ${this.u} You Credit Card Number Is ${string}`; 
+        return `Hello ${this.u} You Credit Card Number Is ${string}`;
     }
 }
 
@@ -1562,12 +1562,48 @@ console.log(userThree.showData);
 
 console.log(userOne.c); // Prevent Accessing To Card Property Here
 // Undefined
+console.log("_------------------------");
 
 
 
+// Get The Nedded --> i want to make it auto
+// write your code
+String.prototype.addLove = function() {
+    return `I Love Elzero Web School`;
+}
+// Do Not Edit Below
+var myStr = "Elzero";
+console.log(String.prototype);
+console.log(myStr.addLove()); // I Love Elzero Web School 
+console.log("--------------");
 
 
+// hidden id property and keep score value save and delte country proprety
+const myObj = {
+    username: "Elzero",
+    id: 100,
+    score: 1000,
+    country: "Egypt",
+};
 
+Object.defineProperties(myObj, {
+    id : {
+        enumerable: false,
+    },
+    score: {
+        writable: false,
+    }
+});
+console.log(delete myObj.country); // true
+myObj.score = 500;
+for (let prop in myObj) {
+    console.log(`${prop} => ${myObj[prop]}`);
+}
+console.log(myObj);
+// Needed Output
+//   "username => Elzero"
+//   "score => 1000"
+//   {username: 'Elzero', score: 1000, id: 100}
 
 
 
