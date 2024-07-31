@@ -11,7 +11,7 @@ typedef struct Node {
 
 typedef struct List {
     Node *head;
-} List; 
+} List;
 
 
 // List *adjList_dsg[n] = {0}; // for directed simple graph
