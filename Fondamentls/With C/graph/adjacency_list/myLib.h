@@ -190,46 +190,59 @@ void addNode_uwdg(int s, int d, int w, List_W *adjList_udwg[n]) {
 typedef struct node_queue {
     Node *data;
     struct node_queue *next;
+    struct node_queue *prev;
 } node_queue;
 
 
-void insert_node(Node *node, node_queue **graph_list) {
+void insert_node(Node *node, node_queue **head, node_queue **tail) {
     node_queue *new_node = (node_queue *) malloc(sizeof(node_queue));
     new_node->data = node;
-    new_node->next = NULL;
-    if (*graph_list == NULL) {
-        *graph_list = new_node;
+    new_node->next = new_node->prev = NULL;
+    if (*head == NULL) {
+        *head = *tail =  new_node;
         return;
     }
-    (*graph_list)->next = new_node;
+    new_node->prev = *tail;
+    (*tail)->next = new_node;
+    (*tail) = new_node;
 }
 
-Node* delete_node(node_queue **graph_list) {
-    if (*graph_list == NULL) return NULL;
-    node_queue *temp = *graph_list;
-    if (temp->next != NULL) {
-        while (temp->next->next != NULL) temp = temp->next;
-        node_queue *p = temp->next;
-        temp->next = NULL;
-        free(p);
-    } else {
-        *graph_list = NULL;
-        free(temp);
-    }
+Node* delete_node(node_queue **head, node_queue **tail) {
+    if (head == NULL) return NULL;
+    node_queue *temp = *tail;
+    *tail = temp->prev;
+    if ((*tail)->next != NULL) (*tail)->next = NULL;
+    else *head = NULL;
+    free(temp);
 }
 
 /*
     problem : 
-        insert a node to the list
-        remove a node from list
+        with first element --> create first element
+        with node already visited
+        how the BSF work ?
+    some solutions
+        delete ele first and then add correspond element
 */
 
 void breath_first_search(List *adjList[n]) {
-    node_queue *graph_list = NULL;
+    node_queue *head = NULL, *tail = NULL;
     Node *node = NULL;
-    insert_node(node ,&graph_list);
+    // insert first node
+    Node *new_node = (Node *) malloc(sizeof(Node));
+    new_node->data = 0;
+    new_node->next = NULL;
+    insert_node(new_node, &head, &tail);
     
-    delete_node(&graph_list);
+    while (head != NULL) {
+        Node *temp = adjList[tail->data->data]->head;
+        while (temp != NULL) {
+            insert_node(temp, &head, &tail);
+            temp = temp->next;
+        }
+        Node *deleted_node = delete_node(&head, &tail);
+    }
+    
     
 }
 
