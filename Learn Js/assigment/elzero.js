@@ -1508,10 +1508,10 @@ class Phone {
 class Tablet extends Phone {
     constructor(name, serial, price, size) {
         super(name, serial, price);
-        this.s = size;
+        this.s = size || "Unknown";
     }
     fullDetails = function() {
-        return `${this.name} Serial is ${this.serial} And Size Is ${(this.s) ? this.s : 'unknown'}`;
+        return `${this.name} Serial is ${this.serial} And Size Is ${this.s}`;
     }
 }
 var TabletOne = new Tablet("iPad", 100200300, 1500, 12.9);
@@ -1531,22 +1531,20 @@ console.log("-------------");
 // Edit The Class
 class User {
     // the private property
-    #c
+    #c;
     constructor(username, card) {
         this.u = username;
         this.#c = card;
-        this.showData = this.sayHello();
+        this.showData = this.#message();
     }
-    sayHello = function() {
-        var number = `${this.#c}`;
+    #message() {
         var regex = /(\d{4}|\d{1,})/gi;
-        var string = number.match(regex).join("-");
+        let string = this.#c.toString().match(regex).join("-");
         return `Hello ${this.u} You Credit Card Number Is ${string}`;
     }
 }
 
 // Do Not Edit Anything Below
-
 var userOne = new User("Osama", "1234-5678-1234-567");
 var userTwo = new User("Ahmed", "1234567812345678");
 var userThree = new User("Ghareeb", 1234567812345678);
@@ -1568,13 +1566,14 @@ console.log("_------------------------");
 
 // Get The Nedded --> i want to make it auto
 // write your code
+// String.prototype.addLove = () => `I Love ${this} Web School`; // I Love [object Window] Web School
 String.prototype.addLove = function() {
-    return `I Love Elzero Web School`;
-}
+    return `I Love ${this} Web School`;
+};
 // Do Not Edit Below
-var myStr = "Elzero";
+var myStr = "Abdellah";
 console.log(String.prototype);
-console.log(myStr.addLove()); // I Love Elzero Web School 
+console.log(myStr.addLove()); // I Love Abdellah Web School 
 console.log("--------------");
 
 
@@ -1592,7 +1591,7 @@ Object.defineProperties(myObj, {
     },
     score: {
         writable: false,
-    }
+    },
 });
 console.log(delete myObj.country); // true
 myObj.score = 500;
@@ -1601,9 +1600,9 @@ for (let prop in myObj) {
 }
 console.log(myObj);
 // Needed Output
-//   "username => Elzero"
-//   "score => 1000"
-//   {username: 'Elzero', score: 1000, id: 100}
+    // "username => Elzero"
+    // "score => 1000"
+    // {username: 'Elzero'; score: 1000; id: 100}
 
 
 
