@@ -14,10 +14,10 @@ int main() {
     
     addNode_dsg(0, 1, adjList_dsg);
     addNode_dsg(0, 2, adjList_dsg);
-    addNode_dsg(0, 3, adjList_dsg);
-    addNode_dsg(1, 2, adjList_dsg);
-    addNode_dsg(1, 4, adjList_dsg);
-    addNode_dsg(1, 5, adjList_dsg);
+    // addNode_dsg(0, 3, adjList_dsg);
+    addNode_dsg(1, 3, adjList_dsg);
+    //  addNode_dsg(1, 4, adjList_dsg);
+    // addNode_dsg(1, 5, adjList_dsg);
     addNode_dsg(2, 4, adjList_dsg);
     printfList_simple_graph(adjList_dsg);
     
@@ -68,7 +68,7 @@ int main() {
     
     // BFS With Adjacency List
     printf("\nBreadth First Search : \n\n");
-    breath_first_search(adjList_dsg);
+    breadth_first_search(adjList_dsg);
     return 0;
 }
 

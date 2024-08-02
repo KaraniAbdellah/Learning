@@ -194,6 +194,7 @@ typedef struct node_queue {
 } node_queue;
 
 
+// insert at the tail
 void insert_node(Node *node, node_queue **head, node_queue **tail) {
     node_queue *new_node = (node_queue *) malloc(sizeof(node_queue));
     new_node->data = node;
@@ -207,50 +208,49 @@ void insert_node(Node *node, node_queue **head, node_queue **tail) {
     (*tail) = new_node;
 }
 
-Node* delete_node(node_queue **head, node_queue **tail) {
+
+// delete at the head
+Node* delete_node(node_queue **head, node_queue **tail) { // delete from head
     if (*head == NULL) return NULL;
-    Node *temp = (*tail)->data;
-    if ((*head)->next == NULL) {
-        free(*head);
-        *head = *tail = NULL;
-    } else {
-        node_queue *temp1 = *tail;
-        *tail = (*tail)->prev;
-        (*tail)->next = NULL;
-        free(temp1);
-    }
-    return temp;
+    Node *node = (*head)->data;
+    node_queue *temp = *head;
+    *head = temp->next;
+    if (*head == NULL) *tail = NULL;
+    else (*head)->prev = NULL;
+    free(temp);
+    return node;
 }
 
-/*
-    problem : 
-        with first element --> create first element
-        with node already visited
-        how the BSF work ?
-    some solutions
-        delete ele first and then add correspond element
-*/
+// ask about why we are using passage par @ in insertion and deletion
 
-void breath_first_search(List *adjList[n]) {
+
+// Breadth First Search
+void breadth_first_search(List *adjList[n]) {
     node_queue *head = NULL, *tail = NULL;
     Node *node = NULL;
+    int visited[n] = {0};
     // insert first node
     Node *new_node = (Node *) malloc(sizeof(Node));
     new_node->data = 0;
     new_node->next = NULL;
     insert_node(new_node, &head, &tail);
+    visited[0] = 1;
     
     while (head != NULL) {
+        // Dequeue
         Node *deleted_node = delete_node(&head, &tail);
+        // Print
         printf("%d --> ", deleted_node->data);
+        // Marked As Visited
+        // Enqueue
         Node *temp = adjList[deleted_node->data]->head;
         while (temp != NULL) {
-            insert_node(temp, &head, &tail);
+            if (!visited[temp->data]) insert_node(temp, &head, &tail);
+            visited[temp->data] = 1;
             temp = temp->next;
         }
     }
     printf("\n\n");
-    
 }
 
 
