@@ -208,12 +208,18 @@ void insert_node(Node *node, node_queue **head, node_queue **tail) {
 }
 
 Node* delete_node(node_queue **head, node_queue **tail) {
-    if (head == NULL) return NULL;
-    node_queue *temp = *tail;
-    *tail = temp->prev;
-    if ((*tail)->next != NULL) (*tail)->next = NULL;
-    else *head = NULL;
-    free(temp);
+    if (*head == NULL) return NULL;
+    Node *temp = (*tail)->data;
+    if ((*head)->next == NULL) {
+        free(*head);
+        *head = *tail = NULL;
+    } else {
+        node_queue *temp1 = *tail;
+        *tail = (*tail)->prev;
+        (*tail)->next = NULL;
+        free(temp1);
+    }
+    return temp;
 }
 
 /*
@@ -235,14 +241,15 @@ void breath_first_search(List *adjList[n]) {
     insert_node(new_node, &head, &tail);
     
     while (head != NULL) {
-        Node *temp = adjList[tail->data->data]->head;
+        Node *deleted_node = delete_node(&head, &tail);
+        printf("%d --> ", deleted_node->data);
+        Node *temp = adjList[deleted_node->data]->head;
         while (temp != NULL) {
             insert_node(temp, &head, &tail);
             temp = temp->next;
         }
-        Node *deleted_node = delete_node(&head, &tail);
     }
-    
+    printf("\n\n");
     
 }
 
