@@ -1,37 +1,31 @@
+// Date and Time
 /*
-    Date And Time
-    - Date Constructor
-
-    Static Methods
-    - Date.now()
-
-    - To Track Time You Need Starting Point
-    - Epoch Time Or Unix Time In Computer Science Is The Number of Seconds Since January 1, 1970.
-    - Why 1970 [829 Days To 136 Years]
-
-    Search For
-    - Year 2038 Problem in Computer Science.
-
-    UTC : Coordinated Universal Time
-        Depend Your Distance Between Grinitch Line
+Date And Time
+    - getTime() => Number Of Milliseconds
+    - getDate() => Day Of The Month
+    - getFullYear()
+    - getMonth() => Zero Based [ start with zero ]
+    - getDay() => Day Of The Week
+    - getHours()
+    - getMinutes()
+    - getSeconds()
 */
 var dateNow = new Date();
-console.log(dateNow);
+var birthday = new Date("Jan 18, 2005");
+var dateDiff = dateNow - birthday;
 
-console.log(Date.now()); // time in millesecond 1722632673112 from 1 January 1, 1970
+console.log(dateDiff); // in Milliseconds
+console.log(dateDiff / 1000 / 60 / 60/ 24 / 365); // in year
 
-var seconds = Date.now() / 1000;
-console.log(seconds); // time in seconds
+console.log(dateNow.getTime()); // 1722687498143 from 1970
+console.log(dateNow.getDate()); // 3
+console.log(dateNow.getFullYear()); // 2024
+console.log(dateNow.getMonth()); // 7 becuase is month start with 0 --> 11
+console.log(dateNow.getDate()); // 3
+console.log(dateNow.getHours()); // 13 -->  13:20:10
+console.log(dateNow.getMinutes()); // 20 minute
+console.log(dateNow.getSeconds()); // 10 second
 
-var minutes = seconds / 60;
-console.log(minutes); // 28710548.98345
 
-var hours = minutes / 60;
-console.log(hours); // 478509.1472497222
 
-var days = hours / 24;
-console.log(days); // 19937.881531921295
-
-var years = days / 365;
-console.log(years); // 54.62433412620497
 
