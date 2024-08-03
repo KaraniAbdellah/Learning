@@ -221,7 +221,8 @@ Node* delete_node(node_queue **head, node_queue **tail) { // delete from head
     return node;
 }
 
-// ask about why we are using passage par @ in insertion and deletion
+
+
 
 
 // Breadth First Search
@@ -241,11 +242,11 @@ void breadth_first_search(List *adjList[n]) {
         Node *deleted_node = delete_node(&head, &tail);
         // Print
         printf("%d --> ", deleted_node->data);
-        // Marked As Visited
         // Enqueue
         Node *temp = adjList[deleted_node->data]->head;
         while (temp != NULL) {
             if (!visited[temp->data]) insert_node(temp, &head, &tail);
+            // Marked As Visited
             visited[temp->data] = 1;
             temp = temp->next;
         }
