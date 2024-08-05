@@ -195,7 +195,7 @@ typedef struct node_queue {
 
 
 // insert at the tail
-void insert_node(Node *node, node_queue **head, node_queue **tail) {
+void insert_node_at_queue(Node *node, node_queue **head, node_queue **tail) {
     node_queue *new_node = (node_queue *) malloc(sizeof(node_queue));
     new_node->data = node;
     new_node->next = new_node->prev = NULL;
@@ -210,7 +210,7 @@ void insert_node(Node *node, node_queue **head, node_queue **tail) {
 
 
 // delete at the head
-Node* delete_node(node_queue **head, node_queue **tail) { // delete from head
+Node* delete_node_from_queue(node_queue **head, node_queue **tail) { // delete from head
     if (*head == NULL) return NULL;
     Node *node = (*head)->data;
     node_queue *temp = *head;
@@ -222,9 +222,6 @@ Node* delete_node(node_queue **head, node_queue **tail) { // delete from head
 }
 
 
-
-
-
 // Breadth First Search
 void breadth_first_search(List *adjList[n]) {
     node_queue *head = NULL, *tail = NULL;
@@ -234,18 +231,18 @@ void breadth_first_search(List *adjList[n]) {
     Node *new_node = (Node *) malloc(sizeof(Node));
     new_node->data = 0;
     new_node->next = NULL;
-    insert_node(new_node, &head, &tail);
+    insert_node_at_queue(new_node, &head, &tail);
     visited[0] = 1;
     
     while (head != NULL) {
         // Dequeue
-        Node *deleted_node = delete_node(&head, &tail);
+        Node *deleted_node = delete_node_from_queue(&head, &tail);
         // Print
         printf("%d --> ", deleted_node->data);
         // Enqueue
         Node *temp = adjList[deleted_node->data]->head;
         while (temp != NULL) {
-            if (!visited[temp->data]) insert_node(temp, &head, &tail);
+            if (!visited[temp->data]) insert_node_at_queue(temp, &head, &tail);
             // Marked As Visited
             visited[temp->data] = 1;
             temp = temp->next;
@@ -256,8 +253,68 @@ void breadth_first_search(List *adjList[n]) {
 
 
 
+// Start DFS With Adjacency List
+typedef struct node_stack {
+    Node *data;
+    struct node_stack *next;
+    struct node_stack *prev;
+} node_stack;
 
 
+// Insert At Stack
+void insert_node_at_stack(Node *node, node_stack **head) {
+    node_stack *new_node = (node_stack *) malloc(sizeof(node_stack));
+    new_node->next = new_node->prev = NULL;
+    new_node->data = node;
+    if (*head == NULL) {
+        *head = new_node;
+        return;
+    }
+    new_node->prev = *head;
+    (*head)->next = new_node;
+    *head = new_node;
+}
+
+
+// Delete From Stack
+Node *delete_node_from_stack(node_stack **head) {
+    if (*head == NULL) return NULL;
+    node_stack *temp = *head;
+    Node *node = temp->data;
+    if ((*head)->prev != NULL) {
+        *head = (*head)->prev;
+        (*head)->next = NULL;
+    } else *head = NULL;
+    free(temp);
+    return node;
+}
+
+
+// Depth First Search
+void depth_first_search(List *adjList[n]) {
+    int visited[n] = {0};
+    node_stack *head = NULL;
+    Node *new_node = (Node *) malloc(sizeof(Node));
+    new_node->data = 0;
+    new_node->next = NULL;
+    insert_node_at_stack(new_node, &head);
+    visited[0] = 1;
+    while (head != NULL) {
+        // Depiler
+        Node *deleted_node = delete_node_from_stack(&head);
+        // Print
+        printf("%d --> ", deleted_node->data);
+        // Insert
+        Node *temp = adjList[deleted_node->data]->head;
+        while (temp != NULL) {
+            if (!visited[temp->data]) insert_node_at_stack(temp, &head);
+            // Visited
+            visited[temp->data] = 1;
+            temp = temp->next;
+        }
+    }
+    printf("\n\n");
+}
 
 
 

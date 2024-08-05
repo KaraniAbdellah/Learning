@@ -69,6 +69,15 @@ int main() {
     // BFS With Adjacency List
     printf("\nBreadth First Search : \n\n");
     breadth_first_search(adjList_dsg);
+    breadth_first_search(adjList_udsg);
+    
+    // DFS With Adjacency List
+    printf("\nDepth First Search : \n\n");
+    depth_first_search(adjList_dsg);
+    depth_first_search(adjList_udsg);
+    
+    
+    
     return 0;
 }
 
