@@ -4216,6 +4216,26 @@ console.log(date3);
 
 
 
+// Tracking Operations Time
+/*
+    Search
+        performance.now()
+        performance.mark()
+*/
+// Start Time
+var start = new Date();
+// Operations
+for (var i = 0; i < 10000; i++) {
+    // document.write(`<div>${i}</div>`); // 1196
+    var div = document.createElement("div");
+    div.textContent = i;
+    document.body.appendChild(div); // 109
+}
+// End Time
+var end = new Date();
+// Duration
+var duration = end - start;
+console.log(duration);
 
 
 
