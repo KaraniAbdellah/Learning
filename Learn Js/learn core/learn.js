@@ -4240,6 +4240,53 @@ console.log(duration);
 
 
 
+// Search
+/*  
+    performance.now() 
+        - check the performance of your code.
+        - It returns value of time in milliseconds.
+
+    performance.mark() 
+        - allows you to create custom timestamps (called "marks")
+
+    perfomance.measure()
+        - calculates the time between 'startLoop' and 'endLoop',
+            and stores it with the name 'loopDuration'.
+
+    performance.getEntriesByName('loopDuration')[0]
+        - shows the time taken in milliseconds
+*/
+// Perfomance.now()
+var t0 = performance.now();
+for(let i = 0; i < 10000; i++);
+var t1 = performance.now();
+console.log(`Loop Take ${t1 - t0} Millseconds`); // Loop Take 0.4 Millseconds
+
+// perfomance.mark()
+// Create a start mark 
+performance.mark("startLoop");
+for(let i = 0; i < 10000; i++);
+// Create an end mark
+performance.mark("endLoop");
+// Measure the duration
+performance.measure("LoopTime", "startLoop", "endLoop");
+// Get the measurement result
+var measure = performance.getEntriesByName("LoopTime")[0];
+console.log(`Loop Take ${measure.duration} Millseconds`); // Loop Take 0.2 Millseconds
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
