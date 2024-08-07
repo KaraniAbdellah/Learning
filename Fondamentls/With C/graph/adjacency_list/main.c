@@ -77,6 +77,8 @@ int main() {
     depth_first_search(adjList_udsg);
     
     
+    // delete_node_from_Dgraph(adjList_dsg, 0);
+    depth_first_search(adjList_dsg);
     
     return 0;
 }

@@ -317,8 +317,19 @@ void depth_first_search(List *adjList[n]) {
 }
 
 
+// delete node from graph
+void delete_node_from_Dgraph(List *adjList[n], int ele) {
+    List *temp = adjList[ele];
+    free(temp);
+}
 
 
+
+// delete an element from graph
+/*
+    delete a row that contain all connection of element deleted.
+    search for each row about element and delete it.
+*/
 
 
 
