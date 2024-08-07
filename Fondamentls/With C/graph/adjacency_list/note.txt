@@ -1,11 +1,9 @@
 
-//////////////// ttask : 
-// understand BFS and DFS for Adjacency List
 
+// explain for the people what you learn about graph with adjacency list representation
 
-
-
-
+// delete from graph
+// search an element
 
 
 
