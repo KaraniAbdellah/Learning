@@ -317,11 +317,42 @@ void depth_first_search(List *adjList[n]) {
 }
 
 
-// delete node from graph
-void delete_node_from_Dgraph(List *adjList[n], int ele) {
-    List *temp = adjList[ele];
-    free(temp);
+void delete_node_from_Dgraph(List *adjList[n], int nodeToDelete) {
+    // Free the list of the node to delete
+    Node *temp = adjList[nodeToDelete]->head;
+    while (temp != NULL) {
+        Node *p = temp;
+        temp = temp->next;
+        free(p);
+    }
+    free(adjList[nodeToDelete]);
+    adjList[nodeToDelete] = NULL;
+
+    // Remove references to nodeToDelete from other nodes' adjacency lists
+    for (int i = 0; i < n; i++) {
+        if (adjList[i] != NULL) { // Check if the list is not NULL
+            Node *current = adjList[i]->head;
+            Node *prev = NULL;
+            while (current != NULL) {
+                if (current->data == nodeToDelete) {
+                    if (prev != NULL) {
+                        prev->next = current->next;
+                    } else {
+                        adjList[i]->head = current->next;
+                    }
+                    Node *toDelete = current;
+                    current = current->next;
+                    free(toDelete);
+                } else {
+                    prev = current;
+                    current = current->next;
+                }
+            }
+        }
+    }
 }
+
+
 
 
 
