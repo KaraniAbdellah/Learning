@@ -4332,10 +4332,67 @@ for (let value of generator) {
 
 
 
+// Delegate Generator
+/*
+    Using Generators instead of generator
+    function *name() {
+        yiled *gen1;
+        yiled *gen2;
+    }
+    let n = name();
+    n.next;
+    n.return(); --> stop generating
+    n.next(); --> undifined
+*/
+function *generateLetters() {
+    yield "A";
+    yield "C";
+}
+function *generateNumbers() {
+    yield 1;
+    yield 3;
+}
+function *generateAll() {
+    yield *generateLetters();
+    yield *generateNumbers();
+    yield [0, 0];
+    yield *[100, 200];
+}
+
+let generator = generateAll();
+console.log(generator);
+
+console.log(generator.next());
+console.log(generator.next());
+console.log(generator.next());
+console.log(generator.next());
+console.log(generator.return("STOP")); // {value: 'STOP', done: true}
+// without using return() we found this
+console.log(generator.next()); // {value: Array(2), done: false}
+console.log(generator.next().value); // 100
+console.log(generator.next()); // {value: 200, done: false}
+console.log(generator.next()); // {value: undefined, done: true}
 
 
 
+// Generate Infinite Numbers && Return Instead Genrators
+function* generateNumbers() {
+    // yield 1;
+    // yield 2;
+    // return "STOP GENERATING";
+    // yield 3;
+    // yield 4;
+    let index = 0;
+    while (true) {
+        yield index++;
+    }
+}
+let generator = generateNumbers();
 
+console.log(generator.next());
+console.log(generator.next());
+console.log(generator.next());
+console.log(generator.next()); // {value: 3, done: false}
 
 
 
