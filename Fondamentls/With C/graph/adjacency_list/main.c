@@ -13,12 +13,12 @@ int main() {
     intialize_simple_graph(adjList_dsg);
     
     addNode_dsg(0, 1, adjList_dsg);
-    addNode_dsg(0, 2, adjList_dsg);
-    // addNode_dsg(0, 3, adjList_dsg);
+    addNode_dsg(0, 3, adjList_dsg);
     addNode_dsg(1, 3, adjList_dsg);
-    //  addNode_dsg(1, 4, adjList_dsg);
-    // addNode_dsg(1, 5, adjList_dsg);
+    addNode_dsg(1, 4, adjList_dsg);
+    addNode_dsg(1, 5, adjList_dsg);
     addNode_dsg(2, 4, adjList_dsg);
+    addNode_dsg(2, 0, adjList_dsg);
     printfList_simple_graph(adjList_dsg);
     
     // undirected simple graph
@@ -76,10 +76,14 @@ int main() {
     depth_first_search(adjList_dsg);
     depth_first_search(adjList_udsg);
     
-    
-    delete_node_from_Dgraph(adjList_dsg, 0);
+    // Delete A Node From Graph
+    int node_nbr = 0;
+    printf("\nDelete Node From Graph Ele --> [%d] : \n", node_nbr);
     printfList_simple_graph(adjList_dsg);
-    
+    delete_node_from_Dgraph(adjList_dsg, node_nbr);
+    printfList_simple_graph(adjList_dsg);
+    printf("\nDepth First Search : \n\n");
+    depth_first_search(adjList_dsg);
     return 0;
 }
 

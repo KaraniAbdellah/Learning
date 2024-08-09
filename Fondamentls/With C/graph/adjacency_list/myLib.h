@@ -241,6 +241,7 @@ void breadth_first_search(List *adjList[n]) {
         printf("%d --> ", deleted_node->data);
         // Enqueue
         Node *temp = adjList[deleted_node->data]->head;
+        
         while (temp != NULL) {
             if (!visited[temp->data]) insert_node_at_queue(temp, &head, &tail);
             // Marked As Visited
@@ -305,6 +306,7 @@ void depth_first_search(List *adjList[n]) {
         // Print
         printf("%d --> ", deleted_node->data);
         // Insert
+        
         Node *temp = adjList[deleted_node->data]->head;
         while (temp != NULL) {
             if (!visited[temp->data]) insert_node_at_stack(temp, &head);
@@ -318,35 +320,42 @@ void depth_first_search(List *adjList[n]) {
 
 
 void delete_node_from_Dgraph(List *adjList[n], int nodeToDelete) {
-    // Free the list of the node to delete
+    // delete space in list
     Node *temp = adjList[nodeToDelete]->head;
     while (temp != NULL) {
         Node *p = temp;
         temp = temp->next;
         free(p);
     }
-    free(adjList[nodeToDelete]);
-    adjList[nodeToDelete] = NULL;
-
-    // Remove references to nodeToDelete from other nodes' adjacency lists
+    adjList[nodeToDelete]->head = NULL;
+    // delete this node in another spaces
     for (int i = 0; i < n; i++) {
-        if (adjList[i] != NULL) { // Check if the list is not NULL
-            Node *current = adjList[i]->head;
-            Node *prev = NULL;
-            while (current != NULL) {
-                if (current->data == nodeToDelete) {
-                    if (prev != NULL) {
-                        prev->next = current->next;
-                    } else {
-                        adjList[i]->head = current->next;
-                    }
-                    Node *toDelete = current;
-                    current = current->next;
-                    free(toDelete);
-                } else {
-                    prev = current;
-                    current = current->next;
+        Node *temp = adjList[i]->head;
+        if (temp != NULL) {
+            while (temp->next != NULL) {
+                if (temp->next->data == nodeToDelete) {
+                    Node *p = temp->next;
+                    // start connecting element
+                    int data = p->data;
+                    // the prolem here
+                    printf("\nEle Is %d\n", data);
+                    Node *temp2 =  adjList[data]->head; // temp to the list of connections
+                    if (temp2 != NULL && temp2->next != NULL) {
+                        // has one connections
+                        printf("\nOne Connection is %d\n", temp2->next->data);
+                        if (temp2->next->next != NULL) {
+                            // hase two connections
+                            printf("\nTwo Connection is %d and %d\n", temp2->next->data, temp2->next->next->data);
+                        }
+                    } else printf("\nNo Connection To This Element\n");
+                    
+                    // start deleting the element
+                    if(temp->next->next != NULL) temp->next = temp->next->next;
+                    else temp->next = NULL;
+                    free(p);
+                    break;
                 }
+                temp = temp->next;
             }
         }
     }
