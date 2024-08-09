@@ -1,48 +1,25 @@
-// Delegate Generator And Infintif Numbers
+// Module Import And Export
+/*
+    - add type module in html
+        <script src="/learn core/app.js"  type="module"></script>
+*/
 
-
-function *genarateNumbers() {
-    yield 1;
-    yield 2;
+// in main.js --> file contain functions and variables
+export let a = 10;
+export let arr = [1, 2, 3, 4];
+export function saySomething() {
+    return `Something`;
 }
-
-function *generateLetters() {
-    yield "A";
-    yield "B";
+// another method for exporintg
+export {
+    a, arr, saySomething
 }
+// in app.js --> file specific for project
+import {a, arr, saySomething as s} from "./main.js"
 
-
-function *generateAll() {
-    yield *generateLetters();
-    yield *genarateNumbers();
-    yield *["L", "L", "C"];
-    
-    let index = 0;
-    while (1) {
-        yield index++;
-        if (index > 3) break;
-    }
-}
-
-let generator = generateAll();
-console.log(generator.next());
-console.log(generator.next());
-console.log(generator.next());
-console.log(generator.next());
-console.log(generator.next());
-console.log(generator.next());
-console.log(generator.next());
-console.log(generator.next());
-console.log(generator.next());
-console.log(generator.next());
-console.log(generator.next());
-console.log(generator.next());
-console.log(generator.next()); // {value: undefined, done: true}
-
-
-
-
-
+console.log(a); // 10
+console.log(arr); // [1, 2, 3 4]
+console.log(s()); // Something
 
 
 
