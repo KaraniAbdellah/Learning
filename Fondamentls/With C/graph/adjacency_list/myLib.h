@@ -295,11 +295,20 @@ Node *delete_node_from_stack(node_stack **head) {
 void depth_first_search(List *adjList[n]) {
     int visited[n] = {0};
     node_stack *head = NULL;
+    
+    // choose a root for DFS
+    int root = 0;
+    while (1) {
+        if (adjList[root]->head == NULL) root++;
+        else break;
+    }
     Node *new_node = (Node *) malloc(sizeof(Node));
-    new_node->data = 0;
+    new_node->data = root;
     new_node->next = NULL;
     insert_node_at_stack(new_node, &head);
-    visited[0] = 1;
+    visited[root] = 1;
+    
+    // start depling, empling, printing and visiting new node
     while (head != NULL) {
         // Depiler
         Node *deleted_node = delete_node_from_stack(&head);
@@ -320,6 +329,37 @@ void depth_first_search(List *adjList[n]) {
 
 
 void delete_node_from_Dgraph(List *adjList[n], int nodeToDelete) {
+    // find the connections nodeToDelete and connect edges
+    int T[n], i = 0;
+    for (int i = 0; i < n; i++) T[i] = -1;
+    Node *tempToCons = adjList[nodeToDelete]->head;
+    while (tempToCons != NULL) {
+        T[i] = tempToCons->data;
+        tempToCons = tempToCons->next;
+        i++;
+    }
+    // start connect first connection to other connections
+    for (int j = 0; T[j] != -1; j++) {
+        int firstCon = T[j];
+        for (int i = 0; T[i] != -1 && i < n - 1; i++) {
+            // find the last node of firstCon
+            if (T[i] != T[j]) {
+                int secondCon = T[i];
+                Node *temp = adjList[firstCon]->head;
+                if (temp == NULL) {
+                    adjList[firstCon]->head = (Node *) malloc(sizeof(Node));
+                    adjList[firstCon]->head->next = NULL;
+                    adjList[firstCon]->head->data = secondCon;
+                } else {
+                    while (temp->next != NULL) temp = temp->next;
+                    Node *new_node = (Node *) malloc(sizeof(Node));
+                    new_node->data = secondCon;
+                    new_node->next = NULL;
+                    temp->next = new_node;
+                }
+            }
+        }
+    }
     // delete space in list
     Node *temp = adjList[nodeToDelete]->head;
     while (temp != NULL) {
@@ -330,33 +370,21 @@ void delete_node_from_Dgraph(List *adjList[n], int nodeToDelete) {
     adjList[nodeToDelete]->head = NULL;
     // delete this node in another spaces
     for (int i = 0; i < n; i++) {
-        Node *temp = adjList[i]->head;
-        if (temp != NULL) {
-            while (temp->next != NULL) {
-                if (temp->next->data == nodeToDelete) {
-                    Node *p = temp->next;
-                    // start connecting element
-                    int data = p->data;
-                    // the prolem here
-                    printf("\nEle Is %d\n", data);
-                    Node *temp2 =  adjList[data]->head; // temp to the list of connections
-                    if (temp2 != NULL && temp2->next != NULL) {
-                        // has one connections
-                        printf("\nOne Connection is %d\n", temp2->next->data);
-                        if (temp2->next->next != NULL) {
-                            // hase two connections
-                            printf("\nTwo Connection is %d and %d\n", temp2->next->data, temp2->next->next->data);
-                        }
-                    } else printf("\nNo Connection To This Element\n");
-                    
-                    // start deleting the element
-                    if(temp->next->next != NULL) temp->next = temp->next->next;
-                    else temp->next = NULL;
-                    free(p);
-                    break;
+        Node *current = adjList[i]->head;
+        Node *prev = NULL;
+        while(current != NULL) {
+            Node *temp = current;
+            if (current->data == nodeToDelete) {
+                if (prev != NULL) {
+                    prev->next = current->next;
+                } else {
+                    adjList[i]->head = current->next;
                 }
-                temp = temp->next;
+                free(temp);
+                break;
             }
+            prev = current;
+            current = current->next;
         }
     }
 }
@@ -367,8 +395,10 @@ void delete_node_from_Dgraph(List *adjList[n], int nodeToDelete) {
 
 // delete an element from graph
 /*
-    delete a row that contain all connection of element deleted.
-    search for each row about element and delete it.
+    we are remove list of nodeToDelete and nodeToDelete from other list
+    we are also reconect the nodes of nodeToDelete from together
+    by DFS or BFS we are checking if node already visited
+    delete_node_from_Dgraph can generate a mistake i think ? --> ask chatGPT 
 */
 
 

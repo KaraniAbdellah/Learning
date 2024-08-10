@@ -19,6 +19,7 @@ int main() {
     addNode_dsg(1, 5, adjList_dsg);
     addNode_dsg(2, 4, adjList_dsg);
     addNode_dsg(2, 0, adjList_dsg);
+    addNode_dsg(2, 1, adjList_dsg);
     printfList_simple_graph(adjList_dsg);
     
     // undirected simple graph
@@ -77,7 +78,7 @@ int main() {
     depth_first_search(adjList_udsg);
     
     // Delete A Node From Graph
-    int node_nbr = 0;
+    int node_nbr = 1;
     printf("\nDelete Node From Graph Ele --> [%d] : \n", node_nbr);
     printfList_simple_graph(adjList_dsg);
     delete_node_from_Dgraph(adjList_dsg, node_nbr);
