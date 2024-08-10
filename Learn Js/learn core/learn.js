@@ -4423,9 +4423,38 @@ console.log(s()); // Something
 
 
 
+// Named vs Default Export And Import All
+/* in app.js */
+// import module
+import sayHello, {myNumber, T} from "./main.js"
+console.log(myNumber); // 10
+console.log(T); // [1, 2, 3 4]
+console.log(sayHello()); // Hello World
 
+import * as all from "./main.js";
+console.log(all); // Module {Symbol(Symbol.toStringTag): 'Module'}
+console.log(all.T); // [1, 2, 3, 4]
+/* in main.js */
+/*
+    Named Export
+        export { a as myNumber } should be import with 'myNumber' not 'a'
 
+    Default Export
+        export default function sayHello() {
+            return `Hello World`;
+        }
+        do not import like { sayHello } --> Error
+        sayHello { others } || abdellah { others } because it default
+    
+    Import All
+*/
 
+var a = 10;
+var T = [1, 2, 3, 4];
+export { a as myNumber, T } // export named 'a'
+export default function sayHello() { // can you use anonymose fucntion --> does not has a name
+    return `Hello World`;
+}
 
 
 
