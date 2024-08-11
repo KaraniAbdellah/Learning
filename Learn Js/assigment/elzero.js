@@ -1603,6 +1603,26 @@ console.log(myObj);
     // "username => Elzero"
     // "score => 1000"
     // {username: 'Elzero'; score: 1000; id: 100}
+console.log("========================");
+console.groupEnd();
+
+
+
+// Assignment 159 to 168
+console.group("159 to 168");
+var brithday = new Date("2005-01-18");
+var seconds = brithday.getTime() / 1000;
+console.log(seconds);
+
+
+
+
+
+
+
+
+
+
 
 
 
