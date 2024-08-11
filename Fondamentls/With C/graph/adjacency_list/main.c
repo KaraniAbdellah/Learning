@@ -85,6 +85,11 @@ int main() {
     printfList_simple_graph(adjList_dsg);
     printf("\nDepth First Search : \n\n");
     depth_first_search(adjList_dsg);
+    
+    // Search About Element in Graph
+    search_in_garph(adjList_dsg, 10);
+    search_in_garph(adjList_dsg, 0);
+    
     return 0;
 }
 

@@ -338,13 +338,13 @@ void delete_node_from_Dgraph(List *adjList[n], int nodeToDelete) {
         tempToCons = tempToCons->next;
         i++;
     }
-    // start connect first connection to other connections
+    // start connect nodes each other
     for (int j = 0; T[j] != -1; j++) {
         int firstCon = T[j];
         for (int i = 0; T[i] != -1 && i < n - 1; i++) {
-            // find the last node of firstCon
             if (T[i] != T[j]) {
                 int secondCon = T[i];
+                /*
                 Node *temp = adjList[firstCon]->head;
                 if (temp == NULL) {
                     adjList[firstCon]->head = (Node *) malloc(sizeof(Node));
@@ -357,6 +357,8 @@ void delete_node_from_Dgraph(List *adjList[n], int nodeToDelete) {
                     new_node->next = NULL;
                     temp->next = new_node;
                 }
+                */
+                addNode_dsg(firstCon, secondCon, adjList);
             }
         }
     }
@@ -391,15 +393,11 @@ void delete_node_from_Dgraph(List *adjList[n], int nodeToDelete) {
 
 
 
-
-
-// delete an element from graph
-/*
-    we are remove list of nodeToDelete and nodeToDelete from other list
-    we are also reconect the nodes of nodeToDelete from together
-    by DFS or BFS we are checking if node already visited
-    delete_node_from_Dgraph can generate a mistake i think ? --> ask chatGPT 
-*/
+// search in garph
+void search_in_garph(List *adjList[n], int searched) {
+    if (adjList[searched]->head == NULL || searched >= n) printf("\n%d Does Not Exit In Garph\n", searched);
+    else printf("\n%d Exit In Garph\n", searched);
+}
 
 
 
