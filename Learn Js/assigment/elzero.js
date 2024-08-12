@@ -1610,20 +1610,116 @@ console.groupEnd();
 
 // Assignment 159 to 168
 console.group("159 to 168");
-var brithday = new Date("2005-01-18");
-var seconds = brithday.getTime() / 1000;
+var brithday = new Date("2005-01-18T12:31:10Z");
+var Millseconds = Date.now() - brithday.getTime();
+console.log(Millseconds);
+var seconds = Millseconds / 1000;
 console.log(seconds);
+var minutes = seconds / 60;
+console.log(minutes);
+var hours = minutes / 60;
+console.log(hours);
+var days = hours / 24;
+console.log(days);
+var year = days / 365;
+console.log(year); // 19
 
 
+// Get The Nedded
+var dateAfterTenYears = new Date();
+dateAfterTenYears.setTime(0); // Thu Jan 01 1970 00:00:00 GMT+0000 (GMT)
+dateAfterTenYears.setFullYear(1980); // Tue Jan 01 1980 00:00:00 GMT+0000 (GMT)
+dateAfterTenYears.setSeconds(1);
+console.log(dateAfterTenYears); // Tue Jan 01 1980 00:00:01 GMT+0000 (GMT)
 
 
+// Get The Last Day In Previos Month
+// "Sat Apr 30 2022 18:13:20 GMT+0200 (Eastern European Standard Time)"
+// "Previous Month Is April And Last Day Is 30"
+var dateNow = new Date();
+console.log(dateNow); // Mon Aug 12 2024 18:37:00 GMT+0100 (GMT+01:00)
+dateNow.setMonth(6, 31);
+console.log(dateNow); // Wed Jul 31 2024 18:43:40 GMT+0100 (GMT+01:00)
+let months = ["january", "Feburay", "March", "April", "May", "Juin", 
+"Jully", "August", "Spetembre", "Novembre", "Decembre"]
+console.log(`Previous Month Is ${months[dateNow.getMonth()]} And Last Day Is ${dateNow.getDate()}`); 
+// Previous Month Is Jully And Last Day Is 31
 
 
+// Get Your Brithday Date With Three Deffrent Method
+var brithday1 = new Date("2005-01-18");
+var brithday2 = new Date("01/18/2005");
+var brithday3 = new Date("Jan 01 2005");
+console.log(brithday1);
+console.log(brithday2);
+console.log(brithday3);
 
 
+// Calculate The Time For Execute 999999
+var t0 = performance.now();
+for (let i = 0; i < 999999; i++);
+var t1 = performance.now();
+console.log(`Loop Took ${t1 - t0} Milliseconds.`);
 
 
+// Make A Generator 
+function *gen() {
+    // let n = 0;
+    // while (1) {
+    //     index = 100 * Math.pow(n, 2) - 160 * n + 74;
+    //     yield index;
+    //     n++;
+    // }
+    let y = 154;
+    let k = 1;
+    while (1) {
+        result = y - Number(`${k}40`);
+        k += 2;
+        yield result;
+        y = Number(`${k}40`) + y;
+    }
+}
 
+var generator = gen();
+console.log(generator.next()); // {value: 14, done: false}
+console.log(generator.next()); // {value: 154, done: false}
+console.log(generator.next()); // {value: 494, done: false}
+console.log(generator.next()); // {value: 1034, done: false}
+console.log(generator.next()); // {value: 1774, done: false}
+console.log(generator.next()); // {value: 2714, done: false}
+console.log(generator.next()); // {value: 3854, done: false}
+console.log(generator.next()); // {value: 5194, done: false}
+console.log(generator.next()); // {value: 6734, done: false}
+
+
+// Get The Nedded
+function* genNumbers() {
+    yield* [1, 2, 2, 2, 3, 4, 5];
+}
+function* genLetters() {
+    yield* ["A", "B", "B", "B", "C", "D"];
+}
+  
+// Write Your Generator Function Here
+function* genAll() {
+    yield *new Set(genNumbers());
+    yield *genLetters();
+} 
+var generator = genAll();
+console.log(generator.next()); // {value: 1, done: false}
+console.log(generator.next()); // {value: 2, done: false}
+console.log(generator.next()); // {value: 3, done: false}
+console.log(generator.next()); // {value: 4, done: false}
+console.log(generator.next()); // {value: 5, done: false}
+console.log(generator.next()); // {value: "A", done: false}
+console.log(generator.next()); // {value: "B", done: false}
+console.log(generator.next()); // {value: "C", done: false}
+console.log(generator.next()); // {value: "D", done: false}
+
+
+// Import And Export
+import * as modOne from "./mod-two.js";
+console.log((modOne.numOne, modOne.numTwo, modOne.numThree)); // 60
 
 
 
