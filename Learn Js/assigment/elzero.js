@@ -758,22 +758,22 @@ function itsMe() {
     return `I am A Normal function`;
 }
 // With Regular Function
-var itsMe = function () {
+var itsMe2 = function () {
     return `I am A Regular function`;
 }
 // With Arrow Function
-var itsMe = _ => `I am A Arrow function`;
+var itsMe3 = _ => `I am A Arrow function`;
 console.log(itsMe());
 
 function urlCreate(protocol, web, tld) {
     return `${protocol}://www.${web}.${tld}`;
 }
 // With Regular Function
-var urlCreate = function (protocol, web, tld) {
+var urlCreate2 = function (protocol, web, tld) {
     return `${protocol}://www.${web}.${tld}`;
 }
 // With Arrow Function
-var urlCreate = (protocol, web, tld) => `${protocol}://www.${web}.${tld}`;
+var urlCreate3 = (protocol, web, tld) => `${protocol}://www.${web}.${tld}`;
 
 console.log(urlCreate("https", "nts", "org"));
 
@@ -1138,7 +1138,7 @@ console.group("101 To 110");
 
 // Use Prompt And Print The Numbers
 // var nbr = prompt("Print Number From - To");
-nbr = "12-10"
+var nbr = "12-10"
 nbr = nbr.split("-");
 var min = nbr[0] > nbr[1] ? nbr[1] : nbr[0];
 var max = nbr[0] > nbr[1] ? nbr[0] : nbr[1];
@@ -1590,7 +1590,7 @@ Object.defineProperties(myObj, {
         enumerable: false,
     },
     score: {
-        writable: false,
+        writable: true,
     },
 });
 console.log(delete myObj.country); // true
@@ -1638,8 +1638,8 @@ console.log(dateAfterTenYears); // Tue Jan 01 1980 00:00:01 GMT+0000 (GMT)
 // "Previous Month Is April And Last Day Is 30"
 var dateNow = new Date();
 console.log(dateNow); // Mon Aug 12 2024 18:37:00 GMT+0100 (GMT+01:00)
-dateNow.setMonth(6, 31);
-console.log(dateNow); // Wed Jul 31 2024 18:43:40 GMT+0100 (GMT+01:00)
+// dateNow.setMonth(6, 31); 
+dateNow.setDate(0);
 let months = ["january", "Feburay", "March", "April", "May", "Juin", 
 "Jully", "August", "Spetembre", "Novembre", "Decembre"]
 console.log(`Previous Month Is ${months[dateNow.getMonth()]} And Last Day Is ${dateNow.getDate()}`); 
@@ -1659,7 +1659,7 @@ console.log(brithday3);
 var t0 = performance.now();
 for (let i = 0; i < 999999; i++);
 var t1 = performance.now();
-console.log(`Loop Took ${t1 - t0} Milliseconds.`);
+console.log(`Loop Took ${(t1 - t0).toFixed(0)} Milliseconds.`);
 
 
 // Make A Generator 
@@ -1670,13 +1670,20 @@ function *gen() {
     //     yield index;
     //     n++;
     // }
-    let y = 154;
-    let k = 1;
+    // let y = 154;
+    // let k = 1;  
+    // while (1) {
+    //     result = y - Number(`${k}40`);
+    //     k += 2;
+    //     yield result;
+    //     y = Number(`${k}40`) + y;
+    // }
+    let index = 14;
+    let num = 140;
+    sum = index + num;
     while (1) {
-        result = y - Number(`${k}40`);
-        k += 2;
-        yield result;
-        y = Number(`${k}40`) + y;
+        yield sum;
+        sum += num + 200;
     }
 }
 
@@ -1717,9 +1724,19 @@ console.log(generator.next()); // {value: "C", done: false}
 console.log(generator.next()); // {value: "D", done: false}
 
 
-// Import And Export
+// // Import And Export
 import * as modOne from "./mod-two.js";
-console.log((modOne.numOne, modOne.numTwo, modOne.numThree)); // 60
+import calc from "./mod-one.js";
+console.log(calc(modOne.numOne, modOne.numTwo, modOne.numThree)); // 60
+
+
+
+
+
+
+
+
+
 
 
 

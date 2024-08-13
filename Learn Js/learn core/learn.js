@@ -4148,6 +4148,7 @@ console.log(dateNow.getSeconds()); // 10 second
   Date And Time
   - setTime(Milliseconds)
   - setDate() => Day Of The Month [Negative And Positive]
+        setDate(0) --> get the last day in prev month
   - setFullYear(year, month => Optional [0-11], day => Optional [1-31])
   - setMonth(Month [0-11], Day => Optional [1-31]) [Negative And Positive]
   - setHours(Hours [0-23], Minutes => Optional [0-59], Seconds => Optional [0-59], MS => Optional [0-999])
@@ -4443,6 +4444,10 @@ console.log(all.T); // [1, 2, 3, 4]
         export default function sayHello() {
             return `Hello World`;
         }
+        export default function(a, b, c) { --> Anonymose function
+            return a + b + c;
+        }
+
         do not import like { sayHello } --> Error
         sayHello { others } || abdellah { others } because it default
     
@@ -4455,7 +4460,9 @@ export { a as myNumber, T } // export named 'a'
 export default function sayHello() { // can you use anonymose fucntion --> does not has a name
     return `Hello World`;
 }
-
+export default function(name) { // can you use anonymose fucntion --> does not has a name
+    return `Hello ${name}`;
+}
 
 
 
