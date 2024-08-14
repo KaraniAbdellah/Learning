@@ -4562,3 +4562,29 @@ export default function(name) { // can you use anonymose fucntion --> does not h
     "null": null
 }
 */
+
+
+
+
+// What Is API
+/*
+    - Application Programming Interface
+    - API Overview
+    - Public API and Private API [ has a secret key ]
+    - Tools To Test API
+    - Preview Github API
+*/
+// Public Api
+/* https://api.github.com/users/KaraniAbdellah
+{
+    "login": "KaraniAbdellah",
+    "id": 168738696,
+    "node_id": "U_kgDOCg6_iA",
+    "avatar_url": "https://avatars.githubusercontent.com/u/168738696?v=4",
+    .......
+    "created_at": "2024-05-02T12:05:09Z",
+    "updated_at": "2024-07-21T13:38:36Z"
+}
+*/
+
+
