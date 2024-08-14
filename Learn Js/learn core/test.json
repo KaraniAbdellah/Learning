@@ -1,0 +1,19 @@
+{
+    "Lesson1": "// JSON Syntax And Compare With JS Object",
+    "string": "Hello",
+    "number": 1000,
+    "object": {
+        "MR": "Rabat",
+        "KSA": "Riyadh"
+    },
+    "array": [
+        "Casa", "Beni Mellal", "Rabat"
+    ],
+    "boolean": true,
+    "null": null,
+    "seperated": ["-----------------------------------------------"],
+
+
+
+    "Lesson2": "None"
+}

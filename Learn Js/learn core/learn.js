@@ -4468,3 +4468,97 @@ export default function(name) { // can you use anonymose fucntion --> does not h
 
 
 
+
+
+
+////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////
+// Json File
+/*
+    What Is JSON ?
+    - Stands For JavaScript Object Notation
+    - Format For Sharing Data Between Server And Client
+    - Use For Storing and Sharing The Data
+    - JSON Derived From JavaScript
+    - Alternative To XML
+    - File Extension Is .json
+
+    Why JSON ?
+    - Easy To Use And Read
+    - Used By Most Programming Languages And Its Frameworks
+    - You Can Convert JSON Object To JS Object And Vice Versa
+    - Can Use For Any Language [C++, C#, Java, ...]
+
+    JSON vs XML
+    ===================================================
+    = Object File            = Text File              =
+    = Large                  = Not Large              =
+    = Text Based Format      = Markup Language        =
+    = Lightweight            = Heavier                =
+    = Does Not Use Tags      = Using Tags             =
+    = Shorter                = Not Short              =
+    = Can Use Arrays         = Cannot Use Arrays      =
+    = Not Support Comments   = Support Comments       =
+    ===================================================
+*/
+// in xml file
+/*
+    <people>
+        <person>
+            <name>Abdellah</name>
+            <age>19</age>
+            <city>Beni Mellal</city>
+            <country>Morroco</country>
+        </person>
+    </people> 
+*/
+// in json file
+/*
+    "people": {
+        "person": {
+            "name": "Abdellah",
+            "age": 19,
+            "city": "Beni Mellal",
+            "country": "Morroco",
+        }
+    }
+*/
+
+
+
+
+// JSON Syntax And Compare With JS Object
+/*
+    JSON Syntax
+    - Data Added Inside Curly Braces {  }
+    - Data Added With Key : Value
+    - Key Should Be String Wrapped In Double Quotes
+    - Data Separated By Comma [ , ]
+    - Square Brackets [] For Arrays
+    - Curly Braces {} For Objects
+
+    Available Data Types
+    - String
+    - Number
+    - Object
+    - Array
+    - Boolean Values
+    - null
+*/
+// in test.json
+/*
+{
+    "string": "Hello",
+    "number": 1000,
+    "object": {
+        "MR": "Rabat",
+        "KSA": "Riyadh"
+    },
+    "array": [
+        "Casa", "Beni Mellal", "Rabat"
+    ],
+    "boolean": true,
+    "null": null
+}
+*/
