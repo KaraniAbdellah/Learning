@@ -105,7 +105,16 @@ void print_graph_W(graph *g) {
 }
 
 
-
+void add_edges_undirected_W(graph *g, int from, int to, int weight) {
+    if (g != NULL) {
+        if (g->nbr_nodes > from && g->nbr_nodes > to) {
+            if (!g->edges[from][to]) {
+                g->edges[from][to] = weight;
+                g->edges[to][from] = weight;
+            }
+        }
+    }
+}
 
 
 

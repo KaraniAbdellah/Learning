@@ -28,8 +28,17 @@ int main() {
     add_edges_directed_W(directed_graphW, 2, 4, 5);
     print_graph_W(directed_graphW);
     
+    // Weighted UnDirected Graph
+    printf("Weighted Directed Graph : \n\n");
+    graph *undirected_graphW = create_graph(5);
+    add_edges_undirected_W(undirected_graphW, 0, 1, 3);
+    add_edges_undirected_W(undirected_graphW, 1, 2, 4);
+    add_edges_undirected_W(undirected_graphW, 2, 4, 5);
+    print_graph_W(undirected_graphW);
     
-        
+    
+    
+    
     
     
     
@@ -38,6 +47,8 @@ int main() {
 
 
 // deletion and BFS and DFS and Search
+
+
 
 
 
