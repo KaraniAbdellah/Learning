@@ -15,14 +15,14 @@ graph* create_graph(int nbr_nodes) {
     }
     
     // create rows in edges
-    new_graph->edges = (bool **) calloc(nbr_nodes, sizeof(bool *));
+    new_graph->edges = (int **) calloc(nbr_nodes, sizeof(int *));
     if (new_graph == NULL) {
         free(new_graph); return NULL;
     }
     
     // create columns in edges
     for (int i = 0; i < nbr_nodes; i++) {
-        new_graph->edges[i] = (bool *) calloc(nbr_nodes, sizeof(bool));
+        new_graph->edges[i] = (int *) calloc(nbr_nodes, sizeof(int));
         if (new_graph->edges[i] == NULL) {
             free(new_graph->edges[i]);
             // free previously allocated spaces
@@ -41,7 +41,7 @@ void print_graph_S(graph *g) {
     printf("Diagraph {\n");
     if (g != NULL) {
         for (int i = 0; i < g->nbr_nodes; i++) {
-            for (int j = 0; j < g->nbr_nodes; j++) {
+            for (int j = 0; j < g->nbr_nodes && g->edges[i] != NULL; j++) {
                 if (g->edges[i][j]) printf("%d --> %d;\n", i, j);
             }
         }
@@ -76,13 +76,10 @@ void add_edges_undirected_S(graph *g, int from, int to) {
 
 // add edges to the weighted directed graph
 void add_edges_directed_W(graph *g, int from, int to, int weight) {
-    printf("Weighted is %d\n", weight);
     if (g != NULL) {
         if (g->nbr_nodes > from && g->nbr_nodes > to) {
             if (!g->edges[from][to]) {
-                printf("Weighted = %d at g->edges[%d][%d]\n", g->edges[from][to], from, to);
                 g->edges[from][to] = weight;
-                printf("Weighted = %d at g->edges[%d][%d]\n", g->edges[from][to], from, to);
             }
         }
     }
@@ -94,7 +91,7 @@ void print_graph_W(graph *g) {
     if (g != NULL) {
         printf("Diagraph {\n");
         for (int i = 0; i < g->nbr_nodes; i++) {
-            for (int j = 0; j < g->nbr_nodes; j++) {
+            for (int j = 0; j < g->nbr_nodes && g->edges[i] != NULL; j++) {
                 if (g->edges[i][j] != 0) {
                     printf("%d --> %d; [ %d ]\n", i, j, g->edges[i][j]);
                 }
@@ -117,6 +114,22 @@ void add_edges_undirected_W(graph *g, int from, int to, int weight) {
 }
 
 
+// Delete node from graph
+/*
+    for undirected graph delete column and row
+    // Delete the column entries
+    for (int i = 0; i < g->nbr_nodes; i++) {
+        g->edges[i][v] = 0;
+    }
+*/
+
+
+void delete_node_D(graph *g, int v) {
+    int *temp = g->edges[v];
+    g->edges[v] = NULL;
+    free(temp);
+    return;
+}
 
 
 

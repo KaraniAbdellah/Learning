@@ -36,8 +36,10 @@ int main() {
     add_edges_undirected_W(undirected_graphW, 2, 4, 5);
     print_graph_W(undirected_graphW);
     
-    
-    
+    // Delete Node From Simple Graph
+    printf("Delete a Node From a Graph : \n\n");
+    delete_node_D(directed_graphS, 0);
+    print_graph_S(directed_graphS);
     
     
     
@@ -46,8 +48,8 @@ int main() {
 }
 
 
-// deletion and BFS and DFS and Search
 
+// deletion and BFS and DFS and Search
 
 
 
