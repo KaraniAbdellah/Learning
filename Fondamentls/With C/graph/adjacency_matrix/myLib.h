@@ -15,6 +15,13 @@ typedef struct graph {
     int **edges;
 } graph;
 
+// Stack For DFS
+typedef struct stack {
+    int data;
+    struct stack *next;
+    struct stack *prev;
+} stack;
+
 
     // main functions
     graph* create_graph(int nbr_nodes);
@@ -30,7 +37,12 @@ typedef struct graph {
     void print_graph_W(graph *g);
 
     // delete a node from graph
-    void delete_node_D(graph *g, int v);
+    void delete_node(graph *g, int v);
+    
+    // Deapth Frist Search
+    void insert_at_stack(stack **head, int data);
+    int delete_from_stack(stack **head);
+    void deapth_search_first(graph *g);
 
 #endif
 

@@ -42,7 +42,9 @@ void print_graph_S(graph *g) {
     if (g != NULL) {
         for (int i = 0; i < g->nbr_nodes; i++) {
             for (int j = 0; j < g->nbr_nodes && g->edges[i] != NULL; j++) {
-                if (g->edges[i][j]) printf("%d --> %d;\n", i, j);
+                if (&g->edges[i][j] != NULL) {
+                    if (g->edges[i][j]) printf("%d --> %d;\n", i, j);
+                }
             }
         }
     }
@@ -54,6 +56,9 @@ void print_graph_S(graph *g) {
 // add edges to the directed graph
 void add_edges_directed_S(graph *g, int from, int to) {
     if (g != NULL) {
+        if (g->edges[from] == NULL) {
+            g->edges[from] = (int *) calloc(g->nbr_nodes, sizeof(int));
+        }
         if (g->nbr_nodes - 1 >= from && g->nbr_nodes - 1 >= to) {
             if (!g->edges[from][to]) g->edges[from][to] = 1;
         }
@@ -64,6 +69,12 @@ void add_edges_directed_S(graph *g, int from, int to) {
 // add edges to the undirected graph
 void add_edges_undirected_S(graph *g, int from, int to) {
     if (g != NULL) {
+        if (g->edges[from] == NULL) {
+            g->edges[from] = (int *) calloc(g->nbr_nodes, sizeof(int));
+        }
+        if (g->edges[to] == NULL) {
+            g->edges[to] = (int *) calloc(g->nbr_nodes, sizeof(int));
+        }
         if (g->nbr_nodes > from && g->nbr_nodes > to) {
             if (!g->edges[from][to] && !g->edges[to][from]){
                  g->edges[from][to] = 1; g->edges[to][from] = 1;
@@ -114,22 +125,87 @@ void add_edges_undirected_W(graph *g, int from, int to, int weight) {
 }
 
 
+
 // Delete node from graph
-/*
-    for undirected graph delete column and row
-    // Delete the column entries
-    for (int i = 0; i < g->nbr_nodes; i++) {
-        g->edges[i][v] = 0;
-    }
-*/
-
-
-void delete_node_D(graph *g, int v) {
+void delete_node(graph *g, int v) {
     int *temp = g->edges[v];
     g->edges[v] = NULL;
     free(temp);
+    // delete sub-spaces
+    for (int i = 0; i < g->nbr_nodes; i++) {
+        if (g->edges[i] != NULL) {
+            if (g->edges[i][v] == 1) g->edges[i][v] = 0;
+        }
+    }
     return;
 }
+
+
+
+// insert node at the stack
+void insert_at_stack(stack **head, int data) {
+    stack *new_node = (stack *) malloc(sizeof(stack));
+    new_node->next = new_node->prev = NULL;
+    new_node->data = data;
+    if (*head == NULL) {
+        *head = new_node; return;
+    }
+    new_node->prev = *head;
+    (*head)->next = new_node;
+    *head = new_node;
+}
+
+// delete node from stack
+int delete_from_stack(stack **head) {
+    if (*head == NULL) {
+        return -1;
+    }
+    stack *temp = *head;
+    int value = temp->data;
+    (*head)->next = NULL;
+    if ((*head)->prev != NULL) (*head) = (*head)->prev;
+    else *head = NULL;
+    return value;
+}
+
+
+// DFS Deapth Search First
+void deapth_search_first(graph *g) {
+    if (g == NULL) return;
+    // visited & choise the root & insert first ele
+    int visited[g->nbr_nodes];
+    for (int i = 0; i < g->nbr_nodes; i++) visited[i] = -1;
+    stack *head = NULL;
+    int root = 0;
+    while (root < g->nbr_nodes) {
+        if (g->edges[root] != NULL) break;
+        else root++;
+    }
+    insert_at_stack(&head, root);
+    visited[root] = 1;
+    // Start DFS
+    while (head != NULL) {
+        // delete
+        int deleted_node = delete_from_stack(&head);
+        // print
+        printf("%d --> ", deleted_node);
+        // insert from each row clolumn [ start with root ]
+        for (int i = 0; i < g->nbr_nodes; i++) {
+            if (g->edges[i] != NULL) {
+                if (g->edges[deleted_node][i] != 0 && visited[i] != 1) {
+                    insert_at_stack(&head, i);
+                    // set visited
+                    visited[i] = 1;
+                }
+            }
+        }
+    }
+    printf("\n");
+}
+
+
+
+// revise the dfs with chatGPT and the start BFS
 
 
 
