@@ -4568,7 +4568,7 @@ export default function(name) { // can you use anonymose fucntion --> does not h
 
 // What Is API
 /*
-    - Application Programming Interface
+    - Application Programming Interface 
     - API Overview
     - Public API and Private API [ has a secret key ]
     - Tools To Test API
@@ -4657,3 +4657,102 @@ setTimeout(() => console.log("Operation"), 3000);
 console.log("3");
 // Output : 1 2 3 Operations
 
+
+
+
+
+// Thread and MultiThread
+
+/*
+    // JavaScript Is A Single-Threaded
+    - JavaScript is single-threaded, meaning it can only execute one task at a time.
+    - JavaScript does not support multithreading.
+    - JavaScript can handle multiple tasks efficiently using 
+        something called "asynchronous programming,", Which
+        allows it to start a task and then move on to other tasks.
+ 
+    // Multi Threaded Languages
+    Multi-threaded languages can execute multiple tasks 
+        at the same time by using multiple "threads." 
+*/
+
+
+
+
+//  Call Stack And Web API
+/*
+  To Understand Ajax, Fetch, Promises
+
+  Call Stack || Stack Trace
+  -- JavaScript Engine Uses A Call Stack To Manage Execution Contexts
+  -- Mechanism To Make The Interpreter Track Your Calls
+  -- Work Using LIFO Principle => Last In First Out
+  -- Code Execution Is Synchronous.
+  -- Call Stack Detect Web API Methods And Leave It To The Browser To Handle It
+
+  Web API
+  -- Methods Available From The Environment => Browser
+*/
+
+setTimeout(() => { // it handle by browser
+    console.log("Web Api");
+}, 0);
+
+function One() {
+    console.log(1);}
+function Two() {
+    One();
+    console.log(2);
+}
+function Three() {
+    Two();
+    console.log(3);
+}
+Three(); // 1 2 3
+// output
+/**
+ * 1
+ * 2
+ * 3
+ * Web Api
+ */
+
+
+
+
+// Event Loop And Callback Queue
+/*
+  To Understand Ajax, Fetch, Promises
+
+  Event Loop + Callback Queue
+
+  Story
+  - JavaScript Is A Single Threaded Language "All Operations Executed in Single Thread"
+  - Call Stack Track All Calls With LIFO
+  - Every Function Is Done Its Poped Out [ Remove From Stack ]
+  - When You Call Asynchronous Function It Sent To Browser API
+  - Asynchronous Function Like Settimeout Start Its Own Thread
+  - Browser API Wrok in A Another Thread
+  - API Finish Waiting And Send Back The Function For Processing
+  - Browser API Add The Callback To Callback Queue
+  - Event Loop Wait For Call Stack To Be Empty
+  - Event Loop Get Callback From Callback Queue And Add It To Call Stack
+  - Callback Queue Follow FIFO "First In First Out" Rule
+*/
+
+console.log(1);
+setTimeout(() => { // this for web api && this first in call back queue
+    console.log(3);
+}, 0);
+setTimeout(() => { // this second in call back queue
+    console.log(4);
+}, 0);
+console.log(2);
+// 1 2 3 4
+
+setTimeout(() => {
+    console.log(myVar);
+});
+let myVar = 10;
+myVar += 10;
+// 20
