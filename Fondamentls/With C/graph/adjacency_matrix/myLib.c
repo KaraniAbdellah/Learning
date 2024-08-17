@@ -170,7 +170,7 @@ int delete_from_stack(stack **head) {
 
 
 // DFS Deapth Search First
-void deapth_search_first(graph *g) {
+void depth_search_first(graph *g) {
     if (g == NULL) return;
     // visited & choise the root & insert first ele
     int visited[g->nbr_nodes];
@@ -200,12 +200,90 @@ void deapth_search_first(graph *g) {
             }
         }
     }
-    printf("\n");
+    printf("\n\n");
 }
 
 
 
-// revise the dfs with chatGPT and the start BFS
+// insert at the queue
+void insert_at_queue(queue **head, queue **tail, int v) {
+    queue *new_node = (queue *) malloc(sizeof(queue));
+    new_node->next = NULL;
+    new_node->data = v;
+    if (*head == NULL) {
+        *head = *tail = new_node; return;
+    }
+    new_node->next = *tail;
+    (*tail)->next = new_node;
+    *tail = new_node;
+}
+
+
+
+// delete from queue
+int delete_from_queue(queue **head, queue **tail) {
+    if (*head == NULL) return -1;
+    
+    // repeat this please
+}
+
+void breadth_search_first(graph *g) {
+    if (g == NULL) return;
+    // visited & choise the root & insert first ele
+    queue *head = NULL, *tail = NULL;
+    int visited[g->nbr_nodes];
+    for (int i = 0; i < g->nbr_nodes; i++) visited[i] = -1;
+    int root = 0;
+    while (root < g->nbr_nodes) {
+        if (g->edges[root] == NULL) root++;
+        else break;
+    }
+    
+    insert_at_queue(&head, &tail, root);
+    visited[root] = 1;
+    
+    // Start Breath First Search
+    while (head != NULL) {
+        // delete
+        int deleted_node = delete_from_queue(&head, &tail);
+        // print
+        printf("%d --> ", deleted_node);
+        if (g->edges[deleted_node] != NULL) {
+            for (int i = 0; i < g->nbr_nodes; i++) {
+                // insert
+                if (g->edges[deleted_node][i] != 0 && visited[i] != 1) {
+                    insert_at_queue(&head, &tail, i);
+                    // visited
+                    visited[i] = 1;
+                }
+            }
+        }
+    }
+    
+    printf("\n\n");
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

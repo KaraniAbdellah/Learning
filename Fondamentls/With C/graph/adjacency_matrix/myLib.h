@@ -22,6 +22,12 @@ typedef struct stack {
     struct stack *prev;
 } stack;
 
+// Queue For BFS
+typedef struct queue {
+    int data;
+    struct queue *next;
+} queue;
+
 
     // main functions
     graph* create_graph(int nbr_nodes);
@@ -42,7 +48,14 @@ typedef struct stack {
     // Deapth Frist Search
     void insert_at_stack(stack **head, int data);
     int delete_from_stack(stack **head);
-    void deapth_search_first(graph *g);
+    void depth_search_first(graph *g);
+    
+    // Breath First Search
+    void breadth_search_first(graph *g);
+    int delete_from_queue(queue **head, queue **tail);
+    void insert_at_queue(queue **head, queue **tail, int v);
+    
+    
 
 #endif
 

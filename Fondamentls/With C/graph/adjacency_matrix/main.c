@@ -62,7 +62,13 @@ int main() {
     
     // DFS : Deapth Search First
     printf("Deapth First Search : \n\n");
-    deapth_search_first(directed_graphW);
+    depth_search_first(directed_graphW);
+    
+    // BFS : Breadth Search First
+    printf("Breadth First Search : \n\n");
+    breadth_search_first(directed_graphW);
+    
+    
     
     
     return 0;
