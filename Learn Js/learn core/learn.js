@@ -4684,8 +4684,7 @@ console.log("3");
   To Understand Ajax, Fetch, Promises
 
   Call Stack || Stack Trace
-  -- JavaScript Engine Uses A Call Stack To Manage Execution Contexts
-  -- Mechanism To Make The Interpreter Track Your Calls
+  -- This is where JavaScript keeps track of what function is currently running
   -- Work Using LIFO Principle => Last In First Out
   -- Code Execution Is Synchronous.
   -- Call Stack Detect Web API Methods And Leave It To The Browser To Handle It
@@ -4694,12 +4693,13 @@ console.log("3");
   -- Methods Available From The Environment => Browser
 */
 
-setTimeout(() => { // it handle by browser
+setTimeout(() => { // it handle by web browser
     console.log("Web Api");
 }, 0);
 
 function One() {
-    console.log(1);}
+    console.log(1);
+}
 function Two() {
     One();
     console.log(2);
@@ -4724,20 +4724,34 @@ Three(); // 1 2 3
 /*
   To Understand Ajax, Fetch, Promises
 
-  Event Loop + Callback Queue
+    Story :
+        When we call a function like setTimeout, JavaScript 
+        gives it to the Browser API, which handles it in the
+        background. Once the API is done, it adds the function
+        to the Callback Queue. When the stack is empty, 
+        the Event Loop takes the first function from the queue
+        and puts it in the stack. JavaScript then pops it from
+        the stack and executes it.
 
-  Story
-  - JavaScript Is A Single Threaded Language "All Operations Executed in Single Thread"
-  - Call Stack Track All Calls With LIFO
-  - Every Function Is Done Its Poped Out [ Remove From Stack ]
-  - When You Call Asynchronous Function It Sent To Browser API
-  - Asynchronous Function Like Settimeout Start Its Own Thread
-  - Browser API Wrok in A Another Thread
-  - API Finish Waiting And Send Back The Function For Processing
-  - Browser API Add The Callback To Callback Queue
-  - Event Loop Wait For Call Stack To Be Empty
-  - Event Loop Get Callback From Callback Queue And Add It To Call Stack
-  - Callback Queue Follow FIFO "First In First Out" Rule
+    Call Stack
+        This is where JavaScript keeps track of what
+        function is currently must running
+    
+    Callback Queue
+        This is where functions are placed after the Browser API
+        has finished handling them (e.g., after a setTimeout completes). 
+        These functions wait here until the Call Stack is empty.
+    
+    The Browser API 
+        is a set of tools provided by the browser that helps 
+        JavaScript with tasks like timers (setTimeout) or network 
+        requests (fetch). It works in the background and gives JavaScript 
+        the results when it's done.
+    
+    Event Loop
+        The Event Loop checks if the Call Stack is empty and then moves
+        functions from the Callback Queue to the Call Stack for execution.
+            
 */
 
 console.log(1);
@@ -4756,3 +4770,64 @@ setTimeout(() => {
 let myVar = 10;
 myVar += 10;
 // 20
+
+
+
+
+
+// Why console.log(); first then setTimeout()
+/*
+    console.log(1) is a direct JavaScript call and is
+    immediately added to the Call Stack for execution.
+
+    he Browser API is responsible for handling asynchronous 
+    operations like setTimeout and fetch, but not for direct 
+    calls like console.log(1);
+
+    console.log() is a synchronous function. This means 
+    it executes immediately in the order it appears in 
+    the code, directly within the Call Stack.
+*/
+
+setTimeout(function() {
+    console.log("hello");
+}, 0);
+console.log(1);
+// 1 hello
+
+
+
+
+
+/*
+    AJAX
+    - Asynchronous JavaScript And XML
+    - Approach To Use Many Technologies Together [HTML, CSS, Js, DOM]
+    - It Use "XMLHttpRequest" Object To Interact With The Server
+    - You Can Fetch Data Or Send Data Without Page Refresh
+    - Examples
+    --- Youtube Studio
+    --- Google Drive
+    --- Upload Article Photo
+    --- Form Check Name
+
+    Test new XMLHttpRequest();
+    Request And Response
+    Status Code
+
+    When Client Demand Something Browser Send a Request To 
+    Server Using XMLHttpRequest Object. Without Refrech To The Page
+*/
+
+var req = new XMLHttpRequest();
+console.log(req);
+
+
+
+
+
+
+
+
+
+
