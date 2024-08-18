@@ -55,6 +55,10 @@ typedef struct queue {
     int delete_from_queue(queue **head, queue **tail);
     void insert_at_queue(queue **head, queue **tail, int v);
     
+    // Search In Graph
+    void search_in_graph(graph *g, int v);
+    
+    
     
 
 #endif

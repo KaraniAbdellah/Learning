@@ -211,9 +211,9 @@ void insert_at_queue(queue **head, queue **tail, int v) {
     new_node->next = NULL;
     new_node->data = v;
     if (*head == NULL) {
-        *head = *tail = new_node; return;
+        *head = new_node; 
+        *tail = new_node; return;
     }
-    new_node->next = *tail;
     (*tail)->next = new_node;
     *tail = new_node;
 }
@@ -223,8 +223,12 @@ void insert_at_queue(queue **head, queue **tail, int v) {
 // delete from queue
 int delete_from_queue(queue **head, queue **tail) {
     if (*head == NULL) return -1;
-    
-    // repeat this please
+    queue *temp = *head;
+    int value = temp->data;
+    *head = (*head)->next;
+    if (*head == NULL) *tail = NULL;
+    free(temp);
+    return value;
 }
 
 void breadth_search_first(graph *g) {
@@ -267,7 +271,22 @@ void breadth_search_first(graph *g) {
 
 
 
-
+// Search For An Element
+void search_in_graph(graph *g, int v) {
+    if (g == NULL) {
+        printf("The Graph Is Emepty\n"); return;
+    }
+    if (g->nbr_nodes <= v) {
+        printf("The Node Does Not Exit In Graph\n");
+        return;
+    }
+    for (int i = 0; i < g->nbr_nodes; i++) {
+        if ((g->edges[i] != NULL && g->edges[i][v] != 0) 
+        || (g->edges[v] != NULL && g->edges[v][i] != 0)) {
+            printf("The Node Exit In Graph\n"); return;
+        }
+    }
+}
 
 
 

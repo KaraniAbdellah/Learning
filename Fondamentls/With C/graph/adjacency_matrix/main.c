@@ -69,14 +69,16 @@ int main() {
     breadth_search_first(directed_graphW);
     
     
+    // Search In Graph
+    printf("Search In Graph: \n\n");
+    search_in_graph(directed_graphW, 0);
+    
     
     
     return 0;
 }
 
 
-
-// deletion and BFS and DFS and Search
 
 
 
