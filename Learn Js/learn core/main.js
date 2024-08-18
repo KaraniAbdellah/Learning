@@ -1,3 +1,1 @@
-// revise the lessons
-
-
+// Revise the JSON and Search For Project To Practice JSON, API and Ajax
