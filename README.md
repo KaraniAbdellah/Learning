@@ -1,1 +1,1 @@
-# When you stop learning, you start dying. 📚💀
+# This Just For Learning New Skills
