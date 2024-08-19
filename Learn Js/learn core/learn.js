@@ -4859,13 +4859,68 @@ myRequest.onreadystatechange = function() {
 
 
 
+// Dealing With Data That Come From Server
+/*
+    Loop On Data
+
+    Search
+    - Cross Origin API [CORS]
+    - API Authentication
+*/
+
+var myRequest = new XMLHttpRequest();
+myRequest.open("GET", "https://api.github.com/users/KaraniAbdellah/repos", true); // try test.json
+myRequest.send(); // send reques to server
+console.log(myRequest);
+
+myRequest.onreadystatechange = function() {
+    console.log(myRequest.readyState);
+    console.log(myRequest.status);
+    if (this.readyState === 4 && this.status === 200) {
+        // console.log(this.responseText); // print the JSON 
+        let myObject = JSON.parse(this.responseText);
+        console.log(myObject); // array of objects
+        // 1 : Loop On Data
+        for (let i = 0; i < myObject.length; i++) {
+            let ele = document.createElement("div");
+            ele.innerHTML = myObject[i].full_name;
+            document.body.appendChild(ele);
+        }
+        // 2 : Loop On Data Use https://api.github.com/users/KaraniAbdellah
+        // for (let i = 0; i < Object.keys(myObject).length; i++) {
+        //     let ele = document.createElement("div");
+        //     ele.innerHTML = Object.keys(myObject)[i] + ":" + Object.values(myObject)[i];
+        //     document.body.appendChild(ele);
+        // }
+    }
+}
 
 
 
 
 
+// Cross Origin Resource Sharing [CORS]
+/*
+    **** Introduction ****
+    - Mecanism That lets a web app get data from another
+        website by checking if the other website allows it.
+        It uses special messages (HTTP headers) to make sure 
+        the data sharing is safe.
+    - This For Security Of The User
+    - The Porblem When Browser Fetch Data From API It Can Be Failed
 
 
+    **** In HTTP Requets ****
+    // Browser Request
+        ....
+        Origin: example.com,
+        ....
+    // Server Reponse 
+        .....
+        Acces-origin-Control-Allow-Origin: example.com,
+        ....
+    - If MisMatch The Browser Will Failed to Get The Data
+*/
 
 
 
