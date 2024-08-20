@@ -1728,11 +1728,84 @@ console.log(generator.next()); // {value: "D", done: false}
 import * as modOne from "./mod-two.js";
 import calc from "./mod-one.js";
 console.log(calc(modOne.numOne, modOne.numTwo, modOne.numThree)); // 60
+console.groupEnd();
 
 
 
+// 169 To 178
+console.group("169 To 178");
+
+// Make Json File That Contien Artcile With [id, title, content]
+
+// Convert Json To Js Object
+function convert_to_js(req) {
+    console.log("=== Convert To Js Object : ");
+    const mainData = JSON.parse(req.responseText);
+    console.log(mainData);
+    return mainData;
+}
+
+// Add Another Pro in Object
+function add_another_pro(mainData) {
+    console.log("=== Adding New Prop : ");
+    let authors = ["Ali", "Mohamed", "Osama", "Sayed", "Ahmed"];
+    for (let i = 0; i < mainData.length; i++) {
+        mainData[i].category = "All";
+        mainData[i].author = authors[i];
+    }
+    console.log(mainData);
+    return mainData;
+}
+
+// Convert To Json Object
+function convert_to_json(mainData) {
+    console.log("==== Convert To Json Object");
+    let updatedData = JSON.stringify(mainData);
+    console.log(updatedData);
+    return updatedData;
+}
+
+// Add Data To Html Page
+function add_to_html(mainData) {
+    let main_div = document.createElement("div");
+    main_div.id = "Data";
+    for (let i = 0; i < mainData.length; i++) {
+        let div = document.createElement("div");
+        div.innerHTML = `
+        <h2>${mainData[i].title}</h2>
+        <p>Article Number ${i + 1} Body</p>
+        <p>Author: ${mainData[i].author}</p>
+        <p>Category: ${mainData[i].category}</p>`;
+        main_div.appendChild(div);
+    }
+    document.body.appendChild(main_div);
+}
 
 
+// Get The Date USing Ajax Call
+var article_req = new XMLHttpRequest();
+article_req.open("GET", "articles.json");
+article_req.send();
+
+article_req.onreadystatechange = function() {
+    if (article_req.status == 200 && article_req.readyState == 4) {
+        console.log(article_req.responseText);
+        // Converting To Js Object
+        let mainData = convert_to_js(article_req);
+        // Loop Thought The Data
+        mainData = add_another_pro(mainData);
+        // Converting To JSON
+        let updatedData = convert_to_json(mainData);
+        // Add Data To Html Page Inside div with
+        add_to_html(mainData);
+    }
+    // Event
+    article_req.onload = function() {
+        console.log("Data Loaded");
+    }
+}
+
+// JSON Object Is Type String
 
 
 

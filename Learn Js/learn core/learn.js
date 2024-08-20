@@ -4907,7 +4907,7 @@ myRequest.onreadystatechange = function() {
         It uses special messages (HTTP headers) to make sure 
         the data sharing is safe.
     - This For Security Of The User
-    - The Porblem When Browser Fetch Data From API It Can Be Failed
+    - The Poroblem When Browser Fetch Data From API It Can Be Failed
 
 
     **** In HTTP Requets ****
@@ -4925,4 +4925,13 @@ myRequest.onreadystatechange = function() {
 
 
 
+// API Authentication & Authorization
+/*
+    Authentication : 
+    Processs Of Validation The Identity
+    Of User To Acces To The Web Application.
+    By Using Token
 
+    Authorization : 
+    is Permissions That Add To User To Acess To SomeThing
+*/

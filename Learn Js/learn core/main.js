@@ -1,8 +1,5 @@
-// API Authentication
+// Start New Lessons
 
-
-
-// Search About
 
 
 
