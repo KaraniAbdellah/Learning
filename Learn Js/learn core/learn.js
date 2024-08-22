@@ -4990,7 +4990,41 @@ setTimeout(() => {
 
 
 
+// Search About Call Back Hell
+// Callback Hell = Situation in JavaScript where callbacks 
+//                            are nested within other callbacks to the
+//                            degree where the code is difficult to read.
+//                            Old pattern to handle asynchronous functions.
+//                            Use Promises + async/await to avoid Callback Hell
 
+function task1(callBack) {
+    setTimeout(() => {
+        console.log("Task 1 Complete");
+        callBack();
+    }, 2000);
+}
+
+function task2(callBack) {
+    setTimeout(() => {
+        console.log("Task 2 Complete");
+        callBack();
+    }, 1000);
+}
+
+function task3(callBack) {
+    setTimeout(() => {
+        console.log("Task 3 Complete");
+        callBack();
+    }, 1500);
+}
+
+task1(() => {
+    task2(() => {
+        task3(() => {
+            console.log("All Tasks Complete");
+        });
+    });
+});
 
 
 
