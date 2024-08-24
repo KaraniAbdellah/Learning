@@ -5184,3 +5184,32 @@ Promise.race([uploadVideo1, uploadVideo2, uploadVideo3]).then((msgs) => {
 
 
 
+
+
+
+// Promise && XHR
+const getData = (apiLink) => {
+    return new Promise((resolve, reject) => {
+        let myRequest = new XMLHttpRequest();
+        myRequest.onload = function() {
+            if (this.status == 200 && this.readyState == 4) {
+                resolve(JSON.parse(this.responseText));
+            } else reject(Error("No Data Found"));
+        }
+        myRequest.open("GET", apiLink);
+        myRequest.send();
+
+    });
+}
+getData("https://api.github.com/users/KaraniAbdellah/repos").then((msg) => {
+    console.log(msg);
+}).catch((msg) => {
+    console.log(msg);
+})
+// https://api.github.com/users/KaraniAbdellah
+
+
+
+
+
+
