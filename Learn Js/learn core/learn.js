@@ -5213,3 +5213,18 @@ getData("https://api.github.com/users/KaraniAbdellah/repos").then((msg) => {
 
 
 
+// Fetch API
+/*
+    Return Promise
+    Return Reponse
+    Return A Representation Of the Entire HTTP Response
+*/
+
+fetch("https://api.github.com/users/KaraniAbdellah").then((result) => {
+  const Data = result.json();
+  return Data;
+}).then((Data) => {
+  console.log("The Data From Server Is : ", Data.login);
+}).catch((reject) => {
+  console.log(Error("API_LINK"))
+});
