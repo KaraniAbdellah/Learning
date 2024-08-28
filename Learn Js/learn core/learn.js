@@ -5272,6 +5272,33 @@ Promise.race([Pro1, Pro2, Pro3])
 
 
 
+/*
+    Async
+    - Async Before Function Mean This Function Return A Promise
+    - Async And Await Help In Creating Asynchronous Promise Behavior With Cleaner Style
+*/
+
+// Without async
+function getData1() {
+    let users = ["Abdellah"];
+    if (users.length) {
+        return Promise.reject("Users Found");
+    } else Promise.resolve("No Users Found");
+}
+getData1().then(
+    (resolve_value) => console.log(resolve_value),
+    (reject_value) => console.log(reject_value) 
+);
+
+// With async
+async function getData2() {
+    let users = ["Abdellah"];
+    if (users.length > 0) {
+        return "Users Found";
+    } else throw new Error("No User Found");
+}
+
+console.log(getData2()); // Promise {<fulfilled>: 'Users Found'}
 
 
 
