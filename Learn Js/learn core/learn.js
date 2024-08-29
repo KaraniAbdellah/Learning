@@ -5302,3 +5302,69 @@ console.log(getData2()); // Promise {<fulfilled>: 'Users Found'}
 
 
 
+
+
+/*
+    Await
+    - Await Works Only Inside Asnyc Functions
+    - Await Make JavaScript Wait For The Promise Result
+    - Await Is More Elegant Syntax Of Getting Promise Result
+    - Await Get The Data Without then or catch
+*/
+const myPromise3 = new Promise((resolve, reject) => {
+    setTimeout(() => {
+        // resolve("I Am Resolved");
+        reject(new Error("I Am Rejected"));
+    }, 1000);
+});
+
+async function readData() {
+    console.log("Before Promise");
+    // myPromise3.then((resolve) => console.log(resolve));
+    console.log(await myPromise3.catch((msg) => msg));
+    console.log("After Promise");
+}
+
+readData();
+
+
+
+
+
+
+// Try, Catch And Finally With Fetch
+
+const good_promise = new Promise((resolve, reject) => {
+    setTimeout(() => {
+        // resolve("Good Promise");
+        reject(new Error("Bad Promise"));
+    }, 3000);
+})
+
+async function getData() {
+    console.log("Before Promise");
+    try {
+        let myData = await fetch("https://api.github.com/users/KaraniAbdellah");
+        console.log(await myData);
+    } catch (error) {
+        console.log(error);
+    } finally {
+        console.log("After Promise");
+    }
+}
+
+getData();
+
+
+
+
+
+
+// The End And Advices
+/*
+    - Other Information => Practice + Tutorials
+    - Problem Solving
+    - Search In Lessons
+    - Advanced Books
+*/
+
