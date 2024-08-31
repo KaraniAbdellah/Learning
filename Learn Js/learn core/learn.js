@@ -5031,6 +5031,9 @@ task1(() => {
 
 
 
+////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////
 // Promise Intro And Syntax
 /*
     - Promise In JavaScript Is Like Promise In Real Life
@@ -5191,14 +5194,13 @@ Promise.race([uploadVideo1, uploadVideo2, uploadVideo3]).then((msgs) => {
 const getData = (apiLink) => {
     return new Promise((resolve, reject) => {
         let myRequest = new XMLHttpRequest();
+        myRequest.open("GET", apiLink);
+        myRequest.send();
         myRequest.onload = function() {
             if (this.status == 200 && this.readyState == 4) {
                 resolve(JSON.parse(this.responseText));
             } else reject(Error("No Data Found"));
         }
-        myRequest.open("GET", apiLink);
-        myRequest.send();
-
     });
 }
 getData("https://api.github.com/users/KaraniAbdellah/repos").then((msg) => {

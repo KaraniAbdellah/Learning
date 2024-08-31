@@ -1,12 +1,4 @@
-// Revise All Last Lessons And Start Assignment
-
-
-
-
-
-
-
-
+// do the last exercice
 
 
 
