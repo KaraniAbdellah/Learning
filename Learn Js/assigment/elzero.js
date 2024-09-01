@@ -1804,8 +1804,85 @@ article_req.onreadystatechange = function() {
         console.log("Data Loaded");
     }
 }
-
 // JSON Object Is Type String
+console.groupEnd();
+
+
+
+// 179 To 188
+console.group("179 To 188");
+
+// do this with no fetch
+function getData() {
+    return new Promise((resolve, reject) => {
+        let myReq = new XMLHttpRequest();
+        myReq.onload = function() {
+            if (this.status == 200 && this.readyState == 4) {
+                resolve(myReq.responseText);
+            } else reject("Can Not Get The Data");
+        }
+        myReq.open("GET", "article1.json");
+        myReq.send();
+    });
+}
+
+function makeEle(Data) {
+    for (let i = 0; i < 5; i++) {
+        let ele = document.createElement("div");
+        ele.innerHTML = `
+            <h3>${Data[i].title}</h3>
+            <p>${Data[i].description}</p>
+        `;
+        document.body.appendChild(ele);
+    }
+}
+
+getData().then((resolveValue) => {
+    let Data = JSON.parse(resolveValue);
+    return Data;
+}).then((Data) => {
+    Data.length = 5;
+    return Data;
+}).then((Data) => {
+    makeEle(Data);
+})
+.catch(rejectValue => {
+    console.log(rejectValue);
+});
+
+// do this with fetch
+
+
+
+
+
+async function fetchData() {
+    try {
+        let myPromise = fetch("article1.json");
+        await myPromise.then((msg) => {
+            let Data = msg.json();
+            return Data;
+        }).then((Data) => {
+            console.log(Data);
+            Data.length = 5;
+            makeEle(Data);
+        });
+    } catch(error) {
+        console.log(error);
+    } finally {
+        console.log("Finally");
+    }
+}
+fetchData();
+
+console.groupEnd();
+
+
+
+
+
+
+
 
 
 
