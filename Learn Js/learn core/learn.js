@@ -5341,7 +5341,7 @@ const good_promise = new Promise((resolve, reject) => {
         // resolve("Good Promise");
         reject(new Error("Bad Promise"));
     }, 3000);
-})
+});
 
 async function getData() {
     console.log("Before Promise");
