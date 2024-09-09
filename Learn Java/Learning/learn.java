@@ -9,7 +9,7 @@
     Java is a Class-Based, Object-Oriented Programming Language
     Java is Availble For Most OS
 
-    file.java --> JavaC [Compiler] --> Byte Code
+    file.java --> JavaC [Compiler] --> Byte Code [0, 1]
         --> JVM [Java Virtual Machine] [Interpreter]
     
     Each Code In Java Should Be Write In class
@@ -23,8 +23,16 @@ package Learning;
 
 
 
-//  System.out.print
-/* 
+
+/////////////////////////////////// 
+/////////////////////////////////// 
+// Basics Of Input And Output
+/////////////////////////////////// 
+/////////////////////////////////// 
+
+
+//  Print in Output
+/*
     System.out.print(Data); --> For Print Data
     System.out.println(Data); --> It Add New Line
     Sout + tab --> System.out.println();
@@ -48,7 +56,6 @@ public class learn {
     }
 }
 */
-
 
 
 
@@ -82,7 +89,6 @@ public class learn {
     }
 }
 */
-
 
 
 
@@ -157,7 +163,6 @@ public class learn {
 
 
 
-
 // Arithmetic Operators && Typing Casting && (Prefix & Postfix)
 /*
     + : additions
@@ -209,7 +214,6 @@ public class App {
 
 
 
-
 // Java User Input (Scanner), Printf methods
 /*
     --- Scanner
@@ -219,7 +223,7 @@ public class App {
     System.out.println(value); --> Get The Value
 
     ---> Others : nextBoolean() nextFloat() nextLong()
-        next() : get firs word in string
+        next() : get first word in string
         nextLine() : get all string
 -----------------------------------------------
 
@@ -264,3 +268,114 @@ public class learn {
 
 
 
+/////////////////////////////////// 
+/////////////////////////////////// 
+// Control Flow
+/////////////////////////////////// 
+/////////////////////////////////// 
+
+
+// Control Folow [if - if else - if else if]
+/*
+    if (condition) {
+        // code
+    } else if (condition) {
+        // code
+    } else {
+        // code
+    }
+*/
+
+/* 
+public class learn {
+    static public void  main(String args[]) {
+        int a = 30;
+        if (a % 2 == 0) {
+            System.out.printf("%d is even number%n", a);
+            if (a > 10)
+                System.out.printf("%d is large then 10%n", a);
+        } else if (a < 40) {
+            System.out.printf("%d is odd number%n", a);
+        } else {
+            System.out.printf("%d is zero%n");
+        }
+    }
+}
+*/
+
+
+
+
+// Exercises, Practice, Ternary Operator
+/*
+ * Exercises
+ * Ternary Operator [?:]
+ * Instanceof Method [Work Just For No Primitive Data Type]
+*/
+
+/*
+public class learn {
+    static public void main(String args[]) {
+        int mark;
+        Scanner input = new Scanner(System.in);
+        System.out.print("Enter Youe Mark : ");
+        mark = input.nextInt();
+        // Condition With If Statement
+        boolean cond1 = mark >= 50 && mark <= 100;
+        boolean cond2 = mark <= 50 && mark > 0;
+        if (cond1) System.out.println("A");
+        else if (cond2) System.out.println("D");
+        else System.out.println("fail");
+        // Condition With Ternary Operator
+        String mention = (cond1 || cond2) ? "Good" : "Bad";
+        System.out.printf("Mention : %S%n", mention);
+        // Instanceof Method
+        System.out.println(mention instanceof String); // true
+        System.out.println(input instanceof Scanner); // true
+    }
+}
+*/
+
+
+
+
+// Switch Statements
+/*
+    Switch Is Statment for Control Flow
+    Switch Can Not Take Float Point Data Types [double, float]
+    Syntax :
+        switch (value) {
+            case 1: // code // break;
+            case 2: // code // break;
+            ....
+            case n: // code // break;
+            default: // code // break;
+        }
+    Break: For Stop The Swicth Exectuion
+    Condition Does Not Support Inside Case
+    Case 1 and Case 2 Can Be Have The Same Result
+*/
+
+/*
+public class App {
+    public static void main(String args[]) {
+        Scanner input = new Scanner(System.in);
+        System.out.print("Today is : ");
+        String day = input.next();
+        switch (day) {
+            case "Mon" + "day":
+            case "Thursday":
+            case "Weednesday":
+            case "Thuesday":
+            case "Sunday": System.out.println("Working"); break;
+            case "Saturday": System.out.println("Weekend"); break;
+            default: System.out.println("value ot of range"); break;
+        }
+    }
+}
+*/
+
+
+
+
+// Repetition Control Statement (While Loop)
