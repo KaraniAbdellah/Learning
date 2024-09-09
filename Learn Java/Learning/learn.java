@@ -379,3 +379,64 @@ public class App {
 
 
 // Repetition Control Statement (While Loop)
+/*
+    while (conditon) {
+        // code
+    }
+    ----------------
+
+    for (initilize: conditoon: step) {
+        // code
+    }
+    ----------------
+
+    do {
+        // code
+    } while (condition);
+*/
+
+/*
+public class learn {
+    public static void main(String args[]) {
+        // while loop
+        int a = 10;
+        while (a-- > 0) {
+            System.out.printf("a = %d%n", a);
+        }
+        System.out.println("---------");
+        // for loop
+        for (int i = 0; i < 10; i++) {
+            System.out.printf("i = %d %n", i);
+        }
+        System.out.println("---------");
+        // do while loop
+        int x = 10;
+        do {
+            System.out.printf("x = %d%n", x);
+            x--;
+        } while (x <= 10 && x > 0);
+    }
+}
+*/
+
+
+
+
+
+// Questions and Exercises in Loops
+/* 
+public class learn {
+    public static void main(String main[]) {
+        Scanner input = new Scanner(System.in);
+        System.out.print("Enter A Value : ");
+        int nbr = input.nextInt();
+        float sum = 0f;
+        
+        for (int i = 1; i < nbr; i++) {
+            sum += 1.0 / i;
+            // sum += 1 / i; will give 1 
+        }
+        System.err.printf("sum = %f%n", sum);
+    }
+}
+*/
