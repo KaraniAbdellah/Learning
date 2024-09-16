@@ -422,7 +422,6 @@ public class learn {
 
 
 
-
 // Questions and Exercises in Loops
 /* 
 public class learn {
@@ -437,6 +436,57 @@ public class learn {
             // sum += 1 / i; will give 1 
         }
         System.err.printf("sum = %f%n", sum);
+    }
+}
+*/
+
+
+
+
+// Branching Statements ( Break/Continue )
+/*
+    break: Exit from control structure
+    continue: Skips remaining statements in loop body
+
+    if (true) {
+        break; --> error
+    }
+    if (true) {
+        continue;
+    }
+*/
+
+/*
+public class App {
+    public static void main(String main[]) {
+        int n = 10;
+        for (int i = 0; i < n; i++) {
+            System.out.println(i);
+            if (i == 5) break;
+            if (i == 2) continue;
+            System.err.println("go go");
+        }
+    }
+}
+*/
+
+
+
+
+// Repetition Control Statement (Nested Loops)
+/*
+    There Nested Loop and Outer Loop
+*/
+
+/*
+public class App {
+    public static void main(String main[]) {
+        for (int i = 0; i < 3; i++) {
+            System.out.println("Outer Loop " + i);
+            for (int j = 0; j < 3; j++) {
+                System.out.println("Nested Loop " + j);
+            }
+        }
     }
 }
 */
