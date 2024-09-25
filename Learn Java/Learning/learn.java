@@ -574,6 +574,9 @@ public class learn {
         static int sum(int x, int y) --> return integer
     
     EveryThing Inder Class
+    
+    // public --> Anyone can use this.
+    // static --> You can use the method without creating an object.
 */
 
 /*
@@ -635,6 +638,121 @@ public class App {
     }
 }
 */
+
+
+
+
+
+//  Built in Method / Function
+/*
+    * Java Number Methods 
+        Math.function_name()
+        float x = (int) 10.3f;
+    * Java String Methods
+    * Java Character Methods
+    * Java Array Methods
+*/
+
+/*
+import static java.lang.Math.*;
+import static java.lang.String.*;
+
+public class learn {
+    public static void main(String main[]) {
+        // Math Function
+        double a = abs(-1.2);
+        System.err.println("abs = " + a);
+        double c = ceil(10.30);
+        System.out.println("ciel = " + c);
+        double f = floor(102.90);
+        System.err.println("floor = " + f);
+        long r = Math.round(19292.90); // without import Math
+        System.err.println("round = " + r);
+        double ran = (int) Math.floor(Math.random() * 10) + 1; // without import Math
+        System.err.println("random = " + ran);
+        System.err.println("max = " + max(10, 10.9));
+        // String Function
+        String str1 = "Hello";
+        String str2 = "World";
+        String new_str = join("-", str1, str2);
+        System.out.println("New String : " + new_str);
+        System.out.println("Length : " + new_str.length());
+    }
+}
+*/
+
+
+
+
+
+// Overloading Method / Function
+/*
+    - method overloading: means having multiple methods with the
+        same name but different parameters(number, type, or order of parameters).
+    - another definition: two method has a defferent signature.
+
+    - Signature: its Method Name & its Parameter
+*/
+
+/* 
+public class learn {
+    // Different Signature
+    public static int sum(int a, int b) {
+        return a + b;
+    }
+    public static float sum(float a, float b, float c) {
+        int s = sum((int) a, (int) b);
+        return s + c;
+    }
+    public static void main(String[] args) {
+        float s = sum(1.2f, 90.1f, 89f);  
+        System.err.println("sum = " + s);   
+    }
+}
+*/
+
+
+
+
+
+// Recursion/Recursive Methods Part 1
+/*
+    - Base-Case Required in Recursion
+    - Each Function Store In Stack [Space in Memory]
+*/
+
+/*
+public class learn {
+    static int count = 0;
+    public static void fun() {
+        System.err.println("fun");
+        count++;
+        if (count < 5) fun();
+    }
+    public static int fact(int n) {
+        if (n == 0) return 1; // base-case
+        else return n * fact(n - 1);
+    }
+    public static void main(String[] args) {
+        int n = 15;
+        System.out.printf("fact(%d) = %d%n", n, fact(n));
+    }
+}
+*/
+
+
+
+
+
+/////////////////////////////////// 
+/////////////////////////////////// 
+// Arrays
+/////////////////////////////////// 
+/////////////////////////////////// 
+
+
+// One Dimensional Arrays (1D Array)
+
 
 
 

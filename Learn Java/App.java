@@ -1,21 +1,45 @@
-//  Built in Method / Function
+// One Dimensional Arrays (1D Array)
+
+/*
+    - Array: Container Of Objects 
+        Have Fixed Number Values
+        Single Types
+        Zero-Based 
+        Values Intialze With Zero
+    
+    - Type Of Array: 
+        static arrays: Numbers of values are fixed
+        dynamique arrays: We Don't Know Nbr Of Values
+    
+    - Syntax:
+        int[] numbers; // Declares an array of integers
+        numbers = new int[5]; // Allocates memory for 5 integers
+    
+*/
+
 
 public class App {
-    public static int sum(int...nums) {
-        int s = 0;
-        for (int i: nums) {
-            s += i;
-        }
-        return s;
-    }
-    public static void main(String main[]) {
-        System.out.println("The Sum Is " + sum(10, 10, 92, 28));
+    public static void main(String args[]) {
+        int[] numbers = new int[5];
+        numbers[0] = 10;
+        for (int i:numbers) System.err.println(i);
     }
 }
 
 
-// search for methods please
-    // what is public and static in fucntions
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
