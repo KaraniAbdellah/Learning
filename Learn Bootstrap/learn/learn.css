@@ -4,16 +4,41 @@
 
 /* Create The Work Envirement */
 /*
-    - Bootstrap Is Framework Based On Classes
-    - To Begin:
-        - Download Bootstrap
-        - Download Jquery File
-        - Download Pooper Js File
-    - See The Documentation
-        - https://getbootstrap.com/docs/4.5/getting-started/introduction/
+
 */
 
 
+
+
+/* Grid System */
+/*
+    Grid System in Boostrap Base in 12 Columns
+
+    container {will center the content}
+        width: 100%; // in phone 540px
+        padding-right: 15px;
+        padding-left: 15px;
+        margin-right: auto;
+        margin-left: auto;
+    row: 
+        display: flex;
+        flex-wrap: wrap;
+        margin-right: -15px;
+        margin-left: -15px;
+    col: 
+        flex-grow: 1;
+        max-width: 100%;
+    col-n:
+        n is number of column take from 12 column
+    col-3:
+        flex: 0 0 25%;
+        max-width: 25%;
+*/
+
+
+
+
+/* Responsiveness to devices */
 
 
 
