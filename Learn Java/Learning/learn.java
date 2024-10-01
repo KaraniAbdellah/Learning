@@ -611,6 +611,7 @@ public class learn {
         s += i;
     }
 */
+
 /*
 public class App {
     protected static void find_largest(float a, float b, float c) {
@@ -752,6 +753,91 @@ public class learn {
 
 
 // One Dimensional Arrays (1D Array)
+/*
+    - Array: Container Of Objects 
+        Have Fixed Number Values
+        Single Types
+        Zero-Based 
+        Values Intialze With Zero
+    
+    - Type Of Array: 
+        static arrays: Numbers of values are fixed
+        dynamique arrays: We Don't Know Nbr Of Values
+    
+    - Syntax:
+        int[] numbers; // Declares an array of integers
+        numbers = new int[5]; // Allocates memory for 5 integers
+*/
+
+/*
+public class App {
+    public static void main(String []args) {
+        int size = 5;
+        int[] T = new int[size];
+        float P[] = {1.4f, 2.3f, 3}; /// array has 3 ele
+        char C[] = new char[4];
+        String S[] = {"Abdellah", "Hello", "Karani"};
+        C[1] = '9'; T[0] = 1;
+
+        System.out.printf("T = %d & P = %f & C = %c%n", T[0], P[0], C[0]);
+        System.out.println("The Length = " + P.length);
+
+        for(String name: S) {
+            System.out.println(name);
+        }
+        
+    }
+}
+*/
+
+
+
+
+
+// One Dimensional Array (Char Array)
+/*
+    with array of character --> you can print without loop
+    you can casting --> (char) 97 --> a
+    there is no NULL terminator
+    in.next().toCharArray() --> if there is space --> stop printing
+    in.nextLine().toCharArray() --> continue printing
+
+    toCharArray() --> convert string to character array
+
+    why we use array of character
+        - quick
+        - space
+        - storage for example the password
+*/
+
+/* 
+public class App {
+    public static void main(String[] args) {
+        char arr[] = {72, 73};
+        System.err.println("msg = " + arr); // HI
+
+        char name[] = new char[10];
+        Scanner in = new Scanner(System.in);
+        String str = in.nextLine();
+        name = str.toCharArray();
+        // name = in.next().toCharArray();
+        System.out.println("name = " + name);
+
+        String extra = new String(name, 0, 3);
+        System.out.println("extra = " + extra);
+    }
+}
+*/
+
+
+
+
+
+
+
+
+
+
 
 
 
