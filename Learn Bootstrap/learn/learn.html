@@ -66,7 +66,32 @@
 
 
 
-    
+
+    <!-- Responsive Devices -->
+    <!-- 
+        In Bootstrap There is 4 Sizes
+
+        Small (sm)          >= 576px
+        Medium (md)         >= 768px
+        Large (lg)          >= 992px
+        Extra-large (xl)    >= 1200px
+        ==> big take from small [if md-col-2 then sm-col-2 ]
+        ==> col without [sm, lg, xl, md] ==> it is small then [sm]
+
+        Example:
+            col-sm-12 // in small screen he take 12 column (width: 100%)
+            col-md-6 // in mediam screen he take 6 column (width: 50%)
+            col-lg-3 // in large screen he take 3 column (width: 25%)
+    -->
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">test1</div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">test2</div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">test3</div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">test4</div>
+        </div>
+    </div>
 
 
 
