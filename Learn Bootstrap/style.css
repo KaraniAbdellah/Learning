@@ -1,20 +1,7 @@
 body {
     padding: 20px;
 }
-div.row {
-    width: 100%;
-    height: 400px;
-    background-color: black;
-}
 
-div.row div {
-    background-color: red;
-}
-
-div.box {
-    width: 500px;
-    height: 500px;
-}
 
 
 
