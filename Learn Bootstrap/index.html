@@ -5,36 +5,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Working With Bootstrap</title>
     <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     
 
 
-    <!-- Practice  -->
+    <!-- Cards -->
+    <!-- 
+        Width & Height:
+            w-* ==> *% || h-* ==> *% || 
+            w-25 | w-50 | h-75 | h-100 | w-auto
 
-    <div class="row bg-secondary">
-        <div class="col col-1"><button class="btn btn-primary">left</button></div>
-        <div class="col d-flex justify-content-end">
-            <button class="btn btn-primary">right</button>
-            <button class="btn btn-primary">right</button>
-        </div>
-    </div>
-    <div class="row bg-primary align-items-center justify-content-center">
-        <div class="col col-1">
-            <button class="btn btn-secondary">center</button>
-        </div>
-    </div>
-    <div class="row bg-secondary justify-content-between">
-        <div class="col col-1"><button class="btn btn-primary">left</button></div>
-        <div class="col col-1">
-            <button class="btn btn-primary">right</button>
-        </div>
-        <div class="col col-1">
-            <button class="btn btn-primary">right</button>
-        </div>
-    </div>
+        card: create a card
+        img: for image in card
+        card-body: contain text, buttons, ...
+        card-title: title of card
+        card-text: description
         
+
+    -->
+
+    <div class="card">
+        <img class="w-100 h-50 card-img" src="phone.jpg" alt="">
+        <div class="card-body">
+            <h1 class="card-title">Iphone 16X</h1>
+            <p class="card-text">Lorem ipsum dolor sit amet consectetur
+                adipisicing elit.Eum, nobis magnam doloremque provident
+                ipsam aut repellendus sapiente dolorum animi fugiat!
+            </p>
+
+        </div>
+    </div>
+
+
+
+
+
 
 
 
