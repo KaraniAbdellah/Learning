@@ -364,6 +364,49 @@
 
 
 
+    <!-- Breadcrumb -->
+    <!-- in index.html -->
+    <nav>
+        <ul class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a href="index.html">home</a>
+            </li>
+            <li class="breadcrumb-item">
+                <a class="text-dark" href="about.html">about</a>
+            </li>
+        </ul>
+    </nav>
+    <!-- in about.html -->
+    <nav>
+        <ul class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a href="index.html" class="text-dark">home</a>
+            </li>
+            <li class="breadcrumb-item">
+                <a href="about.html">about</a>
+            </li>
+        </ul>
+    </nav>
+
+
+
+
+
+    <!-- Collapse -->
+    <!-- 
+        You have hidden text, when you click to button the text will be display
+
+        collapse: hidden the text
+        data-target: to call ele by id
+    -->
+    
+    <button data-target="#show_text" class="btn btn-danger" data-toggle="collapse">danger</button>
+    <a href="#show_text" class="btn btn-danger" data-toggle="collapse">danger</a>
+    <h1 id="show_text" class="collapse">Be Quit</h1>
+
+
+
+
 
     
 
