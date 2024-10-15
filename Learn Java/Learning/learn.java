@@ -934,6 +934,155 @@ public class learn {
 
 
 
+// Multidimensional Arrays & Passing Multidimensional Arrays to Methods
+/*
+    Declaration:
+        int arr[][] = new int[n_lines][];
+        int[n_line0] = new int[3];
+ */
+/* 
+public class learn {
+    // passing multi to method
+    public static void print_array(int[][] arr) {
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = 0; j < arr[i].length; j++) {
+                System.out.println(arr[i][j]);
+            }
+        }
+    }
+    public static void main(String args[]) {
+        // define an array
+        int arr[][] = {{1, 2, 3}, {1, 2, 3}, {2, 3, 4}};
+        // another definition
+        int arr1[][] = new int[3][];
+        arr1[0] = new int[4];
+        arr1[1] = new int[4];
+        arr1[2] = new int[4];
+        // print the array
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = 0; j < arr[i].length; j++)
+                System.out.printf("%d%n", arr[i][j]);
+        }
+        // passing multi to an array
+        print_array(arr);
+    }
+}
+*/
+
+
+
+
+
+// String 
+/* 
+import java.util.Scanner;
+public class App {
+    public static void main(String[] args) {
+        // define a string
+        String message = "Hello, World!";
+        System.out.println(message);
+        // make user enter the string
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter a string: ");
+        String userInput = scanner.nextLine();
+        System.out.println("You entered: " + userInput);
+    }
+}
+*/
+
+
+
+
+
+// Introduction To OOP.
+// Objet & Class
+/*
+    Class: is a blue print or prototype, template 
+    from wich objects are created
+    
+    Object: instance of class that represente a data
+
+    Create instance App to acess to classes in file
+    Use App instance to create objects since Classes
+        is inner Class for App
+    
+    Defferent between objects in data value
+
+    Access Level Modofiers
+        [public, protected, private, Package-Private(by default)]
+        public: i can access to attribute by using class
+        protected: it is normal but for protecting the data
+        private: we can access inside class (not by objects)
+    
+    Data Heading is Encapsulation
+
+    signs in attributs inside class:
+        -: private
+        +: public
+        #: protected
+        empty space: default
+*/
+
+/* 
+public class App {
+    // create class
+    class Car {
+        String name;
+        public int max_speed;
+        private float price;
+        protected int model;
+
+        public void setName(String n) {
+            this.name = n;
+        }
+        public void getName() {
+            System.out.println("value is " + this.name);
+        }
+    }
+    public static void main(String args[]) {
+        // create a object
+        App app = new App();
+        Car car_obj1 = app.new Car();
+        car_obj1.name = "Clio";
+        Car car_obj2 = app.new Car();
+        car_obj2.name = "Mercidess";
+        System.out.println(car_obj1.name + car_obj2.name);
+
+        car_obj1.getName();
+        car_obj2.setName("Ford");
+        car_obj2.getName(); // value if Ford
+
+    }
+}
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     
 
