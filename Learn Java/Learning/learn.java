@@ -993,65 +993,146 @@ public class App {
 
 
 
-
-// Introduction To OOP.
-// Objet & Class
+/////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////
+// Introduction to Object-Oriented Programming
 /*
-    Class: is a blue print or prototype, template 
-    from wich objects are created
-    
-    Object: instance of class that represente a data
-
-    Create instance App to acess to classes in file
-    Use App instance to create objects since Classes
-        is inner Class for App
-    
-    Defferent between objects in data value
-
-    Access Level Modofiers
-        [public, protected, private, Package-Private(by default)]
-        public: i can access to attribute by using class
-        protected: it is normal but for protecting the data
-        private: we can access inside class (not by objects)
-    
-    Data Heading is Encapsulation
-
-    signs in attributs inside class:
-        -: private
-        +: public
-        #: protected
-        empty space: default
+    OOP Concepts:
+        Classes
+        Objects
+        Abstraction(Interface)
+        Polymorphisme
+        Encapsulation
+        Inheritance
+        Association
+        Composition
+        Aggregation
 */
 
-/* 
-public class App {
-    // create class
-    class Car {
-        String name;
-        public int max_speed;
-        private float price;
-        protected int model;
 
-        public void setName(String n) {
-            this.name = n;
-        }
-        public void getName() {
-            System.out.println("value is " + this.name);
-        }
+
+
+
+// CLasses & Objects
+/*
+    - Use setters() & getters() methods to
+        change and access to the attributs
+
+    - Access Level Modifiers
+        we can not use --> car1.model = 100
+        we must use setters functions
+        =========
+        + public
+            can acces from any class in projects
+        # protected
+            keep it hidden from other classes
+        - private
+            just from this class with setters & getters
+        ~ Default or Package private
+            just from package
+    
+    - Data Hiding:
+        method must be public
+        attribute must be private
+        "I practice Encapsulation"
+*/
+
+/* Car.java
+public class Car {
+    // Define Attributes
+    public String name;
+    int maxSpeed;
+    float price;
+    private int model;
+    // Define Methods
+    void setName(String newName) {
+        this.name = newName;
     }
-    public static void main(String args[]) {
-        // create a object
-        App app = new App();
-        Car car_obj1 = app.new Car();
-        car_obj1.name = "Clio";
-        Car car_obj2 = app.new Car();
-        car_obj2.name = "Mercidess";
-        System.out.println(car_obj1.name + car_obj2.name);
+    void getName() {
+        System.out.println("name = " + this.name);
+    }
+}
+*/
 
-        car_obj1.getName();
-        car_obj2.setName("Ford");
-        car_obj2.getName(); // value if Ford
+/* App.java
+public class App {
+    public static void main(String[] args) {
+        Car car1 = new Car();
+        Car car2 = new Car();
+        car2.maxSpeed = 122;
+        // car1.model = 10; car2.model = 100; error: is not visible
+        car1.name = "Tesla";
 
+        System.out.println("maxSpeed = " + car1.maxSpeed); // maxSpeed = 100
+
+        car1.setName("R4");
+        car1.getName();
+    }
+}
+*/
+
+
+
+
+
+// Constructor [Part 1]
+/*
+    - Constractor give to object attribute intial value
+    - to write a constractor respect three rules:
+        constractor name = class name
+        no explicit return type
+        can not be anstract, static, final or synchronized
+
+    - Constractor Type
+        No-argument constrcator
+            constrcator does not accept any args
+        Parameterized constractor
+            constrcator accept argument
+        Default contarctor
+            auto created by java compiler
+
+    - Overloading 
+        is when multiple methods have the 
+        same name but different parameters
+    
+    - Object can take just one constractor
+    - this reference to the constractor
+    - constractor chaining
+        cons call another cons by using:
+            this (name, price);
+    - if cons private we can not called it from main
+*/
+
+/* Product.java
+public class Product {
+    private String name;
+    private float price;
+
+    public Product() {
+        this.name = "t-shirt";
+        this.price = 12.2f;
+    }
+    public void display() {
+        System.out.printf("name = %s, price =  %f", this.name, this.price);
+    }
+    public Product(String n, float p) {
+        this.name = n;
+        this.price = p;
+    }
+}
+*/
+
+/* App.java
+public class App {
+    public static void main(String main[]) {
+        // No-argument constrcator
+        Product p1 = new Product(); // Constractor is Called
+        p1.display();
+        // Parameterized constractor
+        Product p3 = new Product("M", 10f);
+        p3.display();
     }
 }
 */
