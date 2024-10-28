@@ -1144,8 +1144,11 @@ public class App {
 // Constrcator Part 2
 /*
     - Copy Constructor
-        constructor that create an object
-        using another object
+        constublic class App {
+    public static void main(String[] args) {
+        System.out.println("Hello, World!");
+    }
+}
 
     - Call to default constructor
         if we do not write construtor
