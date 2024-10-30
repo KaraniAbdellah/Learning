@@ -1,6 +1,11 @@
+// Static keyword (Static Variable Block and Methods)
+
+
+
 public class App {
     public static void main(String[] args) {
-        System.out.println("Hello, World!");
+        Student std = new Student(122, "Abdellah");
+        std.display();
     }
 }
 
