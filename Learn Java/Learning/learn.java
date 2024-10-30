@@ -1191,6 +1191,121 @@ public class App {
 
 
 
+// Static keywords || Static Variable & Method
+/*
+    static variable: means it conserve the
+        initial value 1 can be access from ClassName
+    
+    statis method: we can use just ClassName for call to object
+*/
+
+/* Student.java
+public class Student {
+    // static variable
+    static int count = 1;
+    // Attribut
+    private int no;
+    private String name;
+    private String password;
+    private static String college="IT";
+
+    public Student(String name, String password) {
+        this.no = count;
+        this.name = name;
+        this.password = password;
+        count++;
+    }
+    static void showPassword(String password) {
+        System.out.printf("Password = %s", password);
+    }
+    public void display() {
+        System.out.printf("name = %s, no = %d, college = %s%n", this.name, this.no, this.college);
+    }
+}
+*/
+
+/* 
+public class App {
+    public static void main(String[] args) {
+        Student std1 = new Student("Abdellah", "ksks");
+        Student std2 = new Student("Abdellah", "ksks");
+        std1.display();
+        std2.display();
+        System.err.println("count = " + std.count);
+        std1.showPassword("dd");
+    }
+}
+*/
+
+
+
+
+
+// Static keywords || static Method & Static Block
+/* Student.java
+    Restriction for static mEthod
+        static method can not use non static data member 
+        || call no-static method directly
+    
+    Static Block:
+        When e run the programm static block call
+        the goal is to give initialization to static var
+        inside each static block you call just static var
+*/
+
+/*  
+public class App {
+    static int x = 10;
+    static{
+        x = 20;
+        System.out.println("Hello World");
+    }
+    public static void main(String[] args) {
+        System.out.println("x = " + x); // x = 20
+    }
+    
+}
+*/
+
+
+
+
+
+// Static keyword Part 3 || Static Class
+/*
+    Static Class:
+        A class can be made static only if it is a nested class
+        create object from innerClass
+*/
+
+/* OuterClass.java
+public class OuterClass {
+    public static class InnerClass {
+        public void print() {
+            System.out.println("Hello From InnerClass");
+        }
+    }    
+}
+*/
+
+/*
+public class App {
+    public static void main(String[] args) {
+        OuterClass.InnerClass nested_class = new OuterClass.InnerClass();
+        nested_class.print(); // Hello
+    }
+}
+*/
+
+
+
+
+
+
+
+
+
+
 
 
 
