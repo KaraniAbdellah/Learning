@@ -21,7 +21,7 @@ public class Product {
         this.name = obj.name;
         this.price = obj.price;
         // Another method
-        this (obj.name, obj.price); // call another constructor
+        // this (obj.name, obj.price); // call another constructor
     }
     // Set price
     public void setPrice(float p) {
