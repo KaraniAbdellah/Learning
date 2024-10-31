@@ -1301,6 +1301,46 @@ public class App {
 
 
 
+// Passing Objects to Methods (by Value vs by Reference)
+/*
+    for primitive data type(int, float, ...)
+        cannot support call by refrence
+    do wrap to primitive data type inside object
+*/
+
+/* Test.java
+public class Test {
+    int number;
+}
+*/
+
+/*
+public class App {
+    static void fun(int n) {
+        n++;
+    }
+    static void Incr(Test obj) {
+        obj.number++;
+    }
+    public static void main(String[] args) {
+        // Method 1
+        int n = 10;
+        fun(n);
+        System.out.println("n = " + n); // n = 10
+
+        // Method 2
+        Test obj = new Test();
+        obj.number = 10;
+        Incr(obj);
+        System.out.println("n = " + obj.number); // n = 11
+
+    }
+}
+*/
+
+
+
+
 
 
 
