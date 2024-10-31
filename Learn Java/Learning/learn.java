@@ -1102,7 +1102,7 @@ public class App {
     - constractor chaining
         cons call another cons by using:
             this (name, price);
-    - if cons private we can not called it from main
+    - if constractor private we can not called it from main
 */
 
 /* Product.java
@@ -1196,7 +1196,7 @@ public class App {
     static variable: means it conserve the
         initial value 1 can be access from ClassName
     
-    statis method: we can use just ClassName for call to object
+    statis method: we can use just ClassName for call it
 */
 
 /* Student.java
@@ -1231,7 +1231,7 @@ public class App {
         Student std2 = new Student("Abdellah", "ksks");
         std1.display();
         std2.display();
-        System.err.println("count = " + std.count);
+        System.out.println("count = " + std.count);
         std1.showPassword("dd");
     }
 }
@@ -1243,14 +1243,14 @@ public class App {
 
 // Static keywords || static Method & Static Block
 /* Student.java
-    Restriction for static mEthod
+    Restriction for static Method
         static method can not use non static data member 
         || call no-static method directly
     
     Static Block:
-        When e run the programm static block call
-        the goal is to give initialization to static var
-        inside each static block you call just static var
+        - When e run the programm static block call
+        - the goal is to give initialization to static var
+            inside each static block you call just static var
 */
 
 /*  
