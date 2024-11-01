@@ -52,6 +52,7 @@ void addNode_dsg(int s, int d, List* adjList_dsg[n]) {
         adjList_dsg[s]->head = dest;
         return;
     }
+    
     temp = adjList_dsg[s]->head;
     while (temp->next != NULL) temp = temp->next;
     temp->next = dest;

@@ -1342,6 +1342,54 @@ public class App {
 
 
 
+// Returning Objects & Comparing Objects
+/*
+    obj1 + obj2: is not support in java
+    obj1 == obj2: compare the refrence
+    obj1 = obj2: two refrences are equals
+*/
+
+/* Test.java
+public class Test {
+    int number;
+    public Test() {
+        this.number = 1;
+    }
+    public static Test sumObj(Test t1, Test t2) {
+        // return t1 + t2; not support
+        Test t3 = new Test();
+        t3.number = t1.number + t2.number;
+        return t3;
+    }
+}
+*/
+
+/* 
+public class App {
+    public static void main(String[] args) {
+        // Returning Objects
+        Test t1 = new Test();
+        Test t2 = new Test();
+        Test t3 = Test.sumObj(t1, t2);
+        System.out.println("n = " + t3.number);
+
+        // Comparing Objects
+        if (t1 == t2) {
+            System.out.println("Equal");
+        } else {
+            System.out.println("Not Equal");
+        }
+    }
+}
+*/
+
+
+
+
+
+
+
+
 
 
 
