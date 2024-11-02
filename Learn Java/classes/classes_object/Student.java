@@ -1,3 +1,4 @@
+package classes_object;
 
 public class Student {
     // Declare a static variable

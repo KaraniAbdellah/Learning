@@ -1,8 +1,2 @@
-// Returning Objects & Comparing Objects
-
-
-public class App {
-    public static void main(String[] args) {
-        
-    }
-}
+// Try To Do your Own Example
+ 

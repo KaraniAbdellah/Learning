@@ -1,3 +1,5 @@
+package classes_object;
+
 public class Product {
     private String name;
     private float price;

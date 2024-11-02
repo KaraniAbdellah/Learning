@@ -1,3 +1,5 @@
+package classes_object;
+
 class User {
     private String name;
     private int code;

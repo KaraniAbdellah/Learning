@@ -1,4 +1,7 @@
 // Car Class
+
+package classes_object;
+
 public class Car {
     // Define Attributes
     public String name;

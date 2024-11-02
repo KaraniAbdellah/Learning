@@ -1,3 +1,5 @@
+package classes_object;
+
 public class Test {
     int number;
     public Test() {

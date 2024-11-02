@@ -1036,7 +1036,7 @@ public class App {
     - Data Hiding:
         method must be public
         attribute must be private
-        "I practice Encapsulation"
+        --> "I practice Encapsulation"
 */
 
 /* Car.java
@@ -1079,7 +1079,7 @@ public class App {
 
 // Constructor [Part 1]
 /*
-    - Constractor give to object attribute intial value
+    - Constractor give to object attribute intialize value
     - to write a constractor respect three rules:
         constractor name = class name
         no explicit return type
@@ -1100,7 +1100,7 @@ public class App {
     - Object can take just one constractor
     - this reference to the constractor
     - constractor chaining
-        cons call another cons by using:
+        constractor call another cons by using:
             this (name, price);
     - if constractor private we can not called it from main
 */
@@ -1244,7 +1244,7 @@ public class App {
 // Static keywords || static Method & Static Block
 /* Student.java
     Restriction for static Method
-        static method can not use non static data member 
+        static method can not use non static data member
         || call no-static method directly
     
     Static Block:
@@ -1386,6 +1386,114 @@ public class App {
 
 
 
+
+///////////////////////////////////////
+///////////////////////////////////////
+// Inheritance (Types/ Access Modifiers)
+/*
+    in Inheritance we can inherit (member, fields & nested classes)
+        constractor are not member (we cannot inherited)
+    
+    Notation:
+        Super Class || Parent Class
+        SubClass || Child Class
+        Specialization: object inherit from general class
+        Generalization: create a general class
+        IS-A relationship: Dog IS-A Animal
+    
+    Types of Inheritance:
+        - Single Inhertance: B inherit from A
+        - Multilevel Inheritance: C inherit from B & B inherit from A
+        - Hierarchical Inheritance: B & C inherit from A
+        - Multiple Inheritance: C inherit From A & B
+        - Heybrid Inheritance: D inherit from B & C, ...
+
+    Note:
+        Multiple & Heybrid not support --> must use interface
+    
+    Access Modifiers & Inheritance
+        - private members cannot access by SubClass (setters & getters)
+        - protected: we can access from SubClass & Super Class
+*/
+
+
+
+
+
+
+// Inheritance (Super Keyword / Object Class / Package-Private vs Protected)
+
+/*
+    subClass Call to constrcator SuperClass & then SubClass
+    Priority always is for parent class (specialization)
+    
+    we can create constractor to Developer
+        but we can use the superClass constractor by "super" 
+
+    the parent class inherit from Object Class
+*/
+
+/* App.java
+import inheritance.*;
+public class App {
+    public static void main(String[] args) {
+        Employee em1 = new Employee("Abdellaj", "Manager", 12.2);
+        Developer d1 = new Developer();
+        System.out.println("name = " + d1.getName());
+        System.out.println("name = " + em1.getName());
+
+        // Without super
+        // Developer d2 = new Developer("Ahmed", "DevOps", 12223.23);
+
+        // With Super
+        Developer d2 = new Developer("Omar", "Dev", 12, "websit");
+        System.out.println("name = " + d2.getName());
+
+        // Object Class
+        Employee em2 = new Employee();
+        System.out.println(em2.toString());
+
+    }
+}
+*/
+
+/* Developer.java
+package inheritance;
+
+public class Employee {
+    protected String name;
+    protected String position;
+    protected double salary;
+
+    // constructors
+    public Employee() {
+        this("john", "employee", 12);
+    }
+
+    public Employee(String name, String position, double salary) {
+        this.name = name;
+        this.position = position;
+        this.salary = salary;
+    }
+
+    // Getters and Setters
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getPosition() {
+        return position;
+    }
+
+    public void setPosition(String position) {
+        this.position = position;
+    }
+}
+*/
 
 
 
