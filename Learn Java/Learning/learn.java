@@ -1388,7 +1388,6 @@ public class App {
 
 
 ///////////////////////////////////////
-///////////////////////////////////////
 // Inheritance (Types/ Access Modifiers)
 /*
     in Inheritance we can inherit (member, fields & nested classes)
@@ -1494,6 +1493,176 @@ public class Employee {
     }
 }
 */
+
+/* Developer.java
+public class Developer extends Employee {
+    String projectName;
+
+    public Developer() {
+
+    }
+
+    // Without super
+    /*public Developer(String name, String position, double salary) {
+        this.name = name;
+        this.position = position;
+        this.salary = salary;
+    }
+
+    public Developer(String name, String position, double salary, String projectName) {
+        // call to no-arg const
+        super(name, position, salary);
+        this.projectName = projectName;
+        super.getName();
+        // call to no-arg const
+        // super();
+    }
+
+    public void setProject(String new_project) {
+        this.projectName = new_project;
+    }
+
+    public void getProject() {
+        System.out.println("ProjectName = " + this.projectName);
+    }
+}
+*/
+
+
+
+
+
+
+///////////////////////////////////////
+// Polymorphism (Method Overloading and Method Overriding)
+/*
+    Polymorphism: polyform
+        it refres to use single type entity(methods, object, ...)
+        to represent diffrent operations (types).
+    
+    We can acheive by:
+        Method Overloading
+        Method Overriding
+    
+    Method Overloading:
+        same method name but diffrent
+        signatures(parm Number || par types)
+    
+    Method Overriding:
+        There must be an IS-A relationship(inheritance)
+        same method name as in the parent class
+        same paramters as in the parent class
+*/
+
+
+
+
+
+
+// Polymorphism(Explanation of Examples, Static Methods)
+/*
+    Object Parent can access to Child Methods
+        but must be methods common between him 
+    
+    if we change parent type object to child type,
+        parent still can acces to parent methods
+    
+    Employee e3 = new SalariedEmployee("Omar", 11, 12);
+        e3 is of type Employee, but it holds a SalariedEmployee,
+        This lets you call methods that Employee has, 
+        and if SalariedEmployee overrides them,
+        it will use the overridden version.
+
+    can we override a static method ?
+        No: if object hold anything
+        YES: if object hold another Child
+*/
+
+/* App.java
+import polymorphism.*;
+
+public class App {
+    public static void main(String[] args) {
+        Employee e1 = new Employee("Ahmed", 1000);
+        SalariedEmployee e2 = new SalariedEmployee("Omar", 500, 100);
+        System.out.println("salary = " + e1.getSalary());
+        System.out.println("salary = " + e2.getSalary());
+            
+        // Change the Object Type
+        e1 = new SalariedEmployee("Ali", 500, 100);
+        System.out.println("salary = " + e1.getSalary());
+        // e1.getBonus(); method not common
+        e1.getName(); // still has the access
+
+        // Access To Static Method
+        Employee e3 = new SalariedEmployee("Omar", 11, 12);
+        e3.print(); // Based Class [no overrding]
+        e2.print(); // SubClass [can access]
+    }
+}
+*/
+
+/*  Employee.java
+package polymorphism;
+public class Employee {
+    protected String name;
+    private int salary;
+    
+    // Constractor
+    public Employee() {
+        System.out.println("Hello From Employee Class");
+    }
+    public Employee(String name, int salary) {
+        this.name = name;
+        this.salary = salary;
+    }
+
+    // Method to overriding
+    public int getSalary() {
+        return this.salary;
+    }
+    // getters & static method
+    public void getName() {
+        System.out.println("name = " + this.name);
+    }
+    public static void print() {
+        System.out.println("Based Class");
+    }
+}
+*/
+
+/* SalariedEmplyee.java
+package polymorphism;
+
+public class SalariedEmployee extends Employee {
+    private int bonus;
+
+    public SalariedEmployee(String name, int salary, int bonus) {
+        super(name, salary);
+        this.bonus = bonus;
+        this.name = name; // it is protected
+    }
+
+    // Overriding to getSalary() Method
+    @Override
+    public int getSalary() {
+        return super.getSalary() + this.bonus;
+    }
+    public void getBonus() {
+        System.out.println("bonus = " + this.bonus);
+    }
+    public static void print() {
+        System.out.println("SubClass");
+    }
+}
+*/
+
+
+
+
+
+
+
 
 
 

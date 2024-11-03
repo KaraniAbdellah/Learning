@@ -1,2 +1,8 @@
-// Try To Do your Own Example
- 
+
+
+public class App {
+
+    public static void main(String[] args) {
+        System.out.println("repeat the last lessons");
+    }
+}
