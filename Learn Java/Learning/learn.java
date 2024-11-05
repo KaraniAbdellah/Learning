@@ -1569,13 +1569,17 @@ public class Developer extends Employee {
     
     Employee e3 = new SalariedEmployee("Omar", 11, 12);
         e3 is of type Employee, but it holds a SalariedEmployee,
-        This lets you call methods that Employee has, 
-        and if SalariedEmployee overrides them,
-        it will use the overridden version.
+        This lets you call methods that Employee has
 
     can we override a static method ?
-        No: if object hold anything
-        YES: if object hold another Child
+        You cannot override a static
+        method in Java from a child class.
+        Static methods are hidden
+    
+    Parent parent = new Parent() & Parent parent = new Child()
+        in this two case he cal Parent.print() & [print() is static method]
+    
+    parent class cannot access child class methods directly
 */
 
 /* App.java
