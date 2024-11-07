@@ -1561,25 +1561,20 @@ public class Developer extends Employee {
 
 // Polymorphism(Explanation of Examples, Static Methods)
 /*
-    Object Parent can access to Child Methods
-        but must be methods common between him 
-    
     if we change parent type object to child type,
-        parent still can acces to parent methods
+        parent can acces to child methods (not a static methods)
     
     Employee e3 = new SalariedEmployee("Omar", 11, 12);
         e3 is of type Employee, but it holds a SalariedEmployee,
-        This lets you call methods that Employee has
+        e3 access to the SalariedEmployee Methods
+        e3 in override method he go to the child methods
 
     can we override a static method ?
-        You cannot override a static
-        method in Java from a child class.
-        Static methods are hidden
+        NO
     
-    Parent parent = new Parent() & Parent parent = new Child()
-        in this two case he cal Parent.print() & [print() is static method]
-    
-    parent class cannot access child class methods directly
+    if we change the object type:
+        static method: object go to the baseClass methods
+        override method: object go the subClass methods
 */
 
 /* App.java
@@ -1591,7 +1586,7 @@ public class App {
         SalariedEmployee e2 = new SalariedEmployee("Omar", 500, 100);
         System.out.println("salary = " + e1.getSalary());
         System.out.println("salary = " + e2.getSalary());
-            
+
         // Change the Object Type
         e1 = new SalariedEmployee("Ali", 500, 100);
         System.out.println("salary = " + e1.getSalary());
@@ -1671,7 +1666,8 @@ public class SalariedEmployee extends Employee {
     Late binding: Dynamic Polymorphism
     Early binding: Static Polymorphism
 
-    compile time: phase when the source code is translated into bytecode before it runs.
+    compile time: phase when the source code is translated
+        into bytecode before it runs.
 
     Method Overloading: this is example of compile time polymorphism
         (Early binding)
@@ -1679,9 +1675,11 @@ public class SalariedEmployee extends Employee {
     Method Overriding: this is example of Late binding
         (Method detect at runtime)
     
-    Late binding: happens when the method to be called is determined at runtime.
+    Late binding: happens when the method to be called
+        is determined at runtime.
 
-    Early binding: happens when the method to be called is determined at compile-time.
+    Early binding: happens when the method to be called
+        is determined at compile-time.
 
     Polymorphic Array (Generic) Array Types
         array can contain more then data type in the same time
