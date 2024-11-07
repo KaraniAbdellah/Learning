@@ -1569,13 +1569,17 @@ public class Developer extends Employee {
     
     Employee e3 = new SalariedEmployee("Omar", 11, 12);
         e3 is of type Employee, but it holds a SalariedEmployee,
-        This lets you call methods that Employee has, 
-        and if SalariedEmployee overrides them,
-        it will use the overridden version.
+        This lets you call methods that Employee has
 
     can we override a static method ?
-        No: if object hold anything
-        YES: if object hold another Child
+        You cannot override a static
+        method in Java from a child class.
+        Static methods are hidden
+    
+    Parent parent = new Parent() & Parent parent = new Child()
+        in this two case he cal Parent.print() & [print() is static method]
+    
+    parent class cannot access child class methods directly
 */
 
 /* App.java
@@ -1653,6 +1657,72 @@ public class SalariedEmployee extends Employee {
     }
     public static void print() {
         System.out.println("SubClass");
+    }
+}
+*/
+
+
+
+
+
+
+// Polymorphism(Late binding , Early binding)
+/*
+    Late binding: Dynamic Polymorphism
+    Early binding: Static Polymorphism
+
+    compile time: phase when the source code is translated into bytecode before it runs.
+
+    Method Overloading: this is example of compile time polymorphism
+        (Early binding)
+    
+    Method Overriding: this is example of Late binding
+        (Method detect at runtime)
+    
+    Late binding: happens when the method to be called is determined at runtime.
+
+    Early binding: happens when the method to be called is determined at compile-time.
+
+    Polymorphic Array (Generic) Array Types
+        array can contain more then data type in the same time
+*/
+
+/* Animal.java
+public class Animal {
+    public void sound() {
+        System.out.println("Animal sound");
+    }
+}
+*/
+
+/* Dog.java
+public class Dog extends Animal {
+    public void sound() {
+        System.out.println("Bark");
+    }
+}
+*/
+
+/* App.java
+public class App {
+    public static void main(String[] args) {
+        Dog dog = new Dog();
+        dog.sound(); // Bark
+
+        Animal animal = new Dog(); // Reference type is Animal, but object is Dog
+        animal.sound(); // Outputs: Bark (determined at runtime)
+
+        Animal animal2 = new Animal();
+        animal2.sound(); // Animal Sound
+
+        // Polymorphic Array
+        Animal [] refArray = new Animal[] {new Animal(), new Dog()};
+        // refArray[0] = new Animal();
+        // refArray[1] = new Dog();
+
+        for (int i = 0; i < refArray.length; i++)
+            refArray[i].sound();
+
     }
 }
 */
