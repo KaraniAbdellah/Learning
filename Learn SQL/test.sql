@@ -1,7 +1,13 @@
-create database my_db;
+/* 
+	task:
+		create a database
+        create table
+        add column
+        rename column name
+        modify column type
+        change the position of column
+        remove column table
+*/
 
-ALTER DATABASE my_db READ ONLY = 1;
-
-drop database my_db;
 
 
