@@ -1732,14 +1732,14 @@ public class App {
 ///////////////////////////////////////
 // Relationships (Association, Aggregation "has-a", Composition "part-of")
 /*
-    Between classes we have: 
+    Between classes we have:
         Association (has-a)
         inheritance (is-a)
         composition  (part-of)
         aggregation (has-a)
     
     Association: is a connection between two seperate classes
-        that are setup through thier object
+        that are setup through object
         Unary Association: from A to B
         Binary Association: from A to B & inverse
         EX: Personn has-a Address
@@ -1758,8 +1758,92 @@ public class App {
             ClassA has no meaning without ClassB
         Organization <-- Department
             no Organization no Department
+        Note: composition [remove ObjectA will be Remove also ObjectB]
 */
 
+
+
+
+
+// Relationships Practice
+/*
+    delete emp =  delete personnal_info
+    create object in class ---> Composition    
+    pass object to the class ---> Agregation
+
+    - in general Association we don't
+        declare instanceOf other class
+    - No, in a binary association, deleting one 
+        object doesn’t automatically delete the other
+*/
+
+/* Employee.java
+public class Employee {
+    private int id;
+    private int salary;
+    private Personnal_info personnal_info; // relationship Composition 
+    private Department dept; // relationship Agregation
+    
+    
+    public Employee(int id, int salary, String name, 
+        int brithday_year, String account_number, Department dept) {
+        this.id = id;
+        this.salary = salary;
+        // this.personnal_info = personnal_info;
+        this.personnal_info = new Personnal_info(name, brithday_year, account_number);
+        this.dept = dept;
+    }
+
+    @Override
+    public String toString() {
+        return "id = " + this.id + "\nname = " + personnal_info + 
+        "\ndepName = " + dept.getDep_name();
+    }
+}
+*/
+
+/* Personnal_info.java
+public class Personnal_info {
+    private String name;
+    private int brithday_year;
+    private String account_number;
+
+    public Personnal_info() {}
+
+    public Personnal_info(String name, int brithday_year, String account_number) {
+        this.account_number = account_number;
+        this.name = name;
+        this.brithday_year = brithday_year;
+    }
+
+    public String getName() {
+        return name;
+    }
+    @Override
+    public String toString() {
+        return this.name;
+    }
+}
+*/
+
+/* Department.java
+public class Department {
+    private String dep_name;
+    private int dep_nbr;
+
+    public Department() {
+    }
+    
+    public Department(int dep_nbr, String dep_name) {
+        this.dep_nbr = dep_nbr;
+        this.dep_name = dep_name;
+    }
+
+    public String getDep_name() {
+        return dep_name;
+    }
+}
+*/
 
 
 
