@@ -1860,6 +1860,70 @@ public class Department {
     Single Association = Unidirectional
     Binary Association = Bidirectional
 */
+/* User.java
+public class User {
+    private String name;
+    private int id;
+    private Admin admin; // Signle Association
+
+    public User() {}
+    public User(String name, int id, Admin admin) {
+        this.name = name;
+        this.id = id;
+        this.admin = admin;
+    }
+    @Override
+    public String toString() {
+        return "name = " + this.name + " status = " + admin.getStatus();
+    }
+    public void setAdmin(Admin admin) {
+        this.admin = admin;
+    }
+}
+*/
+
+/* Admin.java
+public class Admin {
+    private String permission;
+    private int status;
+    private User user;
+
+    public Admin() {
+    }
+
+    public Admin(String permisssion, int status, User user) {
+        this.permission = permisssion;
+        this.status = status;
+        this.user = user;
+    }
+
+    public int getStatus() {
+        return this.status;
+    }
+    public void setUser(User user) {
+        this.user = user;
+    }
+}
+*/
+
+/* App.java
+public class App {
+    public static void main(String args[]) {
+
+        // Binary Association
+        Admin admin = new Admin("All", 122, null);
+        User user1 = new User("Ahmed", 10, admin);
+        admin.setUser(user1);
+
+        System.out.println(user1.toString());
+
+    }
+}
+*/
+
+
+
+
 
 
 

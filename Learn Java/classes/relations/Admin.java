@@ -20,5 +20,5 @@ public class Admin {
     public void setUser(User user) {
         this.user = user;
     }
-
 }
+
