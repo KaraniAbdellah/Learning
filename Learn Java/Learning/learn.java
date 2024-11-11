@@ -1850,6 +1850,21 @@ public class Department {
 
 
 
+// Single & Binary Association
+/*
+    Signle association: like Agregation
+        Developer has a User reference
+    Binary association:
+        each class should have a reference to the other
+    
+    Single Association = Unidirectional
+    Binary Association = Bidirectional
+*/
+
+
+
+
+
 
 
 
