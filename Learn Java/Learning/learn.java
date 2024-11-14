@@ -1154,7 +1154,7 @@ public class App {
         if we do not write construtor
 
     - Finalizers vs Destructor
-        used when end to use the object, 
+        used when we end use object, 
         we remove space in memory(heap)
         +Destructor
             Java does not have destructors like C++
@@ -1248,7 +1248,7 @@ public class App {
         || call no-static method directly
     
     Static Block:
-        - When e run the programm static block call
+        - When we run the programm static block call
         - the goal is to give initialization to static var
             inside each static block you call just static var
 */
@@ -1256,7 +1256,7 @@ public class App {
 /*  
 public class App {
     static int x = 10;
-    static{
+    static {
         x = 20;
         System.out.println("Hello World");
     }
@@ -1271,7 +1271,7 @@ public class App {
 
 
 
-// Static keyword Part 3 || Static Class
+// Static keyword || Static Class [Part 3]
 /*
     Static Class:
         A class can be made static only if it is a nested class
