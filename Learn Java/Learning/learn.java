@@ -1926,7 +1926,7 @@ public class App {
 
 
 //////////////////////////////////////////// 
-// Final Keyword [Part 1]
+// Final Keyword [Part 1] --> Final Variable
 /*
     Final Variable (Constance Var)
         can not change the value of final variables
@@ -1945,7 +1945,7 @@ public class App {
     Final Blank Varibles
         we give initilize after Declaring
 
-    "sometimes we need to se limitions"
+    "sometimes we need to do limitions"
 */
 
 /* Student.java
@@ -1979,11 +1979,9 @@ public class Student {
 import final_keyword.*;
 public class App {
     public static void main(String args[]) {
-        // Final Variable
         Student s1 = new Student(122, "ahmed");
         // s1.std_id = 999;
         // s1.setStd_id(101);
-
     }
 }
 */
