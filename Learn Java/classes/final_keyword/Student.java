@@ -23,8 +23,5 @@ public class Student {
     // public void setStd_id(int age) {
     //     this.std_id = std_id;
     // }
-
-    
-
-
 }
+
