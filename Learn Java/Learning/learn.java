@@ -1992,6 +1992,96 @@ public class App {
 
 
 
+// Final Keyword [Part 2]
+/*
+    final Paramters
+    final Methods
+*/
+
+/* User.java
+public class User {
+    private int id;
+    private String name;
+
+    public User() {}
+    public User(String name, final int id) {
+        this.name = name;
+        // id = 100; can not
+        this.id = id;
+    }
+    public int getId() {
+        return id;
+    }
+    // can not override this method
+    @Override
+    final public String toString() {
+        return "User [id=" + id + ", name=" + name + "]";
+    }
+
+}
+
+class Admin extends User {
+    private int salary;
+    public String toString() {
+        return "Admin []";
+    }
+}
+*/
+
+/* 
+import final_keyword.*;
+public class App {
+    public static void main(String args[]) {
+        User user1 = new User("ahmed", 1910);
+        System.out.println("id = " + user1.getId());
+    }
+}
+*/
+
+
+
+
+
+
+// Final Keyword [Part 2]
+/*
+    final Classes
+        can not be inherited
+    final References
+*/
+
+/* User.java
+final public class User {
+    private int id;
+    private String name;
+
+    public User() {}
+    public User(String name, int id) {
+        this.name = name;
+        this.id = id;
+    }
+}
+*/
+
+/* App.java
+import final_keyword.*;
+public class App {
+    public static void main(String args[]) {
+        User user1 = new User("ahmed", 1910);
+        final User user2 = new User("abdellah", 13393);
+        // user2 = new User("abdellah", 13393); // cannot be assigned
+    }
+}
+*/
+
+/*
+ * Stop value Change
+ * Stop Method Overriding
+ * Stop Inheritance
+ */
+
+
+
 
 
 
