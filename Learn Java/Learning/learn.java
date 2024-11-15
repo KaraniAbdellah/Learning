@@ -1503,7 +1503,7 @@ public class Developer extends Employee {
     }
 
     // Without super
-    /*public Developer(String name, String position, double salary) {
+    public Developer(String name, String position, double salary) {
         this.name = name;
         this.position = position;
         this.salary = salary;
