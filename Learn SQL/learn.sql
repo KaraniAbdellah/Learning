@@ -12,6 +12,7 @@
 
 
 
+
 -- CREATE DB & USE IT & DROP & ALTER
 /*
 	USE my_db;
@@ -47,6 +48,7 @@ DROP table employees; -- remove a table
 
 
 
+
 -- Modification(add, rename, drop) Tables
 /*
 	rename, add, modify
@@ -60,6 +62,7 @@ modify first_name text after id; -- change the position
 modify phone_number text first;
 drop column last_name; -- drop column
 select * from employee;
+
 
 
 
@@ -79,6 +82,7 @@ values ("Ahmed", 110); -- insert just in (first_name, id)
 
 
 
+
 -- Select
 /*
 	select: select the column
@@ -91,6 +95,18 @@ select * from worker where first_name = "omar"; -- select column thae has name "
 select * from worker where id > 1;
 select * from worker where id != 1;
 select * from worker where id is NULL; -- use "is" not = 
+
+
+
+
+-- Update & Delete
+update worker set first_name = "abdellah" where email is null;
+update worker set first_name = "abdellah", id = 100 where email is null;
+update worker set first_name = "Aya"; -- all first_name column take "Aya"
+
+delete from worker; -- delete all rows
+delete from worker where id = 10; -- delete row that have id = 10
+select * from worker;
 
 
 
