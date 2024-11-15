@@ -1860,6 +1860,7 @@ public class Department {
     Single Association = Unidirectional
     Binary Association = Bidirectional
 */
+
 /* User.java
 public class User {
     private String name;
