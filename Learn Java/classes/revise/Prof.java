@@ -25,5 +25,10 @@ public class Prof {
         " StudentName = " + this.student.getName();
     }
 
+    public void setStudent(Student student) {
+        this.student = student;
+    }
+
+    
 
 }
