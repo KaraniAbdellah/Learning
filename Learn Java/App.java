@@ -5,11 +5,14 @@ import revise.*;
 
 public class App {
     public static void main(String args[]) {
-        Prof prof = new Prof("Aya", 10293);
-        Student student = new Student("ahmed", 10, prof, "Hafida", 1029303);
-        System.out.println(student.toString());
-        
-        
+        // Binary Association
+        Prof prof1 = new Prof();
+        Student student1 = new Student("hasan", 133, prof1);
+        prof1 = new Prof("Aya", 10, student1);
+        System.out.println(student1.toString());
+        System.out.println(prof1.toString());
+
+
     }
 }
 
