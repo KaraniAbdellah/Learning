@@ -1,14 +1,13 @@
 package revise;
 
-public class Prof {
-    
+public class Director {
     private String name;
     private float salary;
 
-    public Prof() {
+    public Director() {
 
     }
-    public Prof(String name, float salary) {
+    public Director(String name, float salary) {
         this.name = name;
         this.salary = salary;
     }
@@ -16,5 +15,4 @@ public class Prof {
     public String getName() {
         return this.name;
     }
-
 }
