@@ -103,6 +103,8 @@ select * from worker where id is NULL; -- use "is" not =
 update worker set first_name = "abdellah" where email is null;
 update worker set first_name = "abdellah", id = 100 where email is null;
 update worker set first_name = "Aya"; -- all first_name column take "Aya"
+update employee set last_name = "khaled" where first_name = "ahmed" or id = 2; 
+update employee set last_name = "khaled" where first_name = "ahmed" and id = 2; 
 
 delete from worker; -- delete all rows
 delete from worker where id = 10; -- delete row that have id = 10
