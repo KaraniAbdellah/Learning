@@ -1,6 +1,6 @@
 
 
-update employee set id = 100 where first_name = "abdellah" or id > 2;
+insert rows
 
 
 select * from employee;
