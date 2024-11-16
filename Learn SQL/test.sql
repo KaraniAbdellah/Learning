@@ -1,9 +1,11 @@
+-- revise rollback
 
 
--- update employee set id = 10 where first_name = "basma" or last_name = "karani";
-delete from employee where id = 10;
+insert into test
+values(current_date(), current_time(), now());
+
+select * from test;
 
 
-select * from employee;
 
 

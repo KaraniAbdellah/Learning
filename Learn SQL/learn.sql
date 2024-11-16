@@ -79,6 +79,8 @@ values  ("ahmed", "38383", 1030, "ahmed@gmail.com"),
 
 insert into employee(first_name, id)
 values ("Ahmed", 110); -- insert just in (first_name, id)
+insert into test
+values(current_date(), current_time(), now());
 
 
 
@@ -110,6 +112,19 @@ delete from worker; -- delete all rows
 delete from worker where id = 10; -- delete row that have id = 10
 select * from worker;
 
+
+
+
+-- Autocommit, commit, rollback
+
+set autocommit = off; -- all changes will no save automaticelly
+commit; -- create a save point
+rollback; -- back to save point
+
+delete from employee;
+commit;
+rollback;
+select * from employee;
 
 
 
