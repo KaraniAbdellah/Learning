@@ -8,6 +8,7 @@
     Declaration
         // size = 10 byDefault
         ArrayList<Integer> nums = new ArrayList<>();
+
     Print
         System.out.println(nums + "\n--------");
     Methods(Add, Get, AddAll) 
@@ -19,12 +20,16 @@
         - ArrayListName.addAll(index, Arrays.asList(1, 2, 3, 4));
     
     Copy Constructor
-         
+        ArrayList notes = new ArrayList(Arrays.asList(1, 2, 3));
+        ArrayList marks = new ArrayList<>(notes);
     
+    // Copy Type
+        notes1 = notes.clone(); --> Shallow Copy
+        notes = notes1; --> Reference Copy
 */
 
+/* 
 import java.util.*;
-
 import revise.*;
 
 public class App {
@@ -64,9 +69,14 @@ public class App {
         System.out.println("notes = " + notes); // [1, 2, 3, 1]
         System.out.println("marks = " + marks); // [1, 2, 3]
 
-
-
+        // Clone Contractor
+        ArrayList <Integer> notes1;
+        notes1 = (ArrayList) notes.clone(); // Shallow Copy
+        System.out.println("notes1 = " + notes1); // [1, 2, 3, 1]
+        notes = notes1; // Reference Copy
+        notes1.add(-10);
+        System.out.println("note = " + notes); // [1, 2, 3, 1, -10]
     }
 }
-
+*/
 
