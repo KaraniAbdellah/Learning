@@ -152,6 +152,19 @@ add constraint unique (price); -- make price a unique attribute
 select * from products;
 
 
+
+
+-- Not NULL
+/*
+	make an attribute not null
+*/
+create table products(
+	product_name varchar(25),
+    product_id int not null
+);
+select * from products;
+insert into products values("phone", null); -- column can not be null
+
 	
 
 
