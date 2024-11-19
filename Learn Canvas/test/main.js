@@ -1,26 +1,24 @@
 // StrokeRect And Text
-/*
-    Stroke do just the Border
-*/
+
 
 let theCanvas = document.querySelector("#our-canvas");
     theContext = theCanvas.getContext("2d");
-    theGradient = theContext.createLinearGradient(0, 0, 200, 0);
-    theGradient.addColorStop(0, "red");
-    theGradient.addColorStop(1, "yellow");
-
-theContext.lineWidth = 2; // border = 10px
-theContext.strokeStyle = theGradient;
-theContext.strokeRect(10, 10, 100, 100);
-
-// Set font & Create filled text
-theContext.font = "20px Arial";
-// theContext.fillStyle = theGradient;
-// theContext.fillText("Hello", 40, 60);
-theContext.strokeStyle = theGradient;
-theContext.strokeText("Hello", 40, 60);
+    let h = theCanvas.height;
+    let w = theCanvas.width;
+    let start_x = 20;
+    let start_y = 40;
+    let rect_width = 40;
+    let temp = 0;
 
 
+    for (let i = 0; i < 6; i++) {
+        theContext.fillStyle = `rgb(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255})`;
+        theContext.fillRect(start_x + temp, start_y, rect_width, h);
+        start_x += 20;
+        start_y += 40;
+        temp += rect_width;
+    }
 
 
-
+    
+ 
