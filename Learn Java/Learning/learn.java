@@ -1943,8 +1943,8 @@ public class App {
     static varibales
         initialize just in (Static Block || in Declaring)
     
-    Final Blank Varibles
-        we give initilize after Declaring
+    Final Blank Variables
+        we give initilizae after Declaring
 
     "sometimes we need to do limitions"
 */
