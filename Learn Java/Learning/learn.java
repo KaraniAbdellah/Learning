@@ -2078,8 +2078,15 @@ public class App {
  * Stop value Change
  * Stop Method Overriding
  * Stop Inheritance
- */
-
+*/
+/*
+ * Final Variable: can not be ressigned
+ * Final Parameters: can not be change value
+ * Final Method: can not be @override
+ * Final Class: can not be inherit
+ * Final Refrence: car1 = car2; // with car1 is final object
+ * NOTE: "all final keyword can be access to thier values"
+*/
 
 
 

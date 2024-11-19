@@ -1,6 +1,6 @@
 package revise;
 
-public class Car {
+final public class Car {
     private String name;
     private int id;
     private int year;
@@ -62,17 +62,5 @@ public class Car {
 
     final public void SayHello() {
         System.err.println("Helllo from Car.java");
-    }
-}
-
-
-class Vehicale extends Car  {
-    
-    public Vehicale() {
-
-    }
-
-    public Vehicale(String name, int id, int year) {
-        super(name, id, year);
     }
 }
