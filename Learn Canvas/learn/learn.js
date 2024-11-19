@@ -18,6 +18,9 @@
 
 
 // Context And Filling Style
+/*
+    By Default Context Color in Black
+*/
 // select the canvas element
 let theCanvas = document.querySelector("#our-canvas");
 
@@ -25,7 +28,7 @@ let theCanvas = document.querySelector("#our-canvas");
 theContext = theCanvas.getContext("2d");
 
 // choose fill style
-theContext.fillStyle = "#F00"; // Coloe, Gradiant, Pattern
+theContext.fillStyle = "red"; // Color(#F00), Gradiant, Pattern
 
 // Draw Rectangle
 theContext.fillRect(0, 0, 100, 100);
