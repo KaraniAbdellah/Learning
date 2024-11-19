@@ -134,7 +134,7 @@ select * from employee;
 
 
 
--- Unique 
+-- Contraint: Unique 
 /*
 	like cle primaire: exit just one in table
 */
@@ -154,7 +154,7 @@ select * from products;
 
 
 
--- Not NULL
+-- Contraint: Not NULL
 /*
 	make an attribute not null
 */
@@ -168,6 +168,31 @@ modify product_id int not null;
 insert into products(product_name) values("phone");
 insert into products values("phone", null); -- column can not be null
 
+
+
+
+
+-- Contraint: Check
+/*
+	use to limit what 
+*/
+
+create table clients(
+	client_name varchar(25),
+    client_id int,
+    brithday date,
+    constraint id_cheker check (client_id > 100)
+);
+alter table clients
+add constraint id_checker check (client > 100);
+insert into clients values ("abdellah", 1, "2005-01-18"); -- error client_id must be > 100
+select * from clients;
+-- delete check 
+alter table clients
+drop check id_cheker;
+insert into clients values ("ahmed", 10, "2005-01-18"); -- correct
+
+ 
 
 
 
