@@ -116,6 +116,9 @@ select * from worker;
 
 
 -- Autocommit, commit, rollback
+/*
+	ROLLBACK only undoes changes not saved with COMMIT.
+*/
 set autocommit = off; -- all changes will no save automaticelly
 commit; -- create a save point
 rollback; -- back to save point
