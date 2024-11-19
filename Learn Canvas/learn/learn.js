@@ -90,3 +90,28 @@ theContext.strokeText("Hello", 40, 60);
 
 
 
+
+// Charts Taraining
+theCanvas = document.querySelector("#our-canvas");
+    theContext = theCanvas.getContext("2d");
+    let h = theCanvas.height;
+    let w = theCanvas.width;
+    let start_x = 20;
+    let start_y = 40;
+    let rect_width = 40;
+    let temp = 0;
+    let text_pos = 20;
+    
+    theContext.font = "16px Arial";
+    for (let i = 0; i < 6; i++) {
+        theContext.fillStyle = `rgb(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255})`;
+        theContext.fillRect(start_x + temp, start_y, rect_width, h);
+        theContext.fillStyle = "black";
+        theContext.fillText(`${i + 1}`, start_x + temp + 15, start_y);
+        start_x += 20;
+        start_y += 40;
+        temp += rect_width;
+    }
+
+
+
