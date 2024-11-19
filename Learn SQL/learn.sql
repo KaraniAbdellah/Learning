@@ -134,6 +134,27 @@ select * from employee;
 
 
 
+-- Unique 
+/*
+	like cle primaire: exit just one in table
+*/
+create table products (
+	id int,
+	product_name varchar(20) Unique,
+    price decimal(4, 2)
+);
+insert into products values (10, "phone", 10);
+insert into products values (10, "phone", 10); -- error duplicate same entry 
+select * from products;
+-- another method
+alter table products 
+add constraint unique (price); -- make price a unique attribute
+select * from products;
+
+
+	
+
+
 
 
 
