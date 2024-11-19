@@ -2109,15 +2109,17 @@ public class App {
     Generic Class:
         Student, Prof, ...
     
-    NOTE: if size = 10 --> new size in add will be 15
+    NOTE: if size = 10 --> if we add an ele --> new size will be 15
         10 >> 1 = 5
-        oldCapacity + oldCapacity / 2 = newCapacity
-        Solution: trimToSize() 
+        newCapacity = oldCapacity + oldCapacity / 2
+        Solution: trimToSize()
 
     Is ArrayList Good Enough:
         Access is Good
         Add & remove (we need shifting)
-
+    
+    AbstractList, List, Collection & Iterbale are Interface
+        can not define object with them
 */  
 
 /*
