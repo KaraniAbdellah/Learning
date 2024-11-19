@@ -163,9 +163,10 @@ create table products(
     product_id int not null
 );
 select * from products;
+alter table products
+modify product_id int not null;
+insert into products(product_name) values("phone");
 insert into products values("phone", null); -- column can not be null
-
-	
 
 
 
