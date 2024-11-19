@@ -1,17 +1,26 @@
 // ArrayList
 /*
+    ArrayList Contractor:
+        ArrayList() --> empty constractor
+        ArrayList(capacity)
+        ArrayList(Collection<? extends E>c) --> copy Contractor 
+        
     Declaration
         // size = 10 byDefault
         ArrayList<Integer> nums = new ArrayList<>();
     Print
         System.out.println(nums + "\n--------");
-    Methods(Add, Get, AddAll, Copy Constructor, Clone) 
+    Methods(Add, Get, AddAll) 
         - add(ele);
         - ArrayListName.size();
         - ArrayListName.get(index);
         - ArrayListName.addAll(ArrayListName);
         - ArrayListName.addAll(Arrays.asList(1, 2, 3, 4));
         - ArrayListName.addAll(index, Arrays.asList(1, 2, 3, 4));
+    
+    Copy Constructor
+         
+    
 */
 
 import java.util.*;
@@ -22,7 +31,6 @@ public class App {
     public static void main(String args[]) {
         // Declaration
         ArrayList<Integer> nums = new ArrayList<>();
-        ArrayList<String> names = new ArrayList<String>();
 
         // Methods
         nums.add(1);
@@ -50,7 +58,12 @@ public class App {
         }
 
         // Copy Constructor
-        
+        ArrayList <Integer> notes = new ArrayList(Arrays.asList(1, 2, 3));
+        ArrayList <Integer> marks = new ArrayList<>(notes);
+        notes.add(1);
+        System.out.println("notes = " + notes); // [1, 2, 3, 1]
+        System.out.println("marks = " + marks); // [1, 2, 3]
+
 
 
     }
