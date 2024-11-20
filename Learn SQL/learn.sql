@@ -192,6 +192,25 @@ alter table clients
 drop check id_cheker;
 insert into clients values ("ahmed", 10, "2005-01-18"); -- correct
 
+
+
+
+-- Constraint: Default
+/*
+	make a column take a default value
+*/
+
+create table products(
+	product_id int,
+    product_name text,
+    product_price float default 0.00
+);
+
+alter table products
+alter product_id set default 0;
+insert into products(product_id, product_name)
+values (1, "phone"); -- 1 phone 0
+
  
 
 
