@@ -1,10 +1,10 @@
 
-create table employees(
-	first_name varchar(40),
-    id int,
-    last_name varchar(40)
-);
+alter table employees
+-- rename column brithday to brithday_client;
+-- modify column brithday_client varchar(40);
+modify brithday_client varchar(40) first;
 
 
 
+select * from employees;
 
