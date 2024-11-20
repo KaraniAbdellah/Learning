@@ -1,10 +1,20 @@
 
-alter table employees
--- rename column brithday to brithday_client;
--- modify column brithday_client varchar(40);
-modify brithday_client varchar(40) first;
+-- Constraint: Default
+/*
+	make a column take a default value
+*/
+
+/*
+create table products(
+	product_id int,
+    product_name text,
+    product_price float default 0.00
+);
+*/
+
+select * from products;
 
 
 
-select * from employees;
+
 
