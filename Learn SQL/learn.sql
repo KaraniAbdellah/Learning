@@ -211,6 +211,38 @@ alter product_id set default 0;
 insert into products(product_id, product_name)
 values (1, "phone"); -- 1 phone 0
 
+
+
+
+-- Constraint: Primary Keys
+/*
+	Primay Key = Not NULL + Unique
+    in table we can have just one column
+*/
+
+create table transactions (
+	transaction_id int primary key,
+    amount float default 0
+);
+alter table transactions
+add constraint primary key(email);
+
+
+
+
+-- Constraint: Auto Increment
+/*
+	in each row we are going to increment the column value
+*/
+
+create table transactions(
+	transactions_id int primary key auto_increment,
+    transactions_name text
+);
+
+insert into transactions(transactions_name) values ("XXX");
+select * from transactions;
+
  
 
 
