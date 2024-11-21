@@ -1,25 +1,4 @@
 // ArrayList Methods
-/*
-    contains
-        ArrayListName.contains((Integer) 0);
-    retainAll
-        notes.retainAll(nums);
-        "get the ele correspond" 
-    subList
-        ArrayListName.subList(fromIndex, toIndex);
-        "get from index to index"
-    clear & isEmpty
-        notes.isEmpty();
-        notes.clear();
-    ensureCapacity & trimToSize
-        ArrayListName.ensureCapacity(100);
-        "increase capacity with 100 new ele"
-        nums.trimToSize();
-        "unsed ele from the memory"
-    sort
-    min
-    max
-*/
 
 /* 
 import java.lang.reflect.Array;
