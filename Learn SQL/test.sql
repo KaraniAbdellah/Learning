@@ -1,5 +1,1 @@
--- AND OR NOT
-
-
-
-
+-- revise join & logical operators

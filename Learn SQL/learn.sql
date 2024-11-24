@@ -327,8 +327,28 @@ select max(client_id) from clients; -- 5
 select min(client_id) from clients; -- 1
 select avg(client_id) from clients; -- 3.2500
 select sum(client_id) from clients; -- 13
-
 select concat(first_name, " ", last_name) from clients; -- concate first_name & last_name
+
+
+
+
+-- AND OR NOT BTEWEEN IN
+/*
+	AND: all conditions must true
+    OR: just one condition must be true
+    NOT: condition must be false
+	BETWEEN: Checks if a value is within a range 
+	IN: Checks if a value matches any value in a list
+*/
+
+-- alter table clients
+-- add column email varchar(100);
+-- update clients set email = "a@g.c" where email is null;
+select * from clients where first_name = "abdellah" and client_id = 3;
+select * from clients where client_id is not null or email = "a@g.c";
+select * from clients where not brithday = "1111-11-11";
+select * from clients where client_id between 1 and 3;
+select * from clients where email in ("a@g.c", null);
 
 
 
