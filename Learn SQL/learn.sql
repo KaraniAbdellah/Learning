@@ -303,7 +303,11 @@ select * from commands;
 */
 
 select * from commands inner join clients on commands.client_id = clients.client_id;
+-- right table: clients
+-- left table: commands
 select * from commands left join clients on commands.client_id = clients.client_id;
+-- right table: commands
+-- left table: clients
 select * from commands right join clients on commands.client_id = clients.client_id;
 select * from commands;
 select * from clients;
