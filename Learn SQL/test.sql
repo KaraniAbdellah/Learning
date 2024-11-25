@@ -1,3 +1,5 @@
+-- we want to join two tables employees & compte
+-- we use join with select & can be used with others
 /*
 create table employees (
 	id_emp int primary key auto_increment,
@@ -11,9 +13,23 @@ create table compte (
     foreign key (id_emp_cmt) references employees (id_emp)
 );
 */
+/*
+-- insert some rows in employees & compte table
+insert into employees(first_name, last_name) values
+	("abdellah", "karani"),
+    ("aziza", "khoumri"),
+    ("khadija", "elmardi"),
+    ("Ali", "Amine");
+    
+insert into compte(amount, id_emp_cmt) values(400.2, 1);
+select * from compte;
+select * from employees;
+*/
 
+select * from employees inner join compte on compte.id_emp_cmt = employees.id_emp;
 
-
+select * from employees;
+select * from compte;
 
 
 
