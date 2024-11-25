@@ -306,7 +306,7 @@ select * from commands inner join clients on commands.client_id = clients.client
 -- right table: clients
 -- left table: commands
 select * from commands left join clients on commands.client_id = clients.client_id;
--- right table: commands
+-- right table: commandss
 -- left table: clients
 select * from commands right join clients on commands.client_id = clients.client_id;
 select * from commands;
