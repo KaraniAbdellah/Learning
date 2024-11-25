@@ -26,17 +26,15 @@ select * from compte;
 select * from employees;
 */
 
-select * from employees inner join compte on compte.id_emp_cmt = employees.id_emp;
+-- right table: employees
+-- left table: compte
+
+-- select * from employees inner join compte on compte.id_emp_cmt = employees.id_emp;
+select * from employees right join compte on compte.id_emp_cmt = employees.id_emp;
+
 
 select * from employees;
 select * from compte;
-
-
-
-
-
-
-
 
 
 
