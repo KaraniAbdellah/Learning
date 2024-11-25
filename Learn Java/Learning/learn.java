@@ -2399,4 +2399,93 @@ public class App {
 
 
 
+// Abstract Class part 1 (Examples, Abstract rules)
+/* Car.java
+public abstract class Car {
+    private float height;
+    private float weight;
+    private int numberOfWheels;
+
+    // No-arg Constractor
+    public Car(){}
+    // Pametiraze contractor
+    public Car(float height, float weight, int numberOfWheels) {
+        this.height = height;
+        this.weight = weight;
+        this.numberOfWheels = numberOfWheels;
+    }
+
+    // abstract method
+    public abstract void autopilot();
+    public abstract void streamingServices();
+    public abstract void parkingSensors();
+    // Concrete method
+    public void sayHello() {
+        System.out.println("Hello");
+    }
+    // setter & getters
+    public float getHeight() {
+        return height;
+    }
+    public void setHeight(float height) {
+        this.height = height;
+    }
+}
+*/
+
+/* SUV.java
+public class SUV extends Car {
+    public SUV(float height, float weight, int numberOfWheels) {
+        super(height, weight, numberOfWheels);
+    }
+    public SUV(){}
+
+    @Override
+    public void autopilot() {
+        System.out.println("Hello AutoPilot");
+    }
+    @Override
+    public void streamingServices() {
+        System.out.println("Hello streamingServices");
+    }
+    @Override
+    public void parkingSensors() {
+        System.out.println("Helloo parkingSensors");
+    }
+}
+*/
+
+/*
+    Abstract Class: can have abstract and non-abstract methods
+    Concrete Class: is class that has implementation for methods
+    Concrete Method: is method has body
+
+    We can not define object with abstract Class
+
+    - Rules of asbtract class:
+        We do not have 
+            abstract varaible
+            abstract contractor
+            abstract with static Methods
+        private abstract void autopilot(); --> error
+*/
+/* 
+import abstraction.*;
+public class App {
+    public static void main(String args[]) {
+        SUV suv1 = new SUV();
+        suv1.autopilot(); // Hello AutoPilot
+        suv1.sayHello(); // Hello
+
+        // Car car2 = new Car(10, 10, 10); // Cannot instantiate the type Car
+
+        // Define SUV object with Contractor of abstract Class
+        SUV suv2 = new SUV(12, 23, 4);
+        suv2.streamingServices();
+
+    }
+}
+*/
+
+
 
