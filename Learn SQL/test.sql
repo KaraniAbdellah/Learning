@@ -1,16 +1,41 @@
--- LIMIT CLAUSE
+-- UNION
 /*
-	used to limit the number of records
-    used to display a large data on pages (pagination)
-    
-    3, 1: skip the first row and get the next three rows.
-    2, 3:  skip the first two rows and get the next three rows.
-    x, y: skip x rows and get next y rows.
+	combine the result of two or more select statments
 */
 
-select * from employees limit 1; -- get just the first employees
-select * from employees order by first_name asc limit 2; 
-select * from employees limit 2, 3;
+/*
+create table income(
+	amount double,
+	income_name varchar(25) not null
+);
+insert into income values
+	(1000, "orders"),
+    (12332, "services"),
+    (23000, "merchandise");
+
+create table expenses (
+	amount double,
+	expenses_name varchar(25) not null
+);
+insert into expenses values
+	(-1000, "taxs")	,
+    (-12332, "repairs"),
+    (-23000, "wages");
+select * from income;
+select * from expenses;
+*/
+
+-- continues lessons & start revesing
+
+select * from income union select * from expenses;
+
+
+
+
+
+
+
+
 
 
 
