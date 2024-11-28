@@ -7,6 +7,11 @@ public abstract  class User {
     public abstract void sayUser();
     public abstract void sayId();
 
+    public User() {}
+    public User(int user_id, String user_name) {
+        this.user_id = user_id;
+        this.user_name = user_name;
+    }
 
     public int getUser_id() {
         return user_id;
@@ -20,5 +25,6 @@ public abstract  class User {
     public void setUser_name(String user_name) {
         this.user_name = user_name;
     }
+
 
 }

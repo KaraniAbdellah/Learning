@@ -3,7 +3,9 @@ import revise.abstract_classes.*;
 
 public class App {
     public static void main(String args[]) {
-        User user1 = new User();
+        Admin admin1 = new Admin(12, "Ahmed");
+        admin1.sayId();
+        admin1.sayUser();
     }
 }
 
