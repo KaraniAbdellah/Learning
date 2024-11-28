@@ -1,4 +1,4 @@
-package revise;
+package revise.inhertance;
 
 final public class Car {
     private String name;

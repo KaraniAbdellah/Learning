@@ -1,4 +1,4 @@
-package revise;
+package revise.inhertance;
 
 public class Director {
     private String name;
