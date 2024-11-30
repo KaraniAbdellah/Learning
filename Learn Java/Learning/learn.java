@@ -31,6 +31,21 @@ package Learning;
 /////////////////////////////////// 
 
 
+// JRE, JDK, & JVM
+/*
+    problem is that program X in WinDows is not like program Y in linux
+    JVM: Java Virtual Machine
+    JDK: Java Development Kit
+        contain a lot of tool to compila java code
+        like: javac, Library, Debuging Tool, ...
+    JRE: Java Runtime Environment
+    
+    JDK (Java Development Kit) includes:
+        JRE (Java Runtime Environment): For running Java applications.
+        JVM (Java Virtual Machine): Part of JRE, executes Java bytecode.
+        JavaC: java compiler
+*/
+
 //  Print in Output
 /*
     System.out.print(Data); --> For Print Data
