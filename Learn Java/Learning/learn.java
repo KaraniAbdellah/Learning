@@ -2389,7 +2389,7 @@ public class App {
 
 ////////////////////////////////////////////////////////////
 /*
-    Abstraction: hiding the internal implementation(method, features)
+    Abstraction: hiding the internal implementation(method, feature)
         and only showing the functionality to the users.
     
     We achieve Abstraction By:
@@ -2501,6 +2501,35 @@ public class App {
     }
 }
 */
+
+
+
+
+
+
+
+////////////////////////////////////////////////////////////
+/// Interface
+/*
+    Interface: Pure Abstraction
+        - is blueprint template
+        - contain a list of methods signature (abstract methods)
+        - it can acheive multiple inhertance
+        - Class can implements one or more interfaces
+
+    Deffrences between abstract class & interface
+        - we say implement (realize) not "extend"
+            between two interfaces we say "extend"
+        - in UML design
+        - does not have Constractors
+*/
+
+
+
+
+
+
+
 
 
 

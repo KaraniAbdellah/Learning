@@ -1,13 +1,8 @@
-// Interface
-/*
-    Interface: Pure Abstraction
-        list of method signature (abstract methods)
-        it can acheive multiple inhertance
-*/
+/// Start Practice Interface
 
 public class App {
     public static void main(String args[]) {
-
+        System.out.println("Start Interface");
     }
 }
 
