@@ -382,7 +382,7 @@ select * from employees where last_name like "____"; -- last_name with 4 digit
     ASC: ascendent order
     DESC: descendent order
 */
-select * from employees order by last_name DESC; 
+select * from employees order by last_name DESC;
 select * from employees order by last_name ASC, first_name ASC; 
 
 
