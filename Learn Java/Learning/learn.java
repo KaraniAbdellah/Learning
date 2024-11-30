@@ -2389,7 +2389,7 @@ public class App {
 
 ////////////////////////////////////////////////////////////
 /*
-    Abstraction: hiding the internal implementation(method,feature)
+    Abstraction: hiding the internal implementation(method, features)
         and only showing the functionality to the users.
     
     We achieve Abstraction By:
