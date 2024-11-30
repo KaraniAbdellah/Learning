@@ -1,35 +1,17 @@
--- UNION
+-- SELF JOINS
 /*
-	- combine the result of two or more select statments
-    - must be a commun columun between the two tables
-    - must have same number of columns
-    - UNION doesn't allowed duplicated
+	- join the same table 
+    
 */
 
-create table income(
-	amount double,
-	income_name varchar(25) not null
-);
-insert into income values
-	(1000, "orders"),
-    (12332, "services"),
-    (23000, "merchandise");
-
-create table expenses (
-	amount double,
-	expenses_name varchar(25) not null
-);
-insert into expenses values
-	(-1000, "taxs")	,
-    (-12332, "repairs"),
-    (-23000, "wages");
-
-select * from expenses union select * from income;
-select * from expenses union all select * from income; -- union with duplicated
-
-
-
-
+/*
+select emp1.first_name, emp1.last_name,
+		emp2.first_name, emp2.last_name
+from employees as emp1 
+inner join 
+employees as emp2 
+on emp1.referal_id = emp2.id;
+*/
 
 
 
