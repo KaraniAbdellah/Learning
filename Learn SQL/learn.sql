@@ -452,6 +452,22 @@ on emp1.referal_id = emp2.id;
 
 
 
+-- VIEWS
+/*
+	- a virtual table in DB
+    - filieds of view are filieds from one or more table
+    - views acceept all previos operations
+    - any changes of reel table will be reflect to virtual table
+*/
+
+create view clients as select first_name, last_name from employees; -- create virtual table
+insert into employees values (8, "ahmed", "ali", 10);
+select * from clients;
+drop view clients; -- drop view
+
+
+
+
 
 
 
