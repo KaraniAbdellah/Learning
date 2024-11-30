@@ -1,15 +1,16 @@
--- SELF JOINS
+-- VIEWS
 /*
-	- join the same table 
+	- a virtual table in DB
+    - filieds of view are filieds from one or more table
 */
-select emp1.first_name, emp1.last_name,
-		emp2.first_name, emp2.last_name
-from employees as emp1 
-inner join 
-employees as emp2 
-on emp1.referal_id = emp2.id;
 
 
+-- create view clients as select first_name, last_name from employees; -- create virtual table
+-- drop view clients; -- drop view
+
+-- create view clients as select first_name, last_name from employees;
+
+select * from clients;
 
 
 
