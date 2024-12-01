@@ -1,4 +1,4 @@
-package interface_abstraction;
+package abstraction2;
 
 public interface Moveble {
     int x = 10; // public final static Attribute
