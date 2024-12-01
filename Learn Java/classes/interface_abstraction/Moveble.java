@@ -1,5 +1,7 @@
+package interface_abstraction;
 
-public interface Movable {
+public interface Moveble {
+    int x = 10; // public final static Attribute
     public abstract void moveUp();
     public abstract void moveDown();
     public abstract void moveLeft();

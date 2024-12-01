@@ -2,11 +2,13 @@
 /*
     class can implement multiple interfaces [not extend]
     interface can extend an multiple interfaces
+    By default Attributes in interface in 
+        public static final --> "must give to him a init value"
 */
 
 public class App {
     public static void main(String args[]) {
-        System.out.println("Start Interface");
+        
         
     }
 }
