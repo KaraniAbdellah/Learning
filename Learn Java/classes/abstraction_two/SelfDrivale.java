@@ -1,4 +1,4 @@
-package abstraction2;
+package abstraction_two;
 
 public interface SelfDrivale {
     public abstract void destination(String d);

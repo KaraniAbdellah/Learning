@@ -6,12 +6,11 @@
         public static final --> "must give to him a init value"
 */
 
-import abstraction2.*;
+import abstraction_two.CarV1;
 
 public class App {
     public static void main(String args[]) {
         CarV1 C1 = new CarV1(1, 2, 100);
-        
     }
 }
 

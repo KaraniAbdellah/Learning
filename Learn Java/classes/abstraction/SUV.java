@@ -1,6 +1,6 @@
 package abstraction;
 
-/* SUV.java
+// SUV.java
 public class SUV extends Car {
 
     public SUV(float height, float weight, int numberOfWheels) {
@@ -21,4 +21,3 @@ public class SUV extends Car {
         System.out.println("Helloo parkingSensors");
     }
 }
-*/
