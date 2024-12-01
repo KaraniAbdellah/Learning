@@ -12,21 +12,27 @@ public class CarV1 implements Moveble, SelfDrivale {
     }
 
     // Implement the abstract class "SelfDrivable"
+    @Override
     public void destination(String d) {
-        System.out.println("destiantion + " + d);
+        System.out.println("destiantion = " + d);
     }
+    @Override
     public void drive() {
         System.out.println("drive...");
     }
+    @Override
     public void moveUp() {
         y++;
     }
+    @Override
     public void moveDown() {
         y--;
     }
+    @Override
     public void moveLeft() {
         x--;
     }
+    @Override
     public void moveRight() {
         x++;
     }
