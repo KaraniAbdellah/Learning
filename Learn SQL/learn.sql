@@ -445,8 +445,7 @@ select * from expenses union all select * from income; -- union with duplicated
 select emp1.first_name, emp1.last_name,
 		emp2.first_name, emp2.last_name
 from employees as emp1 
-inner join 
-employees as emp2 
+inner join employees as emp2 
 on emp1.referal_id = emp2.id;
 
 
@@ -456,7 +455,7 @@ on emp1.referal_id = emp2.id;
 /*
 	- a virtual table in DB
     - filieds of view are filieds from one or more table
-    - views acceept all previos operations
+    - views aceept all previos operations
     - any changes of reel table will be reflect to virtual table
 */
 
