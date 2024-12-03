@@ -3,13 +3,9 @@
 
 select * from employees;
 select * from students;
-INSERT INTO student_scores (notes, marks) VALUES
-('Good performance', 85),
-('Needs improvement', 60),
-('Excellent work', 95);
+select * from student_scores;
 
+select * from employees join students join student_scores where id = 1;
 
-select * from employees join students join employees;
-
-
+select * from employees where referal_id > 10 or (last_name = "ahmed" and referal_id = 3);
 
