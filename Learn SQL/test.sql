@@ -24,5 +24,3 @@ select * from employees;
 select students.name from students join employees where employees.id = students.id;
 
 
-
-
