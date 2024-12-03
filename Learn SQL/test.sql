@@ -2,6 +2,9 @@
 /*
 	Nested queries || Sub queries: is querie inside another querie
 	nested query (inside query) runs first After the outer query
+    
+    ALL is used to compare a value with all results from the inner query
+    ANY is for comparing with any one result
 */
 /*
 CREATE TABLE students (
@@ -15,12 +18,21 @@ INSERT INTO students (name, last_name) VALUES
 ('Michael', 'Johnson');
 */
 
+select * from employees;
+select * from students;
+
 
 -- select * from employees where id = (select max(id) from employees);
 -- select * from employees where id > (select avg(id) from employees);
 
-select * from students;
-select * from employees;
-select students.name from students join employees where employees.id = students.id;
+-- get the ids biger then all students id
+select * from employees where id > all (select id from students);
+
+
+
+
+
+
+
 
 
