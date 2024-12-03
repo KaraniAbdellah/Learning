@@ -448,6 +448,8 @@ from employees as emp1
 inner join employees as emp2 
 on emp1.referal_id = emp2.id;
 
+select employees.first_name, students.name from employees, students; 
+select employees.first_name, students.name from employees join students; 
 
 
 
