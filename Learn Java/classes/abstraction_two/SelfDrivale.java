@@ -5,3 +5,5 @@ public interface SelfDrivale {
     public abstract void drive();
 }
 
+// public interface SelfDrivale extends Moveble
+

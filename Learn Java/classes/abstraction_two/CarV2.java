@@ -1,11 +1,11 @@
 
 package abstraction_two;
 
-public class CarV1 implements Moveble, SelfDrivale {
+public class CarV2 implements Moveble, SelfDrivale {
     private int x, y, number_of_places;
 
-    public CarV1() {}
-    public CarV1(int x, int y, int number_of_places) {
+    public CarV2() {}
+    public CarV2(int x, int y, int number_of_places) {
         this.x = x;
         this.y = y;
         this.number_of_places = number_of_places;
@@ -18,7 +18,7 @@ public class CarV1 implements Moveble, SelfDrivale {
     }
     @Override
     public void drive() {
-        System.out.println("drive... V1");
+        System.out.println("drive... V2");
     }
     @Override
     public void moveUp() {
