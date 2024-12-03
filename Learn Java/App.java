@@ -5,24 +5,7 @@
     By default Attributes in interface in 
         public static final --> "must give to him a init value"
 */
-/* 
-    Abstract Class:
 
-    Can inherit from a regular (non-abstract) class.
-    Can have methods with or without a body (partially implemented).
-    Can have attributes and constructors.
-    Supports single inheritance (one abstract class at a time).
-
-
-    Interface:
-    Cannot inherit from a regular (non-abstract) class. 
-        It can only extend other interfaces.
-    All methods are abstract by default (before Java 8).
-    No attributes (only constants allowed).
-    Supports multiple inheritance (a class can
-        implement manyinterfaces).
-*/
-// revise the interfaces
 
 import abstraction_two.CarV1;
 
@@ -32,4 +15,39 @@ public class App {
         C1.destination("10102939");
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Abstract Class VS Interface
+    Abstract Class:
+
+    We Can inherit from a regular (non-abstract) class
+    We Can have methods with or without a body (partially implemented).
+    We Can have attributes and constructors.
+    Supports single inheritance (one abstract class at a time).
+
+
+    Interface:
+    We Cannot inherit from a regular (non-abstract) class. 
+        It can only extend other interfaces.
+    All methods are abstract by default [no implementation] (before Java 8).
+    No attributes (only constants allowed).
+    Supports multiple inheritance (a class can implement many interfaces).
+    
+
+    class in Java can implement multiple interfaces
+    class in Java cannot extend multiple abstract classes
+*/
 

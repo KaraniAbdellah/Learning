@@ -1,7 +1,7 @@
 package abstraction;
 
 // SUV.java
-public class SUV extends Car, Hatchback {
+public class SUV extends Car {
 
     public SUV(float height, float weight, int numberOfWheels) {
         super(height, weight, numberOfWheels);
