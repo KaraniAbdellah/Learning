@@ -21,7 +21,7 @@ INSERT INTO students (name, last_name) VALUES
 
 select * from students;
 select * from employees;
-select employees.first_name, students.name from employees join students; 
+select students.name from students join employees where employees.id = students.id;
 
 
 
