@@ -6,6 +6,7 @@
         public static final --> "must give to him a init value"
 */
 
+// try to understand the example & revise the interface & abstract class
 
 import abstraction_two.*;
 
