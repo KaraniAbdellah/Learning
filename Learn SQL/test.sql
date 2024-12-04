@@ -1,20 +1,25 @@
+-- Group BY
+/*
+	GROUP BY in SQL groups rows with the same values in specified columns.
+	It's used to apply aggregate functions like COUNT() or SUM() to each group.
+*/
 
--- select * from Logiciel join Projet where Projet.TitreProj = "Project A" order by PrixLog desc;
--- select * from Projet;
--- select sum(PrixLog) as "le totale c'est" from Logiciel, Projet where Projet.TitreProj = "Project A";
--- select * from Developpeur;
--- select * from Realisation;
--- select * from Projet;
+/*
+create table transactions(
+	transaction_id int primary key auto_increment, 
+    amount float,
+    customer_id int, 
+    order_date date
+);
+*/
 
--- select * from Realisation join Projet join Developpeur where  Projet.NumProj = "PROJ001";
+select * from transactions;
 
--- SELECT COUNT(NumDev) FROM Realisation JOIN Projet WHERE Projet.TitreProj = 'Project A';
 
--- select Count(distinct NumDev) from Realisation join Projet on 
--- Projet.NumProj = Realisation.NumProj 
--- where Projet.TitreProj = "Project A";
 
--- select * from Realisation join Projet on Projet.NumProj = Realisation.NumProj;
+
+
+
 
 
 
