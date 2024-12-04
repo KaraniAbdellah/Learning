@@ -1,31 +1,32 @@
-create table Developpeur(
-	NumDev varchar(20),
-    NomDev int,
-    AdrDev text, 
-    EmailDev varchar(30),
-    TelDev varchar(20)
+CREATE TABLE Developpeur (
+    NumDev VARCHAR(20) PRIMARY KEY,
+    NomDev VARCHAR(50),
+    AdrDev TEXT,
+    EmailDev VARCHAR(30),
+    TelDev VARCHAR(20)
 );
 
-create table Projet (
-	NumProj varchar(20),
-    TitreProj varchar(20),
-    DateDeb Date,
-    DateFin Date
+CREATE TABLE Projet (
+    NumProj VARCHAR(20) PRIMARY KEY,
+    TitreProj VARCHAR(50),
+    DateDeb DATE,
+    DateFin DATE
 );
 
-create table Logiciel (
-	CodeLog int,
-    NomLog text,
-    PrixLog float,
-    NumProj varchar(20),
-    foreign key(NumProj) references Projet (NumProj)
+CREATE TABLE Logiciel (
+    CodeLog INT PRIMARY KEY,
+    NomLog TEXT,
+    PrixLog FLOAT,
+    NumProj VARCHAR(20),
+    FOREIGN KEY (NumProj) REFERENCES Projet (NumProj)
 );
 
-create table Realisation (
-	NumProj varchar(20),
-    NumDev varchar(20),
-    foreign key(NumProj) references Projet (NumProj),
-    foreign key(NumDev) references Developpeur (NumDev)
+CREATE TABLE Realisation (
+    NumProj VARCHAR(20),
+    NumDev VARCHAR(20),
+    PRIMARY KEY (NumProj, NumDev),
+    FOREIGN KEY (NumProj) REFERENCES Projet (NumProj),
+    FOREIGN KEY (NumDev) REFERENCES Developpeur (NumDev)
 );
 
 
