@@ -2389,7 +2389,7 @@ public class App {
 
 ////////////////////////////////////////////////////////////
 /*
-    Abstraction: hiding the internal implementation(method, feature)
+    Abstraction: hiding the internal implementation(methods, feature)
         and only showing the functionality to the users.
     
     We achieve Abstraction By:
@@ -2401,7 +2401,7 @@ public class App {
         - Class declared with abstract keyword is known as an abstract
             class in java. (can have abstrcat || no abstrcat method)
         - Allow you to create blueprints for concrete classes
-        - Concrete class: is a class that has an implmentation
+        - Concrete class: is a class that has an Implementation
             for all methods (that are abstracted)
         - NOTE: we define just the prototype, the Method
             will be implmented in Classes.
@@ -2514,17 +2514,148 @@ public class App {
     Interface: Pure Abstraction
         - is blueprint template
         - contain a list of methods signature (abstract methods)
-        - it can acheive multiple inhertance
+        - it can acheive multiple inheritance
         - Class can implements one or more interfaces
-
-    Deffrences between abstract class & interface
-        - we say implement (realize) not "extend"
-            between two interfaces we say "extend"
-        - in UML design
-        - does not have Constractors
 */
 
 
+
+
+
+
+
+// Start Practice Interface
+/*
+    - class can implement multiple interfaces [not extend]
+    - interface can extend an multiple interfaces
+    - By default Attributes in interface in 
+        public static final --> "must give to him a init value"
+*/
+
+/* App.java
+import abstraction_two.*;
+
+public class App {
+    public static void main(String args[]) {
+        CarV1 C1 = new CarV1(1, 2, 100);
+        C1.destination("10102939");
+
+        // Reasibilty
+        SelfDrivale car = new CarV1(0, 0, 0);
+        car.drive(); // drive... V1
+        car = new CarV2(0, 0, 0);
+        car.drive(); // drive... V2
+    }
+}
+*/
+
+/* SelfDrivale.java
+package abstraction_two;
+public interface SelfDrivale {
+    public abstract void destination(String d);
+    public abstract void drive();
+}
+// public interface SelfDrivale extends Moveble
+*/
+
+/* Moveble.java
+package abstraction_two;
+
+public interface Moveble {
+    int x = 10; // public final static Attribut
+    public abstract void moveUp();
+    public abstract void moveDown();
+    public abstract void moveLeft();
+    public abstract void moveRight();
+}
+*/
+
+/* CarV1.java
+package abstraction_two;
+
+public class CarV1 implements Moveble, SelfDrivale {
+    private int x, y, number_of_places;
+
+    public CarV1() {}
+    public CarV1(int x, int y, int number_of_places) {
+        this.x = x;
+        this.y = y;
+        this.number_of_places = number_of_places;
+    }
+
+    // Implement the abstract class "SelfDrivable"
+    @Override
+    public void destination(String d) {
+        System.out.println("destiantion = " + d);
+    }
+    @Override
+    public void drive() {
+        System.out.println("drive... V1");
+    }
+    // ....
+}
+*/
+
+/* CarV2.java
+package abstraction_two;
+
+public class CarV2 implements Moveble, SelfDrivale {
+    private int x, y, number_of_places;
+
+    public CarV2() {}
+    public CarV2(int x, int y, int number_of_places) {
+        this.x = x;
+        this.y = y;
+        this.number_of_places = number_of_places;
+    }
+
+    // Implement the abstract class "SelfDrivable"
+    @Override
+    public void destination(String d) {
+        System.out.println("destiantion = " + d);
+    }
+    @Override
+    public void drive() {
+        System.out.println("drive... V2");
+    }
+    // ....
+}
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+// Abstract Class VS Interface
+/*
+    Abstract Class:
+    - We Can inherit from a regular (non-abstract) class
+    - We Can have methods with or without a body (partially implemented).
+    - We Can have attributes and constructors.
+    - Supports single inheritance (one abstract class at a time).
+
+
+    Interface:
+    - We Cannot inherit from a regular (non-abstract) class. 
+        It can only extend other interfaces.
+    - All methods are abstract by default [no implementation] (before Java 8).
+    - No attributes (only constants allowed).
+    - Supports multiple inheritance (a class can implement many interfaces).
+    - we say implement (realize) not "extend"
+        between two interfaces we say "extend"
+    - in UML design
+    - does not have Constractors
+    
+    - class in Java can implement multiple interfaces
+    - class in Java cannot extend multiple abstract classes
+*/
 
 
 
