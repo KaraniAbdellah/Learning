@@ -14,7 +14,7 @@
 -- Projet.NumProj = Realisation.NumProj 
 -- where Projet.TitreProj = "Project A";
 
-
+-- select * from Realisation join Projet on Projet.NumProj = Realisation.NumProj;
 
 
 
