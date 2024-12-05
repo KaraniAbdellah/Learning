@@ -2,15 +2,23 @@
 /*
     Marker or Taggin Interface: 
         Empty interface, When a class uses it, it tell to Java:
-        “This class can be used in a special way.“
+        “This class can be used in a special way“
+
+    Generic Interface:
+        
 */
 
-import java.util.*;
+import abstraction_two.*;
+
 
 public class App {
     public static void main(String args[]) {
-        System.out.println("Revesing...");
-        List list = new ArrayList();
+        Admin admin = new Admin();
+        if (admin instanceof Marker) {
+            System.out.println("YES!!");
+        }
+        else System.out.println("No!!");
+
 
     }
 }
