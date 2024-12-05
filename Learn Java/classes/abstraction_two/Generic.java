@@ -1,5 +1,6 @@
 package abstraction_two;
 
-public interface Generic {
-    public Object GetUser();
+public interface Generic <T> { // for Template
+    // public Object GetUser();
+    public T GetUser();
 }

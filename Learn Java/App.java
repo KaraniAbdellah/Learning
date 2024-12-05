@@ -9,6 +9,10 @@
         we do not know the type of object
         --> Use Casting in Object Definition
 
+    Benifits:
+        Security, Multiple Interface,
+        Loose Coupling (no depedency between classes) 
+
 */
 
 import abstraction_two.*;
@@ -25,8 +29,9 @@ public class App {
 
         // Generic Interface
         Generic UserObj = new User();
-        User user = (User) UserObj.GetUser(); // we know the type
-        // Object user = UserObj.GetUser(); // we know the type
+        User user = (User) UserObj.GetUser();
+        User user1 = UserObj.GetUser();
+        Object user2 = UserObj.GetUser();
 
 
 
