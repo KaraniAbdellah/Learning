@@ -2627,6 +2627,123 @@ public class CarV2 implements Moveble, SelfDrivale {
 
 
 
+// Other Concept about Interface
+/*
+    Marker or Taggin Interface: 
+        Empty interface, When a class uses it, it tell to Java:
+        “This class can be used in a special way“
+
+    Generic Interface:
+        we return object from method but 
+        we do not know the type of object
+        --> Use Casting in Object Definition
+        --> Use <T> in return type & Make Class Generic
+
+    Benifits:
+        Security, Multiple Interface,
+        Loose Coupling (no depedency between classes) 
+
+*/
+
+/* App.java
+import abstraction_two.*;
+public class App {
+    public static void main(String args[]) {
+        // Marker Interface
+        Admin admin = new Admin();
+        if (admin instanceof Marker) {
+            System.out.println("YES!!");
+        }
+        else System.out.println("No!!");
+
+        // Generic Interface
+        Generic UserObj = new User();
+        User user = (User) UserObj.GetUser();
+        User user1 = UserObj.GetUser();
+        Object user2 = UserObj.GetUser();
+    }
+}
+*/
+
+/* App.java
+import abstraction_two.*;
+public class App {
+    public static void main(String args[]) {
+        // Marker Interface
+        Admin admin = new Admin();
+        if (admin instanceof Marker) {
+            System.out.println("YES!!");
+        }
+        else System.out.println("No!!");
+
+        // Generic Interface Without Casting
+        Generic UserObj = new User();
+        // User user = (User) UserObj.GetUser(); error --> must has a type
+        Object user2 = UserObj.GetUser(); 
+
+        // Generic Interface With Casting
+        Generic <User> UserObj1 = new User();
+        User user4 = (User) UserObj1.GetUser();
+        User user5 = UserObj1.GetUser();
+        Object user6 = UserObj1.GetUser();
+    }
+}
+*/
+
+// Marker Interface
+/* Admin.java
+    package abstraction_two;
+    public class Admin implements Marker {
+        public Admin() {}
+    }
+*/
+/* Marker.java
+    package abstraction_two;
+
+    public interface Marker {
+    // this is an marker interface 
+    }
+*/
+
+// Generic Interface
+/* User.java
+    package abstraction_two;
+    // With Generic Class
+    public class User <T> implements Generic <T> {
+        @Override
+        public T GetUser() {
+            return (T) new User();
+        }
+    }
+    // Without Generic Class
+    public class User implements Generic {
+        @Override
+        public Object GetUser() {
+            return new User();
+        }
+    }
+*/
+/* Generic.java
+    // With Generic
+    package abstraction_two;
+    public interface Generic <T> { // for Template
+        public T GetUser();
+    }
+    // Without Generic
+    public interface Generic{ // for Template
+        public Object GetUser();
+    }
+*/
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -1,23 +1,7 @@
 // Other Concept about Interface
-/*
-    Marker or Taggin Interface: 
-        Empty interface, When a class uses it, it tell to Java:
-        “This class can be used in a special way“
 
-    Generic Interface:
-        we return object from method but 
-        we do not know the type of object
-        --> Use Casting in Object Definition
-
-    Benifits:
-        Security, Multiple Interface,
-        Loose Coupling (no depedency between classes) 
-
-*/
-
+/* 
 import abstraction_two.*;
-
-
 public class App {
     public static void main(String args[]) {
         // Marker Interface
@@ -27,14 +11,17 @@ public class App {
         }
         else System.out.println("No!!");
 
-        // Generic Interface
+        // Generic Interface Without Casting
         Generic UserObj = new User();
-        User user = (User) UserObj.GetUser();
-        User user1 = UserObj.GetUser();
-        Object user2 = UserObj.GetUser();
+        // User user = (User) UserObj.GetUser(); error --> must has a type
+        Object user2 = UserObj.GetUser(); 
 
-
-
+        // Generic Interface With Casting
+        Generic <User> UserObj1 = new User();
+        User user4 = (User) UserObj1.GetUser();
+        User user5 = UserObj1.GetUser();
+        Object user6 = UserObj1.GetUser();
     }
 }
+*/
 
