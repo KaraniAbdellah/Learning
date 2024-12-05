@@ -1,7 +1,8 @@
 // Other Concept about Interface
 /*
     Marker or Taggin Interface: 
-        empty interface
+        Empty interface, When a class uses it, it tell to Java:
+        “This class can be used in a special way.“
 */
 
 import java.util.*;
