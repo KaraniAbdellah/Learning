@@ -1,4 +1,12 @@
-// Anonymous Inner Class
+// Interface (Default - Private - Static Methods, Nested Interface)
 /*
-    make a code more concise(brief)
+    
 */
+
+public class App{
+    public static void main(String args[]) {
+        System.out.println("MSG");
+    }
+}
+
+
