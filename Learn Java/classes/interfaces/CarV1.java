@@ -21,6 +21,10 @@ public class CarV1 implements Moveble, SelfDrivale {
         System.out.println("drive... V1");
     }
     @Override
+    public void newMethod() {
+        System.out.println("Hello World");
+    }
+    @Override
     public void moveUp() {
         y++;
     }
