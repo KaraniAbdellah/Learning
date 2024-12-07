@@ -1,6 +1,4 @@
 
-import abstraction_two.CarV1;
-import abstraction_two.SelfDrivale;
 
 // Interface (Default - Private - Static Methods, Nested Interface)
 /*
@@ -35,9 +33,12 @@ import abstraction_two.SelfDrivale;
             System.out.println("This A Static Method");
         }
     
-    - if We HAve a class implment & extend from interfaces
-        & we have same signature 
+    - if We HAve a class implement & extend from interface & Class
+        & we have same signature in interface & class
+        we are creating object --> Always Object Take Classe Method
 
+    - in Java 9 --> ca create private method inside interface
+    - we can say also nested interface
 */
 
 import interfaces.*;
