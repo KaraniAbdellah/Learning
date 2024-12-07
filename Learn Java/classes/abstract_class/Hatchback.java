@@ -1,4 +1,4 @@
-package abstraction;
+package abstract_class;
 
 public class Hatchback extends Car {
     @Override

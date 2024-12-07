@@ -1,4 +1,4 @@
-package abstraction;
+package abstract_class;
 
 public abstract class Car {
     private float height;

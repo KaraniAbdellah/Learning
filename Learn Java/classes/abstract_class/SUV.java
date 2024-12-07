@@ -1,4 +1,4 @@
-package abstraction;
+package abstract_class;
 
 // SUV.java
 public class SUV extends Car {

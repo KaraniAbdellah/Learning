@@ -1,5 +1,5 @@
 
-package abstraction_two;
+package interfaces;
 
 public class CarV2 implements Moveble, SelfDrivale {
     private int x, y, number_of_places;

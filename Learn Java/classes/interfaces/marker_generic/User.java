@@ -1,4 +1,4 @@
-package abstraction_two;
+package interfaces.marker_generic;
 
 public class User <T> implements Generic <T> {
     @Override

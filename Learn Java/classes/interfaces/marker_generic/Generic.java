@@ -1,5 +1,5 @@
 // With Generic
-package abstraction_two;
+package interfaces.marker_generic;
 public interface Generic <T> { // for Template
     // public Object GetUser();
     public T GetUser();
