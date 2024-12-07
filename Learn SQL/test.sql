@@ -14,9 +14,10 @@ create trigger before_tran_id_update
 before update on  transactions -- before (update, delete, insert, ...)
 for each row
 set new.amount = new.tran_id * 2;
+show triggers;
 */
 
-
+update transactions set tran_id = 4 where tran_id = 2; -- amount = 8
 select * from transactions;
 
 
