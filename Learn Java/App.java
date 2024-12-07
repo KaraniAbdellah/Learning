@@ -34,6 +34,9 @@ import abstraction_two.SelfDrivale;
         static void MethodStatic() {
             System.out.println("This A Static Method");
         }
+    
+    - if We HAve a class implment & extend from interfaces
+        & we have same signature 
 
 */
 
