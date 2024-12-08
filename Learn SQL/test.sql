@@ -44,6 +44,7 @@ insert into expenses values
 ;
 */
 
+-- this trigge if i delete amount should update expenses_total
 /*
 create trigger after_amount_delete 
 after delete on transactions
@@ -53,6 +54,8 @@ set expenses_total = expenses_total - old.amount
 where expenses_total = 0;
 */
 
+
+delete from transactions where amount = 102; -- expenses_total must change
 select * from expenses;
 select * from transactions;
 
