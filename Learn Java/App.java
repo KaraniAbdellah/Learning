@@ -3,7 +3,7 @@
     Anonymous Inner Class for code more "concise" [brief]
 */
 
-import Anonymous_Inner_Class.Reward;
+import Anonymous_Inner_Class.*;
 
 public class App {
     public static void main(String args[]) {
