@@ -3,10 +3,12 @@
     Anonymous Inner Class for code more "concise" [brief]
 */
 
+import Anonymous_Inner_Class.Reward;
 
 public class App {
     public static void main(String args[]) {
-        System.out.println("Hello World");
+        Reward reward = new Reward();
+        reward.rewardMethod();
     }
 }
 
