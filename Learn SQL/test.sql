@@ -45,7 +45,6 @@ insert into expenses values
 */
 
 
-
 select * from expenses;
 
 
