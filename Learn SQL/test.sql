@@ -20,7 +20,12 @@ show triggers;
 update transactions set tran_id = 4 where tran_id = 2; -- amount = 8
 select * from transactions;
 
-
+/*
+create trigger update_amount
+before insert on transactions
+for each row
+set new.tran_id = new.amount + 2;
+*/
 
 
 
