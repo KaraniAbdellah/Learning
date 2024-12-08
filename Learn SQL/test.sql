@@ -44,8 +44,17 @@ insert into expenses values
 ;
 */
 
+/*
+create trigger after_amount_delete 
+after delete on transactions
+for each row 
+update expenses
+set expenses_total = expenses_total - old.amount
+where expenses_total = 0;
+*/
 
 select * from expenses;
+select * from transactions;
 
 
 
