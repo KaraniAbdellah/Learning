@@ -1,4 +1,4 @@
-# This Just For Learning New Skills
+# This is for learning new skills
 
 
 ## Contributors
