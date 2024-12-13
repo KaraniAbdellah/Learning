@@ -5365,6 +5365,12 @@ readData();
 
 
 // Try, Catch And Finally With Fetch
+/*
+    most case we working with try-catch when we need to get data from other resources
+    or we we intercat with user (inputs)
+
+    throw(): for generate a custom error
+*/
 
 const good_promise = new Promise((resolve, reject) => {
     setTimeout(() => {
