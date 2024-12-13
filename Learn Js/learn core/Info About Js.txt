@@ -1,0 +1,25 @@
+-- Introduction
+ Js: is scripting language
+working on client side & server side [Back-end & Front-end]
+JS => web browser, mobile apps, Desktop, Gaming, AI...
+----There Is Framework can do All Whit (Html, Css & Js)
+-- Content
+core language
+Dom
+Bom
+OOP
+ES6, ES7
+practice in Elzero.org
+-------------------------------------------------
+-- How To Study
+Focus
+Always Search
+Ask How To Fix Not Fix
+Start Idea
+Assignments
+leetCode, edabit, HackerRank, CodeForces => For Problem Solving
+-------------------------------------------
+-- Why We Use 
+Can Make Mobile Apps, Desktop Apps, Web Apps.
+In 2022 StackOverflow Popular Language is Js.
+Node Js = Runtime or Interpreter Of Js
