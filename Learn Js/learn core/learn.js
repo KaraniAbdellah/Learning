@@ -1,3 +1,33 @@
+// NodeJs & npm & require
+/*
+    require:
+        always return a function
+        It loads and uses code from other files or packages.
+
+    Node: 
+        allow you tu run javascript outside
+        the web browser (in the terminal)
+
+    npm:
+        NPM (Node Package Manager), used to install, manage, 
+        and share JavaScript libraries and packages.
+        like github: contain a lot of package
+        npm: contain a lot of packages like "prompt-sync"
+
+        problem: in install any package use -g
+        -g: make ths modulo used in all folders in project
+
+        Set-ExecutionPolicy Unrestricted -Scope CurrentUser -Force
+            change the PowerShell policy to run any script
+        PowerShell: blocks some scripts to protect the computer
+
+    package a lot of modulo and modulo contain a lot of libraries
+
+    "in js you can store function in variable & use variable as function"
+*/
+
+
+
 // Start Learning JavaScript
 /* Method Of Write The Js Code
 Execution => line By Line Must Script Do In last Of Page
@@ -5335,6 +5365,12 @@ readData();
 
 
 // Try, Catch And Finally With Fetch
+/*
+    most case we working with try-catch when we need to get data from other resources
+    or we we intercat with user (inputs)
+
+    throw(): for generate a custom error
+*/
 
 const good_promise = new Promise((resolve, reject) => {
     setTimeout(() => {
