@@ -1,36 +1,37 @@
-// Polymorphism
+// Abstraction || Abstract Class
 /*
-    We realize polymorphism with
-        Overriding --> paractice this in inhertiance
-        Overloading --> you can use default paramerters
+    We can Relize the abstraction by:
+        Abstract class
+        Interface
 
-    JavaScript does not natively support method overloading
+    there are no abstract classes or interface, But we can achieve
+    Abstract classes are used to define a blueprint for other classes to follow.
+
+    Can not be create a object from Abstract CLass 
 */
 
-// Overinding
-class Animal {
-    speak() {
-        console.log("This animal makes a sound.");
+class Employee {
+    constructor() {
+        if (new.target === Employee) {
+            throw new Error("Can not be create Object from Abstract Class");
+        }
+    }
+    // Concrete Method
+    display() {
+        throw new Error("Abstract Method has no implementation");
     }
 }
-class Dog extends Animal {
-    // @Override
-    speak() {
-        console.log("The dog barks.");
+
+class Manager extends Employee {
+    display() {
+        console.log("I am A Manager");
     }
 }
-const animal = new Animal();
-animal.speak(); // This animal makes a sound.
- 
-// Overloading [use default parameters]
-class Calculator {
-    add(a, b, c = 0) {
-      return a + b + c;
-    }
-}
-const calc = new Calculator();
-console.log(calc.add(2, 3));
-console.log(calc.add(2, 3, 4));
+
+// const emp = new Employee(); //  Can not be create Object from Abstract Class
+const manager = new Manager();
+manager.display(); // I am A Manager
+
 
 
 
