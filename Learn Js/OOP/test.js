@@ -1,37 +1,31 @@
-// Abstraction || Abstract Class
+// Abstraction || Interface
 /*
-    We can Relize the abstraction by:
-        Abstract class
-        Interface
-
-    there are no abstract classes or interface, But we can achieve
-    Abstract classes are used to define a blueprint for other classes to follow.
-
-    Can not be create a object from Abstract CLass 
+    Js does not support interfaces
+    The two concept support in Typescript
+    
+    We can achieve interfaces:
+        create a function that check if object implement method
 */
 
-class Employee {
+// this function check if object implements a specific methods
+function isImplementMethod(obj) {
+    if(obj.display == undefined) {
+        throw new Error("Class must implement 'display' method");
+    }
+}
+// Implement the interface in a class
+class Product {
     constructor() {
-        if (new.target === Employee) {
-            throw new Error("Can not be create Object from Abstract Class");
-        }
+        // isImplementMethod.call(this); // pass object without parameter
+        isImplementMethod(this); 
     }
-    // Concrete Method
     display() {
-        throw new Error("Abstract Method has no implementation");
+        console.log("display the details here");
     }
 }
 
-class Manager extends Employee {
-    display() {
-        console.log("I am A Manager");
-    }
-}
-
-// const emp = new Employee(); //  Can not be create Object from Abstract Class
-const manager = new Manager();
-manager.display(); // I am A Manager
-
+const product = new Product();
+product.display(); // display the details here
 
 
 
