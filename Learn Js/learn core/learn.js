@@ -4622,6 +4622,14 @@ export default function(name) { // can you use anonymose fucntion --> does not h
 
     // - JSON.parse => Convert JSON To JS Object
     // - JSON.stringify => Convert JS Object To JSON
+
+    ReadFile(), WriteFile()
+    It is asynchronous, meaning it reads the file in the background
+        and the program does not wait for it to finish before moving on.
+        --> use readFileSync, writeFileSync
+    
+    // Problem in Reading Json File:
+        if the json file empty --> you must add [] --> use try & catch
 */
 
 const fs = require("fs"); // file system
