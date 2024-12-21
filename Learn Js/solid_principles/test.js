@@ -4,7 +4,6 @@
         should be open for extension, but closed for modification
 */
 
-
 // Bad Example
 /*
     The problem if we create another class for
@@ -20,14 +19,12 @@ class Rectangle {
         this._width = width;
     }
 }
-
 class Square {
     _side
     constructor(side) {
         this._side = side;
     }
 }
-
 class ShapePrinter {
     drawShape(shape) {
         if (shape instanceof Square) {
@@ -39,7 +36,7 @@ class ShapePrinter {
 }
 
 // Good Example
-class Shape { // this is a abtstract class 
+class Shape { // can be abstract class || interface 
     draw() {
 
     }
