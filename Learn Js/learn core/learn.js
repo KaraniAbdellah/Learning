@@ -5476,3 +5476,53 @@ getData();
     - Advanced Books
 */
 
+
+///////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////
+
+// JSon Operations
+/*
+    const fs = require("fs"); // file system contains a lot of function to deal with JSON File
+    console.log(fs); // print all function that exit in fs modulo 
+
+    - readFile function in "fs" modulo
+        The method accepts three parameters as mentioned
+        above and described below:  
+
+        - file_path: json file
+
+        - callback_function: A callback function is called after
+            reading the file. It takes two parameters:
+            err: If any error occurred.
+            data: Contents of the file.
+
+    - there is a lot of methods:
+        fs.readFile(path, [options], callback)
+        fs.readFileSync(path, [options])
+        fs.writeFile(path, data, [options], callback): // remove the old content
+        fs.writeFileSync(path, data, [options]):
+        fs.appendFile(path, data, [options], callback)
+
+    // - JSON.parse => Convert JSON To JS Object || Array of Object
+    // - JSON.stringify => Convert JS Object To JSON || Array of Object
+
+    module.exports = ClassName; --> make a class exported
+*/
+const fs = require("fs"); // file system
+const Product = require("./Product"); // import a class (Product.js)
+
+
+
+
+
+// Express & MongoDB
+
+
+
+
+
+
+
+

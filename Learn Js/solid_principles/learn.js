@@ -5,7 +5,6 @@
     3. Liskov Substitution Principle
     4. Interface Segregation Principle
     5. Dependency Inversion Principle
-
 */
 
 
@@ -50,7 +49,7 @@ class CustomerReport extends Customer {
     }
 }
 
-export default Customer; // this class can not be change
+
 
 
 
@@ -73,19 +72,21 @@ class Rectangle {
         this._height = height;
     } 
 }
+
 class Square {
     _side
     constructor(side) {
         this._side = side;
     }
 }
+
 class ShapePrinter {
     drawShape(shape) {
         if (shape instanceof Square) {
             // Draw Square ...
         } else if (shape instanceof Rectangle) {
             // Draw Rectangle ...
-        } 
+        }
         // the problem when i create another form (Box) --> must add new condition
     }
 }
@@ -113,6 +114,13 @@ class SahpePrinter {
         shape.draw(); // any one can draw
     }
 }
+
+
+
+
+
+
+
 
 
 
