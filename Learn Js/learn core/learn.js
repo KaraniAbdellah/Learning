@@ -5517,11 +5517,6 @@ const Product = require("./Product"); // import a class (Product.js)
 
 
 
-// Express & MongoDB
-
-
-
-
 
 
 
