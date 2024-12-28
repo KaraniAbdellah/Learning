@@ -1,0 +1,147 @@
+// npm init
+// npm install prompt-sync
+// npm install body-parser
+// npm install express
+// npm install mongoose
+// npm install -g nodemon
+// install MongoDb Compass --> with google
+
+
+/*
+    - npm init -y: create package.json --> setting up a new Node.js
+
+    - Depencies in package.json:
+        The dependencies object is used to declare the versions of packages that your project used
+        "dependencies": {
+            "express": "^4.17.1",
+            "mongoose": "^5.10.17",
+            "body-parser": "^1.19.0"
+        }
+        this project used (express, mongoose, body-parser)
+
+    - body-parser: is a middleware used in Express to Convert HTTP REQUEST to JSON Format
+
+    - mongoose: promise-based object data modeling (ODM) library for the Node.js framework,
+        and it is modole in npm has a lot of functionality to intercat with DB (NoSQL)
+
+    - MongoDB Compass: is a graphical user interface (GUI) has a lot of features 
+        like databases visually, store data in collection
+
+    - MongoDB Atlas:  database used in couled
+
+    - The cloud is like using a service or storing data online instead
+        of on your own computer. You can access it from anywhere with the internet.
+    
+    - Note: the data store in DB as BSON format (like JSON format)
+
+    - Nodemon is a tool that automatically restarts your Node.js server
+        whenever you make changes to your code.
+    
+        "you should be installed globally can be used from 
+        anywhere in my system not just within a specific project"
+    
+    - Postman: is tool used to test APIS By sending HTTP Request to APIs
+*/
+
+
+
+// Life Cycle Transfer the Data to DB:
+/*
+    To store user data in MongoDB you need to:
+        - Create a API to handle requests that come from Postman --> use Express
+        - Send Request with Postman to API that created
+        - API send data to DB
+
+    In Details in API:
+        The API contains routes (like GET, POST, PUT, DELETE) to handle different types of requests.
+        Use PostMan to send request Database:
+            "http://localhost:3000/post"
+            "http://localhost:3000/get"
+            "http://localhost:3000/put"
+            "http://localhost:3000/delete"
+        in routes you can use REGEX
+            we can use: /ab*cd --> ab234cd
+*/
+
+
+// API vs REST API vs REST API
+/*
+    API refres to any interface that allows different 
+        software to communicate with each others.
+        can be implemnet with a lot of protocoles like (REST, SOAP, ...)
+
+    (REST): Representational State Transfer architectural style
+
+    REST API:
+        is an API that uses the REST architectural style to provide an interface betwen 
+        specific type of API that use HTTP methods (GET, POST, PUT, DELETE, ...)
+    RESTFULLAPI:
+        is RESTAPI that follows all principles of REST architect
+*/
+
+
+// HTTP Methods
+/*
+    GET: get data from Database
+    DELETE: delete specific fields with id
+    PUT: update resource
+    PATCH: update specific fields
+    POST: put the data into Database
+*/
+
+
+// async && await
+/*
+    I am  sending a request to the API, and the API uses async and await
+    to wait database finish tasks (save data, ...) before responding.
+    Once Database Complete, the API sends a response to Postman.
+*/
+
+
+// More Concepts About Database
+/*
+    - Schema: Defines the structure of the data (fields and types).
+    - Collection || Model: The group of documents (data) in the database
+    - Document: like JSOn Format
+        {
+            "_id": 4,
+            "title": "Task",
+            "description": "this task will be take 1919 days",
+            "status": "incomplete"
+        }
+*/
+
+
+// Router
+/*
+    Router behaves like middleware itself, so you
+        can use it as an argument to app.use()
+    
+    - api.js
+        const { router } = require("./router"); // router.js has all HTTP methods
+        api.use("/user/", router);
+
+    - router.js:
+        const express = require("express");
+        const router = express.Router();
+        router.get("/", (req, res) => {
+            console.log("Request Sended from postman [GET]");
+        });
+        exports.router = router;
+
+    - postman:
+        http://127.0.0.1:3000/user
+*/
+
+
+// create NoSQL Data Model Diagram
+/*
+    we are stored as collections of documents
+*/
+
+
+
+// Some Resources
+https://medium.com/@ralphplacide/lets-build-a-simple-api-with-express-and-mongodb-5e9aae53add0
+https://medium.com/@tomorchandraroy884/how-to-connect-mongodb-with-node-js-using-mongoose-a0c772dfb1ca
+https://www.youtube.com/playlist?list=PLyr3gkJ8OBxobKzATTb7I4QrJ09pZHaQ6
