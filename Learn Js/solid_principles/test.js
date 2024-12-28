@@ -95,7 +95,7 @@ class Square2 extends Rectangle {
         super(size, size);
     }
 }
-let rectangle2 = new Rectangle2(2, 5);
+let rectangle2 = new Rectangle2(2, 5); 
 let square2 = new Square2(2);
 
 
