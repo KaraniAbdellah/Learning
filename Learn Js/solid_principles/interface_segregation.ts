@@ -23,17 +23,27 @@ class Dog implements Animal {
 
 
 // Solution
-interface ParkingLot1 {
-    parkCar(): void;
-    getCapacity(): Number;
+interface Animal1 {
+    eat(): void;
+    drink(): void;
+    walk(): void;
 }
 
-interface ParkingLotFree1 extends ParkingLot1 {
-    doPayment(): void;
-    CalculateFree(): Number;
+interface Flyable extends Animal1 {
+    fly(): void;
 }
 
-class Car implements ParkingLot1 {
-    parkCar(): void { }
-    getCapacity(): Number { return 0; }
+
+class Dog1 implements Animal1 {
+    eat(): void { }
+    drink(): void { }
+    walk(): void { }
 }
+
+class Brid implements Flyable {
+    eat(): void { }
+    drink(): void { }
+    fly(): void { }
+    walk(): void { }
+}
+
