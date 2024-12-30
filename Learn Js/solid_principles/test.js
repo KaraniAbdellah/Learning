@@ -1,5 +1,3 @@
-// Interface segregation
-
 
 
 
