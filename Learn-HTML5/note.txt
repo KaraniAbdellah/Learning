@@ -1,0 +1,18 @@
+// How the HTML Work
+/*
+    To understand how html work we should be understand this
+        principle that help to show the web page in browser:
+
+    - HTML (Parsing)
+        When you type a website address (URL) in your browser,
+        the first thing the browser does is request the HTML file
+        from the server where the website is stored. After that,
+        the browser starts reading the file line by line and analyzes
+        and interprets the "tags" (like <p> for paragraphs and <h1>
+        for main headings) and the content inside them. The tags give
+        structure to the page.
+
+*/
+
+
+
