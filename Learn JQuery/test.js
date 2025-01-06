@@ -1,6 +1,4 @@
 // DOM Manipulation
-
-
 $(document).ready(function() {
     let myText =  $(".sayHello").text(); // get text
     $(".sayHello").text("this new text"); // set text
@@ -17,10 +15,6 @@ $(document).ready(function() {
     let valId = $("div").attr("id"); // get the value of "id" attribut
     $(".card").attr("class", "product"); // set new attribut (class = "product")  [override to old classes]
     console.log(valId);
-
-    // Adding & Removing
-    
-
 
 }); // do not write code outside
 
