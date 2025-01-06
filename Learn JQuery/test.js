@@ -18,6 +18,10 @@ $(document).ready(function() {
     $(".card").attr("class", "product"); // set new attribut (class = "product")  [override to old classes]
     console.log(valId);
 
+    // Adding & Removing
+    
+
+
 }); // do not write code outside
 
 
