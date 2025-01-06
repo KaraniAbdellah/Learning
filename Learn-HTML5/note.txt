@@ -12,6 +12,31 @@
         for main headings) and the content inside them. The tags give
         structure to the page.
 
+    - DOM Tree
+        After Browser read the html file. briwser start making DOM tree 
+        each node of tree has a tag element.
+        this tree very important because he try to understand the architect 
+        of the your html file
+    
+    - CSSOM
+        always HTML file has links like: (<link>, <script>, ...)
+        browser read this filies for make a CSSOM(CSS Object Model)
+        and this object decide how ele should be in wee page inside of (colors, position, ...)
+
+        # after that browser take DOM & CSSOM to make Render Tree.
+        # Rendre Tree used by brower to show you the website
+
+    - JavaScript Filies
+        Browser start processing the Js Filies and this processing can affect to Render Tree
+
+    - Rendering
+        after Render Tree ready, the browser start display the websites
+    
+    - Deep Linking
+        Browser start link the page by address like:
+            https://example.com with this https://example.com/path/page
+
+    the browser creates three trees: DOM, CSSOM, and Render Tree to build the webpage.
 */
 
 
