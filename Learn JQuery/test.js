@@ -1,22 +1,25 @@
 // DOM Manipulation
-$(document).ready(function() {
-    let myText =  $(".sayHello").text(); // get text
-    $(".sayHello").text("this new text"); // set text
-    console.log(myText);
+/*
+    add & remove [append, prepend, after, before, remove]
+    css [addClass, removeClass, toggleClass]
+*/
+$(function() {
+    $("p.title").append(" Append");
+    $("p.title").prepend("Prepend ");
+    
+    $("p.title").after("After");
+    $("p.title").before("Before");
 
-    let htmlText = $(".sayHello").html(); // get html tag 
-    $(".sayHello").html("this new text"); // set html tag
-    console.log(htmlText); // <a href="">sayHello</a>
-
-    let inputValue = $("input").val();
-    $("input").val("write your name");
-    console.log(inputValue); // write your email
-
-    let valId = $("div").attr("id"); // get the value of "id" attribut
-    $(".card").attr("class", "product"); // set new attribut (class = "product")  [override to old classes]
-    console.log(valId);
-
-}); // do not write code outside
+    // $("p.title").remove(); // remove tag
+    
+    $("p.title").addClass("main ");
+    $("p.title").removeClass("main ");
+    $("p.title").toggleClass("main ");
+    $("p.title").css({
+        fontSize: "40px",
+    });
+    $("p.title").css('color', 'red');
+});
 
 
 
