@@ -23,6 +23,8 @@ $(function() {
     $(".section").find("ul").css('color', "blue");
     console.log($(".section").find("ul"));
 
+    // Sibling
+    
 
 });
 
