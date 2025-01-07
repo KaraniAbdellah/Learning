@@ -232,3 +232,29 @@ $(function() {
     console.log($("p").not(".test1")); // get all paragraph that has not class .test1
 
 });
+
+
+
+
+
+// jQuery Ajax
+/*
+    Filter[first, last, eq, filter, not]
+*/
+$(function() {
+    $(document).ready(function() {
+        $("#fetchData").click(function() {
+            $.ajax({
+                url: 'https://jsonplaceholder.typicode.com/todos/1', // Sample API endpoint
+                method: 'GET',
+                dataType: 'json',
+                success: function(data) {
+                    $("#dataContainer").text('Title: ' + data.title);
+                },
+                error: function(error) {
+                    console.error('Error:', error);
+                }
+            });
+        });
+    });
+});
