@@ -249,7 +249,7 @@ $(function() {
                 method: 'GET',
                 dataType: 'json',
                 success: function(data) {
-                    $("#dataContainer").text('Title: ' + data.title);
+                    console.log(data);
                 },
                 error: function(error) {
                     console.error('Error:', error);
