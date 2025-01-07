@@ -148,3 +148,18 @@ $(function() {
 
 
 
+// DOM Manipulation [dimension]
+$(function() {
+    // if there is: box-sizing: border-box;
+    console.log($(".dim").width()); //  width - padding - border = 280px
+    console.log($(".dim").innerWidth()); // width + padding - border = 296px
+    console.log($(".dim").outerWidth()); // width + padding + border = 300px
+
+    // if there is: box-sizing: border-box;
+    console.log($(".dim").height()); //  height - padding - border = 280px
+    console.log($(".dim").innerHeight()); // height + padding - border = 296px
+    console.log($(".dim").outerHeight()); // width + padding + border = 300px
+});
+
+
+
