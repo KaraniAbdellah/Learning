@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Animated Cards</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background: #f0f0f0;
+      overflow: hidden;
+    }
+    .cards {
+      display: flex;
+      gap: 20px;
+    }
+    .card {
+      width: 150px;
+      height: 200px;
+      background: #007bff;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      opacity: 0;
+      transform: scale(0.8);
+    }
+  </style>
+</head>
+<body>
+  <div class="cards">
+    <div class="card"></div>
+    <div class="card"></div>
+    <div class="card"></div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script>
+    const timeline = gsap.timeline();
+    timeline.fromTo(
+      ".card",
+      { opacity: 0, scale: 0.5, y: 100 },
+      { opacity: 1, scale: 1, y: 0, duration: 0.8, stagger: 0.2 }
+    );
+  </script>
+</body>
+</html>

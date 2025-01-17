@@ -1,0 +1,51 @@
+/* Start Learning GSAP */
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.boxes {
+    /* display: grid; */
+    /* grid-template-columns: repeat(3, 1fr); */
+    height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+}
+
+.code-box {
+    background-color: #7e7e7e;
+    color: white;
+    font-weight: bold;
+    padding: 50px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: "Courier New", monospace;
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* Start Plugins */
+.bar {
+    top: 0;
+    left: 0;
+    position: fixed;
+    background-color: red;
+    width: 10px;
+    height: 10px;
+    padding: 0;
+}
+.text {
+    margin-top: 60px;
+}
+
+
