@@ -4931,15 +4931,15 @@ console.log(req);
 
 /*
     Ajax
-    - Ready State => Status Of The Request
-    [0] Request Not Initialized
-    [1] Server Connection Established [ There Is Connection ]
-    [2] Request Received
-    [3] Processing Request
-    [4] Request Is Finished And Response Is Ready
-    - Status
-    [200] Response Is Successful
-    [404] Not Found
+        - Ready State => Status Of The Request
+        [0] Request Not Initialized
+        [1] Server Connection Established [ There Is Connection ]
+        [2] Request Received
+        [3] Processing Request
+        [4] Request Is Finished And Response Is Ready
+        - Status
+        [200] Response Is Successful
+        [404] Not Found
 */
 var myRequest = new XMLHttpRequest();
 myRequest.open("GET", "https://api.github.com/users/KaraniAbdellah", true);
