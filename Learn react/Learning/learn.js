@@ -27,6 +27,7 @@
 */
 
 
+
 // Installation
 /*
     npx create-react-app learn
@@ -34,7 +35,15 @@
 
 
 
+// React Structure
+/*
+    public Folder is for assets:
+        images, audio files, ...
+    
+    src Folder is your project
+        App.js: is root component that contain all other component
 
-
-
-
+    .gitignore for thing that I do not want to push in github
+    package.json && package-lock.json for depencies for the projects
+        (like libs that you use)
+*/
