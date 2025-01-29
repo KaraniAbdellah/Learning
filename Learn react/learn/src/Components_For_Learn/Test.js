@@ -2,9 +2,11 @@
 
 
 // Test Component 
-function Test( ) {
+function Test() {
     return (
-      <h1>Hello Test Component</h1>
+      <>
+        <h1>Hello Test Component</h1>
+      </>
     );
 }
 

@@ -77,6 +77,8 @@
     import logo from "public/logo.png";
         --> import images
         --> use like: <img src={logo} alt="Logo" />
+    
+    Nested Component: is component inside another component
 */
 
 // in App.js
@@ -96,4 +98,10 @@ export default Test;
 import Test from "./Components/Test";
 
 
+
+
+// What JSX
+/*
+    
+*/ 
 
