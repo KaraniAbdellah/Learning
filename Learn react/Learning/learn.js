@@ -24,7 +24,12 @@
     :::::::::::::::::::
     Vite: Fast tool for React.
     Next.js: Full framework with more features (Routing, SSR, APIs).
+    :::::::::::::::::::
+    HOT RELOAD: is a React library used to edit your code and
+        automatically reflect that change in your running app
+        --> which means you don't need to refresh your browser t see the result
 */
+
 
 
 
@@ -32,6 +37,7 @@
 /*
     npx create-react-app learn
 */
+
 
 
 
@@ -50,6 +56,44 @@
 
 
 
+
 // Create First Component
+/*
+    You Create Component By [Function || Class]
+
+    --> Function components are simpler and more lightweight,
+        defined as JavaScript functions that return JSX.
+    --> Class components provide more control over component
+        behavior.
+    
+    NOTE: for best practice create for each component a file
+
+    import CompoName from "pathToCompon";
+        --> this for use this component in other filies
+    
+    import "FilePath";
+        --> this for import filies in react (css, js, ....) filies
+    
+    import logo from "public/logo.png";
+        --> import images
+        --> use like: <img src={logo} alt="Logo" />
+*/
+
+// in App.js
+function Test( ) {
+    return (
+      <h1>Hello Test Component</h1>
+    );
+}
+// in Test.js
+function Test( ) {
+    return (
+      <h1>Hello Test Component</h1>
+    );
+}
+export default Test;
+// Use this for work with Test Component
+import Test from "./Components/Test";
+
 
 
