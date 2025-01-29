@@ -248,6 +248,16 @@ function Test(props) {
       </>
     );
 }
+function App() {
+  return (
+    <div className="app container">
+        <Test content="" name="Abdellah" email="abdellahkarani@gmail.com" link="google.com"/>
+    </div>
+  );
+}
+
+
+
 
 
 
