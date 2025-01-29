@@ -185,7 +185,7 @@ alert("Hello World");
 /*
     ClassName="red": simple notation
     ClassName={"red, green"}: you can add JS code inside Class
-        
+
 
     import CSS file use:
         import "PathToCssFile"
@@ -203,6 +203,49 @@ function Test() {
           Check Name
         </h1>
       </div>
+    );
+}
+
+
+
+
+// Challenge 1:
+/*
+    in your App.js
+*/
+import Header from "./Challenges/challenge1/Header";
+import Section from "./Challenges/challenge1/Section";
+import Cards from "./Challenges/challenge1/Cards";
+import "./Challenges/challenge1/style.css";
+
+
+
+
+// Props
+/*
+    Props is use props with parameters
+    Props are objects:
+        {
+            email: "abdellahkarani@gmail.com"
+            link: "google.com"
+            name: "Abdellah"
+        }
+*/
+
+function Test(props) {
+    console.log(props);
+    console.log(props.name);
+    console.log(props.email);
+    console.log(props.link);
+    return (
+      <>
+        <h1>{props.name}</h1>
+        <h3>{props.email}</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur
+            adipisicing elit. Qui, tempora.
+        </p>
+        <a href={props.link}>click here</a>
+      </>
     );
 }
 

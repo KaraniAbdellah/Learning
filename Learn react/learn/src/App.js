@@ -1,11 +1,9 @@
-import './App.css';
-// import './Components_For_Learn/Test.css';
-import Test from "./Components_For_Learn/Test";
+import Test from "./Components_For_Learn/Test.js";
 
 function App() {
   return (
-    <div className="App">
-      <Test/>
+    <div className="app container">
+        <Test name="Abdellah" email="abdellahkarani@gmail.com" link="google.com"/>
     </div>
   );
 }
