@@ -102,6 +102,110 @@ import Test from "./Components/Test";
 
 // What JSX
 /*
-    
-*/ 
+    Is combine HTML code inside Js Code
+    This Code:
+        return (
+        <>
+            <h1>Hello Test Component</h1>
+        </>
+        );
+        --> this code for JSX not for HTML
+
+    With JSX format there is a lot of resctriction
+        --> use emmet extentions
+ 
+    To Call Component:
+        <Test/>
+        <Test></Test>
+
+    Inside root eles you should be return just one element
+
+    To Write Javascript Inside JSX Use {}
+
+    Use "className" instead "class"
+*/
+// Test.js
+function Test() {
+    let x = 10;
+    const person = {
+      "name": "abdellah",
+      "age": 20
+    }
+    return (
+    <>
+        <h3>{person.age}</h3>
+        <h1>{person.name} Hello Test Component</h1>
+        <p>
+        {
+            console.log("Hello World" + x + SayHello)
+        }
+        {
+            // this an error because push JS object inside HTML --> Not Supported
+            console.log(person.name)
+        }
+        </p>
+    </>
+    );
+}
+function SayHello() {
+return "Hello World";
+}
+
+
+
+
+// Styling in JSX
+/*
+    Use Attribute Must write in this format:
+        Attribute={Value}
+*/
+
+// Test.js
+function Test() {
+    const eleStyle = {
+        color: "blue",
+        fontSize: "40px",
+    }
+    return (
+    <>
+        <h1 style={eleStyle}>React is Awesome</h1>
+        <button onClick={sayHello}>Click</button>
+    </>
+    );
+}
+function sayHello() {
+alert("Hello World");
+}
+
+
+
+
+
+// Classes in JSX
+/*
+    ClassName="red": simple notation
+    ClassName={"red, green"}: you can add JS code inside Class
+        
+
+    import CSS file use:
+        import "PathToCssFile"
+*/
+// Test.js
+import "./Test.css"
+function Test() {
+  const person = {
+    name: "taha"
+  }
+    return (
+      <div className={"box active container"}>
+        <h1>Hello World</h1>
+        <h1 className={person.name == "taha" ? "greenText": "redText"}>
+          Check Name
+        </h1>
+      </div>
+    );
+}
+
+
+
 
