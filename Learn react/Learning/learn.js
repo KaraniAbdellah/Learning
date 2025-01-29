@@ -221,7 +221,7 @@ import "./Challenges/challenge1/style.css";
 
 
 
-// Props
+// Props || Part 1
 /*
     Props is use props with parameters
     Props are objects:
@@ -230,13 +230,18 @@ import "./Challenges/challenge1/style.css";
             link: "google.com"
             name: "Abdellah"
         }
+    
+    Using Props:
+        <Test content="" name="Abdellah" email="abdellahkarani@gmail.com" link="google.com"/>
+    
+    You can use Default Parameters
 */
 
+// :::::::::: First Example 1
+// Test.js
 function Test(props) {
-    console.log(props);
-    console.log(props.name);
-    console.log(props.email);
-    console.log(props.link);
+    console.log(props); console.log(props.name);
+    console.log(props.email); console.log(props.link);
     return (
       <>
         <h1>{props.name}</h1>
@@ -248,6 +253,7 @@ function Test(props) {
       </>
     );
 }
+// App.js
 function App() {
   return (
     <div className="app container">
@@ -256,8 +262,56 @@ function App() {
   );
 }
 
+// :::::::::: First Example 2
+// Test.js
+function Test({content="no content", name}) {
+    return (
+      <>
+      <h1>{name}</h1>
+        <p>{content}</p>
+      </>
+    );
+}
+// App.js
+function App() {
+  const firstArticle = `
+        This is article
+        for the people that 
+        want to go to France
+    `;
+    return (
+        <div className="app container">
+            <Test content={firstArticle}/>
+        </div>
+    );
+}
 
 
+
+
+// Translate Props as JSX
+/*
+    Children Props are passed inside the component
+*/
+// App.js
+function App() {
+    return (
+        <div className="app container">
+            <Test>
+                {/* this ele come to Test function as "Props Children" */}
+                <h1 className="greenText">Hello JSX I Am Good</h1>
+            </Test>
+        </div>
+    );
+}
+function Test(props) {
+    const children = props.children;
+    return (
+      <>
+        {children}
+      </>
+    );
+}
 
 
 
