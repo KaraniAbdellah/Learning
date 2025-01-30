@@ -2,12 +2,10 @@
 import "./Test.css"
 
 export default function Test(props) {
-    const children = props.children;
-
     return (
-      <>
-        {children}
-      </>
+      <div className="box">
+        <h1>hello World</h1>
+      </div>
     );
 }
 

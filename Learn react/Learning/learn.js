@@ -319,7 +319,12 @@ function Test(props) {
 
 // Conditional Rendering in React
 /*
+    Rendering is process to convert digital
+        model to visually complete images or video.
     
+    Conditional Rendering: is rendering but if some conditions true
+
+    I Appluat
 */
 
 
