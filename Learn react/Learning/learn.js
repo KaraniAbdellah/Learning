@@ -323,9 +323,130 @@ function Test(props) {
         model to visually complete images or video.
     
     Conditional Rendering: is rendering but if some conditions true
+*/
+// App.js
+const showHeader = true;
+function App() {
+    return (
+        <div className="app container">
+            {
+                AppTest(showHeader)
+            }
+        </div>
+    );
+}
+function AppTest(showHeader) {
+    if (showHeader) {
+        return (<Test title="hello"></Test>);
+    } else {
+        return (
+            <div>
+                <h1>this not a header</h1>
+            </div>
+        )
+    }
+}
 
-    I Appluat
+// Test.js
+function Test({title}) {
+    if (title == "" || title == null) {
+        return null;
+    }
+    return (
+      <div className="box">
+        <h1>hello World</h1>
+      </div>
+    );
+}
+
+
+
+
+
+// Rendering List in React
+/*
+    in lists you have more control
+*/
+function App() {
+    const tasks = [
+        {id: 1, title: "doing my homework"},
+        {id: 2, title: "reading book"},
+        {id: 3, title: "studying"},
+        {id: 4, title: "cleaning room"}
+    ];
+    const myTasklist = tasks.map(function(task) {
+        return <li style={{backgroundColor: "#eee"}} key={task.id}>{task.title}</li>;
+    });
+    return (
+        <div>
+            <ul>{myTasklist}</ul>
+        </div>
+    );
+}
+
+
+
+
+
+// Intro to State in React && Problem in React
+/*
+    State: is data that exit in your app at specific time
+*/
+// App.js
+var msg = "I click to button";
+function Test({title}) {
+    return (
+      <div>
+        <button onClick={buttonCliked}>click me</button>
+        <h1>{msg}</h1>
+      </div>
+    );
+}
+function buttonCliked() {
+    msg = "hello button";
+}
+
+
+
+
+
+// React DOM
+/*
+    React creates a new Virtual DOM tree each time a component’s state or props change.
+        and where react create new virtual DOM this is what we called [re-rendering]
+    
+    Local Change Does not Render.
 */
 
+
+
+
+
+// useState Hook in React
+/*
+    - Hooks is functions in react
+    - useState() return array that have two elements [readEle, writeEle]
+    - In this example when I click to the button I can change the state and then the data
+*/
+// Test.js
+function Test() {
+    const state = useState("abdellah");
+    const value = state[0];
+    const setValue = state[1];
+    function Change() {
+        setValue("hello")
+    }
+    return (
+      <div>
+        <button onClick={Change}>click me</button>
+        <h1>{value}</h1>
+      </div>
+    );
+}
+
+
+
+
+// Managing State with Input in React
 
 
