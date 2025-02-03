@@ -4,7 +4,7 @@ import "./Components_For_Learn/Test.css";
 function App() {
     return (
         <div>
-            <Test isLoggedIn={true} userName="Abdellah"></Test>
+            <Test></Test>
         </div>
     );
 }
