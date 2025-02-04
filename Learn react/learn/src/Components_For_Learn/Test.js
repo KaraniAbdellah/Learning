@@ -1,24 +1,46 @@
 // Start Create Test Component
 import "./Test.css"
 
+// React Hooks
+/*
+	Special function that allows functional components
+	to use React features without writting class components (React v16.8)
+	(useState, useEffect, useContext, useReducer, useCallback, and more ...)
 
-// Redering a List
+	useState():
+		A react Hook that allows the creation of a stateful variable
+		And a setter function to update its value in Virtual DOM [name, setName]
+*/
 
-
+import React, {useState} from "react";
 function Test(props) {
-	let fruits = props.items;
+	const [name, setName] = useState("Guest");
+	const [age, setAge] = useState(20);
+	const [isEmployed, setIsEmplyed] = useState(false);
 
-	fruits.sort((a, b) => a.name.localeCompare(b.name));
-	fruits = fruits.filter((fruit) => fruit.calories > 30); 
-	console.log(fruits);
-
-	const listItems = fruits.map((fruit) => 
-		<li key={fruit.key}>{fruit.name} -- {fruit.calories}</li>
-	);
-	
+	const updateName = () => {
+		setName("SpongeBob");
+	}
+	const incrementAge = () => {
+		setAge(age + 1);
+	}
+	const toggleEmployedStatus = () => {
+		setIsEmplyed(!isEmployed);
+	}
 	return (
-		listItems
+		<div>
+			<p>Name: {name}</p>
+			<p>Age: {age}</p>
+			<p>isEmployed: {isEmployed ? "yes": "no"}</p>
+
+			<button onClick={updateName}>Set Name</button>
+			<button onClick={incrementAge}>Increment Age</button>
+			<button onClick={toggleEmployedStatus}>Employed</button>
+		</div>
 	);
 }
 
 export default Test;
+
+
+

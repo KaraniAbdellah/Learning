@@ -383,6 +383,92 @@ function App() {
 
 
 
+// CLick Events
+/*
+	An Intercation when a user clicks on a specific element.
+	We can repond to clicks by passing a callBack to 
+	onClick event handler.
+
+	
+	onClick={handleClick2("john")} calls the function immediately in rendering the components.
+	onClick={() => handleClick2("john")} waits until the button is clicked.
+*/
+function Test(props) {
+	const handleClick = () => console.log("OUCH!!");
+	const handleClick2 = (name) => console.log("Stop Clicking Me " + name + "!!!");
+
+	// Event Paramater
+	const handleClickEvent = (e) => {
+		console.log(e);
+		e.target.textContent = "OUACH 🤞!";
+	};
+	const handleHidden = (e) => e.target.style.display = "none";
+
+	return (
+		<div>
+			<button onClick={handleClick}>click me😀</button>
+			{/* in This Button Before Click you will Show  "Stop Clicking Me john!!!" */}
+			<button onClick={handleClick2("john")}>click again😀</button> 
+			{/* This Solution here */}
+			<button onClick={() => handleClick2("john")}>click again😀</button> 
+
+			<button onDoubleClick={handleClickEvent}>Click Event 👌</button>
+
+			<button onDoubleClick={handleHidden}>Hide Me</button>
+		</div>
+	);
+}
+
+
+
+
+
+// React Hooks
+/*
+    Special function that allows functional components
+    to use React features without writting class components (React v16.8)
+    (useState, useEffect, useContext, useReducer, useCallback, and more ...)
+
+    useState():
+        A react Hook that allows the creation of a stateful variable
+        And a setter function to update its value in Virtual DOM [name, setName]
+*/
+import React, {useState} from "react";
+function Test(props) {
+    const [name, setName] = useState("Guest");
+    const [age, setAge] = useState(20);
+    const [isEmployed, setIsEmplyed] = useState(false);
+
+    const updateName = () => {
+        setName("SpongeBob");
+    }
+    const incrementAge = () => {
+        setAge(age + 1);
+    }
+    const toggleEmployedStatus = () => {
+        setIsEmplyed(!isEmployed);
+    }
+    return (
+        <div>
+            <p>Name: {name}</p>
+            <p>Age: {age}</p>
+            <p>isEmployed: {isEmployed ? "yes": "no"}</p>
+
+            <button onClick={updateName}>Set Name</button>
+            <button onClick={incrementAge}>Increment Age</button>
+            <button onClick={toggleEmployedStatus}>Employed</button>
+        </div>
+    );
+}
+
+
+
+
+// onChange event handler
+
+
+
+
 
 
 
