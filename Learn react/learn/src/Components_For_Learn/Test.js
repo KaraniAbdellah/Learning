@@ -6,15 +6,14 @@ import "./Test.css"
 
 
 function Test(props) {
-	const fruits = [
-		{ name: "apple", key: 1 },
-		{ name: "orange", key: 2 },
-		{ name: "banana", key: 3 },
-		{ name: "coconut", key: 4 }
-	];
+	let fruits = props.items;
+
+	fruits.sort((a, b) => a.name.localeCompare(b.name));
+	fruits = fruits.filter((fruit) => fruit.calories > 30); 
+	console.log(fruits);
 
 	const listItems = fruits.map((fruit) => 
-		<li key={fruit.key}>{fruit.name}</li>
+		<li key={fruit.key}>{fruit.name} -- {fruit.calories}</li>
 	);
 	
 	return (

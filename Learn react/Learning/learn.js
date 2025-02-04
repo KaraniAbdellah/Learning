@@ -348,6 +348,39 @@ function App() {
 
 
 
+// Render lists
+/*
+    map(), filter(), sort()
+*/
+// Test.jsx
+function Test(props) {
+	let fruits = props.items;
+	fruits.sort((a, b) => a.name.localeCompare(b.name));
+	fruits = fruits.filter((fruit) => fruit.calories > 30); 
+	const listItems = fruits.map((fruit) => 
+		<li key={fruit.key}>{fruit.name} -- {fruit.calories}</li>
+	);
+	return (
+		listItems
+	);
+}
+// App.jsx
+function App() {
+    let fruits = [
+        { name: "apple", calories: 23, key: 1 },
+        { name: "orange", calories: 40, key: 2 },
+        { name: "banana",  calories: 53, key: 3 },
+        { name: "coconut",  calories: 90, key: 4 }
+    ];
+    return (
+        <div>
+            <Test items={fruits} category="Fruits"></Test>
+        </div>
+    );
+}
+
+
+
 
 
 
