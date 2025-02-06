@@ -1,41 +1,33 @@
 // Start Create Test Component
 import "./Test.css"
 
-// React Hooks
+// Update Objects in state
 /*
-	Special function that allows functional components
-	to use React features without writting class components (React v16.8)
-	(useState, useEffect, useContext, useReducer, useCallback, and more ...)
-
-	useState():
-		A react Hook that allows the creation of a stateful variable
-		And a setter function to update its value in Virtual DOM [name, setName]
+	use ...PrevCar and Updater Function and ()
+		in arrow function if I use {} ==> javascript except multilple lines
+			ex: (prevCar) => {...prevCar, make: e.target.value}
 */
 
 import React, {useState} from "react";
 function Test(props) {
-	const [name, setName] = useState("Guest");
-	const [age, setAge] = useState(20);
-	const [isEmployed, setIsEmplyed] = useState(false);
+	const [car, setCar] = useState({year: 2024, make: "Ford", model: "Mustang"});
 
-	const updateName = () => {
-		setName("SpongeBob");
+	const HandleMakeChange = (e) => {
+		setCar(prevCar => ({...prevCar, make: e.target.value}));
 	}
-	const incrementAge = () => {
-		setAge(age + 1);
+	const HandleModelChange = (e) => {
+		setCar(prevCar => ({...prevCar, model: e.target.value}));
 	}
-	const toggleEmployedStatus = () => {
-		setIsEmplyed(!isEmployed);
+	const HandleYearChange = (e) => {
+		setCar(prevCar => ({...prevCar, year: e.target.value}));
 	}
+
 	return (
 		<div>
-			<p>Name: {name}</p>
-			<p>Age: {age}</p>
-			<p>isEmployed: {isEmployed ? "yes": "no"}</p>
-
-			<button onClick={updateName}>Set Name</button>
-			<button onClick={incrementAge}>Increment Age</button>
-			<button onClick={toggleEmployedStatus}>Employed</button>
+			<p>Your favorite Car is: {car.make} {car.model} @{car.year}</p>
+			<input onChange={(e) => HandleMakeChange(e)} defaultValue={car.make} type="text"/>
+			<input onChange={(e) => HandleModelChange(e)} type="text" defaultValue={car.model}/>
+			<input onChange={(e) => HandleYearChange(e)} type="text" defaultValue={car.year}/>
 		</div>
 	);
 }

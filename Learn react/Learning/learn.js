@@ -471,8 +471,102 @@ function Test(props) {
         Trigger a function every time the value of input changes
 */
 
+// Test.jsx
+function Test(props) {
+    const [name, setName]  = useState("task");
+    const HandleNameChange = (e) => {
+        console.log(e.target.value);
+        setName(e.target.value);
+    }
+    return (
+        <div>
+            <label>Name: </label>
+            <input value={name} onChange={(e) => HandleNameChange(e)} type="text" />
+            <h3>Your Name: {name}</h3>
+        </div>
+    );
+}
 
 
+
+
+
+// Updater Function in React
+/*
+    A function passed as an argument to setState() usually
+        ex. setYear(Year + 1) ==> setYear(Updater Function) ==> setYear(y => y + 1) 
+        Allow for safe updates based on the previous state
+        Used with multiple state updates and asynchrouns functions
+        GOOD Practice to use updater functions
+    
+    - In This Example Will Increment Just One Time
+        const HandleIncre = () => {
+            setCount(count + 1);
+            setCount(count + 1);
+        }
+*/
+import React, {useState} from "react";
+function Test(props) {
+    const [count, setCount] = useState(0);
+    const HandleDec = () => {
+        setCount(c => c - 1);
+        setCount(c => c - 1);
+    }
+    const HandleReset = () => {
+        setCount(c => c = 0);
+    }
+    const HandleIncre = () => {
+        // Takes a Current State to calculate the next State
+        // React puts your updater function in queue (waitin in line)
+        // During the next render , React will call them in same order
+        setCount(function (count) {
+            return count + 1;
+        });
+        setCount((count) => count + 1);
+    }
+    return (
+        <div>
+            <h1>count = {count}</h1>
+            <button onClick={HandleDec}>Decrement</button>
+            <button onClick={HandleReset}>Reset</button>
+            <button onClick={HandleIncre}>Increment</button>
+        </div>
+    );
+}
+
+
+
+
+
+// Update Objects in state
+/*
+    use ...PrevCar and Updater Function and ()
+        in arrow function if I use {} ==> javascript except multilple lines
+            ex: (prevCar) => {...prevCar, make: e.target.value}
+*/
+import React, {useState} from "react";
+function Test(props) {
+    const [car, setCar] = useState({year: 2024, make: "Ford", model: "Mustang"});
+
+    const HandleMakeChange = (e) => {
+        setCar(prevCar => ({...prevCar, make: e.target.value}));
+    }
+    const HandleModelChange = (e) => {
+        setCar(prevCar => ({...prevCar, model: e.target.value}));
+    }
+    const HandleYearChange = (e) => {
+        setCar(prevCar => ({...prevCar, year: e.target.value}));
+    }
+
+    return (
+        <div>
+            <p>Your favorite Car is: {car.make} {car.model} @{car.year}</p>
+            <input onChange={(e) => HandleMakeChange(e)} defaultValue={car.make} type="text"/>
+            <input onChange={(e) => HandleModelChange(e)} type="text" defaultValue={car.model}/>
+            <input onChange={(e) => HandleYearChange(e)} type="text" defaultValue={car.year}/>
+        </div>
+    );
+}
 
 
 
