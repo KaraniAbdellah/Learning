@@ -465,6 +465,12 @@ function Test(props) {
 
 
 // onChange event handler
+/*
+    OnChange = event handler used primarly with form element
+        ex. <input>, <select>, <radio>, .....
+        Trigger a function every time the value of input changes
+*/
+
 
 
 
