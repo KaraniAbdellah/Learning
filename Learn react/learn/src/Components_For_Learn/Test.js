@@ -6,25 +6,32 @@ import "./Test.css"
 
 import React, {useState} from "react";
 function Test(props) {
-	const [foods, setFoods] = useState(["Apple", "Banana", "Orange"]);
-	async function handleAddEle() {
-		const newFood = document.getElementById("foodInput");
-		await setFoods((foods) => [...foods, newFood.value]);
-		newFood.value = "";
+	const [cars, setCars] = useState([{year: 2024, name: "Musting", model: "Ford"}]);
+	const handleAddCar = () => {
+		const yearName = document.getElementById("yearInput");
+		const carName = document.getElementById("carInput");
+		const modelName = document.getElementById("modelInput");
+
+		const newCar = {
+			year: yearName.value,
+			name: carName.value,
+			model: modelName.value
+		}
+		setCars((cars) => [...cars, newCar]);
 	}
-	const handleRemoveEle = (index) => {
-		setFoods(foods.filter((_, i) => i !== index));
+	const handleRemove = (index) => {
+		setCars(cars.filter((_, i) => i !== index));
 	}
 	return (
 		<div>
-			<h1>List Of Foods: </h1>
+			<h2>List Car Objects: </h2>
 			<ul>
-				{foods.map((food, index) => <li key={index} onClick={() => handleRemoveEle(index)}>{food}</li>)}
+				{cars.map((car, index) => <li onClick={() => handleRemove(index)} key={index}>@{car.year} {car.name} {car.model}</li>)}
 			</ul>
-			<div className="submit">
-				<input type="text" id="foodInput" placeholder="Enter your favorite food"/>
-				<button onClick={handleAddEle}>Add Food</button>
-			</div>
+			<input type="text" id="yearInput" placeholder="Enter Year..."/>
+			<input type="text" id="carInput" placeholder="Enter Car Name..."/>
+			<input type="text" id="modelInput" placeholder="Enter Model..."/>
+			<button onClick={handleAddCar}>Add Car</button>
 		</div>
 	);
 }
