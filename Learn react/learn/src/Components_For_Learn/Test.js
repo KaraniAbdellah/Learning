@@ -3,50 +3,51 @@
 import "./Test.css"
 
 
-// useRef()
-/*
-	useRef(): "use Refrence" Does not cause re-renders when it values changes.
-		When you want a component to "remember" some information,
-		but you don't want that that information to trigger new renders.
-
-		1. Accessing/Interacting/ with DOM elements
-		2. Handling Focus, Animations and Transitions
-		3. Managing TImers, and Itervals
-	
-	
-	// Without Ref:
-		const [number, setNumber] = useState(0);
-		const handleClick = () => {
-			console.log(number);
-			setNumber(n => n + 1);
-		}
-		<button onClick={() => handleClick()}>Click Me!</button>
-	
-	NOTE: I can link ref with value and also with element
-		<input ref={InputRef} type="text"/>
-*/
+// Fetching API with fetch()
 
 import "./style.css";
 
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useState } from "react";
 
 function Test() {
-	const inputRef = useRef(null);
-
-	useEffect(() => {
-	console.log("COMPONENT RENDERED");
-	});
-
-	const handleClick = () => {
-	if (inputRef.current) {
-		inputRef.current.style.backgroundColor = "yellow";
+	/*
+		fetch(`https://api.geoapify.com/v1/ipinfo?apiKey=f89627d3b9004e27ac2b2a7d1baedaab`)
+		.then((res) => {
+			let data = res.json();
+			return data;
+		}).then((data) => {
+			console.log(data);
+		})
+		.catch((err) => {
+			console.log("There Is An Error Here + ", err)
+		});
+	*/
+	const [value, setValue] = useState(false);
+	const [Data, setData] = useState(null);
+	const Click = () => {
+		setValue(true);
 	}
-	};
+	useEffect(() => {
+		if (value === true) {
+			async function fetchData() {
+				const reponse = await fetch('https://api.geoapify.com/v1/ipinfo?apiKey=f89627d3b9004e27ac2b2a7d1baedaab');
+				const data = await reponse.json();
+				console.log(data);
+				setData(data);
+			}
+			fetchData();
+		}
+	}, [value]);
 
 	return (
 	<div>
-		<input ref={inputRef} type="text" />
-		<button onClick={handleClick}>Click Me!</button>
+		<h1>Hello The API</h1>
+		<button onClick={() => Click()}>Fetch</button>
+		<div>
+			{
+				
+			}
+		</div>
 	</div>
 	);
 }
