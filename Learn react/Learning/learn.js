@@ -725,3 +725,93 @@ function Test(props) {
 
 
 
+
+// useContxt()
+/*
+	React Hook that alow you share values between multiple levels
+		of components without passing props through each level.
+	
+		
+	// PROVIDER COMPONENTS
+		import {createContext} from "react";
+		export const MyContext = createContext()
+		<MyContext.Provider value = {value}>
+			<Child/>
+		<MyContext.Provider>
+
+	// CONSUMER COMPONENTS
+		import React, {useContext} from "react";
+		import { MyContext } from "./ComponentA";
+		const value = useContext(MyContext);
+*/
+// Test.jsx
+import CompA from "./CompA";
+import "./style.css";
+
+import React, {useState, useEffect, useContext} from "react";
+function Test(props) {
+    const [user, setUser] = useState();
+    return (
+        <div>
+            <CompA></CompA>
+        </div>
+    );
+}
+// Comp1.jsx
+import React, {useState, createContext} from 'react';
+import CompB from './CompB';
+export const UserContext = createContext();
+function CompA() {
+    const [user, setUser] = useState("Abdellah");
+    return (
+        <div>
+            <h3>
+                Hello CompA
+                <UserContext.Provider value={user}>
+                    <CompB user={user}></CompB>
+                </UserContext.Provider>
+            </h3>
+        </div>
+    );
+}
+
+// CompB.jsx
+import React, { useContext } from 'react';
+import CompC from './CompC';
+import { UserContext } from './CompA';
+function CompB() {
+    const user = useContext(UserContext);
+  return (
+    <div>
+        <h3>
+            Hello CompB
+            <h4>By {user}</h4>
+            <CompC></CompC>
+        </h3>
+    </div>
+  )
+}
+
+// CompC.jsx
+import React, {useContext} from 'react';
+import { UserContext } from './CompA'; // Location of UserContext
+function CompC() {
+    const user = useContext(UserContext);
+    return (
+    <div>
+        <h3>
+            Hello CompC
+            <h4>By {user}</h4>    
+        </h3>
+        
+    </div>
+)
+}
+
+
+
+
+
+
+// 
+
