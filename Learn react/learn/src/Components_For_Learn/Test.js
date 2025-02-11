@@ -2,36 +2,34 @@
 import "./Test.css"
 
 
-import React, {useState, useEffect} from "react";
-function Test(props) {
-	const [width, setWidth] = useState(window.innerWidth);
-	const [height, setHeight] = useState(window.innerHeight);
- 
-	const handleResize = () => {
-		setWidth(window.innerHeight);
-		setHeight(window.innerWidth);
-	}
-	// Widthout useEffect()
-	// window.addEventListener("resize", () => {
-	// 	handleResize();
-	// });
-	// With UseEffect()
-	useEffect(() => {
-		window.addEventListener("resize", () => {
-			handleResize();
-			console.log("EVENT LISTENER ADDED");
-		});
-		return() => {
-			window.removeEventListener("resize", handleResize);
-			console.log("EVENT LISTENEAR REMOVED");
-		}
-	}, [width, height]);
+// useContxt()
+/*
+	React Hook that alow you share values between multiple levels
+		of components without passing props through each level.
 	
+		
+	// PROVIDER COMPONENTS
+		import {createContext} from "react";
+		export const MyContext = createContext()
+		<MyContext.Provider value = {value}>
+			<Child/>
+		<MyContext.Provider>
 
+	// CONSUMER COMPONENTS
+		import React, {useContext} from "react";
+		import { MyContext } from "./ComponentA";
+		const value = useContext(MyContext);
+*/
+
+import CompA from "./CompA";
+import "./style.css";
+
+import React, {useState, useEffect, useContext} from "react";
+function Test(props) {
+	const [user, setUser] = useState();
 	return (
 		<div>
-			<h1>Window Width: {width}px</h1>
-			<h1>Window height: {height}px</h1>
+			<CompA></CompA>
 		</div>
 	);
 }
