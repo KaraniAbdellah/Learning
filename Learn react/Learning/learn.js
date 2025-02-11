@@ -573,5 +573,93 @@ function Test(props) {
 
 
 
+// UseEffect()
+/*
+	UseEffect() = React Hook that tells React  Do Some Code When (pick one):
+		This Component Re-render
+		This Component mounts
+		The state of a value
+	USES:
+		#1 Event Listeners
+		#2 Dom Manipulation
+		#3 Subscriptions (real-time updates)
+		#4 Fetching Data from API
+		#5 Clean Up When a Components unmount
+	
+	useEffect(() => {}) // Runs after every re-render
+	useEffect(() => {}, []) // Runs only on mount
+	useEffect(() => {}, [value]) // Runs on mount + when value changes
+
+    NOTE: "We Can Add Another UseEffect()"
+*/
+import React, {useState, useEffect} from "react";
+function Test(props) {
+    const [count, setCount] = useState(0);
+    const [color, setColor] = useState("green");
+    const addCount = () => {
+        setCount(count => count + 1);
+    }
+    const subtract = () => {
+        setCount((count) => count - 1);
+    }
+    const changeColor = () => {
+        setColor((color) => color === "green" ? "red": "green");
+    }
+    // Each Time Re-render I Would Do This
+    /*
+        Without Dependecies Each Render The Values Change
+        with Count in Depencies --> if count or color change --> update the title
+    */
+    useEffect(() => {
+        document.title = `Count: ${count} ${color}`;
+        document.body.style.backgroundColor = color;
+        // Clean Up Function
+        return () => {
+            // Some Clean Up Code
+        }
+    }, [count, color]);
+    return (
+        <div>
+            <p>Count: {count}</p>
+            <button onClick={() => addCount()}>Add</button>
+            <button onClick={() => subtract()}>Subtract</button><br />
+            <button onClick={() => changeColor()}>Change Color</button>
+        </div>
+    );
+}
+// Another Example
+import React, {useState, useEffect} from "react";
+function Test(props) {
+    const [width, setWidth] = useState(window.innerWidth);
+    const [height, setHeight] = useState(window.innerHeight);
+ 
+    const handleResize = () => {
+        setWidth(window.innerHeight);
+        setHeight(window.innerWidth);
+    }
+    // Widthout useEffect()
+    window.addEventListener("resize", () => {
+    	handleResize();
+    });
+    // With UseEffect()
+    useEffect(() => {
+        window.addEventListener("resize", () => {
+            handleResize();
+            console.log("EVENT LISTENER ADDED");
+        });
+    }, [width, height]);
+    
+
+    return (
+        <div>
+            <h1>Window Width: {width}px</h1>
+            <h1>Window height: {height}px</h1>
+        </div>
+    );
+}
+
+
+
+
 
 
