@@ -926,7 +926,10 @@ function Test() {
 
 
 
-// Fetching The Data Using AXIOS
+// Fetching API with Axios
+/*
+	To Install: npm i axios  --save 
+*/
 // Test.jsx
 import axios from "axios";
 function Test() {

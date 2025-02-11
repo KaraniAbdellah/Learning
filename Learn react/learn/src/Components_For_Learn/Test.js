@@ -3,10 +3,7 @@
 import "./Test.css"
 
 
-// Fetching API with Axios
-/*
-	To Install: npm i axios  --save 
-*/
+
 import "./style.css";
 import axios from "axios";
 
