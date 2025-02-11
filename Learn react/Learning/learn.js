@@ -900,7 +900,7 @@ function Test() {
 	useEffect(() => {
 		if (value === true) {
 			async function fetchData() {
-				const reponse = await fetch('https://api.geoapify.com/v1/ipinfo?apiKey=f89627d3b9004e27ac2b2a7d1baedaab');
+				const reponse = await fetch('https://api.geoapify.com/v1/ipinfo?apiKey=f89627d3b9004e27ac2b2a7d1baedaab', {method: "GET"});
 				const data = await reponse.json();
 				console.log(data);
 				setData(data);
@@ -921,3 +921,38 @@ function Test() {
 	</div>
 	);
 }
+
+
+
+
+
+// Fetching The Data Using AXIOS
+// Test.jsx
+import axios from "axios";
+function Test() {
+	let apiKey = 'https://api.geoapify.com/v1/ipinfo?apiKey=f89627d3b9004e27ac2b2a7d1baedaab';
+	axios.get(apiKey).then(response => {
+		console.log(response.data);
+	}).catch((err) => {
+		console.log("Error!!!");
+	});
+	return (
+	<div>
+		<h1>Hello The API</h1>
+		<button>Fetch</button>
+	</div>
+	);
+}
+
+// '''''''''''''''''''''''
+// NOTE: If You Want to Intercat With DB Via API 
+// You Need to Define All Methods [GET, POST, PUT, DELETE] with fetch or Axios
+// '''''''''''''''''''''''
+
+
+
+
+
+
+
+
