@@ -1,9 +1,12 @@
-import React from 'react'
+import React from 'react';
+import { useParams } from 'react-router-dom';
+
 
 export default function About() {
-  return (
-    <div>
-        <h1>About</h1>
-    </div>
-  )
+    const { id } = useParams();
+    return (
+        <div>
+            <h1>About {id}</h1>
+        </div>
+    );
 }

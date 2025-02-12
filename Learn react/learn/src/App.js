@@ -35,7 +35,6 @@ import "./Components_For_Learn/Test.css";
         ** HashRouter: Uses a # in the URL to change pages, mainly for old browsers.
         ** MemoryRouter: Keeps track of page changes in memory without changing the URL.
 
-
     - index.js
         <React.StrictMode>
             <BrowserRouter>
@@ -43,6 +42,10 @@ import "./Components_For_Learn/Test.css";
             </BrowserRouter>
         </React.StrictMode>
     
+    - Dynamic Routes && Specifc Routes
+        path="/contact/:id"
+        path="/contact/new"
+        <Route path="*" element={<h1>Not Found Page</h1>}/> // can be any route
 */
 import { useRef, useEffect, useState } from "react";
 import { Routes, Route, Link } from "react-router-dom";
@@ -57,15 +60,21 @@ function App() {
     <div>
         <nav>
             <ul>
-                <li><Link to="/">Home</Link></li>
+                <li><Link to="/home">Home</Link></li>
                 <li><Link to="/about">About</Link></li>
                 <li><Link to="/contact">Contact</Link></li>
             </ul>
+            <Link to="/about/1">About 1</Link>
+            <Link to="/about/2">About 2</Link>
+            <Link to="/about/new">About new</Link>
         </nav>
         <Routes>
-            <Route path="/" element={<Home />}/>
+            <Route path="/home" element={<Home />}/>
             <Route path="/contact" element={<Contact />}/>
             <Route path="/about" element={<About />}/>
+            <Route path="/about/:id" element={<About />}/>
+            <Route path="/about/new" element={<About />}/>
+            <Route path="*" element={<h1>Not Found Page</h1>}/>
         </Routes>    
     </div>
     );
