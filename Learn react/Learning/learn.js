@@ -980,7 +980,7 @@ function Test() {
 
 
 
-// HTTP Method in Axios [GET, POST, PUT, DELETE]
+// HTTP Method With Axios [GET, POST, PUT, DELETE]
 import axios from "axios";
 import { useRef, useEffect, useState } from "react";
 

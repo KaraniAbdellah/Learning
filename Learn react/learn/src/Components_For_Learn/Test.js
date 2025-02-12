@@ -3,7 +3,7 @@ import "./Test.css";
 import "./style.css";
 
 
-// HTTP Method in Axios [GET, POST, PUT, DELETE]
+// HTTP Method With Fetch() [GET, POST, PUT, DELETE]
 import axios from "axios";
 import { useRef, useEffect, useState } from "react";
 
