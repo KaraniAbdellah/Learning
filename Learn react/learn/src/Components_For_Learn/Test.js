@@ -10,27 +10,15 @@ import { useRef, useEffect, useState } from "react";
 function Test() {
 	const [data, setData] = useState([]);
 	useEffect(() => {
-		// Get Method
-		axios.get("https://reqres.in/api/users?page=2").then((res) => {
-			setData(res.data.data);
-			console.log(res.data.data);
-		}).catch((err) => {
-			console.log(err);
+		console.log(data);
+		// GET Method
+		fetch("https://reqres.in/api/users?page=2").then((res) => {
+			console.log(res);
+			return res.json();
+		}).then((data) => {
+			console.log(data);
 		});
-		// Post Method
-		axios.post("https://reqres.in/api/users", {
-			"name": "Abdellah",
-			"job": "Developer"
-		}).then(res => console.log(res)).catch((err) => console.log(err));
-		// PUT Method
-		axios.post("https://reqres.in/api/users/2", {
-			"name": "Abdellah",
-			"job": "Developer"
-		}).then(res => console.log(res)).catch((err) => console.log(err));
-		// DELETE Method
-		axios.delete("https://reqres.in/api/users/2").
-		then(res => console.log(res))
-		.catch((err) => console.log(err));
+		// POST Method
 	}, []);
 	return (
 	<div>
