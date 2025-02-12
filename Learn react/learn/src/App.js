@@ -25,23 +25,49 @@ import "./Components_For_Learn/Test.css";
 		If you are upgrading from v5, you will need to use the @latest flag:
 			--> npm i -D react-router-dom@latest
 
+    - Router Types
+        "Router Used in index.js"
+        import { BrowserRouter, HashRouter, MemoryRouter, Static } from 'react-router-dom';
+        "By Used Router Type We Enable Clien-Side Routing in a React app"
+
+        ** usetable_HistoryRouter: Helps navigate between pages in React using a function.
+        ** BrowserRouter: Uses the browser's history to change pages with clean URLs.
+        ** HashRouter: Uses a # in the URL to change pages, mainly for old browsers.
+        ** MemoryRouter: Keeps track of page changes in memory without changing the URL.
+
+
     - index.js
         <React.StrictMode>
             <BrowserRouter>
             <App />
             </BrowserRouter>
         </React.StrictMode>
-        "Enable Clien-Side Routing in a React app"
+    
 */
 import { useRef, useEffect, useState } from "react";
-import { BrowserRouter } from "react-router-dom";
+import { Routes, Route, Link } from "react-router-dom";
 
+// Import Essentiel Components
+import Home from "./Components_For_Learn/CompoForRouter/Home.jsx";
+import Contact from "./Components_For_Learn/CompoForRouter/Contact.jsx";
+import About from "./Components_For_Learn/CompoForRouter/About.jsx";
 
 function App() {
     return (
-        <div>
-            <h1>Hello React Router</h1>
-        </div>
+    <div>
+        <nav>
+            <ul>
+                <li><Link to="/">Home</Link></li>
+                <li><Link to="/about">About</Link></li>
+                <li><Link to="/contact">Contact</Link></li>
+            </ul>
+        </nav>
+        <Routes>
+            <Route path="/" element={<Home />}/>
+            <Route path="/contact" element={<Contact />}/>
+            <Route path="/about" element={<About />}/>
+        </Routes>    
+    </div>
     );
 }
 
