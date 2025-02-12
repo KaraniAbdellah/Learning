@@ -17,11 +17,20 @@ function Test() {
 		}).catch((err) => {
 			console.log(err);
 		});
-
-		return (() => {
-			console.log("Render UnMouting");
-		});
 		// Post Method
+		axios.post("https://reqres.in/api/users", {
+			"name": "Abdellah",
+			"job": "Developer"
+		}).then(res => console.log(res)).catch((err) => console.log(err));
+		// PUT Method
+		axios.post("https://reqres.in/api/users/2", {
+			"name": "Abdellah",
+			"job": "Developer"
+		}).then(res => console.log(res)).catch((err) => console.log(err));
+		// DELETE Method
+		axios.delete("https://reqres.in/api/users/2").
+		then(res => console.log(res))
+		.catch((err) => console.log(err));
 	}, []);
 	return (
 	<div>
