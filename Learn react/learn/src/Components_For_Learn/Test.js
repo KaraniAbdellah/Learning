@@ -1,25 +1,38 @@
 // Start Create Test Component
-import "./Test.css"
-
-
-
+import "./Test.css";
 import "./style.css";
+
+
+// HTTP Method in Axios [GET, POST, PUT, DELETE]
 import axios from "axios";
-
-
 import { useRef, useEffect, useState } from "react";
 
 function Test() {
-	let apiKey = 'https://api.geoapify.com/v1/ipinfo?apiKey=f89627d3b9004e27ac2b2a7d1baedaab';
-	axios.get(apiKey).then(response => {
-		console.log(response.data);
-	}).catch((err) => {
-		console.log("Error!!!");
-	});
+	const [data, setData] = useState([]);
+	useEffect(() => {
+		// Get Method
+		axios.get("https://reqres.in/api/users?page=2").then((res) => {
+			setData(res.data.data);
+			console.log(res.data.data);
+		}).catch((err) => {
+			console.log(err);
+		});
+
+		return (() => {
+			console.log("Render UnMouting");
+		});
+		// Post Method
+	}, []);
 	return (
 	<div>
-		<h1>Hello The API</h1>
-		<button>Fetch</button>
+		<h1>Fetching The Data...</h1>
+		<div className="emails">
+			{
+				data.map((data, index) => <p key={index}>{data.email}</p>)
+			}
+		</div>
 	</div>
 	);
 }
+export default Test;
+

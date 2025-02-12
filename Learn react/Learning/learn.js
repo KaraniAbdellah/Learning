@@ -671,6 +671,11 @@ function Test(props) {
 	useEffect(() => {}, [value]) // Runs on mount + when value changes
 
     NOTE: "We Can Add Another UseEffect()"
+
+    There are three main phases for useEffect: Mounting, Updating, and Unmounting.
+        Mounting: This happens when the component is first added to the screen (rendered)
+        Updating: This happens when a state or prop changes, and the component re-renders.
+        Unmounting: This happens when the component is removed from the screen.
 */
 import React, {useState, useEffect} from "react";
 function Test(props) {
@@ -738,6 +743,24 @@ function Test(props) {
     );
 }
 
+// Example (Mounting):
+useEffect(() => {
+    console.log('Component mounted');
+  }, []);  // Empty dependency array means it runs only once
+
+// Example (Updating):
+const [count, setCount] = useState(0);
+useEffect(() => {
+  console.log('Count updated:', count);
+}, [count]);  // Runs every time `count` changes
+// Example (Unmounting):
+useEffect(() => {
+    console.log('Component mounted');
+    return () => {
+      console.log('Component unmounted');
+    };
+}, []);  // Cleanup when component unmounts
+  
 
 
 
