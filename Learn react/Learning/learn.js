@@ -1206,3 +1206,54 @@ function About() {
 
 
 
+
+
+
+// Routes || Part 2
+/*
+    Nested Routes:
+    Create Router Inside Another Route
+*/
+import AboutLayout from "./Components_For_Learn/CompoForRouter/AboutLayout.jsx";
+function App() {
+    return (
+    <div>
+        <nav>
+            <ul>
+                <li><Link to="/about">About</Link></li>
+                <li><Link to="/contact">Contact</Link></li>
+            </ul>
+        </nav>
+        <Routes>
+            <Route path="/" element={<Home />}></Route>
+            <Route path="/about" element={<AboutLayout />}>
+                <Route index element={<About />}></Route>
+                <Route path=":id" element={<About />}></Route>
+            </Route>
+            <Route path="/contact" element={<Contact />}></Route>
+        </Routes>
+    </div>
+    );
+}
+
+// AboutLayer.jsx
+import React from 'react';
+import { Link, Outlet } from "react-router-dom";
+function AboutLayout() {
+  return (
+    <div>
+        <h1>AboutLayout</h1>
+        <Link to="/about/1">About 1</Link>
+        <br />
+        <Link to="/about/2">About 2</Link>
+        <br />
+        <Link to="/about/3">About 3</Link>
+        <Outlet />
+    </div>
+  )
+}
+
+
+
+
+
