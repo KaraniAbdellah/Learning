@@ -28,6 +28,24 @@
     HOT RELOAD: is a React library used to edit your code and
         automatically reflect that change in your running app
         --> which means you don't need to refresh your browser t see the result
+    
+    In react You Show Outpu Two Time Becuase of StrictMode [that help detection of bugs]
+
+    Click() runs immediately when the component renders.
+    () => Click() delays execution until the button is clicked. ✅
+*/
+
+
+
+
+// re-Render Causes
+/*
+    In React, a component re-renders in the following cases:
+
+    State changes: When setState() or useState() is called, React triggers a re-render to reflect the new state.
+    Props changes: If the parent component passes new props to the child, the child component re-renders.
+    Context changes: When the value in React Context changes, components using that context re-render.
+    Force update: Calling forceUpdate() triggers a re-render manually (rarely used).
 */
 
 
@@ -854,4 +872,90 @@ function Test() {
 	</div>
 	);
 }
+
+
+
+
+
+// Fetching The Data
+// Test.jsx
+function Test() {
+	/*
+		fetch(`https://api.geoapify.com/v1/ipinfo?apiKey=f89627d3b9004e27ac2b2a7d1baedaab`)
+		.then((res) => {
+			let data = res.json();
+			return data;
+		}).then((data) => {
+			console.log(data);
+		})
+		.catch((err) => {
+			console.log("There Is An Error Here + ", err)
+		});
+	*/
+	const [value, setValue] = useState(false);
+	const [Data, setData] = useState(null);
+	const Click = () => {
+		setValue(true);
+	}
+	useEffect(() => {
+		if (value === true) {
+			async function fetchData() {
+				const reponse = await fetch('https://api.geoapify.com/v1/ipinfo?apiKey=f89627d3b9004e27ac2b2a7d1baedaab', {method: "GET"});
+				const data = await reponse.json();
+				console.log(data);
+				setData(data);
+			}
+			fetchData();
+		}
+	}, [value]);
+
+	return (
+	<div>
+		<h1>Hello The API</h1>
+		<button onClick={() => Click()}>Fetch</button>
+		<div>
+			{
+				
+			}
+		</div>
+	</div>
+	);
+}
+
+
+
+
+
+// Fetching API with Axios
+/*
+	To Install: npm i axios  --save 
+*/
+// Test.jsx
+import axios from "axios";
+function Test() {
+	let apiKey = 'https://api.geoapify.com/v1/ipinfo?apiKey=f89627d3b9004e27ac2b2a7d1baedaab';
+	axios.get(apiKey).then(response => {
+		console.log(response.data);
+	}).catch((err) => {
+		console.log("Error!!!");
+	});
+	return (
+	<div>
+		<h1>Hello The API</h1>
+		<button>Fetch</button>
+	</div>
+	);
+}
+
+// '''''''''''''''''''''''
+// NOTE: If You Want to Intercat With DB Via API 
+// You Need to Define All Methods [GET, POST, PUT, DELETE] with fetch or Axios
+// '''''''''''''''''''''''
+
+
+
+
+
+
+
 
