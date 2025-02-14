@@ -1,5 +1,5 @@
 // Use Mongoose Model
-const mongoose = require("./../src/node_modules/mongoose");
+const mongoose = require("../node_modules/mongoose");
 
 // Create Schema that define the data that will be store in DB
 const Schema = new mongoose.Schema({

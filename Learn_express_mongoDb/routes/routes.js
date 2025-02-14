@@ -1,7 +1,7 @@
 
 // Use Express Framework & Body-Parser & Task Model
-const express = require("./../src/node_modules/express");
-const body_parser = require("./../src/node_modules/body-parser");
+const express = require("./../node_modules/express");
+const body_parser = require("./../node_modules/body-parser");
 const Task = require("./../models/Task");
 const PORT = 3000;
 
