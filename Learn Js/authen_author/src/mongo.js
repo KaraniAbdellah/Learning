@@ -6,8 +6,7 @@ mongoose.connect("mongodb://127.0.0.1:27017/Login").then(() => {
     console.log("Error + " + err);
 });
 
-
-const User = mongoose.Schema({
+const UserSchema = mongoose.Schema({
     email: {
         type: String, 
         required: true
@@ -22,7 +21,7 @@ const User = mongoose.Schema({
     }
 });
 
-const Collection = new mongoose.model("UserLogin", User);
+const User = new mongoose.model("UserLogin", UserSchema);
 
 module.exports = User;
 
