@@ -1,4 +1,0 @@
-in js learn more about OOP:
-    interfaces, abstractions, polymorphisme, classes & objets, inheritence
-
-
