@@ -7,9 +7,9 @@ const app = express();
 app.use(express.json());
 
 const posts = [
-    {id: 1, username: "John Deo"},
-    {id: 2, username: "John Miller"},
-    {id: 3, username: "Brayan Don"},
+    {id: 1, username: "John"},
+    {id: 2, username: "Miller"},
+    {id: 3, username: "Don"},
 ];
 
 app.get("/posts", authenticateToken, (req, res) => {
