@@ -1,32 +1,45 @@
+const express = require("express");
+const jwt = require("jsonwebtoken");
+const dotenv = require("dotenv");
 
-// JWT
-/*
-    A JSON Web Token (JWT) is a standard (RFC 7519)
+dotenv.config();
+const app = express();
+app.use(express.json());
 
-    // Components of Token:
-        xxxxx.yyyyy.zzzzz
-        xxxxx: consits type of token wich is JWT && algorithme bening such as HMAC SHA256 or RSA.
-        yyyyy: which contains the claims, claims are Claims are statements about an entity (typically, the user) and additional data.
-        zzzzz: Signature
+const posts = [
+    {id: 1, username: "John Deo"},
+    {id: 2, username: "John Miller"},
+    {id: 3, username: "Brayan Don"},
+];
 
-    How JWT token works ?
-        User Logs In: The client (browser) sends login credentials to the server.
-        Server Generates JWT: If credentials are valid, the server creates a JWT containing user data and signs it with a secret key.
-        Token Sent to Client: The JWT is sent back to the client and stored (usually in localStorage or a cookie).
-        Client Sends Token in Requests: For protected routes, the client includes the JWT in the Authorization header (Bearer Token).
-        Server Verifies and Responds: The server verifies the token, extracts user info, and processes the request if valid.
-    
-    This Token Will Store in Cookies for Second Time
-*/ 
-const jwt = require('jsonwebtoken');
-const crypto = require('crypto');
-const secretKey = crypto.randomBytes(32).toString('hex');
+app.get("/posts", authenticateToken, (req, res) => {
+    res.json(posts.filter(post => post.username === req.body.username)); // Changed req.json to res.json
+    console.log("Request Come To Get Method --> Posts");
+});
 
-const token = jwt.sign({
-    username: "abdellah",
-    id: 1,
-}, secretKey, { expiresIn: '1h' });
+app.post("/login", (req, res) => {
+    console.log("Request Came To POST Method --> Login");
+    const username = req.body.username;
+    const user = { username: username };
 
-console.log("Token: " + token);
+    // Create Token
+    const accessToken = jwt.sign(user, "SCREtKeY");
+    res.json({ accessToken: accessToken });
+});
 
+// Create Middleware --> Verify Token && Check The User
+function authenticateToken(req, res, next) { // Changed nex to next
+    const authHeader = req.headers["authorization"];
+    const token = authHeader && authHeader.split(" ")[1];
+    if (token === null) return res.sendStatus(401); // Changed senStatus to sendStatus
 
+    jwt.verify(token, "SCREtKeY", (err, user) => {
+        if (err) return res.sendStatus(403);
+        req.user = user;
+        next(); 
+    });
+}
+
+app.listen(process.env.PORT || 3000, () => {
+    console.log(`✅ Port Running in ${process.env.PORT || 3000}`);
+});
