@@ -36,7 +36,7 @@ function authenticateToken(req, res, next) { // Changed nex to next
     jwt.verify(token, "SCREtKeY", (err, user) => {
         if (err) return res.sendStatus(403);
         req.user = user;
-        next(); 
+        next();
     });
 }
 

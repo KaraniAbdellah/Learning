@@ -1,5 +1,5 @@
 GET http://127.0.0.1:3000/posts
-Authorization: Bearer SCREtKeY
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkpvaG4iLCJpYXQiOjE3NDA3NjU2MjJ9.dmfrQgvW0M0oRtYVxwuANkhoJsGCgQNOBrAlCSCvEGQ
 
 ###
 
