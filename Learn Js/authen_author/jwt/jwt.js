@@ -40,7 +40,7 @@ app.post("/decode", (req, res) => {
         { complete: true }
     ); 
     res.status(200).json({message: decoded});
-}); 
+});
 
 app.post("/storeCookie", (req, res) => {
     // Store Token In Cookies
