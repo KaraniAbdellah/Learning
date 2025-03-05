@@ -21,7 +21,6 @@ app.get("/auth/google/callback",
 );
 
 app.get("/auth/failure", (req, res) => {
-    console.log("Hello failure");
     res.send("Somethign Wrong...");
 });
 
