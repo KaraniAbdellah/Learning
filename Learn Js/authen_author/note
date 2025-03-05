@@ -1,0 +1,93 @@
+import express from "express";
+import "./auth.js";
+import passport from "passport";
+import cors from "cors"
+
+const app = express();
+app.use(express.json());
+app.use(cors({ origin: "http://127.0.0.1:3000", credentials: true }));
+
+app.get("/auth/google/callback", 
+    passport.authenticate("google", {
+        failureRedirect: "/auth/failure", 
+        successRedirect: "/protected"
+        },
+        (req, res) => {
+    console.log("Request Wes Come for CallBack")
+    }),
+);
+
+
+app.get("/auth/failure", (req, res) => {
+    console.log("Hello failure");
+    res.send("Somethign Wrong...");
+});
+
+app.get("/auth/google", passport.authenticate("google", { scope: ["email", "profile"] }));
+
+
+
+app.listen(process.env.PORT || 3000, () => {
+    console.log(`✅ Port Running in ${process.env.PORT || 3000}`);
+});
+
+
+
+
+
+
+import express from "express";
+import "./auth.js";
+import passport from "passport";
+import cors from "cors"
+
+const app = express();
+app.use(express.json());
+app.use(cors({ origin: "http://127.0.0.1:3000", credentials: true }));
+
+app.get("/auth/google/callback", 
+    passport.authenticate("google", {
+        failureRedirect: "/auth/failure", 
+        successRedirect: "/protected"
+        },
+        (req, res) => {
+    console.log("Request Wes Come for CallBack")
+    }),
+);
+
+
+app.get("/auth/failure", (req, res) => {
+    console.log("Hello failure");
+    res.send("Somethign Wrong...");
+});
+
+app.get("/auth/google", passport.authenticate("google", { scope: ["email", "profile"] }));
+
+
+
+app.listen(process.env.PORT || 3000, () => {
+    console.log(`✅ Port Running in ${process.env.PORT || 3000}`);
+});
+
+
+import passport from "passport";
+import GoogleStrategy from "passport-google-oauth2";
+
+
+passport.use(new GoogleStrategy({
+    callbackURL: "http://localhost:5174/auth/google/callback",
+    passReqToCallback: true
+    },
+    function(request, accessToken, refreshToken, profile, done) {
+        return done(null, profile);
+    }
+));
+
+passport.serializeUser((user, done) => {
+    done(null, user);
+});
+
+passport.deserializeUser((user, done) => {
+    done(null, user);
+});
+
