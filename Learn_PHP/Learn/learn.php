@@ -112,6 +112,62 @@
     echo $total;
     
 
+    // If statement
+    $age = 20;
+    if ($age >= 18) {
+        echo "You are an adult.\n";
+    } else if( $age >= 0) {
+        echo "You are a minor.\n";
+    } else {
+        echo "None";
+    }
+
+
+    // Switch statement
+    $day = "Monday";
+    switch ($day) {
+        case "Monday":
+            echo "Start of the week.\n";
+            break;
+        case "Friday":
+            echo "End of the week.\n";
+            break;
+        default:
+            echo "A normal day.\n";
+    }
+
+
+    // For loop
+    for ($i = 1; $i <= 5; $i++) {
+        echo "Iteration $i\n";
+    }
+
+    // While loop
+    $count = 1; $a = 10;
+    while ($count <= 3) {
+        echo "Count: $count\n";
+        $count++;
+    }
+    do {
+        echo "a: $a\n";
+        $a--;
+    } while ($a >= 0);
+
+
+
+    // Logical operators
+    $x = true;
+    $y = false;
+    if ($x && $y) { echo "Both are true\n";}
+    if ($x || $y) { echo "At least one is true\n";}
+    if (!$y) { echo "Y is false\n";}
+    if ($x xor $y) { echo "One is true, but not both\n";}
+    if ($x and $y) { echo "Both are true (using and)\n";}
+    if ($x or $y) { echo "At least one is true (using or)\n";}
+    
+
+
+    // Arrays
 
 
 
