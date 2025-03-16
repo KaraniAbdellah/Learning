@@ -20,6 +20,7 @@ import userModel from '../model/userModel.js';
 
 
 const protect = asyncHandler(async(req, res, next) => {
+    console.log("Procted Function");
     let token;
     if (req.headers.authorization && req.headers.authorization.startsWith("Bearer")) {
         try {
@@ -28,10 +29,19 @@ const protect = asyncHandler(async(req, res, next) => {
             // Verfiy The Token
             const decoded = jwt.verify(token, process.env.JWT_SECRET);
             // Get User from token
-            req.user = await userModel,find()
+            req.user = await userModel.findById(decoded.id).select("-password");
+            console.log(req.user);
+            // End Of Middlwares
+            next();
         } catch (error) {
-            
+            console.log(error);
+            res.status(401).send({message: "Not Authorized"});
         }
+    }
+    
+    if (!token) {
+        console.log(token);
+        res.status(401).send({message: "Not Authorized [No Token]"});
     }
 });
 

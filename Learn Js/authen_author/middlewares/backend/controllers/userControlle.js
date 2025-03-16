@@ -81,8 +81,10 @@ const loginUser = asyncHandler(async (req, res) => {
 // @route Login POST /user/GetMe
 // @access Private
 const getMe = asyncHandler(async (req, res) => {
-  res.json({ message: "User Data Display" });
+  console.log(req.user);
+  res.status(200).send(req.user);
 });
+
 
 // Generate Token [JWT]
 const generateToken = (id) => {
