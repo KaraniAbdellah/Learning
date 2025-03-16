@@ -81,7 +81,35 @@
 
 
 
-    // Exercice
+    // Exercice [$_GET and $_POST varaibles]
+    /*
+        <form action="index.php" method="get">
+            <label for="quantity">Quantity: </label>
+            <input type="text" name="quantity" /> <br>
+            <input type="submit" name="Total" />
+        </form>
+    */
+    $item = "Pizza";
+    $price = 4.55;
+    $total = null;
+    $total = $quantity * $price;
+
+
+
+    // Math Function
+    $x = $_POST["x"];
+    $y = $_POST["y"];
+    $total = abs($x);
+    $total = round($x);
+    $total = floor($x);
+    $total = ceil($x);
+    $total = pow($x, $y);
+    $total = sqrt($x);
+    $total = max($x, $y, $z);
+    $total = min($x, $y, $z);
+    $total = pi();
+    $total = rand(0, 10);
+    echo $total;
     
 
 
