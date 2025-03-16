@@ -27,7 +27,7 @@ const bcrypt = require('bcrypt');
 
 // MiddleWares
 /*
-    
+    is a function that has access to req and res
 */
 
 
