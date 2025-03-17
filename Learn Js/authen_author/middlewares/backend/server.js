@@ -2,7 +2,7 @@ import express from "express";
 import 'dotenv/config';
 import mongoose from "mongoose";
 import userRoutes from "./routes/userRoutes.js";
-
+import productRoute from "./routes/productRoute.js";
 
 // Let's Create a Rest API
 const rest_api = express();
@@ -11,6 +11,11 @@ const rest_api = express();
 // Let's Use Route
 rest_api.use(express.json());
 rest_api.use("/user", userRoutes);
+rest_api.use("/product", productRoute);
+
+
+
+
 
 // Let's Connect to Database
 mongoose.connect(process.env.URI_BD).then(() => {
