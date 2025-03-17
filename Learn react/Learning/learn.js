@@ -1250,10 +1250,44 @@ function AboutLayout() {
         <Link to="/about/3">About 3</Link>
         <Outlet />
     </div>
-  )
+  );
 }
 
 
+
+
+
+
+
+
+// Routes || Part 3 || Private Routes
+// App.jsx:
+function App() {
+    const user = false;
+    return (
+      // Start Learning Private Route
+      <div>
+          <Routes>
+            <Route path="/login" element={user ? <Navigate to="/" /> : <Login />}></Route>
+            <Route element={<ProtectedRoutes user={user}></ProtectedRoutes>}>
+              <Route path="/" element={<Home></Home>}></Route>
+              <Route path="/profile" element={<Profile></Profile>}></Route>
+            </Route>
+          </Routes>
+      </div>
+    );
+}
+// ProctedRoutes.jsx
+function ProtectedRoutes({user}) {
+    /*
+        The <Outlet> component is a placeholder within a parent route's
+            component that tells React Router where to render the child routes
+    */
+    return user ? <Outlet></Outlet> : <>
+        <Navigate to="/login"></Navigate>
+    </>;
+}
+// Login.jsx and Profile And Home are basic components
 
 
 
