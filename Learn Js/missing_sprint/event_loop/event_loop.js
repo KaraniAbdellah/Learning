@@ -118,7 +118,7 @@ console.log("Hello Again");
         after 5 second the webAPIS push the code [cb] into event Loop [like queue]
         Event Loop Put cb function into Stack And cb will be execute
         Event Loop Wait Stack Clear and Then He Push cb.
-    
+
     // if TimeOut = 0
         The Same Result because Event Loop Wait Stack Clear
     Even with a timeout of 0ms, the callback will wait for the call stack to be cleared.
