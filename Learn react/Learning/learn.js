@@ -1394,7 +1394,40 @@ const Test = () => {
 
 
 // useSycnExternalStore() -->  do not need it
-// useEffectLayout
+
+
+
+// useEffectLayout vs useEffect vs useInsertionEffect
+/*
+useEffectLayout
+    - more limited
+    - runs before paint
+    - synchrouns
+    - used less often
+useEffect
+    - for most side effects
+    - runs after paint
+    - asynchrouns
+    - used more often
+useInsertionEffect
+    - runs before any effect hook
+*/
+useInsertionEffect(() => {
+    console.log("inserted into DOM");
+});
+useLayoutEffect(() => {
+    console.log('Layout Effect RUN');
+});
+useEffect(() => {
+    console.log("Effect RUN");
+}, []);
+console.log("Pre Render");
+
+
+
+
+// useRef()
+
 
 
 
