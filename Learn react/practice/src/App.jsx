@@ -1,10 +1,11 @@
+import Test from "./Test";
 
 function App() {
   return (
-    <>
-    <p className="text-emerald-600">Hello World</p>
-    </>
-  )
+    <div className="w-full h-screen">
+      <Test></Test>
+    </div>
+  );
 }
 
 export default App

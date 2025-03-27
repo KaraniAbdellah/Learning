@@ -1299,9 +1299,102 @@ function ProtectedRoutes({user}) {
 ///////////////////////////////////
 ///////////////////////////////////
 /* Hooks In React */
-// useState() and useEffect() and usePramas() --> alreay know it
+// useState()
+/*
+    <button onClick={setCount(count + 1)} className='p-2 bg-fuchsia-600 ml-2'>Increment</button>
+    infinite rendring because React re-renders whenever state changes.
+
+    1. setCount(count + 1) runs immediately during FIRST Render.
+    2. This updates the state (count increases).
+    3. React re-renders the component again.
+    4. On the new render, setCount(count + 1) runs again.
+    5. The cycle repeats → infinite loop.
+*/
 
 
+
+
+// useEffect
+useEffect(() => {
+    alert("Hello World");
+    return () => {
+        // cleanup code
+    };
+}, [count]); // code excute in first time and if count change
+
+
+
+
+// useReducer
+/*
+    for more complex state managment
+    good if you have a lot of related state
+    "reducer" is function to update state
+
+*/
+const Test = () => {
+  const init_state = {
+    username: 'ahmed',
+    email: "a@gmail.com",
+    password: '1234',
+  };
+  const FormReducer = (state, action) => {
+    switch (action.type) {
+      case "username":
+        console.log(state);
+        return { ...state, username: action.payload };
+      case "email":
+        console.log(state);
+        return { ...state, email: action.payload };
+      case "password":
+        console.log(state);
+        return { ...state, password: action.payload };
+      default:
+        return state;
+    }
+  };
+  const [state, dispatch] = useReducer(FormReducer, init_state);
+
+  return (
+    <div>
+      <form className="mb-5">
+        <input
+          className="border-2 border-blue-500 border-solid"
+          onChange={(e) =>
+            dispatch({ type: "username", payload: e.target.value })
+          }
+          type="text"
+          placeholder="Enter You Username"
+        />
+        <input
+          className="border-2 border-blue-500 border-solid"
+          onChange={(e) => dispatch({ type: "email", payload: e.target.value })}
+          type="text"
+          placeholder="Enter You Email"
+        />
+        <input
+          className="border-2 border-blue-500 border-solid"
+          onChange={(e) =>
+            dispatch({ type: "password", payload: e.target.value })
+          }
+          type="text"
+          placeholder="Enter You Password"
+        />
+      </form>
+      <p>
+        Your Username: <span className="text-green-500">{state.username}</span>,
+        Your Email: <span className="text-green-500">{state.email}</span>, Your
+        Password: <span className="text-green-500">{state.password}</span>
+      </p>
+    </div>
+  );
+};
+
+
+
+
+// useSycnExternalStore() -->  do not need it
+// useEffectLayout
 
 
 
