@@ -771,7 +771,6 @@ useEffect(() => {
 /*
 	React Hook that alow you share values between multiple levels
 		of components without passing props through each level.
-	
 		
 	// PROVIDER COMPONENTS
 		import {createContext} from "react";
@@ -790,7 +789,7 @@ import CompA from "./CompA";
 import "./style.css";
 
 import React, {useState, useEffect, useContext} from "react";
-function Test(props) {
+function Test() {
     const [user, setUser] = useState();
     return (
         <div>
@@ -1454,5 +1453,74 @@ const Test = () => {
 
 
 
+// useMemo()
+/*
+    - uses memorization to "remembre" values
+    - hook made to improve app perfomance By
+        Cashing The Previos Result
+    - it is not for side effect and must return a value
+*/
+
+const Test = () => {
+    const [text, setText] = useState("");
+    const [number, setNumber] = useState(0);
+    const expensiveFunction = (n) => {
+        console.log("Function Re-rendered!"); // this render without useMemo
+        let total = 0;
+        for (let i = 0; i < n; i++) {
+            total += i;
+        } return total;
+    }
+    console.log("Component Re-rendered!");
+    const sum = useMemo(() => {
+        return expensiveFunction(number); // with memo it render just one time
+    }, [number]);
+    return (
+        <div>
+            <input
+            className="bg-red-600"
+            onChange={(e) => setText(e.target.value)} 
+            type="text" />
+            <input 
+            className="bg-red-600"
+            type="number" 
+            onChange={(e) => setNumber(Number(e.target.value))}/>
+            <span>Total: {sum}</span>
+        </div>
+    );
+};
+
+
+
+
+
+// useCallback()
+/*
+    - smiliar to useMemo
+    - for callback functions, not computed values
+    - great to functions passed as a prop
+*/
+export default function Test() {
+  const [count, setCount] = useState(0);
+
+  const increment = useCallback(() => setCount(count + 1), [count]);
+  //const increment = useEffect(() => setCount(count + 1), [count]); // infinite rendering
+
+  return (
+    <div>
+      <p>Count: {count}</p>
+      <button onClick={increment}>Increase</button>
+    </div>
+  );
+}
+
+
+
+
+// useContext
+/*
+    - React Hook that alow you share values between multiple levels
+        of components without passing props through each level.
+*/
 
 
