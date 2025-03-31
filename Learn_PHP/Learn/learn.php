@@ -231,6 +231,7 @@
     // Associative Array
     /*
         associative array = An array made of key=>value pairs
+        $_POST is associtive array with name => value
     */
     $capitals = array("USA"=>"Washington D.C.",
         "Moroc"=>"Rabat",
@@ -260,6 +261,47 @@
     }
 
 
+
+    // Radio Buttons
+    echo $_POST['confirm'] . "<br>"; // confirm
+    if ($_POST['confirm']) {
+        if (isset($_POST["credit_card"])) {
+            $credit_card = $_POST["credit_card"];
+            echo "You Select "  . $credit_card;
+        } else {
+            echo "Please Make Selection";
+        }
+    } else {
+        echo "You Must Click To Confirm Button";
+    }
+
+    /* HTML code
+        <form action="index.php" method="post">
+            <input type="radio" name="credit_card" value="Visa"> Visa<br>
+            <input type="radio" name="credit_card" value="MasterCard"> MasterCard<br>
+            <input type="radio" name="credit_card" value="Pypal"> Pypal<br>
+            <input type="submit" name="confirm" value="confirm">
+        </form>
+    */
+
+
+
+    
+    // CheckBox
+    if (isset($_POST["submit"])) {
+        $pays = $_POST["pays"];
+        foreach ($pays as $value) {
+            echo "<br>" . $value;
+        }
+    }
+    /*
+    <form action="index.php" method="post">
+        <input type="checkbox" name="pays[]" value="Visa"> Visa<br>
+        <input type="checkbox" name="pays[]" value="MasterCard"> MasterCard<br>
+        <input type="checkbox" name="pays[]" value="Paypal"> Paypal<br>
+        <input type="submit" name="submit" value="submit">
+    </form>
+    */    
 
 
 ?>
