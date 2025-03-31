@@ -286,7 +286,7 @@
 
 
 
-    
+
     // CheckBox
     if (isset($_POST["submit"])) {
         $pays = $_POST["pays"];
@@ -302,6 +302,16 @@
         <input type="submit" name="submit" value="submit">
     </form>
     */    
+
+
+
+    // functions
+    function add($a, $b, $c) {
+        $sum = 0;
+        foreach($c as $n) $sum += $n;
+        return $a + $b + $sum;
+    }
+    echo add(1, 2, [1, 2, 3]);
 
 
 ?>
