@@ -1,7 +1,43 @@
 <?php
     // Introduction
     /*
-        Inside PHP file I can wire HTML, CSS, JS and Also PHP.
+        Inside PHP file I can write HTML, CSS, JS and Also PHP.
+    */
+
+
+
+    // Get Started
+    /* 
+        - Apache2 Server: It runs your PHP code on the server before sending the result to your browser.
+        - Website Folder: Place your index.php file in /var/www/html/ (default on Linux).
+        - Start Apache: Make sure Apache is running with:
+            --> sudo systemctl start apache2
+        - Open Your Site: Go to http://localhost/index.php in your browser to see the result.
+    */
+
+
+
+    // How It Works [apache2, browser]
+    /*
+        Browser Request:
+            When you type http://localhost/index.php, the browser sends a request to Apache (your web server).
+        Apache Handles the Request:
+            - Apache checks if index.php exists in /var/www/html/ (or your configured folder).
+                --> Apache uses a module like mod_php (or with PHP-FPM) to connect to PHP.
+            - Since it's a PHP file, Apache forwards it to PHP for processing.
+                --> PHP is runtime that excute code (convert it to HTML or JSOn etc, ...)
+        PHP Executes the Code:
+            - PHP runs the code inside index.php and generates HTML output.
+            - Example: If echo "<h1>Hello</h1>"; is in index.php, PHP converts it to: <h1>Hello</h1>
+        Apache Sends the Response:
+            - Apache sends the generated HTML back to the browser.
+        Browser Displays the Page:
+            - The browser receives the HTML and shows it as a webpage.
+    
+        ** Apache is the middleman that connects the browser and PHP.
+        ** The browser requests a page → 
+            Apache asks PHP to process it → 
+            PHP returns HTML → Apache sends it back to the browser.
     */
 
 
@@ -168,7 +204,7 @@
 
 
     // Arrays
-
+    
 
 
 
