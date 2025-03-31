@@ -203,9 +203,61 @@
     
 
 
-    // Arrays
-    
+    // Arrays 
+    /*
+        array = "variables" wich can hold more than more value at time
 
+        arrray_push --> push eles at end 
+        arrray_shift --> shift ele by 1
+        array_pop --> remove from last ele 
+        array_reverse --> reverse array and return new array 
+    */
+    $foods = array("apple", "orange", "banana", "coconut");
+    for ($i = 0; $i < count($foods); $i++) {
+        echo $foods[$i] . " ";
+    }
+
+    $foods[0] = "Orange";
+    array_push($foods, "Hello", "AM", "Ali");
+    array_pop($foods);
+    array_shift($foods);
+    $newFoods = array_reverse($foods);
+
+    foreach($newFoods as $food) {
+        echo $food . "<br>";
+    }
+
+
+    // Associative Array
+    /*
+        associative array = An array made of key=>value pairs
+    */
+    $capitals = array("USA"=>"Washington D.C.",
+        "Moroc"=>"Rabat",
+        "India"=>"New Delhi",
+        "Japen"=>"Kyoto");
+
+    // echo $capitals["Japen"];
+    $capitals["Egypt"] = "Qurio";
+    $capitals["Moroc"] = "Casablanca";
+    array_pop($capitals);
+    array_shift($capitals);
+    $capitals_reversed =  array_reverse($capitals);
+
+    $capitals_keys = array_keys($capitals); 
+    $capitals_values = array_values($capitals); 
+    $capitals = array_flip($capitals); // return new associative array
+
+
+    foreach($capitals as $key => $capital) {
+        echo $key . "=>" . $capital . "<br>";
+    }
+    foreach ($capitals_keys as $key) {
+        echo $key . " - ";
+    }
+    foreach ($capitals_values as $value) {
+        echo $value . " - ";
+    }
 
 
 
