@@ -25,7 +25,7 @@
             - Apache checks if index.php exists in /var/www/html/ (or your configured folder).
                 --> Apache uses a module like mod_php (or with PHP-FPM) to connect to PHP.
             - Since it's a PHP file, Apache forwards it to PHP for processing.
-                --> PHP is runtime that excute code (convert it to HTML or JSOn etc, ...)
+                --> PHP is runtime that execute code (convert it to HTML or JSOn etc, ...)
         PHP Executes the Code:
             - PHP runs the code inside index.php and generates HTML output.
             - Example: If echo "<h1>Hello</h1>"; is in index.php, PHP converts it to: <h1>Hello</h1>
@@ -295,12 +295,12 @@
         }
     }
     /*
-    <form action="index.php" method="post">
-        <input type="checkbox" name="pays[]" value="Visa"> Visa<br>
-        <input type="checkbox" name="pays[]" value="MasterCard"> MasterCard<br>
-        <input type="checkbox" name="pays[]" value="Paypal"> Paypal<br>
-        <input type="submit" name="submit" value="submit">
-    </form>
+        <form action="index.php" method="post">
+            <input type="checkbox" name="pays[]" value="Visa"> Visa<br>
+            <input type="checkbox" name="pays[]" value="MasterCard"> MasterCard<br>
+            <input type="checkbox" name="pays[]" value="Paypal"> Paypal<br>
+            <input type="submit" name="submit" value="submit">
+        </form>
     */    
 
 
@@ -314,6 +314,9 @@
     echo add(1, 2, [1, 2, 3]);
 
 
+
+
+    
 ?>
 
 

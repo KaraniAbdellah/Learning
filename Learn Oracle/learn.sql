@@ -96,23 +96,3 @@ SELECT * FROM user_tab_comments; -- display the employees comments --> user_tab_
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
