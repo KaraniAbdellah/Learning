@@ -1,0 +1,57 @@
+// What is Angular
+/*
+    Framework for SPA
+    built by Google
+    has huge community
+*/
+
+
+// Benefits
+/*
+    Faster Code Generation with (CLI)
+    Unit-tests ready
+*/
+
+
+// Get Started
+/* 
+    sudo npm install -g @angular/cli --> Angular CLI
+    ng new <project-name> 
+    --> this folder was not actually created in disk --> use an option
+*/
+
+
+// What are Angular Comonenets
+/*
+    @Component: Decorator
+    Each Componenets Has An Attribute, so in css you can find:
+        h1[_ngcontent-ng-c2283532919] {color: red;}
+*/
+@Component({
+    selector: 'app-root',
+    imports: [RouterOutlet],
+    // templateUrl: './home.html',
+    // template: './home.html',
+    // styleUrl: "./css/style.css",
+    template: '<h1>Hello World</h1>',
+    styles: [`
+      h1 {
+        color: red;
+      }
+      `]
+})
+
+
+// Creating Components
+/*
+    We Can Create Just by just By CLI:
+        nh generate component header || ng g c header
+        ng g c component/header
+        ng g c component/header --dry-run --> header does not create in my project
+        
+        NOTE: The "dryRun" flag means no changes were made.
+*/
+
+
+
+
