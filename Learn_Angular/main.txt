@@ -26,6 +26,8 @@
     @Component: Decorator
     Each Componenets Has An Attribute, so in css you can find:
         h1[_ngcontent-ng-c2283532919] {color: red;}
+
+    RouterOutlet: It's used to dynamically load different components based on the current URL route.
 */
 @Component({
     selector: 'app-root',
@@ -50,7 +52,57 @@
         ng g c component/header --dry-run --> header does not create in my project
         
         NOTE: The "dryRun" flag means no changes were made.
+    
+    For Importing Component Should Be in: 
+        --> imports in parent componets "html file" || templace
+        --> import also in imports: []
 */
+@Component({
+  selector: 'app-root',
+  imports: [RouterOutlet, HomeComponent, HeaderComponent],
+  // templateUrl: './app.component.html',
+  // template: './home.html',
+  // styleUrl: "./css/style.css",
+  template: `
+    <app-header />
+    <app-home />
+  `
+})
+
+
+// Angular Data-Buinding
+/*
+    In other words, Data Binding means sharing data between
+        components to view and view to component.
+    
+    For This: 
+        --> use Signal function imported from "@angular/core" --> it is like user useState()
+        --> Simple Varaible
+    
+    Choose: --> Use Signal() is modern method
+*/
+-- First Example With Varaible
+export class HomeComponent {
+  myVar = "Hello Home Page";
+}
+<main>
+    <h1>{{myVar}}</h1>
+</main>
+
+-- Second Example With Signa()
+export class HomeComponent {
+  myVar = Signal("Hello Home Page)";
+}
+<main>
+    <h1>{{myVar()}}</h1>
+</main>
+
+
+
+// Implment More Com inside another comp and passing the data
+/*
+
+*/ 
 
 
 

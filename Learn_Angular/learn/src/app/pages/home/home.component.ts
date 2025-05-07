@@ -1,0 +1,14 @@
+import { Component } from '@angular/core';
+import { GreeterComponent } from '../../component/greeter/greeter.component';
+import { CounterComponent } from '../../component/counter/counter.component';
+
+@Component({
+  selector: 'app-home',
+  imports: [GreeterComponent, CounterComponent],
+  templateUrl: './home.component.html',
+  styleUrl: './home.component.css'
+})
+export class HomeComponent {
+  myVar = "Hello Home Page";
+}
+

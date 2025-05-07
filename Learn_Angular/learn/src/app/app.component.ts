@@ -1,20 +1,22 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterOutlet } from '@angular/router'; // in react we should be install this
+import { HomeComponent } from './pages/home/home.component';
+import { HeaderComponent } from './component/header/header.component';
 
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
-  // templateUrl: './home.html',
+  imports: [RouterOutlet, HomeComponent, HeaderComponent],
+  // templateUrl: './app.component.html',
   // template: './home.html',
   // styleUrl: "./css/style.css",
-  template: '<h1>Hello World</h1>',
-  styles: [`
-    h1 {
-      color: red;
-    }
-    `]
+  template: `
+    <app-header />
+    <app-home />
+  `
 })
+
+
 export class AppComponent {
   title = 'learn';
 }
