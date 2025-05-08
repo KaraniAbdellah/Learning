@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { GreeterComponent } from '../../component/greeter/greeter.component';
 import { CounterComponent } from '../../component/counter/counter.component';
 
@@ -10,5 +10,6 @@ import { CounterComponent } from '../../component/counter/counter.component';
 })
 export class HomeComponent {
   myVar = "Hello Home Page";
+  FromHomeMessage = signal("Hello Greeting Componenets");
 }
 

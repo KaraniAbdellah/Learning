@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, input } from '@angular/core';
 
 @Component({
   selector: 'app-greeter',
@@ -7,5 +7,6 @@ import { Component } from '@angular/core';
   styleUrl: './greeter.component.css'
 })
 export class GreeterComponent {
-
+  message = input('Default Message'); // we can recieve something from outside
+  // This Message Is Signal Also
 }

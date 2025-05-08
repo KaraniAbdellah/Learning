@@ -102,7 +102,31 @@ export class HomeComponent {
 // Implment More Com inside another comp and passing the data
 /*
 
-*/ 
+*/
+// Method 1:
+--> in home.com.ts
+export class HomeComponent {
+  myVar = "Hello Home Page";
+  FromHomeMessage = signal("Hello Greeting Componenets");
+}
+--> in home.com.html
+<main>
+    <div>
+        <h1 class="text-yellow-400">{{myVar}}</h1>
+    </div>
+    <app-greeter [message]="'Hello Gretter Component!!'"></app-greeter>
+    <app-greeter [message]="FromHomeMessage()"></app-greeter>
+    <app-counter></app-counter>
+</main>
+--> in greeter.com.ts
+export class GreeterComponent {
+  message = input('Default Message'); // we can recieve something from outside
+  // This Message Is Signal Also
+}
+
+
+// Event Listaners
+
 
 
 
