@@ -126,8 +126,41 @@ export class GreeterComponent {
 
 
 // Event Listaners
+/*
+    Ther is A lot of Events --> w3 school
+*/
+export class HomeComponent {
+  keyUpHandler(event: KeyboardEvent) {
+    event.preventDefault();
+    console.log(event.type);
+  }
+  myVar = 'Hello Home Page';
+  FromHomeMessage = signal('Hello Greeting Componenets');
+}
+<input type="text" (keyup)="keyUpHandler($event)"/>
 
 
+// Counter application
+export class CounterComponent {
+  counter = signal(0);
+  dec() {
+    this.counter.update((value) => --value);
+    this.counter.update((value) => value--); // does not want to work
+    // this.counter.set(this.counter() - 1);
+  }
+  incr() {
+    // this.counter.set(this.counter() + 1);
+    this.counter.update((value) => value + 1);
+  }
+  reset() {
+    this.counter.set(0);
+  }
+}
 
+
+// Routing in Angular
+/*
+
+*/
 
 

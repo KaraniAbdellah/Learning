@@ -1,1 +1,23 @@
-<p>counter works!</p>
+<main class="bg-green-300 p-4 m-4">
+  <h2 class="text-xl font-semibold">Counter is: {{ counter() }}</h2>
+  <div class="btns my-4">
+    <button
+      class="bg-gray-700 mr-2 p-2 rounded-md text-white font-semibold"
+      (click)="dec()"
+    >
+      Increment
+    </button>
+    <button
+      class="bg-gray-700 mr-2 p-2 rounded-md text-white font-semibold"
+      (click)="reset()"
+    >
+      Reset
+    </button>
+    <button
+      class="bg-gray-700 mr-2 p-2 rounded-md text-white font-semibold"
+      (click)="incr()"
+    >
+      Decrement
+    </button>
+  </div>
+</main>

@@ -6,10 +6,13 @@ import { CounterComponent } from '../../component/counter/counter.component';
   selector: 'app-home',
   imports: [GreeterComponent, CounterComponent],
   templateUrl: './home.component.html',
-  styleUrl: './home.component.css'
+  styleUrl: './home.component.css',
 })
 export class HomeComponent {
-  myVar = "Hello Home Page";
-  FromHomeMessage = signal("Hello Greeting Componenets");
+  keyUpHandler(event: KeyboardEvent) {
+    event.preventDefault();
+    console.log(event.type);
+  }
+  myVar = 'Hello Home Page';
+  FromHomeMessage = signal('Hello Greeting Componenets');
 }
-
