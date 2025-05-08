@@ -7,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrl: './dashbaord.component.css'
 })
 export class DashbaordComponent {
-
+  title = "DashBoard"
 }

@@ -16,4 +16,18 @@ export const routes: Routes = [
         return module.DashbaordComponent;
     },
   },
+  {
+    path: 'task',
+    loadComponent: async () => {
+        const module = await import("./tasks/tasks.component");
+        return module.TasksComponent;
+    },
+  },
+  {
+    path: 'supplier',
+    loadComponent: async () => {
+        const module = await import("./suppliers/suppliers.component");
+        return module.SuppliersComponent;
+    },
+  },
 ];
