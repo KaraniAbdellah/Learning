@@ -160,7 +160,9 @@ export class CounterComponent {
 
 // Routing in Angular
 /*
-
+    --> <RouterOutlet />: a router-outlet is a directive that acts as a placeholder in a component's template.
+    --> Directives: are classes that add additional behavior to elements in your Angular applications.
 */
+
 
 
