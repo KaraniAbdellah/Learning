@@ -1,33 +1,30 @@
 import { Routes } from '@angular/router';
+import { DashbaordComponent } from './dashbaord/dashbaord.component';
+import { TasksComponent } from './tasks/tasks.component';
+import { SuppliersComponent } from './suppliers/suppliers.component';
+import { HomeComponent } from './home/home.component';
+
 
 export const routes: Routes = [
   {
     path: '',
     pathMatch: 'full',
-    loadComponent: async () => {
-      const module = await import('./home/home.component');
-      return module.HomeComponent;
-    },
+    // loadComponent: async () => {
+    //   const module = await import('./home/home.component');
+    //   return module.HomeComponent;
+    // },
+    component: HomeComponent
   },
   {
     path: 'dashbaord',
-    loadComponent: async () => {
-        const module = await import("./dashbaord/dashbaord.component");
-        return module.DashbaordComponent;
-    },
+    component: DashbaordComponent
   },
   {
     path: 'task',
-    loadComponent: async () => {
-        const module = await import("./tasks/tasks.component");
-        return module.TasksComponent;
-    },
+    component: TasksComponent
   },
   {
     path: 'supplier',
-    loadComponent: async () => {
-        const module = await import("./suppliers/suppliers.component");
-        return module.SuppliersComponent;
-    },
+    component: SuppliersComponent
   },
 ];

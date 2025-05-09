@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router'; // in react we should be install this
+import { RouterModule, RouterOutlet } from '@angular/router'; // in react we should be install this
 
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [RouterModule, RouterOutlet],
   templateUrl: "./app.component.html",
 })
 

@@ -160,9 +160,32 @@ export class CounterComponent {
 
 // Routing in Angular
 /*
-    --> <RouterOutlet />: a router-outlet is a directive that acts as a placeholder in a component's template.
-    --> Directives: are classes that add additional behavior to elements in your Angular applications.
+  --> <RouterOutlet />: a router-outlet is a directive that acts as a placeholder in a component's template.
+  --> Directives: are classes that add additional behavior to elements in your Angular applications.
+  --> Add to Each Componenets RouterModule --> since angular 17
 */
+export const routes: Routes = [
+  {
+    path: '',
+    pathMatch: 'full',
+    // loadComponent: async () => {
+    //   const module = await import('./home/home.component');
+    //   return module.HomeComponent;
+    // },
+    component: HomeComponent
+  },
+  {
+    path: 'supplier',
+    component: SuppliersComponent
+  },
+];
+<div class="content">
+      <router-outlet></router-outlet> // all componets will be here
+</div>
 
 
+// Angular Services
+/*
+  --> Used to encapsulate Data, makking HTTP calls, 
+*/
 
