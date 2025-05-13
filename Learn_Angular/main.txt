@@ -257,6 +257,11 @@ export class TodosComponent implements OnInit {
 
   --> RxJS (Reactive Extensions for JavaScript):  is a library for reactive programming using observables
     that makes it easier to compose asynchronous or callback-based code.
+  
+  --> pipe(): used to chain operations on data coming from an Observable (like filtering, error handling, etc.).
+  --> pipe is like a filter or helper that changes or checks the data before you get it.
+  --> subscribe(): get the final result --> when the data is ready run this function
+
 */
 
 "app.config.ts"
