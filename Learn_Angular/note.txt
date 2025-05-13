@@ -1,0 +1,34 @@
+//////////////////////////////////
+
+// More About Event Binding
+/*
+    --> 4 ways to listenear to an event
+       Event Binding, @HostListenear, @Output & EventEmitter, Renderer2
+    
+    --> DOM Manipulation Ways:
+       Template reference variables, ElementRef, @Viewchild/@Viewchildren, AfterViewInit. 
+*/
+
+
+// Life Cycle Hooks
+/*
+    ngOnInit() is called after ngOnChanges() was called the first time after constractor.
+    ngOnChanges() is called every time inputs are updated by change detection.
+    ngAfterViewInit() is called after the view is initially rendered.
+*/
+
+
+////////////////////////////////////////
+
+// Angular CLI
+/*
+    command-line interface tool which allows you to scaffold, develop, test,
+        deploy, and maintain Angular applications directly from a command shell.
+*/ 
+
+// Router Model
+/*
+    the important role iis creating SPAs enabling navigation between different views or components.
+*/
+
+

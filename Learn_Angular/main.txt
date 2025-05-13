@@ -186,6 +186,36 @@ export const routes: Routes = [
 
 // Angular Services
 /*
-  --> Used to encapsulate Data, makking HTTP calls, 
+  --> Used to sperate angular app data and functions (HTTP calls)
+  --> it is way of working
+  --> ng g services services/home/home
+      - will create services folder inside it you can find home file
 */
+// home.service.ts
+@Injectable({
+  providedIn: 'root', // meaning this avaibale in any component
+  // if we remove it means this will be available just in home component
+})
+export class HomeService {
+  constructor() {}
+}
+
+// home.component.ts
+@Component({
+  selector: 'app-home',
+  imports: [RouterModule],
+  templateUrl: './home.component.html',
+  styleUrl: './home.component.css',
+  providers: [HomeService]
+})
+
+
+
+
+
+
+
+
+
+
 
