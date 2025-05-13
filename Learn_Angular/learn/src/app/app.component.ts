@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-import { RouterModule, RouterOutlet } from '@angular/router'; // in react we should be install this
+import { TodosComponent } from './component/todos/todos.component';
 
 
 @Component({
   selector: 'app-root',
-  imports: [RouterModule, RouterOutlet],
+  imports: [TodosComponent],
   templateUrl: "./app.component.html",
 })
 
@@ -12,3 +12,4 @@ import { RouterModule, RouterOutlet } from '@angular/router'; // in react we sho
 export class AppComponent {
   title = 'learn';
 }
+

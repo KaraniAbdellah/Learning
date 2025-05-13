@@ -28,7 +28,16 @@
 
 // Router Model
 /*
-    the important role iis creating SPAs enabling navigation between different views or components.
+    --> Do The Configuration od Routes
+    --> the important role iis creating SPAs enabling navigation
+        between different views or components.
 */
+
+// RouterRouter
+/*
+    If the URL is /home, it shows the HomeComponent inside <router-outlet></router-outlet>.
+*/
+
+
 
 

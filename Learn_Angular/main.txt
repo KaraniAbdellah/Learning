@@ -191,25 +191,61 @@ export const routes: Routes = [
   --> ng g services services/home/home
       - will create services folder inside it you can find home file
 */
-// home.service.ts
+
+// todos.service.ts
 @Injectable({
-  providedIn: 'root', // meaning this avaibale in any component
-  // if we remove it means this will be available just in home component
+  providedIn: 'root'
 })
-export class HomeService {
-  constructor() {}
+export class TodosService {
+  todos: Array<todos> = [
+    {
+      title: 'Learn Angular Services',
+      userId: 10,
+      completed: false,
+      id: 1,
+    }
+  ];
+  constructor() { }
 }
 
-// home.component.ts
+// todos.type.ts
+export type todos = {
+    userId: number;
+    completed: boolean;
+    title: string,
+    id: number,
+}
+
+// todos.component.ts
 @Component({
-  selector: 'app-home',
-  imports: [RouterModule],
-  templateUrl: './home.component.html',
-  styleUrl: './home.component.css',
-  providers: [HomeService]
+  selector: 'app-todos',
+  imports: [],
+  templateUrl: './todos.component.html',
+  styleUrl: './todos.component.css',
+  providers: [TodosService],
 })
+export class TodosComponent implements OnInit {
+  constructor() {}
 
+  todoService = inject(TodosService);
+  todos_array = signal<Array<todos>>([]);
 
+  ngOnInit(): void {
+    console.log(this.todoService.todos);
+    this.todos_array.set(this.todoService.todos);
+  }
+}
+  
+// in html
+<ul class="todos">
+    @for (item of todos_array(); track item.id) {
+        <li>
+            <span>{{item.userId}}, </span>
+            <span>{{item.title}},</span>
+            <span>{{item.completed}}</span>
+        </li>   
+    }
+</ul>
 
 
 

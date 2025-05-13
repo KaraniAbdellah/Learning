@@ -1,1 +1,12 @@
-<p>todos works!</p>
+<main>
+    <p>todos works!</p>
+    <ul class="todos">
+        @for (item of todos_array(); track item.id) {
+            <li>
+                <span>{{item.userId}}, </span>
+                <span>{{item.title}},</span>
+                <span>{{item.completed}}</span>
+            </li>   
+        }
+    </ul>
+</main>
