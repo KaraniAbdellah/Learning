@@ -235,7 +235,7 @@ export class TodosComponent implements OnInit {
     this.todos_array.set(this.todoService.todos);
   }
 }
-  
+
 // in html
 <ul class="todos">
     @for (item of todos_array(); track item.id) {
@@ -248,9 +248,62 @@ export class TodosComponent implements OnInit {
 </ul>
 
 
+// Making HTTP calls
+/*
+  What we need:
+  --> Provide HTTP module/providers/ in the app config using provideHttpClient()
+  --> Inject the HttpClient service
+  --> Up the http method
 
+  --> RxJS (Reactive Extensions for JavaScript):  is a library for reactive programming using observables
+    that makes it easier to compose asynchronous or callback-based code.
+*/
 
+"app.config.ts"
+export const appConfig: ApplicationConfig = {
+  providers: [
+    provideZoneChangeDetection({ eventCoalescing: true }),
+    provideRouter(routes),
+    provideHttpClient()
+  ],
+};
 
+"todos.service.ts"
+export class TodosService {
+  // Making HTTP Calls
+  http = inject(HttpClient); // used make http request
+  constructor() { }
+
+  getTodo() {
+    const url = `https://jsonplaceholder.typicode.com/todos`;
+    return this.http.get<Array<todos>>(url);
+  }
+}
+
+"todos.component.ts"
+export class TodosComponent implements OnInit {
+  constructor() {}
+
+  todoService = inject(TodosService);
+  todos_array = signal<Array<todos>>([]);
+
+  ngOnInit(): void {
+    let data: Array<todos> = [];
+    this.todoService
+      .getTodo()
+      .pipe(
+        catchError((err) => {
+          console.log(err);
+          throw err;
+        })
+      )
+      .subscribe((todos) => {
+        this.todos_array.set(todos);
+        data = todos;
+        console.log(todos);
+      });
+  }
+}
 
 
 

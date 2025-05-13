@@ -1,35 +1,18 @@
-import { Injectable } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
 import { todos } from '../../models/todos.type';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
+
 export class TodosService {
-  todos: Array<todos> = [
-    {
-      title: 'Learn Angular Services',
-      userId: 10,
-      completed: false,
-      id: 1,
-    },
-    {
-      title: 'Learn Angular Services',
-      userId: 10,
-      completed: false,
-      id: 1,
-    },
-    {
-      title: 'Learn Angular Services',
-      userId: 10,
-      completed: false,
-      id: 1,
-    },
-    {
-      title: 'Learn Angular Services',
-      userId: 10,
-      completed: false,
-      id: 1,
-    },
-  ];
+  // Making HTTP Calls
+  http = inject(HttpClient); // used make http request
   constructor() { }
+
+  getTodo() {
+    const url = `https://jsonplaceholder.typicode.com/todos`;
+    return this.http.get<Array<todos>>(url);
+  }
 }
