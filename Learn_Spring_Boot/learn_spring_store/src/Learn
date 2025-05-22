@@ -1,0 +1,65 @@
+// What I Will Learn
+/*
+    - Getting Started with Spring Boot
+    - Dependency Injection (DI)
+    - Database Integration With Spring Boot (JPA)
+    - Understand The Project Structure
+    - Build and run first application
+    -----------
+    - Using Spring Boot DevTools
+    - Configuring your application
+    - Debugging your application
+*/
+
+
+
+// Intro Spring vs Spring Boot
+/*
+    - Both of them is Framework
+    - The Problem with Problem is slowly in production (some tasks manually)
+    - Spring Boot fix that (ready to use feature) --> Save Time
+*/
+
+
+
+// Project Structure
+/*
+    pom.xml --> Project Object Model is file that
+        maven define configuration, dependencies.
+        Like package.json
+    main --> folder we write application
+        java --> write java code
+            SpringBootDabastockApplication: Entries Point
+        resources --> no java file [config like PORT, URLDB]
+*/
+
+
+
+// Dependencies Management
+/*
+    for building web app we need:
+        tomcat, web libs, webmvc(building APIS)
+
+    instead of use all that we can use "Starter Dependency"
+        --> use Maven Control --> like npm, ...
+
+    the best practice if to remove version from dependencies --> it inherit version
+*/
+
+
+
+// Building First Controllers
+/*
+    Spring MVC (mode, vue, controller):
+        mode = data + logic (connect to db)
+        view = what the users sees
+        controller = Mediator
+*/
+
+
+
+// Running Spring Boot Application
+/*
+    mvnw spring-boot:run --> run it in terminal
+*/
+
