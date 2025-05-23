@@ -82,9 +82,36 @@
 // Configuration Application Properties
 /*
     Any Every Application We Need to configure a different setting:
-
 */
+package controllers;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+@Controller
+public class HomeController {
+    @Value("${spring.application.name}") // this value exit in application.properties
+    private String appName;
+    @RequestMapping("/")
+    public String index() {
+        System.out.println(appName); // learn_spring_store
+        return "index.html";
+    }
+}
 
+
+
+// Dependency Injection
+/*
+    what is ID:
+        For Example in Ecommerce platform --> we have "OrderService" class depend to an API "StripePaymentService"
+            --> The problem is that if we want to change the API --> need to change the "OrderService" code
+            Issue: how dependencies are managed
+        we can create an interface "PaymentService" --> and has "Stripe || Paypal"
+
+    Constractor Injection:
+    The Spring Ioc container:
+    configuration beans using annotations:
+*/
 
 
 
