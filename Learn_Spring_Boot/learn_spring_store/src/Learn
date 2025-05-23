@@ -58,8 +58,41 @@
 
 
 
-// Running Spring Boot Application
+// Running Spring Boot Application && Debugging
 /*
-    mvnw spring-boot:run --> run it in terminal
+    Running:
+        - ./mvnw spring-boot:run --> run it in terminal
+        - click to run button
+    Debugging:
+        Using Terminal
+        Using IntelliJ Debugger --> I Do not Understand this lesson know "may be letter"
 */
+
+
+
+// Auto Restart
+/*
+    install spring-boot-devtools:
+        add tags <optional>true</optional>
+            --> means this pack used just in development not in production
+*/
+
+
+
+// Configuration Application Properties
+/*
+    Any Every Application We Need to configure a different setting:
+
+*/
+
+
+
+
+
+
+
+
+
+
+
 
