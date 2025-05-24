@@ -1,6 +1,8 @@
 package learn.com.learn_spring_store;
 
-import org.springframework.boot.SpringApplication;
+import controllers.OrderService;
+import controllers.PaypalPaymentService;
+import controllers.StripePaymentService;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 
@@ -10,8 +12,11 @@ import org.springframework.context.annotation.ComponentScan;
 
 public class LearnSpringStoreApplication {
 	public static void main(String[] args) {
-		SpringApplication.run(LearnSpringStoreApplication.class, args);
-		System.out.println("Hello World");
+		// SpringApplication.run(LearnSpringStoreApplication.class, args);
+		var OrderService = new OrderService(new PaypalPaymentService());
+		OrderService.placeholder();
+		OrderService.setPaymentService(new StripePaymentService());
+		OrderService.placeholder();
 	}
 }
 

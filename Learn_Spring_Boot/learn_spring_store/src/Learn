@@ -91,7 +91,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class HomeController {
     @Value("${spring.application.name}") // this value exit in application.properties
     private String appName;
-    @RequestMapping("/")
+    s@RequestMapping("/")
     public String index() {
         System.out.println(appName); // learn_spring_store
         return "index.html";
@@ -106,12 +106,80 @@ public class HomeController {
         For Example in Ecommerce platform --> we have "OrderService" class depend to an API "StripePaymentService"
             --> The problem is that if we want to change the API --> need to change the "OrderService" code
             Issue: how dependencies are managed
-        we can create an interface "PaymentService" --> and has "Stripe || Paypal"
+        We can create an interface "PaymentService" --> and has "Stripe || Paypal" class (inheritance)
 
-    Constractor Injection:
-    The Spring Ioc container:
-    configuration beans using annotations:
+    Injection Dependency in Class [Constractor Injection, Setter Injection]:
 */
+
+// App.java
+public class LearnSpringStoreApplication {
+	public static void main(String[] args) {
+		// SpringApplication.run(LearnSpringStoreApplication.class, args);
+		var OrderService = new OrderService(new PaypalPaymentService());
+		OrderService.placeholder();
+		OrderService.setPaymentService(new StripePaymentService());
+		OrderService.placeholder();
+	}
+}
+
+// PaymentService.java
+public interface PaymentService {
+    void ProcessPayment(double amount);
+}
+
+// OrderService.java
+public class OrderService {
+    private PaymentService paymentService;
+    public void setPaymentService(PaymentService paymentService) {
+        this.paymentService = paymentService;
+    }
+    // Constractor Injection "Open Closed Principal"
+    public OrderService(PaymentService paymentService) {
+        this.paymentService = paymentService;
+    }
+    public void placeholder() {
+        paymentService.ProcessPayment(10.3);
+    }
+}
+
+// PaypalPaymentService.java
+public class PaypalPaymentService implements PaymentService {
+    @Override
+    public void ProcessPayment(double amount) {
+        System.out.println("Paypal");
+        System.out.println("Amount: " + amount);
+    }
+}
+
+// StripePaymentService.java
+public class StripePaymentService implements PaymentService {
+    @Override
+    public void ProcessPayment(double amount) {
+        System.out.println("STRIPE!");
+        System.out.println("Amount : " + amount);
+    }
+}
+
+
+
+
+// The Spring Ioc container && configuration beans using annotations
+/*
+    Example: If Employee depends on Address, for using
+        Employee we need to create Address.
+        --> With Ioc Spring do it auto
+
+    Ioc: Inversion of Control
+*/
+// Classic Way:
+var OrderService = new OrderService(new PaypalPaymentService());
+OrderService.placeholder();
+
+//
+
+
+
+
 
 
 
