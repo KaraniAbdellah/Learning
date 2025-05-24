@@ -170,15 +170,49 @@ public class StripePaymentService implements PaymentService {
         --> With Ioc Spring do it auto
 
     Ioc: Inversion of Control
+        for this we need to do the Beans Configuration:
+            --> Using Annotations --> [@Component, @Service, @Repository, @Controller]
+            --> Using code
+
+    'in this code bellow we Inject "PaypalPayment" Class Auto'
 */
 // Classic Way:
 var OrderService = new OrderService(new PaypalPaymentService());
 OrderService.placeholder();
 
-//
+// With Ioc
+public static void main(String[] args) {
+    ApplicationContext context = SpringApplication.run(LearnSpringStoreApplication.class, args);
+    var orderService = context.getBean(OrderService.class);
+    orderService.placeholder();
+}
 
+// OrderService.java
+@Component
+public class OrderService {
+    private PaymentService paymentService;
+    public void setPaymentService(PaymentService paymentService) {
+        this.paymentService = paymentService;
+    }
+    // Constractor Injection "Open Closed Principal"
+    @Autowired --> if we have multiple constractor
+    public OrderService(PaymentService paymentService) {
+        this.paymentService = paymentService;
+    }
+    public void placeholder() {
+        paymentService.ProcessPayment(10.3);
+    }
+}
 
-
+// PaypalPaymentService.java
+@Component
+public class PaypalPaymentService implements PaymentService {
+   @Override
+   public void ProcessPayment(double amount) {
+       System.out.println("Paypal");
+       System.out.println("Amount: " + amount);
+   }
+}
 
 
 

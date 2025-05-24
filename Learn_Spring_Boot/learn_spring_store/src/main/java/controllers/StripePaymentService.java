@@ -1,5 +1,7 @@
 package controllers;
 
+import org.springframework.stereotype.Component;
+
 public class StripePaymentService implements PaymentService {
     @Override
     public void ProcessPayment(double amount) {
