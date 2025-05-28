@@ -1,0 +1,25 @@
+// Spring Data
+/*
+    - So Spring is big project and we have spring boot
+        --> We Have Also Spring Data (JPA & Hibernate)
+    - Before If We Want To Connect To Database we have "JDBC"
+        --> we use native query like (select * from ...)
+    - Know we have Spring Data:
+        --> we have built in function
+    - ORM(Object Relational Mapping): We Represent Table as java class and can insert, delete in java class
+--------------------------------------
+    - Spring Data (Entity):
+        is we convert all table to ORM
+    - Spring Boot (Repository):
+        the direct interaction with database (insert, delete, ...) happen in this place
+    - Spring Boot (DTO):
+        is simple java class used to transfer the data between Controller and Client
+*/
+
+
+// Primary Key
+/*
+
+*/
+
+
