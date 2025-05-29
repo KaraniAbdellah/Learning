@@ -17,9 +17,39 @@
 */
 
 
-// Primary Key
+// Connect To Database
 /*
+    // app.proprieties:
+        spring.datasource.url=jdbc:mysql://127.0.0.1:3306/student_management?useSSL=false&serverTimezone=\
+          UTC&useLegacyDatatimeCode=false
+        spring.datasource.username=abdellah
+        spring.datasource.password=ABde12@2
 
+        # Hibernate Property Here
+        spring.jpa.properties.hibernate.dialect = org.hibernate.dialect.MySQLDialect
+        # Hibernate auto ddl
+        spring.jpa.hibernate.ddl-auto=update
+        logging.level.org.hibernate.SQL=DEBUG
+
+    // Run Application and will be Connect Auto to Database
+
+    // But How The Connect Just By Running
+       --> spring boot read proprieties
+       --> Scan The Project [Search for Entity, ...]
 */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
