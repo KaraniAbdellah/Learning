@@ -1,0 +1,2 @@
+--insert into student(student_email, student_name, student_password)
+--values('a@gmail.com', 'ahmed', '19292');

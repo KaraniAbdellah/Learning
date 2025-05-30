@@ -39,6 +39,15 @@
 */
 
 
+// Insertion Value in Database
+/*
+    One Of The Method if To Create data.sql inside resources and type insert into ...
+        --> if you find an error:
+        add this: sprint.jpa.defer-datasource-initialization=true
+*/
+
+
+//
 
 
 
