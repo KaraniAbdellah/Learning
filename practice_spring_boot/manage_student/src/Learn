@@ -47,12 +47,106 @@
 */
 
 
-//
+// Controllers
+/*
+    ResponseEntity<List<Student>>: type of response
+    @RestController: make this class controller
+    @RequestMapping("/api/student"): url of controller
+    @GetMapping("getStudent"): url for get method
+    return ResponseEntity.ok(students): send response with ok 200
+    Student if simple bean (class)
+*/
+// StudentController.java
+@RestController
+@RequestMapping("/api/student")
+public class StudentController {
+    @GetMapping("getStudent")
+    public ResponseEntity<List<Student>> getStudents() {
+        System.out.println("Request Come to Get Student End Point");
+        List<Student> students = new ArrayList<>();
+        students.add(new Student(1, "a@gmail.com", "ahmed", "10202"));
+        return ResponseEntity.ok(students);
+    }
+}
 
 
 
 
+// @PathVariable & @RequestBody
+/*
+    --> I want to return A Specific Student [http://127.0.0.1:8080/api/student/getStudent/1]
+        get student number 1 [@PathVariable]
 
+    --> I Want to Send Data to Controller [@RequestBody]
+---------------------------------------------------------------
+    @PathVariable int id:
+        Gets the {id} from the URL
+    @RequestBody Student student:
+        Reads the student data sent in the request body (usually in JSON).
+    return ResponseEntity.ok(student);
+        Sends back the same student object with HTTP 200 OK status.
+*/
+// StudentController
+public class StudentController {
+
+    @GetMapping("getStudents")
+    public ResponseEntity<List<Student>> getStudents() {
+        System.out.println("Request Come to Get Student End Point");
+        List<Student> students = new ArrayList<>();
+        students.add(new Student(1, "a@gmail.com", "ahmed", "10202"));
+        return ResponseEntity.ok(students);
+    }
+
+    @GetMapping("getStudent/{id}")
+    public Student getStudentById(@PathVariable int id) {
+        return new Student(id,"a@gmail.com", "ahmed", "10202");
+    }
+
+    @PostMapping("postStudent")
+    @ResponseStatus(HttpStatus.CREATED) // When the method runs successfully, the response will return HTTP status 201 Created.
+    public ResponseEntity<Student> postStudent(@RequestBody Student student) {
+        System.out.println("The Student Id is: " + student.getStudent_id());
+        return new ResponseEntity<>(student , HttpStatus.CREATED);
+    }
+
+    @PutMapping("updateStudent/{id}")
+    public ResponseEntity<Student> updateStudent(@PathVariable int id) {
+        Student updatedStudent = new Student(id, "a@gmail.com", "abdellah", "102993");
+        return new ResponseEntity<>(updatedStudent, HttpStatus.valueOf(200));
+    }
+
+    @DeleteMapping("deleteStudent/{id}")
+    public ResponseEntity<Student> updateStudent(@PathVariable int id, @RequestBody Student student) {
+        System.out.println("The Student Received is:" + student.getStudent_id());
+        return ResponseEntity.ok(student);
+    }
+}
+
+
+
+// JpaRepository
+/*
+
+*/
+
+
+// Services & @Autowired
+/*
+
+*/
+
+
+#spring.datasource.url=jdbc:mysql://127.0.0.1:3306/student_management?useSSL=false&serverTimezone=\
+#  UTC&useLegacyDatatimeCode=false
+#spring.datasource.username=abdellah
+#spring.datasource.password=ABde12@2
+#
+## Hibernate Property Here
+#spring.jpa.properties.hibernate.dialect = org.hibernate.dialect.MySQLDialect
+## Hibernate auto ddl
+#spring.jpa.hibernate.ddl-auto=update
+#logging.level.org.hibernate.SQL=DEBUG
+#sprint.jpa.defer-datasource-initialization=true
 
 
 
