@@ -20,9 +20,6 @@ INSERT INTO grades VALUES (3, 1, 'Science', 'B');
 INSERT INTO grades VALUES (4, 1, 'Science', 'C');
 -------------------------------------------------------------------------------------------------
 
--- Group By and Having
-SELECT std_name, sum(std_money) FROM student GROUP BY std_name HAVING sum(STD_MONEY)= 100;
-
 -- Nested Query
 SELECT * FROM student WHERE std_id = (SELECT max(std_id) FROM student); -- Operators
 SELECT * FROM student WHERE std_id NOT IN(SELECT student_id FROM students); -- NOT IN
@@ -35,4 +32,6 @@ SELECT name FROM students WHERE NOT EXISTS
 	
 SELECT * FROM students WHERE student_id > ANY(SELECT std_id FROM student);
 SELECT * FROM students WHERE student_id > ALL(SELECT std_id FROM student WHERE std_id = 1);
+
+
 
