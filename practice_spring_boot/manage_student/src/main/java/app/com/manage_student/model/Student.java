@@ -1,10 +1,20 @@
 package app.com.manage_student.model;
 
-public class Student {
 
-    private int student_id;
+import jakarta.persistence.*;
+
+@Entity
+@Table
+public class Student {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "student_id")
+    private int student_id; // this is primary key
+    @Column(name = "student_name", columnDefinition = "varchar(255) default 'John Snow'")
     private String student_name;
+    @Column(name = "student_email", columnDefinition = "varchar(255) default 'j@gmail.com'")
     private String student_email;
+    @Column(name = "student_password", columnDefinition = "varchar(255) 'null'")
     private String student_password;
 
     public Student() {}

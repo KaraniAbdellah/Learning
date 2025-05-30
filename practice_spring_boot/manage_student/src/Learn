@@ -84,6 +84,9 @@ public class StudentController {
         Reads the student data sent in the request body (usually in JSON).
     return ResponseEntity.ok(student);
         Sends back the same student object with HTTP 200 OK status.
+-----------------------------------------------------------------
+    @ResponseStatus(HttpStatus.CREATED): First Way To Set the status code of an HTTP response.
+    return new ResponseEntity<>(student , HttpStatus.CREATED); Second Way To Return Response with status code
 */
 // StudentController
 public class StudentController {
@@ -125,13 +128,18 @@ public class StudentController {
 
 // JpaRepository
 /*
-
+     JpaRepository<Student, Integer>: Interface Have A lot of Built in function to Interact with database
+     <Student, Integer>: Student if Bean that will be handle, and Integer is type of primary key
 */
+public interface StudentRepo extends JpaRepository<Student, Integer> {
+
+}
+
 
 
 // Services & @Autowired
 /*
-
+    @Autowired: lets StudentServiceImplementation access StudentRepo methods.
 */
 
 
