@@ -12,3 +12,4 @@ public class ManageStudentApplication {
 		System.out.println("Application Is Running");
 	}
 }
+

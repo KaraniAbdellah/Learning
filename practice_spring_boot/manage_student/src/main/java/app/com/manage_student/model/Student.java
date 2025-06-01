@@ -26,7 +26,7 @@ public class Student {
     }
 
     public int getStudent_id() {
-        return student_id;
+        return this.student_id;
     }
 
     public void setStudent_id(int student_id) {
@@ -34,7 +34,7 @@ public class Student {
     }
 
     public String getStudent_name() {
-        return student_name;
+        return this.student_name;
     }
 
     public void setStudent_name(String student_name) {
@@ -42,7 +42,7 @@ public class Student {
     }
 
     public String getStudent_email() {
-        return student_email;
+        return this.student_email;
     }
 
     public void setStudent_email(String student_email) {
@@ -50,7 +50,7 @@ public class Student {
     }
 
     public String getStudent_password() {
-        return student_password;
+        return this.student_password;
     }
 
     public void setStudent_password(String student_password) {
