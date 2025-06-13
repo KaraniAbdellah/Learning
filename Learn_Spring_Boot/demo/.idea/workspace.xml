@@ -4,37 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4ed47f8a-f412-443d-bc47-9c7cd61aa56b" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../man_student/.gitattributes" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../man_student/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../man_student/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../man_student/mvnw" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../man_student/mvnw.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../man_student/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../man_student/src/main/java/com/man_student/man_student/ManStudentApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../man_student/src/main/java/com/man_student/man_student/controllers/StudentController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../man_student/src/main/java/com/man_student/man_student/model/Student.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../man_student/src/main/java/com/man_student/man_student/repository/StudentRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../man_student/src/main/resources/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../man_student/src/test/java/com/man_student/man_student/ManStudentApplicationTests.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../spring_boot_part2/.gitattributes" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../spring_boot_part2/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../spring_boot_part2/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../spring_boot_part2/mvnw" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../spring_boot_part2/mvnw.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../spring_boot_part2/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../spring_boot_part2/src/main/java/example/com/spring_boot_part2/SpringBootPart2Application.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../spring_boot_part2/src/main/resources/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../spring_boot_part2/src/test/java/example/com/spring_boot_part2/SpringBootPart2ApplicationTests.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../practice_spring_boot/manage_student/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../practice_spring_boot/manage_student/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../practice_spring_boot/manage_student/src/Learn" beforeDir="false" afterPath="$PROJECT_DIR$/../../practice_spring_boot/manage_student/src/Learn" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../practice_spring_boot/manage_student/src/main/java/app/com/manage_student/controller/StudentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../practice_spring_boot/manage_student/src/main/resources/StudentController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../practice_spring_boot/manage_student/src/main/java/app/com/manage_student/model/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../practice_spring_boot/manage_student/src/main/java/app/com/manage_student/model/Student.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../practice_spring_boot/manage_student/src/main/java/app/com/manage_student/services/StudentServiceImplementation.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../practice_spring_boot/manage_student/src/main/resources/StudentServiceImplementation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../practice_spring_boot/manage_student/src/main/resources/ManageStudentApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../practice_spring_boot/manage_student/src/main/resources/ManageStudentApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../practice_spring_boot/manage_student/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../../practice_spring_boot/manage_student/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../practice_spring_boot/manage_student/src/test/java/app/com/manage_student/ManageStudentApplicationTests.java" beforeDir="false" />
-    </list>
+    <list default="true" id="4ed47f8a-f412-443d-bc47-9c7cd61aa56b" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -61,10 +31,10 @@
       </MavenGeneralSettings>
     </option>
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": 6
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 6
+}</component>
   <component name="ProjectId" id="2xuHDEiFKHxGDCdPAPRyMAvi3yY" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -78,6 +48,7 @@
     "Application.DemoApplication.executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "main",
     "last_opened_file_path": "/home/abdellah/Documents/git_projects/Learning/Learn_Spring_Boot/learn_spring_boor_part2",
     "settings.editor.selected.configurable": "editor.preferences.import"
