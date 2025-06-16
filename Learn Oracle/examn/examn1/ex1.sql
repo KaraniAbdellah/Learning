@@ -1,0 +1,107 @@
+SELECT * FROM IMP_CATEGORIES;
+SELECT * FROM IMP_CLIENTS;
+SELECT * FROM IMP_COMMANDES;
+SELECT * FROM IMP_DETAILS_COMMANDES;
+SELECT * FROM IMP_EMPLOYES;
+SELECT * FROM IMP_FOURNISSEURS;
+SELECT * FROM IMP_PRODUITS;
+SELECT * FROM IMP_DIM_TEMPS;
+
+
+-- Examen 1:
+-- create a table space
+CREATE TABLESPACE GEST_INX 
+DATAFILE '/opt/oracle/oradata/XE/XEPDB1/GEST_INX.dbf'
+SIZE 10M AUTOEXTEND ON NEXT 10M
+EXTENT MANAGEMENT LOCAL AUTOALLOCATE
+SEGMENT SPACE MANAGEMENT AUTO;
+
+CREATE TABLESPACE GESTDATA 
+DATAFILE '/opt/oracle/oradata/XE/XEPDB1/GESTDATA.dbf'
+SIZE 10M AUTOEXTEND ON NEXT 10M
+EXTENT MANAGEMENT LOCAL AUTOALLOCATE
+SEGMENT SPACE MANAGEMENT AUTO;
+
+
+-- table creation
+CREATE TABLE EX_CLIENTS (
+	code_client varchar(5) NOT NULL,
+	societe varchar(50) NOT NULL,
+	adresse varchar(50) NOT NULL,
+	ville varchar(50) NOT NULL,
+	pays varchar(50) NOT NULL,
+	CONSTRAINT pk_clients PRIMARY KEY(code_client) USING INDEX TABLESPACE GEST_INX
+) TABLESPACE GEST_DATA;
+
+
+
+CREATE TABLE EX_COMMANDES (
+	no_commande NUMBER NOT NULL,
+	code_client varchar(5),
+	no_employee NUMBER,
+	date_commande DATE,
+	date_envoi DATE,
+	port NUMBER,
+	CONSTRAINT fg_code_client FOREIGN KEY (code_client) REFERENCES EX_CLIENTS(code_client),
+	CONSTRAINT fg_no_employee_com FOREIGN KEY (no_employee) REFERENCES EX_EMPLOYES(no_employee),
+	CONSTRAINT pk_no_commande PRIMARY KEY (no_commande) USING INDEX TABLESPACE GEST_INX
+) TABLESPACE GEST_DATA;
+
+
+
+CREATE TABLE EX_EMPLOYES (
+	no_employee NUMBER NOT NULL,
+	rend_compte NUMBER NOT NULL,
+	nom varchar(20),
+	prenom varchar(20),
+	fonction varchar(20),
+	date_naissance DATE NOT NULL,
+	date_embauche DATE NOT NULL,
+	CONSTRAINT fg_no_employee_emp FOREIGN KEY (no_employee) REFERENCES EX_EMPLOYES(no_employee),
+	CONSTRAINT pk_check_min_age CHECK (date_embauche >= ADD_MONTHS(date_naissance, 12 * 18)),
+	CONSTRAINT pk_no_employee PRIMARY KEY(no_employee) USING INDEX TABLESPACE GEST_INX
+) TABLESPACE GEST_DATA;
+
+
+-- Add Constraint
+ALTER TABLE EX_CLIENTS ADD CONSTRAINT code_client_con PRIMARY KEY (code_client);
+
+ALTER TABLE EX_EMPLOYES
+ADD CONSTRAINT chk_age_minimum
+CHECK (date_embauche >= ADD_MONTHS(date_naissance, 12 * 18));
+ALTER TABLE EX_EMPLOYES DROP CONSTRAINT chk_age_minimum;
+
+
+-- Add Constraint to table Space
+ALTER TABLE EX_CLIENTS
+ADD CONSTRAINT pk_code_client PRIMARY KEY (code_client)
+USING INDEX TABLESPACE GEST_INX;
+
+
+-- move EX_COMMANDES and EX_CLIENTS to GEST_ETOILE_DATA
+ALTER TABLE EX_CLIENTS move TABLESPACE GEST_ETOILE_DATA;
+ALTER TABLE EX_COMMANDES move TABLESPACE GEST_ETOILE_DATA;
+
+
+-- Create a user with tablespace GEST_DATA and default tablespace is TEMP
+CREATE USER hamza IDENTIFIED BY hamza DEFAULT TABLESPACE GEST_DATA TEMPORARY TABLESPACE TEMP;
+ALTER USER hamza PASSWORD EXPIRE;
+
+ALTER USER hamza QUOTA 30M ON GEST_DATA;
+ALTER USER hamza QUOTA 30M ON GEST_INDX;
+
+-- give hamza previlage to create a table space
+GRANT CREATE TABLESPACE TO hamza WITH ADMIN OPTION;
+DROP USER hamza;
+
+-- connect to hamza
+-- I See that i need to enter a password first
+
+
+
+
+SELECT * FROM EX_COMMANDES;
+SELECT * FROM EX_EMPLOYES;
+SELECT * FROM EX_CLIENTS;
+
+
