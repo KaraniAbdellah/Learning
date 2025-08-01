@@ -38,7 +38,25 @@ let jobs: {name: string}; // array of object with imple prop string
 // Arrays
 let friends: number[] = [1, 2, 3]; // array of numbers
 let values: Array<any> = ['Apple', 2, 'Orange', 3, 4, 'Banana']; 
-
 // https://www.w3schools.com/typescript/typescript_arrays.php
+
+
+// Enum type
+// enum can not change
+enum Roles {
+    Admin,
+    User,
+    Guest
+}
+enum DaysOfWeek {
+    Monday = "Monday",
+    Tuesday = "Tuesday",
+    Wednesday = "Wednesday",
+    Thursday = "Thursday",
+    Friday = "Friday",
+    Saturday = "Saturday"
+};
+ 
+console.log(DaysOfWeek.Friday);
 
 
