@@ -13,3 +13,13 @@
     Compiler: from high level code to low level code
     Transpiler: from high level code to high level code
 */
+
+
+// Run Ts code
+/*
+    we run js code with node js ---> ts code can not run it with node
+        because node js understand just js code
+    
+    RUN: tsc index.ts
+        index.js will be create auto
+*/
