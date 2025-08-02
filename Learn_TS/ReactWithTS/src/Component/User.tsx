@@ -1,3 +1,5 @@
+// Using Typescript With Contexts
+
 import { useEffect, useState } from "react";
 import type { User } from "../Context/UserContextProvider";
 import UserContext from "../Context/UserContextProvider";
@@ -35,12 +37,12 @@ const User = () => {
   console.log(users);
 
   return (
-      <UserContext.Provider
-        value={{ users, addUser, updateUser, deleteUser, displayUser }}
-      >
-        {/* Any component here has access to [users, addUser, ...] */}
-        <CardUsers></CardUsers>
-      </UserContext.Provider>
+    <UserContext.Provider
+      value={{ users, addUser, updateUser, deleteUser, displayUser }}
+    >
+      {/* Any component here has access to [users, addUser, ...] */}
+      <CardUsers></CardUsers>
+    </UserContext.Provider>
   );
 };
 
