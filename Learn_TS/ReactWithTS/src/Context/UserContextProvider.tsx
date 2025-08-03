@@ -9,6 +9,7 @@ export interface User {
 }
 
 interface UserContextTypes {
+  name: ReactNode;
   users: User[] | null;
   addUser: (user: User) => void;
   updateUser: (id: number, newUser: User) => User | null;

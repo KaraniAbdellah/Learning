@@ -2,6 +2,8 @@ import "./App.css";
 import Person from "./Component/Person";
 import Admin from "./Component/Admin";
 import User from "./Component/User";
+import { DashboardContext } from "./Context/DashboardContext";
+import Dashboard from "./Component/Dashboard";
 
 function App() {
   return (
@@ -17,6 +19,9 @@ function App() {
 
       {/* Contexts using TypeScript */}
       <User></User>
+      <DashboardContext.Provider value={undefined}>
+        <Dashboard></Dashboard>
+      </DashboardContext.Provider>
     </>
   );
 }

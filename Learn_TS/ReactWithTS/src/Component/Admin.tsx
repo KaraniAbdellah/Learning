@@ -2,14 +2,19 @@
 
 import { useState } from "react";
 
+enum AdminsName {
+  ahmed = "ahmed",
+  abdellah = "abdellah",
+}
+
 interface AdminType {
-  name: string;
+  name: AdminsName;
   age: number;
   isMarried: boolean;
 }
 const Admin = () => {
   const [admin, setAdmin] = useState<AdminType>({
-    name: "ahmed",
+    name: AdminsName.abdellah,
     age: 30,
     isMarried: false,
   });
