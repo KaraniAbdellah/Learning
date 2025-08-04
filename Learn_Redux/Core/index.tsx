@@ -6,8 +6,8 @@
 //* Introduction to Redux
 /*
   - The Redux store keeps all the data (state)
-  - The UI gets data from the store 
-  - To change the data, we send an action using dispatch()
+  - The UI gets data from the store
+  - To change the data, we send an action using dispatch() to Reducer
   - The action does not change the data by itself
   - The reducer takes the action and changes the data based on the action type
 

@@ -1,12 +1,33 @@
 import React from "react";
 import { createStore } from "../../node_modules/redux/src/createStore";
 
-const initialState = {
+type User = {
+  name: string;
+  id: number;
+};
+
+type Task = {
+  id: number;
+  userId: number;
+  name: string;
+};
+
+type State = {
+  users: User[];
+  tasks: Task[];
+};
+
+type Action = {
+  type: string;
+  value: User;
+};
+
+const initialState: State = {
   users: [
     { name: "user1", id: 1 },
     { name: "user2", id: 2 },
   ],
-  todos: [
+  tasks: [
     { id: 1, name: "todo1", userId: 1 },
     { id: 2, name: "todo2", userId: 1 },
     { id: 3, name: "todo3", userId: 2 },
@@ -18,6 +39,43 @@ const initialState = {
 const store = createStore((state) => state, initialState);
 console.log(store);
 
+// Action
+const addUserAction = (user: User): Action => ({
+  type: "ADD_USER",
+  value: user,
+});
+const removeActionAction = (user: User): Action => ({
+  type: "REMOVE_USER",
+  value: user,
+});
+
+// Reducer
+const sum = [1, 2, 3, 4].reduce((acc, cur) => acc + cur);
+const userReducer: State = (state: State, action: Action) => {
+  if (action.type == "ADD_USER") {
+    const new_state: State = {
+      users: [...state.users, action.value],
+      tasks: state.tasks,
+    };
+    return new_state;
+  }
+
+  if (action.type == "REMOVE_USER") {
+    // Delete User
+    state.users.splice(action.value.id, action.value.id + 1);
+    // Delete Tasks
+    state.tasks.forEach((task, index) => {
+      if (task.userId !== action.value.id) {
+        state.tasks.splice(index, index + 1);
+      }
+    });
+    const new_state: State = {
+      users: state.users,
+      tasks: state.tasks,
+    };
+    return new_state;
+  }
+};
 
 const ToDo = () => {
   return <div>To Do</div>;
