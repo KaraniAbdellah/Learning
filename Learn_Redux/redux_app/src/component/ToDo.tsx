@@ -22,6 +22,11 @@ type Action = {
   value: User;
 };
 
+enum ActionTypes {
+  ADD_USER = "ADD_USER",
+  REMOVE_USER = "REMOVE_USER",
+}
+
 const initialState: State = {
   users: [
     { name: "user1", id: 1 },
@@ -41,11 +46,11 @@ console.log(store);
 
 // Action
 const addUserAction = (user: User): Action => ({
-  type: "ADD_USER",
+  type: ActionTypes.ADD_USER,
   value: user,
 });
 const removeActionAction = (user: User): Action => ({
-  type: "REMOVE_USER",
+  type: ActionTypes.REMOVE_USER,
   value: user,
 });
 
