@@ -24,8 +24,9 @@ type Action = {
 
 enum ActionTypes {
   ADD_USER = "ADD_USER",
-  REMOVE_USER = "REMOVE_USER",
+  REMOVE_USER = "REMOVE_USER"
 }
+// https://oida.dev/erasable-syntax-only/
 
 const initialState: State = {
   users: [
