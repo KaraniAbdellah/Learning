@@ -1,5 +1,6 @@
 import React from "react";
 import { createStore } from "../../node_modules/redux/src/createStore";
+import { Reducer } from "redux";
 
 type User = {
   name: string;
@@ -25,7 +26,7 @@ type Action = {
 // this code can not be understand from node.js [+v20]
 enum ActionTypes {
   ADD_USER = "ADD_USER",
-  REMOVE_USER = "REMOVE_USER"
+  REMOVE_USER = "REMOVE_USER",
 }
 
 const initialState: State = {
@@ -41,23 +42,22 @@ const initialState: State = {
   ],
 };
 
-// Store
-const store = createStore((state) => state, initialState);
-console.log(store);
-
 // Action
 const addUserAction = (user: User): Action => ({
   type: ActionTypes.ADD_USER,
   value: user,
 });
-const removeAction = (user: User): Action => ({
+const removeUserAction = (user: User): Action => ({
   type: ActionTypes.REMOVE_USER,
   value: user,
 });
 
 // Reducer
 const sum = [1, 2, 3, 4].reduce((acc, cur) => acc + cur);
-const userReducer: State = (state: State, action: Action) => {
+const userReducer: Reducer<State, Action> = (
+  state: State = initialState,
+  action: Action
+) => {
   if (action.type == "ADD_USER") {
     const new_state: State = {
       users: [...state.users, action.value],
@@ -68,16 +68,31 @@ const userReducer: State = (state: State, action: Action) => {
 
   if (action.type == "REMOVE_USER") {
     // Delete User
-    const newUsers: User[] = state.users.filter((user) => user.id != action.value.id);
+    const newUsers: User[] = state.users.filter(
+      (user) => user.id != action.value.id
+    );
     // Delete Tasks
-    const newTasks: Task[] = state.tasks.filter((task) => task.userId != action.value.id)l
+    const newTasks: Task[] = state.tasks.filter(
+      (task) => task.userId != action.value.id
+    );
+    // Return New State
     const new_state: State = {
       users: newUsers,
       tasks: newTasks,
     };
     return new_state;
   }
+  return state;
 };
+
+// Store
+const store = createStore(userReducer, initialState);
+store.dispatch(addUserAction({ name: "abdellah", id: 3 }));
+console.log(store.getState());
+store.dispatch(removeUserAction({name: "ahmed", id: 2}));
+console.log(store.getState());
+
+
 
 const ToDo = () => {
   return <div>To Do</div>;

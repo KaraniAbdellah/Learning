@@ -1,6 +1,6 @@
-import ToDo from "./component/ToDo";
+import Squads from "./component/Squads";
 function App() {
-  return <><ToDo></ToDo></>;
+  return <><Squads></Squads></>;
 }
 
 export default App;
