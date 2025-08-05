@@ -50,7 +50,7 @@ const addUserAction = (user: User): Action => ({
   type: ActionTypes.ADD_USER,
   value: user,
 });
-const removeActionAction = (user: User): Action => ({
+const removeAction = (user: User): Action => ({
   type: ActionTypes.REMOVE_USER,
   value: user,
 });
@@ -68,16 +68,12 @@ const userReducer: State = (state: State, action: Action) => {
 
   if (action.type == "REMOVE_USER") {
     // Delete User
-    state.users.splice(action.value.id, action.value.id + 1);
+    const newUsers: User[] = state.users.filter((user) => user.id != action.value.id);
     // Delete Tasks
-    state.tasks.forEach((task, index) => {
-      if (task.userId !== action.value.id) {
-        state.tasks.splice(index, index + 1);
-      }
-    });
+    const newTasks: Task[] = state.tasks.filter((task) => task.userId != action.value.id)l
     const new_state: State = {
-      users: state.users,
-      tasks: state.tasks,
+      users: newUsers,
+      tasks: newTasks,
     };
     return new_state;
   }
