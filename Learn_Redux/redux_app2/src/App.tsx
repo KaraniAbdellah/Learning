@@ -5,6 +5,12 @@ function App() {
   interface CounterState {
     value: number;
   }
+  interface UserState {
+    isSignedIn: boolean
+  }
+
+  // Actions
+
 
   return <></>;
 }
