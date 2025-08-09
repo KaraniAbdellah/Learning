@@ -5,6 +5,7 @@
 
 //* Introduction to Redux
 /*
+  - We can use store from anywhere
   - The Redux store keeps all the data (state)
   - The UI gets data from the store
   - To change the data, we send an action using dispatch() to Reducer

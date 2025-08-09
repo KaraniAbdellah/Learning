@@ -6,7 +6,8 @@ import { store } from "./states/store.ts";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <Provider store={store}>
+    {/* We can use store in any component */}
+    <Provider store={store}> 
       <App />
     </Provider>
   </StrictMode>
