@@ -25,4 +25,4 @@ const counterSlice = createSlice({
 
 // we name actions like reducer because of redux generate action for each reducer
 export const { increment, decrement } = counterSlice.actions;
-export default counterSlice.reducer;
+export default counterSlice;
