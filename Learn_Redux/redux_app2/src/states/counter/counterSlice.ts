@@ -1,5 +1,4 @@
-// this file contain every thing like actions, reducers, states, ...
-
+// this file for Slice [state + reducers implementation + actions]
 import { createSlice } from "@reduxjs/toolkit";
 
 interface Counter {
@@ -14,10 +13,11 @@ const counterSlice = createSlice({
   name: "counter",
   initialState,
   reducers: {
-    increment: (state) => {
-      state.value += 1;
+    increment: (oldState) => {
+      oldState.value += 1;
     },
   },
 });
 
+// export default counterSlice.actions; // actions generated auto
 export default counterSlice.reducer;

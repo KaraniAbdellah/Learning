@@ -1,9 +1,11 @@
-// this for reduce store
+// this hold app's state
 import { configureStore } from "@reduxjs/toolkit";
 import counterReducer from "./counter/counterSlice";
 
 export const store = configureStore({
-    reducer: counterReducer
+  reducer: {
+    counter: counterReducer,
+  },
 });
 
 export type RootState = ReturnType<typeof store.getState>;
