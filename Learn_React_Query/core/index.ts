@@ -5,5 +5,11 @@
     state management in React applications
 */
 
+// Query
+/*
+    is way to fetch and cache data from server or any async source.
+        --> we use useQuery(queryKey, fun)
+            [fun]: for fetch data
+*/
 
-
+//
