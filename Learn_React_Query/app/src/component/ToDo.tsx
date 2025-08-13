@@ -4,22 +4,29 @@ import type { todos } from "../types/todos";
 import { addTodo } from "../api/todos/addTodo";
 
 const ToDo = () => {
+  const todo: todos = {
+    todo: "Use DummyJSON in the project",
+    completed: false,
+    userId: 5,
+    id: 10000,
+  };
+
   const { data, isLoading } = useQuery({
     queryKey: ["todos"],
     queryFn: () => fetchTodos(),
   });
 
-  const mutation = useMutation({
-    mutationFn : addTodo(
-      {
-        completed: false,
-        id: 91,
-        todo: "Take a nap",
-        userId: 70,
-      },
-      data
-    ),
+  const getMutation = useMutation({
+    mutationFn: () => addTodo(todo),
+    onSuccess: () => {
+      console.log("Todo add succeffully");
+    },
+    onError: (error: Error) => {
+      console.log(error);
+    },
   });
+  console.log(getMutation.data);
+  console.log(getMutation.isPending);
 
   if (isLoading) {
     return <div>Loading...</div>;
@@ -37,6 +44,14 @@ const ToDo = () => {
           </div>
         );
       })}
+      <button
+        onClick={() => {
+          console.log("Hello world");
+          getMutation.mutate();
+        }}
+      >
+        add todo
+      </button>
     </div>
   );
 };

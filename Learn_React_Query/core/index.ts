@@ -19,5 +19,13 @@
 
 // mutation
 /*
-    mutations are used for create/update/delete data
+    mutations are used for create/update/delete data:
+        const {mutate, mutateAsync} = useMutation({
+            mutationFn: () => addTodo(todo),
+        });
+        in generate we use mutateAsync
 */
+
+
+
+
