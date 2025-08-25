@@ -5,6 +5,13 @@
 */
 
 
+// What is Engine And How it works
+/*
+    is browser that help t find right ressource
+    SE works in three way:
+        Crowing, Indexing, Ranking
+*/
+
 
 
 
