@@ -13,5 +13,36 @@
 */
 
 
+// Crowing
+/*
+    Google has small programm called spider or bugs
+    
+    --> When i type a keyword bugs fetch only same pages and
+        find some links in this pages and follow links.
+    
+    --> After that Bugs find billion of webpages and add 
+        them to database
+    
+    --> In your website should add robots.txt --> file that
+        tell google bugs do not follow this webpage 
+*/
+
+
+// Indexing
+/*
+    Save webpages in the database when search engines find them.
+    Use "Search Operators" to know how many pages are saved in database.
+    Use "Robots.txt" to tell browser do not save some webpages
+*/
+
+
+// Ranking
+/*
+    means the order that search engines (like Google) show webpages.
+
+    Depand on Location, Keywords Search, ... --> Google rank the best website
+
+    There is a lot of factors that can affect rank of your website
+*/
 
 
