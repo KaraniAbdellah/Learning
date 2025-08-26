@@ -3,3 +3,12 @@
     WordPress is the simplest, most popular way to create your own website or blog.
     In fact, WordPress powers over 43.6% of all the websites on the Internet.
 */
+
+// Notes
+/*
+    must of the time we just take a website and change our information
+        --> in Technical we take backup of website [website filies]
+    
+    each website has own modification
+*/
+
