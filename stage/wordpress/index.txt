@@ -1,4 +1,5 @@
-// What is Wordpress
+// What is Wordpress [Content Managment System --> CMS]
 /*
-    
+    WordPress is the simplest, most popular way to create your own website or blog.
+    In fact, WordPress powers over 43.6% of all the websites on the Internet.
 */
