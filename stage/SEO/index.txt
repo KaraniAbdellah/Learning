@@ -26,16 +26,12 @@
     --> In your website should add robots.txt --> file that
         tell google bugs do not follow this webpage 
 */
-
-
 // Indexing
 /*
     Save webpages in the database when search engines find them.
     Use "Search Operators" to know how many pages are saved in database.
     Use "Robots.txt" to tell browser do not save some webpages
 */
-
-
 // Ranking
 /*
     means the order that search engines (like Google) show webpages.
@@ -44,6 +40,22 @@
 
     There is a lot of factors that can affect rank of your website
 */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

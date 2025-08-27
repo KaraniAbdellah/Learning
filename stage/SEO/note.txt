@@ -12,10 +12,13 @@
     - Images < 20kb
 */
 
+
+
 // All in One Migration
 /*
-    
+    is for import and export backup 
 */
+
 
 
 // Conficlt of in Plugins
@@ -23,6 +26,30 @@
     When We Install Plugin --> can happen a conflicat
        --> For Example Builder and also Elimontor ==> The Two Plugin Do the same thing
 */
+
+
+
+// Must Used Tools for SEO
+/*
+    Google Keyword Planner → find keywords + search volume.
+        --> this required credit info --> USE KeywordTool.io
+    Google Speed: for speed of website
+        --> Performance, Accessibility, ...
+    Google Analytics → track visitors, pages they visit, time spent.
+    Google Search Console → see what keywords bring traffic + fix site issues.
+    SEO Meta in one click → for page structure
+*/
+
+
+
+// Some Concept to know for
+/*
+    Volume: how many people search about this keyword
+    SEO Difficulty: is number that indect comptetion in this keyword
+    CPC (Cost per click): how many i need to pay for this ads
+*/
+
+
 
 
 
