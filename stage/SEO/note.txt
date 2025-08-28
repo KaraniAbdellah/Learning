@@ -50,6 +50,35 @@
 */
 
 
+// Cache
+/*
+    - If server that store data temporary
+    - We have two type of cahce:
+        ---> Cache Client: is browser ressources
+        ---> Cache Server: is server ressources
+        --> Cache CDN: ....
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
