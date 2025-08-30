@@ -12,3 +12,16 @@
     each website has own modification
 */
 
+
+// SEO Rank Math 
+/*
+    This for SEO for trips, blogs
+*/
+
+// WP-Code Snippet
+/*
+    Some Elements in Wordpress we can not hidden that why we install
+    this plugin for hidden elements by using css.
+*/
+
+
