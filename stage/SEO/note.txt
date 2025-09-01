@@ -63,14 +63,25 @@
 // Tools: Rank Math SEO && WPCode
 /*
     Rank is for seo Optimaster and also WP for clear cache.
+    Moz: for anaylse keyword in website
 */
 
 
-// How to find SEO
+// Technic SEO Keyword
 /*
     Okay --> find principle keyword + others keywords extract from pinciple keyword
 */
 
+
+// Domain vs SubDomain
+/*
+    Domain: consist two part
+        --> TLD: last part like .com, .net, ....
+        --> SLD: part that come from TLD (ahmed.TLD)
+    
+    SubDomain: is subdivision of a larger domain
+        --> blog.ahmed.com
+*/
 
 
 
