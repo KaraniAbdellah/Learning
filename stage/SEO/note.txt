@@ -84,7 +84,21 @@
 */
 
 
+// Internal link vs External backlink
+/*
+    Internal link 👉 A backlink from one page of your own website to another page on the same domain.
+    Example: From your Home page linking to your Contact page.
 
+    External backlink (or just backlink) 👉 A link from another website pointing to your site.
+    Example: A travel blog linking to your site “Trek Desert Morocco.”
+*/
+
+
+// Follow Link vs DoFollow  Link
+/*
+     DoFollow Link: are links follow by crawlers (bugs)
+     Follow Links: are links no follow by crawlers    
+*/
 
 
 
