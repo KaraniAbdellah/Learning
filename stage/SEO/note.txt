@@ -98,6 +98,8 @@
 /*
      DoFollow Link: are links follow by crawlers (bugs)
      Follow Links: are links no follow by crawlers    
+     
+     Both of them are useful
 */
 
 
