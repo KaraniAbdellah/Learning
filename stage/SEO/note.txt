@@ -116,7 +116,7 @@
         - Commercial: Free Tour, Best Tour, ...
         - Transactional: keywords use for buy or pay something
         - ....
-    
+
     NOTE: in each project we need to give each part a specific type of keyword
 */
 

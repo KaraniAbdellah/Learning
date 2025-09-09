@@ -1,0 +1,11 @@
+// Duplicate Keyword
+/*
+    - When we found some keyword get the trafic --> duplicate keyword on other page
+*/
+
+// Attractive Keyword
+/*
+    Always use [positive, power] keywords
+*/
+
+
