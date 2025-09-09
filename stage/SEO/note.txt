@@ -103,18 +103,22 @@
 */
 
 
-// Keywords Types
+// Keywords Types & Categorie
 /*
-    - Informational: keyword use from people who want to learn something
-    - Navigational: Typing a brand like (youtube, google)
-    - Commercial: Free Tour, Best Tour, ...
-    - Transactional: keywords use for buy or pay something
-    - ....
+    Keyword Categorie:
+        Short tail: highly competitive like "digital marketing, ..."
+        Long Tail: less competitive like "digital marketing for small businesses"
+            
+    Keywords Types:
+        - Informational: keyword use from people who want to learn something
+            --> keyword can be: questions, 
+        - Navigational: Typing a brand like (youtube, google)
+        - Commercial: Free Tour, Best Tour, ...
+        - Transactional: keywords use for buy or pay something
+        - ....
+    
+    NOTE: in each project we need to give each part a specific type of keyword
 */
-
-
-
-
 
 
 
