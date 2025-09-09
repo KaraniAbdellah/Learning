@@ -122,6 +122,12 @@
 
 
 
+// LPS: Landing page score
+/*
+    google give each page score based on:
+        UX, SEO of page, relevance (how page match the target keyword)
+*/
+
 
 
 
