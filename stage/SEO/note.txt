@@ -103,7 +103,14 @@
 */
 
 
-
+// Keywords Types
+/*
+    - Informational: keyword use from people who want to learn something
+    - Navigational: Typing a brand like (youtube, google)
+    - Commercial: Free Tour, Best Tour, ...
+    - Transactional: keywords use for buy or pay something
+    - ....
+*/
 
 
 
