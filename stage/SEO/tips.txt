@@ -3,9 +3,15 @@
     - When we found some keyword get the trafic --> duplicate keyword on other page
 */
 
-// Attractive Keyword
+// Attractive Keywords
 /*
     Always use [positive, power] keywords
+*/
+
+
+// Change Keyword Order
+/*
+    for example i am choose as keyword (Location taroudanat) --> work also in this keyword "taroudanat location"
 */
 
 
