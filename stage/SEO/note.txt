@@ -130,10 +130,17 @@
 
 
 
-// How to choose blogs
+// Keyword Difficulty (KD)
 /*
-    
+    KD 0–20 → Easy (new websites can rank with some content + a few backlinks).
+    KD 21–40 → Medium (needs stronger content + authority).
+    KD 41–60 → Hard (competitive niches).
+    KD 61+ → Very Hard (big brands dominate).
 */
+
+
+
+
 
 
 
