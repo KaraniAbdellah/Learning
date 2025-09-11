@@ -15,3 +15,14 @@
 */
 
 
+// Avoid AI Content
+/*
+    blog: https://developers.google.com/search/blog/2023/02/google-search-and-ai-content
+    
+    The Solutions:
+        --> for example we want to write an article:
+            --> pick big lines and all ideas (you can search in others website what the do) + then ask chat to add more details
+*/
+
+
+
