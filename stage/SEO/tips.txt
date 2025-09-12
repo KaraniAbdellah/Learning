@@ -25,4 +25,9 @@
 */
 
 
+// Change Order of Keyword
+/*
+    For Example we choose "Morocco Tours From Fes" Should be use "Tours From Fes Morocco"
+*/
+
 

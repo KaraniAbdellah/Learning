@@ -135,15 +135,54 @@
     KD 0–20 → Easy (new websites can rank with some content + a few backlinks).
     KD 21–40 → Medium (needs stronger content + authority).
     KD 41–60 → Hard (competitive niches).
-    KD 61+ → Very Hard (big brands dominate).
+    KD 61+ → Very Hard (big brands dominate).Technical SEO = things like:
+
+
 */
 
 
 
+// How the Google Rank website
+/*
+    - Meaning
+        --> Keywords: 
+        --> Langauge: langauge of query determines how most results will be displayed
+        --> Localization: 
+        --> Current events: google always show latest result
+
+    - Relevance:
+        --> Just think: when you search for “dogs,” you likely don’t want a page
+            with the word “dogs” on it hundreds of times. With that in mind,
+            algorithms assess if a page contains other relevant content beyond
+            the keyword “dogs” - such as pictures of dogs, videos, or even a list of breeds.
+
+    - Quality:
+        --> one of the factors used to determine quality is understanding
+            if other prominent websites link or refer to the content  
+
+    - Usability of content:
+        --> Google Look is that better content based on: [mobile-friendly content, ...]
+
+    - Context and settings:
+        --> Search aims to connect human curiosity to knowledge as accurately as possible..
+        --> To do this: google use information such as your location, past Search history, and Search settings.
+*/
 
 
 
-
+// How to choose your keywords
+/*
+    when you want to chooce your keyword focus on this:
+        Primary (focus) keyword
+        Secondary / supporting keywords
+        Long-tail keywords
+        LSI or related terms
+        Branded keywords
+        Geo-targeted / local keywords
+        Transactional or commercial intent keywords
+        Informational keywords
+        Navigational keywords
+*/
 
 
 
