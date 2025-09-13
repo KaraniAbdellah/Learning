@@ -196,6 +196,7 @@
     --> SEM:
         - is to get traffic and visibility from both organic and paid search.
         - Goal of this to rank your website in Paid Area
+        - this is like doing ads for our page
     
     --> Google’s search results are divided into two main categories:
         - the paid search results and the organic search results.

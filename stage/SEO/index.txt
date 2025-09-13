@@ -1,13 +1,13 @@
 // What is SEO
 /*
     SEO: Search Engine Optimisation
-        is groups of method to make a website get more trafic
+        is groups of method to make a website get more trafic (organic result)
 */
 
 
 // What is Engine And How it works
 /*
-    is browser that help t find right ressource
+    is browser that help to find right ressource
     SE works in three way:
         Crowing, Indexing, Ranking
 */
@@ -41,10 +41,26 @@
     There is a lot of factors that can affect rank of your website
 */
 
+///////////////////////////////////////////////////////////////////
+in Deepth How Google Search Works ?
+///////////////////////////////////////////////////////////////////
+https://developers.google.com/search/docs/fundamentals/how-search-works#indexing
 
-//
+
+// Introducing How Search Works
+/*
+    Gooogle Search Based Three Main Stage:
+        - Crawling: how google discover URL and Pages
+        - Indexing: Way that google context of pages and store page in database
+        - Serving || Ranking: is How Google Rank Result
+*/
 
 
+
+// Crawling
+/*
+    
+*/
 
 
 
