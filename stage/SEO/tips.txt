@@ -11,7 +11,7 @@
 
 // Change Keyword Order
 /*
-    for example i am choose as keyword (Location taroudanat) --> work also in this keyword "taroudanat location"
+    for example i am choose as keyword (Location taroudanat) --> work also on this keyword "taroudanat location"
 */
 
 
@@ -29,5 +29,17 @@
 /*
     For Example we choose "Morocco Tours From Fes" Should be use "Tours From Fes Morocco"
 */
+
+
+// For pages
+/*
+    --> Privacy Page, Contact, Checkout, Cart: No Index
+    --> About, ...: Work in Brand --> Use Your Brand as Keywords
+    --> Footer: must contain links to other tours
+*/
+
+
+
+
 
 
