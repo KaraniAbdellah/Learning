@@ -39,6 +39,32 @@
 */
 
 
+// Adaptable Blog Writing for Our New SEO Strategy
+/*
+    - Pick a topic that solves a problem --> [See on Reddit what people are asking for]
+    - Choose keywords based on category
+    - Title & Meta Description
+    - Heading should contain keywords
+    - Break the topic into categories
+    - Word count (800 - 1200)
+    - Blog should refer to more than 2 pages on the website
+    - Internal links to tours, other blogs, contact pages, etc.
+    - External links
+    - Call-to-action (CTA): clear action like (Book Now, Contact Us, Learn More, ...)
+    
+*/ src: https://www.marketermilk.com/blog/how-to-write-seo-blog-posts
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
