@@ -205,6 +205,33 @@
 
 
 
+// Second Part
+/*
+    We Are Working with another tools like:
+        --> Google speed (litespeed plugin in wordpress, couldfaire)
+        --> Backlinks
+        --> Google search console
+*/
+
+
+
+// Lite Speed Plugin
+/*
+    we need to enable some option for do not reload uncessary filies, images, ...
+    
+    - CSS Minify: Remove Spaces, Comments, ...
+    - CSS Combine: Merge all css filies(theme, plugins) in one lines
+*/
+
+
+
+
+
+
+
+
+
+
 
 
 
