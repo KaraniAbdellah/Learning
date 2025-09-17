@@ -209,6 +209,8 @@
 /*
     We Are Working with another tools like:
         --> Google speed (litespeed plugin in wordpress, couldfaire)
+            in Computer should be +90
+            in Phone should be +80
         --> Backlinks
         --> Google search console
 */
@@ -221,6 +223,7 @@
     
     - CSS Minify: Remove Spaces, Comments, ...
     - CSS Combine: Merge all css filies(theme, plugins) in one lines
+    - WordPress Emoji: disable imojies
 */
 
 
