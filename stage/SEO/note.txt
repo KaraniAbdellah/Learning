@@ -192,7 +192,7 @@
         - The main difference is that Search Engine Optimization (SEO) is focused on optimizing
             a website in order to get traffic from organic search results.
         - Goal of SEO is to rank a website in organic search
-        
+
     --> SEM:
         - is to get traffic and visibility from both organic and paid search.
         - Goal of this to rank your website in Paid Area
