@@ -229,10 +229,22 @@
 
 
 
+// Cloudfaire with wordpress
+/*
+    - we need to use CDN to load website faster
+    - Caches images, CSS, and JS → reduces server load
+    - Minify HTML, CSS, JS Filies --> Remove Spacing, Comments, ...
+    - Adds Modern Speed tech (HTTP/3, Brotli)
+    - Lazy Loading in Website
+*/
 
 
 
-
+// in Google Speed | First Request is Very Slowy
+/*
+    - TTFB: Time To First Byte
+    
+*/
 
 
 
