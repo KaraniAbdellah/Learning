@@ -63,9 +63,45 @@ https://developers.google.com/search/docs/fundamentals/how-search-works#indexing
 */
 
 
+// Google Search Console
+/*
+    CSS Settings
+        CSS Minify → ON
+        CSS Combine → ON
+        Generate Critical CSS → ON
+        Load CSS Asynchronously → ON
+        Inline CSS Async Lib → ON
+    
+    JS Settings
+        JS Minify → ON
+        JS Combine → ON
+        Load JS Deferred → ON
+        Delay JS → ON
+
+    HTML Settings
+        HTML Minify → ON
+        DNS Prefetch
+    
+*/
 
 
 
+// Render Blocking Resources
+/*
+    Problem is that some code loading and block other part that load also
+    
+    Solutions:
+        Defer: JS, CSS, will be only downloaded when Browser parses the HTML code
+        Async Option: foor filies
+*/
+
+
+
+// TTFB (Time to First Byte).
+/*
+    This is for Time that take first request:
+        --> Lite Speed ---> Cache Logged-in Users	OFF
+*/
 
 
 
