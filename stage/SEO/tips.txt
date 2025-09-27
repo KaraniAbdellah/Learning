@@ -55,7 +55,11 @@
 */ src: https://www.marketermilk.com/blog/how-to-write-seo-blog-posts
 
 
-
+// Tip in Choising Keyword
+/*
+    Do not choice the sane keyword that you already choiced
+    --> choice the keyword of compititor
+*/
 
 
 
