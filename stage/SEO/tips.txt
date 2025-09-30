@@ -58,7 +58,7 @@
 // Tip in Choising Keyword
 /*
     Do not choice the sane keyword that you already choiced
-    --> choice the keyword of compititor
+    --> choice the keyword of competitor
 */
 
 
