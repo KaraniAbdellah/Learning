@@ -1,0 +1,49 @@
+# How are apps made:
+##
+    Idea Behind React Native if to combine(Java/Kotlin for android and Objective-C/Swift for IOS)
+    and make them work together, but Js need Engine to be run.
+
+    IOS have JavaScriptCore Engine for run/execute code, Android No but
+         will be brought along with the React Native framework.
+
+    Java/Obj-C deffrent Programming Language the can not spear directly
+        --> we should be use JSON, this set of communication use programms called Bridge.
+
+    During BuildTime native code will be compile into Java/Obj-C, and Js code
+        will be bundled using Metro Bundler (js Library that it regroupe all js/css/html filies
+        in one js/css/html file).
+
+    Questions
+        is that code generate two times ?
+        - No, we have two code base
+        --> React native run directly in device
+        --> Js code (generate by bundle) run in Js Engine
+
+        Why we generate two code ?
+        - Becuase Android/IOS can not understand js code, that why we
+            Need Engine to run js and Excecute it (Hermes/JavaScriptCore)
+
+        NOTE ?
+        - Native code → Java/Kotlin (Android) or Objective-C/Swift (iOS) → runs directly on the device.
+        - JavaScript code → your React Native components → runs inside the JavaScript engine
+            that is included in the app.
+
+    React Native Thread:
+        When app runs, the device create three threads
+        - Main Thread: this where app runing reponsable of rendering UI in Screen.
+        - JavaScript Thread: this where business logic executed
+        - Shadow Thread: responsable for compute the positions of the views.
+
+    React native Bridge:
+        Bridge Allow change data between Js code and Native code Via Json.
+        "Same Logic in FrontEnd/Backend" But Front/Backend Does not need to know each other.
+        - User touch event
+        - Serialized message send via Bridge with all necessary data (JSON)
+        - Js recieve message, and deserializes message and decide what to do (change icon)
+        - Js send message to Native code
+        - The native side receives the message, deserializes it and updates the view.
+
+    Problem with Bridge:
+        Bridge Work asynchronous (send all in same time)
+        --> that JSI — JavaScript Interface Come
+##
