@@ -1,4 +1,4 @@
-# How are apps made:
+# How react native works:
 ##
     Idea Behind React Native if to combine(Java/Kotlin for android and Objective-C/Swift for IOS)
     and make them work together, but Js need Engine to be run.
@@ -46,4 +46,24 @@
     Problem with Bridge:
         Bridge Work asynchronous (send all in same time)
         --> that JSI — JavaScript Interface Come
+##
+
+
+# What is Expo:
+##
+    My Code: Writtin in Js
+    Expo: translate code in native code (Java/Objective-C)
+    Phone: phone run result in real app
+
+    Example: Camera.takePicture() --> Expo translate js code for phone can understand
+##
+
+
+# What is Expo Go:
+##
+    React Native has two parts:
+    - JavaScript part – your app logic (no rebuild needed)
+    - Native part – Java/Swift code (needs rebuild)
+        If you change anything in the Native part, you must rebuild the
+        entire app using Android Studio or Xcode --> run it again
 ##
