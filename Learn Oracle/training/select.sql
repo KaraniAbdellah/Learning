@@ -6,6 +6,7 @@ SELECT std_money, std_money * 10 AS bonus  FROM student;
 UPDATE student SET std_id = 5 WHERE std_id = 1 AND std_name = 'kawtar';
 SELECT * FROM student ORDER BY std_id DESC  NULLS FIRST;
 
+
 -- Select [fetch, ties]
 SELECT * FROM student FETCH FIRST 3 ROWS ONLY;
 SELECT * FROM student ORDER BY std_id DESC FETCH FIRST 3 ROWS WITH TIES;
