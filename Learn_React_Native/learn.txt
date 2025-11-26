@@ -67,3 +67,9 @@
         If you change anything in the Native part, you must rebuild the
         entire app using Android Studio or Xcode --> run it again
 ##
+
+
+# Reset app
+##
+    npm run reset-app --> for delete all components, .. that come in installations
+##
