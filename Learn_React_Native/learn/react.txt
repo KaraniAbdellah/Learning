@@ -1,0 +1,10 @@
+# React Component LifCycle
+##
+    Mounting: When a component is being created and inserted into the DOM.
+    Updating: When a component’s props or state change.
+    Unmounting: When a component is removed from the DOM.
+##
+
+
+# Why we use (() => ) in SetFunction
+

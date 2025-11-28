@@ -69,7 +69,7 @@
 ##
 
 
-# Reset app
+# Reset React Native App
 ##
     npm run reset-app --> for delete all components, .. that come in installations
 ##
