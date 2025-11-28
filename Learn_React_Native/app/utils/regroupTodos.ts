@@ -1,4 +1,4 @@
-import Todos from "@/types/Todos";
+import Todos from "@/types/Todo";
 function regroupTodos(todos: Todos[]) {
   // Regroup the Todos based on UserId
   // {'1': [todos], '2': []}
