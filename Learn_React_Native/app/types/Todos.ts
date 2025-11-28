@@ -1,8 +1,8 @@
-interface Users {
+interface Todos {
   userId: string;
   id: string;
   title: string;
   completed: boolean;
 }
 
-export default Users;
+export default Todos;
