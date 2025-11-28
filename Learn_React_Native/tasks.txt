@@ -1,0 +1,6 @@
+// Make App With Navigation
+// Add Another Idea with Todo
+// Add Zustand
+// What is Cashing --> useQuery
+// Add Superbase
+
