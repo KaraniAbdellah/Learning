@@ -1,11 +1,12 @@
-import Home from "@/components/Home";
-import { NavigationContainer } from "@react-navigation/native";
-import {createStackNavigator} from "@react-navigation/stack";
-
-
+import Home from "@/components/home";
+import { Link } from "expo-router";
+import { Button, View } from "react-native";
 
 export default function Index() {
-  return <Home></Home>
+  return (
+    <View>
+      <Home></Home>;
+    </View>
+  );
 }
-
 // React native + Zunstand + Caching + SuperBase

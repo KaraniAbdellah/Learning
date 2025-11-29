@@ -44,13 +44,13 @@ const Home = () => {
                 key={index}
                 className="bg-white mb-3 p-4 rounded-lg shadow-md border border-gray-100"
               >
-                {/* First Way*/}
+                {/* First Way*/} 
                 {/* <Button
                   title="Just Clik Me"
                   onPress={() => navigation.navigate("Details", {userId: 10})}
                 /> */}
                 <Text className="text-gray-500 text-sm">User ID: {ele}</Text>
-                <Link href="/details" key={index}>
+                <Link href={{pathname: "/details", params: {name: ele}}} key={index}>
                   <Button
                     title="Click to Show Todo"
                   />
