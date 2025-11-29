@@ -1,21 +1,17 @@
-import React from "react";
 import fetchTodos from "@/services/fetchTodos";
 import { useEffect, useState } from "react";
-import { Text, View, ScrollView, Button, Pressable } from "react-native";
+import { Text, View, ScrollView, Button } from "react-native";
 import "../global.css";
 import Todo from "@/types/Todo";
 import regroupTodos from "@/utils/regroupTodos";
 import { Link, useNavigation } from "expo-router";
 
+
+
 const Home = () => {
   const navigation = useNavigation();
   const [todos, setTodos] = useState<{ [key: string]: Todo[] }>({});
   const [loading, setLoading] = useState<boolean>(false);
-
-  const toTodo = (userId: number) => {
-    console.log(userId);
-    navigation.navigate("Details", { userId: userId }); // error here --> take course for this
-  };
 
   useEffect(() => {
     // Fetch The data todos
@@ -54,10 +50,9 @@ const Home = () => {
                   onPress={() => navigation.navigate("Details", {userId: 10})}
                 /> */}
                 <Text className="text-gray-500 text-sm">User ID: {ele}</Text>
-                <Link href="/" key={index}>
+                <Link href="/details" key={index}>
                   <Button
                     title="Click to Show Todo"
-                    onPress={(e) => toTodo(Number(ele))}
                   />
                 </Link>
               </View>
