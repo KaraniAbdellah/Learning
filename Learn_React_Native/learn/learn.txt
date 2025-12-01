@@ -17,7 +17,7 @@
         is that code generate two times ?
         - No, we have two code base
         --> React native run directly in device
-        --> Js code (generate by bundle) run in Js Engine
+        --> Js code (generate by bundle) --> Metro
 
         Why we generate two code ?
         - Becuase Android/IOS can not understand js code, that why we
@@ -27,7 +27,7 @@
         - Native code → Java/Kotlin (Android) or Objective-C/Swift (iOS) → runs directly on the device.
         - JavaScript code → your React Native components → runs inside the JavaScript engine
             that is included in the app.
-
+    
     React Native Thread:
         When app runs, the device create three threads
         - Main Thread: this where app runing reponsable of rendering UI in Screen.
@@ -73,3 +73,10 @@
 ##
     npm run reset-app --> for delete all components, .. that come in installations
 ##
+
+
+# React Router
+##
+    For navigation in RN we have two options --> [react navigation, expo router]
+##
+
