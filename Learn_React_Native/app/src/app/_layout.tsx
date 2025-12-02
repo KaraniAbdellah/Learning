@@ -7,6 +7,12 @@ import { Stack } from "expo-router";
   --> Expo use filies as Screens
   --> _layout.js: if file when we defien how screen arranged
   --> Use <Link /> or router.push()
+
+  --> How Stack Work With Screen
+      - I am in HOME --> Stack: [HOME]
+      - I am Navigate to Details --> Stack [HOME, DETAILS]
+      - I am Navigate to Profile --> Stack [HOME, DETAILS, PROFILE]
+      - Press Back --> Stack Remove PROFILE --> Back to DETAILS
 */
 
 
