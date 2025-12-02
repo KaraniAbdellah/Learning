@@ -5,7 +5,7 @@ import { Stack } from "expo-router";
 /*
   --> Stack organize screens like a pile of pages
   --> Expo use filies as Screens
-  --> _layout.js: if file when we defien how screen arranged
+  --> _layout.js: Stack SetUp
   --> Use <Link /> or router.push()
 
   --> How Stack Work With Screen
