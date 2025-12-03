@@ -29,7 +29,7 @@ const Home = () => {
 
   if (!loading) return "Loadding Todo...";
   return (
-    <div>
+    <View>
       <View className="bg-white w-full h-screen">
         <View className="bg-blue-600 px-6 py-8 shadow-lg">
           <Text className="text-white text-3xl font-semibold">Todo List</Text>
@@ -48,10 +48,7 @@ const Home = () => {
                   onPress={() => navigation.navigate("Details", {userId: 10})}
                 /> */}
                 <Text className="text-gray-500 text-sm">User ID: {ele}</Text>
-                <Link
-                  href={{ pathname: "/components/details", params: { name: ele } }}
-                  key={index}
-                >
+                <Link href={{ pathname: "/details", params: { name: ele } }}>
                   <Button title="Click to Show Todo" />
                 </Link>
               </View>
@@ -59,7 +56,7 @@ const Home = () => {
           })}
         </ScrollView>
       </View>
-    </div>
+    </View>
   );
 };
 

@@ -12,9 +12,8 @@ import { Stack } from "expo-router";
       - I am in HOME --> Stack: [HOME]
       - I am Navigate to Details --> Stack [HOME, DETAILS]
       - I am Navigate to Profile --> Stack [HOME, DETAILS, PROFILE]
-      - Press Back --> Stack Remove PROFILE --> Back to DETAILS
+      - Press Back --> Stack Remove PROFILE --> Back to DETAILS --> [DETAILS, HOME]
 */
-
 
 const RootLayout = () => {
   return <Stack>
@@ -23,5 +22,5 @@ const RootLayout = () => {
   </Stack>;
 };
 
-
 export default RootLayout;
+
