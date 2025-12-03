@@ -1,7 +1,7 @@
 import React from "react";
 import { Text } from "@react-navigation/elements";
 import todoContext from "@/src/screens/Home/context/Todo";
-import Todo from "@/src/types/Todo";
+import Todo from "../types/Todo";
 import { useLocalSearchParams } from "expo-router";
 
 
