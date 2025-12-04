@@ -84,8 +84,8 @@
 ## React Native Structure
 ##
     source: https://www.youtube.com/watch?v=URjk37NGTE4
-    NOTE: Setup RN app with Expo not like just RN in Structure
-    WITh EXPO:
+    NOTE: Setup RN app with Expo not like just RN Basic SetUp in Structure
+    WITH EXPO:
         --> app: Just UI (features with entry files to this feature --> MAKE IT IN modules)
         --> modules: define features (components, utlis, hooks, services, ...)
         --> components: Global Reusable components

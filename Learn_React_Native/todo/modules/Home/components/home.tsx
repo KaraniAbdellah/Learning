@@ -2,9 +2,9 @@ import fetchTodos from "../services/fetchTodos";
 import { useEffect, useState } from "react";
 import { Text, View, ScrollView, Button } from "react-native";
 import Todo from "../types/Todo";
-import regroupTodos from "@/src/screens/Home/utils/regroupTodos";
-import { Link, useNavigation } from "expo-router";
-
+import regroupTodos from "../utils/regroupTodos";
+import { Link } from "@react-navigation/native";
+import { useNavigation } from "@react-navigation/native";
 
 const Home = () => {
   const navigation = useNavigation();
@@ -44,9 +44,9 @@ const Home = () => {
               >
                 {/* First Way*/}
                 {/* <Button
-                  title="Just Clik Me"
-                  onPress={() => navigation.navigate("Details", {userId: 10})}
-                /> */}
+                title="Just Clik Me"
+                onPress={() => navigation.navigate("Details", {userId: 10})}
+              /> */}
                 <Text className="text-gray-500 text-sm">User ID: {ele}</Text>
                 <Link href={{ pathname: "/details", params: { name: ele } }}>
                   <Button title="Click to Show Todo" />

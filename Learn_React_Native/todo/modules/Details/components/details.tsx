@@ -1,11 +1,8 @@
 import React from "react";
 import { Text } from "@react-navigation/elements";
-import { useLocalSearchParams } from "expo-router";
 
 
 const Details = () => {
-  const params = useLocalSearchParams();
-  console.log(params);
   // const Todos = useContext<Todo | undefined>(todoContext);
   return (
     <div>
