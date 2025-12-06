@@ -3,8 +3,9 @@ import { useEffect, useState } from "react";
 import { Text, View, ScrollView, Button } from "react-native";
 import Todo from "../types/Todo";
 import regroupTodos from "../utils/regroupTodos";
-import { Link } from "@react-navigation/native";
+import { Link } from "expo-router";
 import { useNavigation } from "@react-navigation/native";
+
 
 const Home = () => {
   const navigation = useNavigation();
@@ -48,7 +49,7 @@ const Home = () => {
                 onPress={() => navigation.navigate("Details", {userId: 10})}
               /> */}
                 <Text className="text-gray-500 text-sm">User ID: {ele}</Text>
-                <Link href={{ pathname: "/details", params: { name: ele } }}>
+                <Link href={`/Details/index.details`}>
                   <Button title="Click to Show Todo" />
                 </Link>
               </View>

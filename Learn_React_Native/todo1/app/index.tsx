@@ -1,7 +1,5 @@
 import { View } from "react-native";
 import IndexHome from "./Home/index.home";
-
-
 export default function Index() {
   return (
     <View>
@@ -9,4 +7,3 @@ export default function Index() {
     </View>
   );
 }
-// React native + Zunstand + Caching + SuperBase
