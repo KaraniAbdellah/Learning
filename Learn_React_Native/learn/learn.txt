@@ -96,3 +96,10 @@
 ##
 
 
+## React Navigation vs React Router
+##
+    React Router: for react web
+    React Navigation: for react native
+    Expo Router: for Expo + React Native
+##
+
